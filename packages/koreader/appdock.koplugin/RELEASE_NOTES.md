@@ -1,3 +1,144 @@
+# v7.9.16 · 2026-10-10
+
+## YouTube Music: Suchtreffer bleiben sichtbar
+
+Suchergebnisse und Diagnosen werden nicht länger vom gemeinsamen Setup-Bildschirm verdeckt, wenn `ffmpeg` fehlt. Die Suche und Anzeige benötigen nur `yt-dlp`; `ffmpeg` wird erst für Download und Konvertierung eines ausgewählten Titels benötigt.
+
+## Tests
+
+Alle 13 AppDock-LuaJIT-Testskripte laufen erfolgreich.
+
+# v7.9.15 · 2026-10-10
+
+# AppDock 7.9.15
+
+## YouTube Music: Suche zuverlässiger und Player näher am Original
+
+- **Teiltreffer bleiben sichtbar:** Liefert `yt-dlp` bereits brauchbare Suchtreffer, werden diese auch dann angezeigt, wenn einzelne YouTube-Einträge fehlschlagen und der Prozess deshalb einen Fehlerstatus zurückgibt.
+- **Metadatensuche statt Mediendownload:** Die Suche bleibt auf eine begrenzte Trefferliste beschränkt und lädt keine Audio-/Videodateien herunter. Socket-Timeouts, begrenzte Wiederholungen und ein UI-Timeout schützen vor festhängenden Suchläufen.
+- **Bessere Diagnose:** Bei leeren Ergebnissen werden relevante yt-dlp-Fehlerhinweise in der App angezeigt. Vollfarbige Ergebnisminiaturen werden in den lokalen Cache übernommen.
+- **Überarbeiteter Player:** Die Wiedergabeansicht orientiert sich stärker an YouTube Music – dunkle Fläche, großes quadratisches Cover, Künstlername, Like-/Infoaktionen, getrennte verstrichene und gesamte Laufzeit sowie Shuffle-, Zurück-, Play/Pause-, Weiter- und Repeat-Steuerung.
+- **Wiedergabe minimieren:** Der Abwärtspfeil bringt zurück zur Mediathek, ohne die laufende Musik anzuhalten.
+- **Künstler bleibt erhalten:** Der Kanal-/Künstlername aus dem Suchtreffer wird lokal neben der WAV-Datei gespeichert und in Bibliothek und Player wieder angezeigt.
+
+## Tests
+
+`test_ytmusic.lua`, `test_youtube.lua`, `test_draw.lua` und `test_dapps.lua` laufen unter LuaJIT durch. Die geänderten Lua-Dateien bestehen Syntaxprüfungen; `git diff --check` meldet keine Formatfehler.
+
+# v7.9.14 · 2026-10-10
+
+# AppDock 7.9.14
+
+## YouTube-Wiedergabe: Spitzen-Speicherbedarf senken
+
+Der BWR2-Decoder brauchte während der Videowiedergabe mehrere zusätzliche, framegroße Arbeitskopien:
+`output`, `delta`, `previous` und für zlib außerdem `z_input`. Bei großen Videoframes summierte sich das
+zu mehreren Megabytes pro Arbeitskopie – zusätzlich zum gepackten Cacheframe und zum eigentlichen
+Blitbuffer-Bild. Auf speicherbegrenzten Readern konnte das beim Abspielen zu KOReaders Meldung
+„zu wenig Speicher“ führen.
+
+- **BWR2 hält jetzt nur einen framegroßen Decoder-Arbeitspuffer** (`output`). Die vorherigen und Delta-
+  FFI-Puffer entfielen; Deltas werden direkt im Ausgabepuffer gegen den bereits gecachten Frame XOR-
+  dekodiert.
+- **zlib liest direkt aus dem komprimierten Paketstring** statt eine weitere bis zu framegroße Kopie
+  (`z_input`) zu belegen.
+- **RLE wird direkt aus dem Paketstring dekodiert.** Es entstehen keine zusätzlichen Lua-Substring-
+  Allokationen pro Literalbereich.
+- **Wiederholungsframes geben den bereits gecachten Frame direkt zurück**, statt ihn ein zweites Mal in
+  den Ausgabepuffer zu kopieren.
+
+Der Container bleibt unverändert kompatibel mit BWR1, BWR2 und BRC2; die Bildqualität, Dateigröße,
+Frame-Timing und Suchbarkeit ändern sich nicht. Für ein Frame von 2 MiB entfallen bis zu drei zusätzliche
+2-MiB-Arbeitskopien (bis zu 6 MiB dauerhafte Arbeitsbereiche); zugleich fallen pro dekodiertem Paket
+weniger temporäre Kopien an.
+
+## Tests
+
+`test_bwr.lua` prüft zusätzlich, dass der BWR2-Reader nur den einen Frame-Arbeitspuffer statt der
+entfernten Vollframe-Kopien anlegt. BWR1-, BWR2-, BRC2- und zlib-Fallback-Tests laufen unverändert durch.
+
+## Neue DApp: YouTube Music
+
+**YouTube Music** ist bewusst kein Video-DApp: Es lädt ausschließlich die Tonspur und zeigt dazu das
+Vollfarb-Titelbild.
+
+- Eine `yt-dlp`-Abfrage holt die beste Tonspur (`bestaudio[ext=m4a]/bestaudio/best`). Es wird keine
+  Videospur geladen und nichts zusammengeführt.
+- Ein einzelner FFmpeg-Lauf erzeugt die 16-Bit-WAV-Begleitdatei, die die vorhandene AppDock-Audiokette
+  bereits versteht. Es gibt **keinen** Frame-Umwandlungsschritt, kein BWR2/BRC2-Encoding und keine
+  Dither-Berechnung.
+- Das Titelbild kommt als gewöhnliches JPEG: zuerst `maxresdefault`, dann `hqdefault`, zuletzt die
+  Bild-URL des Suchergebnisses. Damit ist das Cover ein echtes Vollfarbbild statt eines konvertierten
+  Videoframes.
+- Die Bibliothek zeigt Titelbild, Titel und Dauer. Wiedergabe, Pause, ±15 s, Neustart, Fortschrittsbalken
+  und Löschen per langem Druck laufen über dieselbe Audiokette wie YouTube (`gst-launch-1.0`, `aplay`
+  oder `tinyplay`).
+- Suchfeld und Linkeingabe teilen sich die YouTube-Logik; ein Link startet den Download direkt.
+- Eigener Musikordner (Standard `<Datenordner>/appdock/music`) über **Tools → Music folder**. yt-dlp und
+  ffmpeg werden mit der YouTube-DApp geteilt, die Werkzeugverwaltung ist identisch.
+- Eine bestehende Installation erhält die Kachel einmalig nach dem YouTube-Eintrag.
+
+## Schnellere YouTube-Konvertierung
+
+- **Audiospur und Video laufen parallel.** Beide FFmpeg-Durchläufe lesen dieselbe Quelldatei; der
+  Audiopfad wurde bisher vollständig nach der Bildkonvertierung ausgeführt und addierte eine komplette
+  Dekodierung zur Gesamtzeit. Jetzt bestimmt `max(Video, Audio)` die Dauer.
+- **Parallele Fragmente beim Download.** yt-dlp lädt DASH-Fragmente mit `--concurrent-fragments 4`.
+- **Gebündelte Frame-Lesung.** Der Video-Tick liest mehrere Frames pro Pipe-Zugriff in einen Puffer,
+  statt für jeden Frame einen eigenen Lesevorgang zu starten.
+- **`monow`-Erkennung zwischengespeichert.** Die Bitreihenfolge wird pro FFmpeg-Binary einmal geprüft
+  statt bei jeder Konvertierung.
+- **Ruhigerer Fortschrittsbalken.** Während der Videostufe wird die Ansicht seltener neu aufgebaut
+  (1,5 s statt 0,75 s), damit mehr CPU-Zeit bei der Konvertierung bleibt. Downloadstufen bleiben bei
+  0,75 s.
+- Die maximale Frame-Zahl pro Tick steigt von 32 auf 64; das CPU-Zeitbudget bleibt unverändert, damit
+  Abbruch und Fortschritt responsiv bleiben.
+
+## Draw: Oberfläche und Bedienung
+
+- **Herkömmliche Malprogramm-Oberfläche.** Werkzeugleiste mit sechs Werkzeugen (Stift, Radierer, Linie,
+  Rechteck, Kreis, Füllen) und hervorgehobenem aktivem Werkzeug, daneben Undo, Redo und
+  **Bildschirm reinigen**. Darunter eine Optionszeile mit Farbfeldern, Pinselgröße (−/+), Ebenen und
+  Dithering-Schalter, unten eine Aktionsleiste (Leeren, Speichern, Öffnen, JPEG) mit Statuszeile
+  („Stift · 2 px · Schwarz · Ebene 1/2“).
+- **Striche beginnen beim Aufsetzen des Fingers.** Draw reagiert jetzt auf `touch`; der erste Abschnitt
+  eines Strichs geht nicht mehr verloren. Ein Tippen malt einen Punkt.
+- **Nur der berührte Bereich wird neu gezeichnet und aktualisiert.** Vorher wurde pro Touch-Ereignis die
+  gesamte Zeichenfläche neu zusammengesetzt und ein vollständiger E-Ink-Refresh erzwungen; auf langsamen
+  Geräten wirkte Draw dadurch wie eingefroren.
+- **Formwerkzeuge mit Live-Vorschau.** Linie, Rechteck und Kreis werden während des Ziehens angezeigt und
+  erst beim Loslassen übernommen.
+- **Füllen läuft einmal pro Geste** statt bei jedem Bewegungsereignis (jedes Füllen läuft über die ganze
+  Fläche und war als Dauerläufer der teuerste Fehler).
+- **Undo/Redo** mit bis zu 8 Schritten, inklusive der Aktionen *Leeren* und *Strich*.
+- **Fingerdruck verkleinert den Pinsel nicht mehr.** Ein Finger meldet Druck 0; dieser Wert wurde
+  bisher als „sehr leichter Druck“ gelesen und reduzierte jeden Strich auf ein Pixel.
+- Werkzeuge, Farben und Optionen haben echte Symbolschaltflächen mit Kontur, statt Textzeilen über der
+  Zeichenfläche.
+
+## Fenster (Beta) und Vollbild
+
+- **Bildschirmrefresh nach Ziehen oder Skalieren.** Ein DApp-Fenster beendet die Geste jetzt mit einem
+  vollständigen Refresh der Fensteroberfläche. Die regionalen Fast-Refreshes während der Geste konnten
+  den alten Rahmen nicht entfernen.
+- **Die YouTube-Vollbild-Schaltfläche wechselt nur noch den Modus.** Sie lag innerhalb der Trefferfläche
+  des MiniPlayers, der die Taps zuerst bekam und zusätzlich die Wiedergabe umschaltete. Der MiniPlayer
+  gibt den Streifen mit den Schaltflächen jetzt frei.
+
+## Tests
+
+- `test_ytmusic.lua` prüft den Audio-only-Vertrag (kein Videoformat, kein Merge), den WAV-Vertrag
+  (16 Bit, 44,1 kHz, Stereo), die Titelbild-Reihenfolge, die Titelbenennung und die komplette
+  Konvertierung gegen eine echte FFmpeg-Ausgabe.
+- `test_draw.lua` prüft zusätzlich Undo/Redo, die Werkzeugleiste mit hervorgehobenem Werkzeug, das
+  Aufsetzen des ersten Strichs, die einmalige Füllung pro Geste, die Formvorschau und den Teil-Refresh.
+- `test_dapps.lua` erwartet den erweiterten Katalog inklusive `dapp:youtube_music`.
+- Alle 13 Testsuiten laufen mit LuaJIT und Lua 5.1 durch.
+
+# v7.9.13 · 2026-10-10
+
+Notifications :)
+
 # v7.9.12 · 2026-10-10
 
 # AppDock 7.9.12
@@ -11,69 +152,3 @@ Eine eingeblendete Steuerleiste bietet die Rückkehr zur Bibliothek, Zurück-/Vo
 ## Validierung
 
 Alle 12 Lua-Regressionstests bestehen; alle Plugin-Lua-Module und Testskripte kompilieren mit LuaJIT. Der DApp-Test meldet zusätzlich, dass sein optionales externes BWR-Video-Fixture in dieser Umgebung nicht installiert ist.
-
-# v7.9.11 · 2026-10-10
-
-# AppDock 7.9.11
-
-## Deutlich schnellere YouTube-Farbkonvertierung
-
-Die Farbpackung ersetzt die pixelweise Fehlerdiffusion durch vorberechnete 8×8-Muster. Dadurch muss Lua pro Pixel keine drei Farbfehler mehr berechnen und weitergeben. Farben innerhalb des darstellbaren Palettenbereichs können weiterhin mit mehreren – bei Bedarf allen fünf – exakten Farben Weiß, Schwarz, Rot, Grün und Blau gemischt werden. Neutrale Grautöne und Farben außerhalb des Palettenbereichs behalten die bisherige Paarzuordnung.
-
-Das neue geordnete Muster ersetzt die serpentinische Floyd–Steinberg-Textur durch ein regelmäßiges 8×8-Dithermuster. Im isolierten LuaJIT-Benchmark der Farbpackstufe sank die Bearbeitungszeit eines 632×840-Frames in der Entwicklungsumgebung von 28,9 ms auf 1,1 ms (25,6× schneller, nach einmaligem Aufbau der Lookup-Tabellen). Das ist kein End-to-End-Wert für Download, FFmpeg-Decodierung und Dateischreiben; deren Laufzeit hängt weiterhin von Quelle und Gerät ab.
-
-## Lesbare Draw-Werkzeugleiste
-
-Die Mal-App verwendet jetzt KOReaders natives Button-Widget statt selbst gezeichneter Kleinstbeschriftungen. Größere, fette Schrift auf einer hellgrauen Fläche verbessert den Kontrast; die Werkzeugaktionen und Touchbereiche bleiben erhalten.
-
-## Validierung
-
-Alle 12 Lua-Regressionstests bestehen; alle Plugin-Lua-Module kompilieren mit LuaJIT. Der DApp-Test meldet zusätzlich, dass sein optionales externes BWR-Video-Fixture in dieser Umgebung nicht installiert ist.
-
-# v7.9.10 · 2026-10-10
-
-# AppDock 7.9.10
-
-## YouTube-Farbvideos mit Mehrfarben-Fehlerdiffusion
-
-Die Farbkonvertierung mischt nun über benachbarte Pixel mehr als zwei der fünf erlaubten Palettefarben. Zuvor wurde für jeden Quellpixel unabhängig nur das beste Farbpaar ausgewählt; Farbreste wurden nicht an Nachbarpixel weitergegeben. Ein serpentinischer Floyd–Steinberg-Schritt diffundiert diese Reste jetzt räumlich, sodass passende Bildbereiche beispielsweise Schwarz, Rot und Grün gemeinsam nutzen können. Die tatsächlichen Ausgabepixel bleiben weiterhin exakt Weiß, Schwarz, Rot, Grün oder Blau.
-
-Die Palette begrenzt weiterhin den darstellbaren Farbumfang: Farben außerhalb ihres Mischbereichs – etwa leuchtendes Vollgelb – können nur angenähert werden, nicht exakt dargestellt werden.
-
-## Audio endet beim Verlassen der App
-
-AppDock signalisiert nun direkt die PID des laufenden GStreamer-Players, statt sich auf die möglicherweise abweichende Prozessgruppen-PID von `setsid` zu verlassen. Dadurch wird die Wiedergabe beim Verlassen der YouTube-App zuverlässig gestoppt; der PCM-Datenlieferant beendet sich anschließend ebenfalls.
-
-## Validierung
-
-Alle 12 Lua-Regressionstests bestehen; die Lua-Module kompilieren mit LuaJIT. Neue Farbtests prüfen eine tatsächliche Dreifarbmischung aus Schwarz, Rot und Grün.
-
-# v7.9.9 · 2026-10-10
-
-# AppDock 7.9.9
-
-## Draw-Absturz auf Farbgeräten behoben
-
-Die Draw-Zeichenfläche vergleicht Farbwerte des BlitBuffers nicht mehr mit einem `nil`-Sentinel. Auf Farbgeräten sind diese Werte FFI-CData; ihr Vergleich konnte beim Start einen Fehler in der Gleichheits-Metamethode auslösen. Ein Regressionstest deckt diesen Farbpfad ab.
-
-## Natürlichere YouTube-Farben durch Dithering
-
-Die BRC2-Palettenzuordnung bewertet Kandidaten nun in einem farbempfindlichen YUV-Farbraum. So werden Mischfarben wie Gelb, Cyan und Magenta durch Dithering mit den passenden reinen Grundfarben dargestellt, statt überwiegend in Schwarzweiß oder mit unpassenden Farbtönen zu erscheinen. Die Ausgabe bleibt auf die fünf erlaubten Farben beschränkt.
-
-## Kobo-MTK-Audiowiedergabe wiederhergestellt
-
-Der MediaTek-GStreamer-Pfad verwendet wieder rohe PCM-Daten über `fdsrc`, wie im funktionierenden Release 7.8.51, statt vom optionalen `wavparse`-Plugin abzuhängen. Der tatsächliche WAV-Datenoffset wird auch bei zusätzlichen RIFF-Metadaten berücksichtigt; das PCM-Kanal-Layout ist explizit angegeben. Pause und Stopp steuern die zugehörige Prozessgruppe.
-
-## Validierung
-
-Alle 12 Lua-Regressionstests bestehen. Die Plugin-Module kompilieren mit LuaJIT; außerdem wurde die GStreamer-PCM-Pipeline mit einem Test-Sink und einer WAV-Datei mit zusätzlichem `LIST`-Chunk geprüft.
-
-# v7.9.8 · 2026-10-10
-
-# AppDock 7.9.8
-
-## Fix: lesbarer Text in AppDock-Dialogen
-
-Korrigiert den Kontrast der neuen AppDock-eigenen Dialoge. Titel, Aktionsbeschriftungen und Seitennavigation verwenden nun schwarze Schrift auf weißen oder hellgrauen Flächen. Schwarze Flächen hinter Text wurden entfernt, damit die Beschriftungen auch auf KOReader-Renderpfaden mit invertierter Textdarstellung erkennbar bleiben.
-
-Ein Regressionstest prüft die Textfarbe und die hellen Dialogflächen.

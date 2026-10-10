@@ -1,3 +1,10 @@
+# v5.4.1 · 2026-10-10
+
+- Each shelf can choose its own cover captions: long-press a shelf, then Shelf style > Cover captions. For example, series names on your Series shelf and titles everywhere else. Shelves you leave alone follow Settings > Cover display.
+- A shelf inside a shelf of shelves can now have its own theme. Until you choose one it wears its shelf of shelves' theme, shown as "Same as …" in Shelf style and the Theme menu, and the Theme menu's This shelf row now sets the shelf you're on.
+- The line under each cover is now called a cover caption: Settings > Cover display > Cover captions, and Settings > Text size > Cover captions.
+- Show text below groups is now a single switch, Show author below series. The Custom option for groups is gone: the only thing it could add was a series' author. If you had Author or Custom chosen, the switch is on.
+
 # v5.4.0 · 2026-10-10
 
 - Each shelf can now have its own theme (#495). Choose one in the new Theme library: a card for each theme, and the shelf behind changes as you tap. Shelves you leave alone use your Default theme.
@@ -83,13 +90,3 @@
 # v5.2.3 · 2026-09-28
 
 - Fix: A very large PNG ornament no longer crashes KOReader when you open the ornaments browser. Ornaments over 8 megapixels are now left out, with a note in the log; 1000-2000 px on the longest side is plenty (#471).
-
-# v5.2.2 · 2026-09-27
-
-- Fix: With "Return to file browser" as the end of document action, finishing a book goes straight back to bookshelf again instead of flashing KOReader's file browser first (#460).
-- Fix: Sorting by Progress now works on shelves that also have a status filter, instead of falling back to title order (#463).
-- Fix: The skip to end button on spine shelves now reaches the last page on the first tap (#463).
-- Fix: Extract page counts no longer undercounts FB2 books (#461).
-- Fix: Brackets in Chinese titles on spines are now turned to match the vertical text (#462).
-- Fix: The clock and battery in the full screen micro-modules view now keep up with the time instead of staying as they were when it opened.
-- Slovak translation now says "doplnok" instead of "plugin", matching KOReader (from @misko903's PR #467).

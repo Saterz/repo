@@ -1,4 +1,15 @@
-# v1.20.0 · 2026-10-10
+# v1.20.1 · 2026-10-10
+
+# RSS Reader v1.20.1
+
+## 🐛 Fix: Instaparser rate limiting in Offline Mode
+
+Offline Mode's parallel downloads could go over Instaparser's Trial limit of 1 call per second, so Instaparser rejected calls and sent a warning e-mail.
+
+- Instaparser calls now go out at least **2 s apart**, including across Offline Mode's parallel downloads.
+- A call that is rate-limited anyway is retried once.
+- New option `seconds_between_calls` in the Instaparser sanitizer entry (default `2`, `0` turns the limit off). Existing configurations work without changes.
+
 
 # RSS Reader v1.20.0
 

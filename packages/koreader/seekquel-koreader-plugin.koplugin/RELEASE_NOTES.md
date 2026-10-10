@@ -1,3 +1,15 @@
+# v1.15.0 · 2026-10-10
+
+### What's new
+
+- **Continuing from Seekquel lands in the right place in the chapter.** When you accept "Continue there" for a place you reached in the Seekquel app, KOReader now opens the same point in that chapter instead of a percentage of the whole book. This works when your file lists the same chapters as the one you read in the app; otherwise the percentage is used as before.
+- **Seekquel learns how far into the chapter you are.** Each sync now says how far through the current chapter you have read, so the Seekquel app can open the same point in it.
+- **Fixed:** the offer to continue from Seekquel showed two percent signs ("60%%"). It now reads "60%".
+
+### Install
+
+Download `seekquel.koplugin-v1.15.0.zip`, unzip it, copy the `seekquel.koplugin` folder into `koreader/plugins` on your reader and restart KOReader. Then open Tools, Seekquel, Connect this device. If the add-on is already installed, it updates itself from the Seekquel menu.
+
 # v1.14.0 · 2026-10-08
 
 ### What's new
@@ -41,13 +53,3 @@ Download `seekquel.koplugin-v1.12.1.zip`, unzip it, and copy the `seekquel.koplu
 Already using the add-on? It updates itself, so there is nothing to do.
 
 New install: download `seekquel.koplugin-v1.12.0.zip`, unzip it into KOReader's `plugins` folder so you have a `seekquel.koplugin` folder there, restart KOReader, then pair it from the Seekquel menu with the code shown in the app.
-
-# v1.11.0 · 2026-09-22
-
-### What's new
-
-- Each reading day is now sent as a share of the book as well as a page count. Changing the font size partway through a book used to make the days on either side of the change describe a different book; Seekquel now credits every day the same way.
-
-### Install
-
-If the add-on is already installed, it updates itself from Seekquel. For a new install, download seekquel.koplugin-v1.11.0.zip, unzip it, and copy the seekquel.koplugin folder into KOReader's plugins folder, then restart KOReader.

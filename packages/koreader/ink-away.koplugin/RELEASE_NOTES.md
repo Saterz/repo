@@ -1,3 +1,17 @@
+# v4.0.1 · 2026-10-10
+
+**Updating:** on 4.0.0, open Settings, Updates in Ink Away and install it from there. On 3.3.0 or older, download `ink-away.koplugin-v4.0.1.zip` below and put the `ink-away.koplugin` folder in KOReader's plugins folder, as before.
+
+Two fixes for pen and colour readers.
+
+## Fixed
+- With palm rejection on (the default on pen readers), a text box's Done and
+  Format buttons answered neither the pen nor a finger, so the keyboard could
+  not be closed. Both work now, and a finger tapping away closes the box.
+- Colour ink on colour e-ink settles to its true colour once the pen rests.
+  Pale colours such as pink could stay invisible, and blue could stay cyan,
+  until something else redrew the page.
+
 # v4.0.0 · 2026-10-10
 
 **Updating from 3.3.0 or older:** download `ink-away.koplugin-v4.0.0.zip` below and put the `ink-away.koplugin` folder in KOReader's plugins folder, as before. From 4.0.0 on, Ink Away can update itself: Settings, Updates.
@@ -212,29 +226,3 @@ The big new thing this release: you can add pictures to your drawings.
 ## Fixes
 - Smoother colour panel, more reliable palm rejection, and menus that no longer stick around after you close them.
 - Fixed the notebook bottom-bar font.
-
-# v3.0.0 · 2026-09-22
-
-A big release: reliable palm rejection, a top-to-bottom redesign of the drawing interface, and a lot of work to keep everything fast.
-
-## Palm rejection
-Rest your hand on the screen while you write — only the pen marks the page.
-- Enabled automatically on Kindle Scribe and reMarkable. On Kobo and other stylus readers you can switch it on in Pen Settings.
-- Tells a real pen from a resting palm reliably, so no more stray lines drawn between your hand and the pen tip.
-- The rear eraser and barrel button keep working as expected.
-
-## Redesigned drawing interface
-- Every tool menu in the toolbar has been reworked to be cleaner and easier to use.
-- The canvas now runs edge to edge — every drawing and notebook page fills the full width of your screen, with no grey border.
-- Hide the toolbar for a distraction-free, full-screen drawing experience.
-- Zoom moved out of the toolbar into a floating control in the bottom-right corner. It fades away on its own when your pen gets close, so you can draw underneath it, and comes back afterwards.
-- The Shapes menu was rebuilt with large, clear icons, a single Fill toggle, and the line, arrow and curve variants tucked into one place instead of a cluttered row of buttons.
-
-## Faster and lighter
-- The canvas no longer slows down as strokes pile up.
-- Lower memory use for notebooks, quicker undo, and smoother panning and zooming.
-- Memory is reclaimed when you start a new drawing or notebook, without needing a restart.
-
-## Fixes
-- Consistent notebook UI and a fix for a crash in Settings.
-- Tool menus now update in place when you switch tools instead of flickering.
