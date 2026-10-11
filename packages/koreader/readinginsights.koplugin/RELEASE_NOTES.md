@@ -1,3 +1,26 @@
+# v7.6.4 · 2026-10-11
+
+### Changed 
+
+- Months chart now defaults to bars
+With only a few months of reading data the bar chart looks better than the line with dots, so bars should be the default. The line style is still available under Settings > Advanced settings > Reading insight popup > Months chart style, and an already saved choice is kept.
+
+# v7.6.3 · 2026-10-11
+
+### Fixed
+
+- **Yearly chart:** months before the first reading data are left empty instead of showing "00:00".
+
+# v7.6.2 · 2026-10-11
+
+### Added
+- **Goal check mark:** the Daily goal and Weekly goal values show a ✓ once the goal is reached (e.g. `00:45 / 00:30 ✓`).
+- **Yearly goal pace:** in the current year, the "% of yearly goal" cell now shows how far ahead of or behind the pace you are, e.g. **3** books ahead of pace or **1** book behind pace.
+  - Shows "On track" when you are less than one book off pace.
+  - Shows "Goal reached" once the yearly goal is met.
+  - Pace is based on the day of the year and counts whole books only.
+- **Closed years:** past years show "Goal reached" or "Goal not reached" instead of the percentage (only if a goal was set for that year).
+
 # v7.6.1 · 2026-10-11
 
 ### Changed
@@ -15,23 +38,3 @@
 
 - **"Days read" view is now scaled to the length of each month.** Every fully read month stands equally high, whether it has 28, 29, 30 or 31 days, and the label still shows the real day count. This applies to both the bar and line styles. The Hours and Books views are unchanged.
 - Some settings reorganized
-
-# v7.5.4 · 2026-10-10
-
-Changed
-- "Typical chapter length": Books with very many short chapters no longer have half of their
-  real chapters discarded, and books where a few huge chapters hold most of the
-  text are no longer dragged down by a pile of tiny entries.
-
-# v7.5.3 · 2026-10-10
-
-### Changed
-- "Last week" is now "Last 7 days" in all languages, since the section shows a rolling 7-day window, more clear what doest this show
-- "Annual goal" is now "Yearly goal"
-- Finished books counter now reads "27 / 30" instead of "27/30"
-
-# v7.5.2 · 2026-10-10
-
-### Changed
-- Daily/weekly goal popup: the “default values” button now shows a readable value (e.g. “Default: 00:30/30m” / “Default: 05:00/5h”) instead of KOReader’s raw “Default values: 0 : 30” / “5 : 0”.
-  - The value follows KOReader’s duration format setting.

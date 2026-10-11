@@ -4,6 +4,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/EmirErtorer/ink-away.koplugin?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMyAzaDguNUwyMSAxMi41IDEyLjUgMjEgMyAxMS41ek03LjUgNS41YTIgMiAwIDEgMCAwIDQgMiAyIDAgMCAwIDAtNHoiLz48L3N2Zz4%3D&label=Latest%20Release&labelColor=rgb(159%2C%20214%2C%20101)&color=rgb(255%2C255%2C255))](https://github.com/EmirErtorer/ink-away.koplugin/releases/latest)
 [![Total Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FEmirErtorer%2Fink-away.koplugin%2Fbadges%2Fdownloads.json&style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiI%2BPHBhdGggZD0iTTExIDNoMnY5LjE3bDMuNTktMy41OEwxOCAxMGwtNiA2LTYtNiAxLjQxLTEuNDFMMTEgMTIuMTd6TTQgMTVoMnYzaDEydi0zaDJ2NUg0eiIvPjwvc3ZnPg%3D%3D&label=Total%20Downloads&labelColor=rgb(159%2C%20214%2C%20101)&color=rgb(255%2C255%2C255))](https://github.com/EmirErtorer/ink-away.koplugin/releases)
 [![Changelog](https://img.shields.io/badge/Changelog-What%27s%20new-white?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiI%2BPHBhdGggZD0iTTEzIDNhOSA5IDAgMCAwLTkgOUgxbDMuODkgMy44OS4wNy4xNEw5IDEySDZjMC0zLjg3IDMuMTMtNyA3LTdzNyAzLjEzIDcgNy0zLjEzIDctNyA3Yy0xLjkzIDAtMy42OC0uNzktNC45NC0yLjA2bC0xLjQyIDEuNDJBOC45NTQgOC45NTQgMCAwIDAgMTMgMjFhOSA5IDAgMCAwIDAtMTh6bS0xIDV2NWw0LjI4IDIuNTQuNzItMS4yMS0zLjUtMi4wOFY4SDEyeiIvPjwvc3ZnPg%3D%3D&labelColor=rgb(159%2C%20214%2C%20101)&color=rgb(255%2C255%2C255))](CHANGELOG.md)
+[![Buy me a coffee](https://img.shields.io/badge/Support-Buy%20me%20a%20coffee-white?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZiI%2BPHBhdGggZD0iTTIwIDNINHYxMGMwIDIuMjEgMS43OSA0IDQgNGg2YzIuMjEgMCA0LTEuNzkgNC00di0zaDJjMS4xMSAwIDItLjg5IDItMlY1YzAtMS4xMS0uODktMi0yLTJ6bTAgNWgtMlY1aDJ2M3pNNCAxOWgxNnYySDR6Ii8%2BPC9zdmc%2B&labelColor=rgb(159%2C%20214%2C%20101)&color=rgb(255%2C255%2C255))](https://buymeacoffee.com/emirertorer)
 
 
 
@@ -79,7 +80,7 @@ Export a transparent or white PNG, or a paged PDF, at your exact screen size.
 | **Hold to straighten** | Hold the pen still at the end of a stroke and a rough line, box, ellipse or triangle snaps clean. Writing is left alone. |
 | **Shapes** | Lines, curves, single and double arrows, rectangles, ellipses and triangles, filled or outlined, snapped to the grid or to 45°. A paint bucket fills an area in one tap. |
 | **Eraser** | Clears ink back to transparent, or removes whole strokes. It leaves pictures alone unless you ask, and can spare text too. |
-| **Text** | Text boxes in any installed font, with bold, italic, underline, highlight, lists and sizes, snapped to a notebook's lines. |
+| **Text** | Text boxes in any installed font, with bold, italic, underline, sizes, alignment, line spacing, lists and checklists you tick with a tap, snapped to a notebook's lines. On colour screens, coloured text and highlights in yellow, orange, blue, green, pink or your own colours. Turn a box to any angle, or stand it on end for a book's margin. |
 | **Pictures** | From a file or found online (Wikimedia or Openverse), then moved, resized, turned and cut out of their background. A picture can also sit behind a drawing to trace over. |
 | **Symmetry** | Draw mirrored left to right, top to bottom, or four ways. |
 
@@ -121,7 +122,7 @@ Sketch, ink and colour each on a layer of its own, as in a desktop or tablet dra
 | **Ink follows the text** | On a reflowing book each stroke is anchored to the words beside it, so it stays with them when you change the font size, margins or orientation. On PDFs and comics it keeps its place on the page. |
 | **Smart highlighter** | A highlighter stroke over text becomes KOReader's own highlight in the pen's colour and shows in your highlights list. Strokes that wobble or run into the margin still snap; over empty space it stays ink. |
 | **Book notes** | A notebook for each book with a page for each chapter, in a window over the page that expands to full screen. |
-| **Toolbar** | On any side of the screen, and it folds away. |
+| **Toolbar** | On any side of the screen, and it folds away. It can also fit in the book's margin, clear of the text. |
 | **Kept with the book** | Annotations live beside the book's own KOReader data and follow it when it is moved or renamed. Deleting them puts them in Ink Away's trash for 30 days. |
 
 ### Organize and find
@@ -196,6 +197,16 @@ From then on Ink Away can update itself: Settings, Updates.
 
 What changed in each version is in the [changelog](CHANGELOG.md).
 
+<details>
+<summary><b>Getting started</b></summary>
+
+1. **Open a book and swipe down the right edge.** The toolbar comes up and you write right on the page. If your reader uses that edge for its light, swipe with two fingers from the top right corner toward the bottom left instead. Close with ✕ and your ink stays with the book.
+2. **Tap a tool, then tap it again** for its settings: size, colour, kind of pen and so on.
+3. **Not sure how something works?** The Guide button in Settings has a short card for it, with "Show me".
+4. **Want different gestures?** Open a book first, then KOReader's Settings, Taps and gestures, Gesture manager. A book has its own gestures, apart from the file browser's. The actions are "Ink Away: annotate the book" and "Ink Away: book notes", and "Open Ink Away" under General.
+
+</details>
+
 
 ## Notes
 
@@ -203,6 +214,10 @@ What changed in each version is in the [changelog](CHANGELOG.md).
 - Drawings and notebooks are kept in an "ink away" folder and saved automatically; exported PNGs and PDFs go to "ink away/exports" unless you pick another folder. Work from older versions' "drawing projects" and "notebook projects" folders moves into the "ink away" folder on the first start.
 - Settings → "When Ink Away opens" picks what you see first: the last document, the library, or Notebooks (the notebook browser on your last notebook, for note-taking).
 - On e-ink, black ink refreshes faster than greys/white and a white pen is invisible on the white canvas, exports are unaffected.
+
+## How it's made
+
+I'm a computer science and engineering graduate, and I design and test Ink Away on my Kindle Paperwhite. Its code is written with Claude Code, an AI coding assistant, with me directing every change around what these devices can do: slow processors and screens that redraw slowly, so nothing redraws more of the screen than it needs to. Every change runs against about 4,000 automated checks, and anything I can't test there goes out as a prerelease first, so your reports shape the fix before it reaches everyone.
 
 ## Contributing
 

@@ -1,3 +1,9 @@
+# 26.10.11-beta2 · 2026-10-11
+
+- add more memory leak guards around sleeping/waking
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.10-beta3...26.10.11-beta2
+
 # 26.10.10-beta3 · 2026-10-11
 
 ### Improvements and Fixes
@@ -43,9 +49,3 @@ This release focuses on making Storefront significantly faster and more responsi
 * **Cached Tab Icons**: Tab bar icons are cached in memory after the first draw to prevent redraw stutter when tapping tabs.
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.7-beta3...26.10.9-beta
-
-# 26.10.7-beta3 · 2026-10-08
-
-- more screensaver efficiency improvements
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.7-beta2...26.10.7-beta3

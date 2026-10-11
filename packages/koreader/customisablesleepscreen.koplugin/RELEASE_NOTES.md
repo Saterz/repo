@@ -1,3 +1,28 @@
+# v2.5.0 · 2026-10-11
+
+## New Features
+
+* **Lock screen:** An optional PIN lock that appears after the sleep screen. Tap or swipe to clear the sleep screen after waking, then enter your 4-digit PIN to gain access. It needs Customisable Sleep Screen to be your chosen sleep screen.
+   * **Retry limit:** five wrong PINs in a row lock the keypad for 30 seconds, doubling with each further lock-out up to 10 minutes. The count and lock-out are saved, so restarting KOReader doesn't reset them.
+   * **Lock when KOReader starts:** also ask for the PIN at launch, so restarting the app or rebooting can't be used to skip the lock.
+   * **Deferred locking:** skip the lock when the device has only been asleep for a short time (30 seconds up to 1 hour).
+   * **Owner message:** add up to three lines of text under the keypad, such as "If found, call...".
+   * **Customisable look:** Ruled, Plain, Filled or Outlined (Filled and Outlined can be a circle or a rounded square). The background can be your sleep screen background, plain white, plain black, or follow automatic preset switching (white for the day preset, black for the night one). Text colour and a backing panel keep it readable over pictures. Night mode is switched off while the lock screen is up, as it is for the sleep screen.
+   * **Back to sleep:** the key at the bottom left of the unlock pad puts the device back to sleep.
+   * **Delete:** tap the key at the bottom right to delete a digit, or hold it to clear them all. An open padlock shows after a correct PIN.
+   * **Forgotten PIN:** create an empty file named `reset-lock` in the plugin folder and restart KOReader to clear it.
+   * **Security:** the PIN is stored as a salted hash. The lock screen deters casual access but it isn’t strong security: the files on your device aren’t encrypted or protected. Lock settings aren’t part of presets.
+* **Flash screen to reduce ghosting:** now a submenu in Global settings with separate switches for the sleep screen and the PIN pad, and a choice of a black flash or a white flash.
+* **Export triggers:** choose when the sleep screen image is exported - on book close, book open, suspend, or periodically. Close and suspend are on by default.
+* **Highlights:** choose between highlights from the current book only or from all of your books, and optionally show the highlight's book title and author.
+* **Cover drop shadow:** gives the cover image rounded corners and a drop shadow, like a card.
+* **White icon outline in dark mode:** adds a thin white outline around each icon, like a sticker, so they stay visible against dark backgrounds. Works with every icon set.
+* **Weekly streak:** a new option in the daily goal section that counts consecutive weeks with any reading.
+* **Hide every section:** "Section order & visibility" no longer insists that one section stays visible, so you can show only your background.
+* **Previews:** a new "Preview file manager sleep screen" at the top of "Sleep screen in file manager", and "Preview sleep screen" now sits below the active preset in the Presets menu (it's no longer in the main menu, and is still at the top of each section).
+
+For installation instructions, see the [README](https://github.com/pxlflux/customisablesleepscreen.koplugin/blob/main/README.md).
+
 # v2.4.0 · 2026-09-22
 
 ## New Features
@@ -87,35 +112,3 @@ This release fixes reported issues from v2 and adds user suggested features.
 - **Menu and display adjustments.** Section gap options moved into a submenu, standardised section names and slightly modified goal section strings.
 
 For installation instructions, see the [README](https://github.com/pxlflux/customisablesleepscreen.koplugin/blob/main/README.md).
-
-# v2.0.0 · 2026-03-21
-
-Customisable Sleep Screen is now available as a KOReader plugin. This release replaces the original patch version with a plugin rewrite, making installation simpler and adding new features and fixes based on feedback from v1.
-
-## New Features
-- Simpler installation: fonts and icons are now bundled, so no manual folder setup is required
-- Two new presets based on the Catppuccin and Nord colour palettes, with matching wallpapers and two new icon sets
-- Added language support for 12 languages: `de`, `es`, `fr`, `it`, `ja`, `ko`, `nl`, `pl`, `pt_BR`, `ru`, `vi`, `zh_CN`
-- Info-box background and text colour options
-- Daily stats scope option: choose between all books or current book only
-- Stretch cover to fill toggle: disable to preserve cover aspect ratio with black/white fill
-- Cosmetic-only progress bar option for the message section
-- Long-press help text added to most menu items
-- Reset options now restore from the active preset instead of factory defaults
-
-## Fixes
-- Book/chapter time remaining can now be disabled
-- Message section visibility is no longer tied to KOReader’s built-in sleep screen message setting
-- Book highlights now work across all metadata locations
-- Exit sleep screen gesture is now respected within books
-- Sleep screen now loads up-to-date details on first load
-- Daily stats now read from the correct KOReader stats table
-- Various calculation improvements, including weekly goal and chapter count handling
-
-## Plugin Rewrite
-The main menu has been moved and is now registered using the proper KOReader plugin method. v1 was a large single `.lua` patch that modified KOReader internals. v2 is a plugin rewrite that utilises more of KOReader’s own modules.
-
-## Upgrading from v1
-If you are upgrading from the original patch version, delete the old patch file and folders first: `2-customisable-sleep-screen.lua`, `customisable-sleep-screen-fonts`, and `customisable-sleep-screen-iconsets`. Presets carry over, but any personally added icons or fonts will need to be copied into the new plugin folder.
-
-For full installation instructions, see the [README](https://github.com/pxlflux/customisablesleepscreen.koplugin/blob/main/README.md).
