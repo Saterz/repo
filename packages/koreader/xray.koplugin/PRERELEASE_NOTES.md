@@ -1,3 +1,9 @@
+# 26.10.10-beta · 2026-10-10
+
+- Update gemini models
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.8...26.10.10-beta
+
 # 26.10.6-beta · 2026-10-06
 
 ## What's Changed
@@ -44,11 +50,3 @@ This release focuses on memory optimizations and stability improvements to keep 
 - fix overlapping save bug
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.23-beta...26.9.29-beta
-
-# 26.9.23-beta · 2026-09-23
-
-- fix claude bugs
-- update series logic
-- fix unit converter range logic 
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.17...26.9.23-beta

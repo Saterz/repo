@@ -1,3 +1,12 @@
+# v1.43.4 · 2026-10-11
+
+## [1.43.4](https://github.com/tachibana-shin/rakuyomi/compare/v1.43.3...v1.43.4) (2026-10-11)
+
+
+### Performance Improvements
+
+* **cookie-bot:** stop registering bot commands on every cold isolate ([30d8002](https://github.com/tachibana-shin/rakuyomi/commit/30d80029c0566587edc415dd23a57561d948a720))
+
 # v1.43.3 · 2026-10-10
 
 ## [1.43.3](https://github.com/tachibana-shin/rakuyomi/compare/v1.43.2...v1.43.3) (2026-10-10)
@@ -33,12 +42,3 @@
 ### Features
 
 * add optional black manga reader background ([#1](https://github.com/tachibana-shin/rakuyomi/issues/1)) ([#372](https://github.com/tachibana-shin/rakuyomi/issues/372)) ([11f672b](https://github.com/tachibana-shin/rakuyomi/commit/11f672b4d9f484f1786ff2c853a03802782887ac))
-
-# v1.42.2 · 2026-09-30
-
-## [1.42.2](https://github.com/tachibana-shin/rakuyomi/compare/v1.42.1...v1.42.2) (2026-09-30)
-
-
-### Bug Fixes
-
-* **source:** reload an Aidoku source when its settings change ([#371](https://github.com/tachibana-shin/rakuyomi/issues/371)) ([856eb06](https://github.com/tachibana-shin/rakuyomi/commit/856eb06fbab89703dbe767846921b920d7a9bb57))

@@ -1,3 +1,11 @@
+# v1.9.0 · 2026-10-10
+
+## [1.9.0](https://github.com/pierspad/notebook.koplugin/compare/v1.8.0...v1.9.0) (2026-10-10)
+
+### ✨ New Features
+
+* improve gallery navigation and folder naming ([ad3c5d5](https://github.com/pierspad/notebook.koplugin/commit/ad3c5d5a2f7f6249e761994bf4e1c5aa04681b2e))
+
 # v1.8.0 · 2026-10-09
 
 ## [1.8.0](https://github.com/pierspad/notebook.koplugin/compare/v1.7.2...v1.8.0) (2026-10-09)
@@ -45,11 +53,3 @@ The intermittent Scribe issue where library titles reappear around handwriting h
 ### Bug Fixes
 
 * polish notebook menus, previews and translations ([3258b82](https://github.com/pierspad/notebook.koplugin/commit/3258b828322da01cc85818898934c55d2da16e79))
-
-# v1.6.3 · 2026-10-01
-
-## [1.6.3](https://github.com/pierspad/notebook.koplugin/compare/v1.6.2...v1.6.3) (2026-10-01)
-
-### Bug Fixes
-
-* prevent eraser bridges and overlapping marker geometry growth ([d48e26e](https://github.com/pierspad/notebook.koplugin/commit/d48e26e3d09574939905a959cd974732e91c5746))
