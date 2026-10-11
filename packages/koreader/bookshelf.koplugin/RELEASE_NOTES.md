@@ -1,3 +1,8 @@
+# v5.4.2 · 2026-10-11
+
+- Spine shelves now show every book. Home, folders and search shown as spines stopped at 5,000 books before.
+- A theme of your own can now be just a wallpaper: make a folder in koreader/settings/bookshelf/ornaments, put a folder called theme inside it, and put your wallpaper.png in that. It shows in the Theme library under the folder's name, with no theme.json or ornaments needed. Optional wallpaper.dark.png, wallpaper.full.png and wallpaper.full.dark.png cover dark mode and full screen shelves.
+
 # v5.4.1 · 2026-10-10
 
 - Each shelf can choose its own cover captions: long-press a shelf, then Shelf style > Cover captions. For example, series names on your Series shelf and titles everywhere else. Shelves you leave alone follow Settings > Cover display.
@@ -86,7 +91,3 @@
 - Fix: uninstalling bookshelf along with its settings no longer deletes the Hardcover sync plugin's settings too.
 - Fix: on a KOReader older than v2025.08, bookshelf shows one menu line saying to update KOReader instead of crashing.
 - Fix: Full screen shelves image set to None now says None, instead of Same as default.
-
-# v5.2.3 · 2026-09-28
-
-- Fix: A very large PNG ornament no longer crashes KOReader when you open the ornaments browser. Ornaments over 8 megapixels are now left out, with a note in the log; 1000-2000 px on the longest side is plenty (#471).

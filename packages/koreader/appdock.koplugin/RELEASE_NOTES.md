@@ -1,154 +1,69 @@
-# v7.9.16 · 2026-10-10
+# v7.9.21 · 2026-10-11
 
-## YouTube Music: Suchtreffer bleiben sichtbar
+# AppDock 7.9.21
 
-Suchergebnisse und Diagnosen werden nicht länger vom gemeinsamen Setup-Bildschirm verdeckt, wenn `ffmpeg` fehlt. Die Suche und Anzeige benötigen nur `yt-dlp`; `ffmpeg` wird erst für Download und Konvertierung eines ausgewählten Titels benötigt.
+## Draw: Kobo-Stiftdruck, Radierer und Marker
 
-## Tests
+Draw nutzt nun den Kobo-Rohereignispfad für Stylus-Eingaben. Stiftdruck wird aus dem Sensorwert normalisiert und auf die ausgewählte Pinselgröße angewendet. Die physische Radiererspitze löscht mit der weißen Zeichenfarbe; der Marker aktiviert die breitere Marker-Spitze.
 
-Alle 13 AppDock-LuaJIT-Testskripte laufen erfolgreich.
-
-# v7.9.15 · 2026-10-10
-
-# AppDock 7.9.15
-
-## YouTube Music: Suche zuverlässiger und Player näher am Original
-
-- **Teiltreffer bleiben sichtbar:** Liefert `yt-dlp` bereits brauchbare Suchtreffer, werden diese auch dann angezeigt, wenn einzelne YouTube-Einträge fehlschlagen und der Prozess deshalb einen Fehlerstatus zurückgibt.
-- **Metadatensuche statt Mediendownload:** Die Suche bleibt auf eine begrenzte Trefferliste beschränkt und lädt keine Audio-/Videodateien herunter. Socket-Timeouts, begrenzte Wiederholungen und ein UI-Timeout schützen vor festhängenden Suchläufen.
-- **Bessere Diagnose:** Bei leeren Ergebnissen werden relevante yt-dlp-Fehlerhinweise in der App angezeigt. Vollfarbige Ergebnisminiaturen werden in den lokalen Cache übernommen.
-- **Überarbeiteter Player:** Die Wiedergabeansicht orientiert sich stärker an YouTube Music – dunkle Fläche, großes quadratisches Cover, Künstlername, Like-/Infoaktionen, getrennte verstrichene und gesamte Laufzeit sowie Shuffle-, Zurück-, Play/Pause-, Weiter- und Repeat-Steuerung.
-- **Wiedergabe minimieren:** Der Abwärtspfeil bringt zurück zur Mediathek, ohne die laufende Musik anzuhalten.
-- **Künstler bleibt erhalten:** Der Kanal-/Künstlername aus dem Suchtreffer wird lokal neben der WAV-Datei gespeichert und in Bibliothek und Player wieder angezeigt.
+Die Bildschirmrotation wird bei den Rohkoordinaten berücksichtigt. Der Stylus-Listener ist nur während einer aktiven Draw-Pane registriert und stellt beim Verlassen den ursprünglichen KOReader-Gesture-Handler wieder her. Normale Touch-Eingaben und KOReader-Gesten bleiben unverändert.
 
 ## Tests
 
-`test_ytmusic.lua`, `test_youtube.lua`, `test_draw.lua` und `test_dapps.lua` laufen unter LuaJIT durch. Die geänderten Lua-Dateien bestehen Syntaxprüfungen; `git diff --check` meldet keine Formatfehler.
+Alle 14 AppDock-LuaJIT-Regressionstests laufen durch, einschließlich der neuen Draw-Stylus-Tests für Druck, Radierer, Marker, Rotation, Tracking-IDs und Listener-Lifecycle. LuaJIT-Syntaxprüfung aller Plugin-Dateien und `git diff --check` sind sauber.
 
-# v7.9.14 · 2026-10-10
+# v7.9.20 · 2026-10-11
 
-# AppDock 7.9.14
+# AppDock 7.9.20
 
-## YouTube-Wiedergabe: Spitzen-Speicherbedarf senken
+## Window Mode (Beta): Taskbar und mehrere Fenster
 
-Der BWR2-Decoder brauchte während der Videowiedergabe mehrere zusätzliche, framegroße Arbeitskopien:
-`output`, `delta`, `previous` und für zlib außerdem `z_input`. Bei großen Videoframes summierte sich das
-zu mehreren Megabytes pro Arbeitskopie – zusätzlich zum gepackten Cacheframe und zum eigentlichen
-Blitbuffer-Bild. Auf speicherbegrenzten Readern konnte das beim Abspielen zu KOReaders Meldung
-„zu wenig Speicher“ führen.
+Der Beta-Fenstermodus erhält eine Taskleiste mit Startmenü. Darüber lassen sich weitere DApps starten, während bereits geöffnete Apps im Desktop-Fenstermodus geöffnet bleiben. Neue Fenster werden leicht versetzt angeordnet; pro App bleiben Position und Größe erhalten.
 
-- **BWR2 hält jetzt nur einen framegroßen Decoder-Arbeitspuffer** (`output`). Die vorherigen und Delta-
-  FFI-Puffer entfielen; Deltas werden direkt im Ausgabepuffer gegen den bereits gecachten Frame XOR-
-  dekodiert.
-- **zlib liest direkt aus dem komprimierten Paketstring** statt eine weitere bis zu framegroße Kopie
-  (`z_input`) zu belegen.
-- **RLE wird direkt aus dem Paketstring dekodiert.** Es entstehen keine zusätzlichen Lua-Substring-
-  Allokationen pro Literalbereich.
-- **Wiederholungsframes geben den bereits gecachten Frame direkt zurück**, statt ihn ein zweites Mal in
-  den Ausgabepuffer zu kopieren.
-
-Der Container bleibt unverändert kompatibel mit BWR1, BWR2 und BRC2; die Bildqualität, Dateigröße,
-Frame-Timing und Suchbarkeit ändern sich nicht. Für ein Frame von 2 MiB entfallen bis zu drei zusätzliche
-2-MiB-Arbeitskopien (bis zu 6 MiB dauerhafte Arbeitsbereiche); zugleich fallen pro dekodiertem Paket
-weniger temporäre Kopien an.
+Taskbar-Einträge bringen ein Fenster in den Vordergrund und stellen minimierte Fenster wieder her. Fenster können einzeln minimiert oder geschlossen werden, ohne die übrigen Fenster zu beenden. Der Beta-Modus unterstützt bis zu acht gleichzeitig geöffnete Fenster. Vollbild bleibt pro Fenster möglich und blendet die Taskleiste vorübergehend aus.
 
 ## Tests
 
-`test_bwr.lua` prüft zusätzlich, dass der BWR2-Reader nur den einen Frame-Arbeitspuffer statt der
-entfernten Vollframe-Kopien anlegt. BWR1-, BWR2-, BRC2- und zlib-Fallback-Tests laufen unverändert durch.
+Alle 13 AppDock-LuaJIT-Regressionstests laufen durch. Die Tests decken Startmenü-Launch, mehrere offene Fenster, Taskbar-Fokus, Minimieren/Wiederherstellen, Einzel-Schließen und Vollbildwechsel ab. LuaJIT-Bytecodeprüfung und `git diff --check` sind sauber.
 
-## Neue DApp: YouTube Music
+# v7.9.19 · 2026-10-11
 
-**YouTube Music** ist bewusst kein Video-DApp: Es lädt ausschließlich die Tonspur und zeigt dazu das
-Vollfarb-Titelbild.
+# AppDock 7.9.19
 
-- Eine `yt-dlp`-Abfrage holt die beste Tonspur (`bestaudio[ext=m4a]/bestaudio/best`). Es wird keine
-  Videospur geladen und nichts zusammengeführt.
-- Ein einzelner FFmpeg-Lauf erzeugt die 16-Bit-WAV-Begleitdatei, die die vorhandene AppDock-Audiokette
-  bereits versteht. Es gibt **keinen** Frame-Umwandlungsschritt, kein BWR2/BRC2-Encoding und keine
-  Dither-Berechnung.
-- Das Titelbild kommt als gewöhnliches JPEG: zuerst `maxresdefault`, dann `hqdefault`, zuletzt die
-  Bild-URL des Suchergebnisses. Damit ist das Cover ein echtes Vollfarbbild statt eines konvertierten
-  Videoframes.
-- Die Bibliothek zeigt Titelbild, Titel und Dauer. Wiedergabe, Pause, ±15 s, Neustart, Fortschrittsbalken
-  und Löschen per langem Druck laufen über dieselbe Audiokette wie YouTube (`gst-launch-1.0`, `aplay`
-  oder `tinyplay`).
-- Suchfeld und Linkeingabe teilen sich die YouTube-Logik; ein Link startet den Download direkt.
-- Eigener Musikordner (Standard `<Datenordner>/appdock/music`) über **Tools → Music folder**. yt-dlp und
-  ffmpeg werden mit der YouTube-DApp geteilt, die Werkzeugverwaltung ist identisch.
-- Eine bestehende Installation erhält die Kachel einmalig nach dem YouTube-Eintrag.
+## Draw: RGB-Anzeige und Pinselstärke
 
-## Schnellere YouTube-Konvertierung
+Draw sendet Farbpixel nun über KOReaders `paintRectRGB32`-Framebufferpfad – wie die funktionierende Minecraft-DApp. Die Farberkennung berücksichtigt sowohl die Farbfähigkeit des Displays als auch KOReaders aktivierte Farbwiedergabe.
 
-- **Audiospur und Video laufen parallel.** Beide FFmpeg-Durchläufe lesen dieselbe Quelldatei; der
-  Audiopfad wurde bisher vollständig nach der Bildkonvertierung ausgeführt und addierte eine komplette
-  Dekodierung zur Gesamtzeit. Jetzt bestimmt `max(Video, Audio)` die Dauer.
-- **Parallele Fragmente beim Download.** yt-dlp lädt DASH-Fragmente mit `--concurrent-fragments 4`.
-- **Gebündelte Frame-Lesung.** Der Video-Tick liest mehrere Frames pro Pipe-Zugriff in einen Puffer,
-  statt für jeden Frame einen eigenen Lesevorgang zu starten.
-- **`monow`-Erkennung zwischengespeichert.** Die Bitreihenfolge wird pro FFmpeg-Binary einmal geprüft
-  statt bei jeder Konvertierung.
-- **Ruhigerer Fortschrittsbalken.** Während der Videostufe wird die Ansicht seltener neu aufgebaut
-  (1,5 s statt 0,75 s), damit mehr CPU-Zeit bei der Konvertierung bleibt. Downloadstufen bleiben bei
-  0,75 s.
-- Die maximale Frame-Zahl pro Tick steigt von 32 auf 64; das CPU-Zeitbudget bleibt unverändert, damit
-  Abbruch und Fortschritt responsiv bleiben.
-
-## Draw: Oberfläche und Bedienung
-
-- **Herkömmliche Malprogramm-Oberfläche.** Werkzeugleiste mit sechs Werkzeugen (Stift, Radierer, Linie,
-  Rechteck, Kreis, Füllen) und hervorgehobenem aktivem Werkzeug, daneben Undo, Redo und
-  **Bildschirm reinigen**. Darunter eine Optionszeile mit Farbfeldern, Pinselgröße (−/+), Ebenen und
-  Dithering-Schalter, unten eine Aktionsleiste (Leeren, Speichern, Öffnen, JPEG) mit Statuszeile
-  („Stift · 2 px · Schwarz · Ebene 1/2“).
-- **Striche beginnen beim Aufsetzen des Fingers.** Draw reagiert jetzt auf `touch`; der erste Abschnitt
-  eines Strichs geht nicht mehr verloren. Ein Tippen malt einen Punkt.
-- **Nur der berührte Bereich wird neu gezeichnet und aktualisiert.** Vorher wurde pro Touch-Ereignis die
-  gesamte Zeichenfläche neu zusammengesetzt und ein vollständiger E-Ink-Refresh erzwungen; auf langsamen
-  Geräten wirkte Draw dadurch wie eingefroren.
-- **Formwerkzeuge mit Live-Vorschau.** Linie, Rechteck und Kreis werden während des Ziehens angezeigt und
-  erst beim Loslassen übernommen.
-- **Füllen läuft einmal pro Geste** statt bei jedem Bewegungsereignis (jedes Füllen läuft über die ganze
-  Fläche und war als Dauerläufer der teuerste Fehler).
-- **Undo/Redo** mit bis zu 8 Schritten, inklusive der Aktionen *Leeren* und *Strich*.
-- **Fingerdruck verkleinert den Pinsel nicht mehr.** Ein Finger meldet Druck 0; dieser Wert wurde
-  bisher als „sehr leichter Druck“ gelesen und reduzierte jeden Strich auf ein Pixel.
-- Werkzeuge, Farben und Optionen haben echte Symbolschaltflächen mit Kontur, statt Textzeilen über der
-  Zeichenfläche.
-
-## Fenster (Beta) und Vollbild
-
-- **Bildschirmrefresh nach Ziehen oder Skalieren.** Ein DApp-Fenster beendet die Geste jetzt mit einem
-  vollständigen Refresh der Fensteroberfläche. Die regionalen Fast-Refreshes während der Geste konnten
-  den alten Rahmen nicht entfernen.
-- **Die YouTube-Vollbild-Schaltfläche wechselt nur noch den Modus.** Sie lag innerhalb der Trefferfläche
-  des MiniPlayers, der die Taps zuerst bekam und zusätzlich die Wiedergabe umschaltete. Der MiniPlayer
-  gibt den Streifen mit den Schaltflächen jetzt frei.
+Die ausgewählte Pinselgröße wird nicht mehr durch die Canvas-Skalierung auf einen Pixel reduziert. Instabile Druckwerte von Fingereingaben verändern die Strichdicke nicht; explizite Drucksensitivität bleibt für Stylus-Eingaben verfügbar. Pinselstempel verwenden nun die gewählte Durchmessergröße.
 
 ## Tests
 
-- `test_ytmusic.lua` prüft den Audio-only-Vertrag (kein Videoformat, kein Merge), den WAV-Vertrag
-  (16 Bit, 44,1 kHz, Stereo), die Titelbild-Reihenfolge, die Titelbenennung und die komplette
-  Konvertierung gegen eine echte FFmpeg-Ausgabe.
-- `test_draw.lua` prüft zusätzlich Undo/Redo, die Werkzeugleiste mit hervorgehobenem Werkzeug, das
-  Aufsetzen des ersten Strichs, die einmalige Füllung pro Geste, die Formvorschau und den Teil-Refresh.
-- `test_dapps.lua` erwartet den erweiterten Katalog inklusive `dapp:youtube_music`.
-- Alle 13 Testsuiten laufen mit LuaJIT und Lua 5.1 durch.
+Alle 13 AppDock-LuaJIT-Regressionstests laufen durch. LuaJIT-Bytecodeprüfung und `git diff --check` sind sauber.
 
-# v7.9.13 · 2026-10-10
+# v7.9.18 · 2026-10-11
 
-Notifications :)
+# AppDock 7.9.18
 
-# v7.9.12 · 2026-10-10
+## Draw: Farbe auf Farbdisplays und RGB-Farbwahl
 
-# AppDock 7.9.12
+Draw erkennt nun die tatsächliche Hardware-Farbdisplay-Fähigkeit statt KOReaders globaler Einstellung „Color rendering“. Dadurch werden RGB-Farben auch dann an Draw übergeben, wenn die Dokument-Farbdarstellung global ausgeschaltet ist.
 
-## Echter Vollbildmodus für YouTube
+Die Werkzeugleiste enthält einen RGB-Farbwähler mit Vorschau. Farben können als `#RRGGBB` oder `R,G,B` eingegeben werden. Benutzerdefinierte Farben und die aktuelle Farbauswahl werden in Zeichnungsprojekten gespeichert. Bestehende `ADRAW1`-Projekte bleiben weiterhin ladbar.
 
-Die YouTube-Wiedergabe kann jetzt die gesamte AppDock-Displayfläche nutzen. AppDock-Kopf- und Navigationsleisten werden ausgeblendet, und der Videoplayer erhält den vollständigen Bildschirmbereich.
+## Tests
 
-Eine eingeblendete Steuerleiste bietet die Rückkehr zur Bibliothek, Zurück-/Vorwärtsspringen um fünf Sekunden, Wiedergabe/Pause und Neustart. Beim Zurückkehren zur Bibliothek läuft das Video im MiniPlayer weiter. Das zuvor verwendete AppDock-Layout beziehungsweise die Fenstergröße wird beim Verlassen des Vollbildmodus wiederhergestellt.
+Alle 13 AppDock-LuaJIT-Testskripte laufen durch. LuaJIT-Bytecodeprüfung und `git diff --check` sind sauber.
 
-## Validierung
+# v7.9.17 · 2026-10-11
 
-Alle 12 Lua-Regressionstests bestehen; alle Plugin-Lua-Module und Testskripte kompilieren mit LuaJIT. Der DApp-Test meldet zusätzlich, dass sein optionales externes BWR-Video-Fixture in dieser Umgebung nicht installiert ist.
+# AppDock 7.9.17
+
+## YouTube Music: Suche per Enter und überarbeitete Startansicht
+
+Die AppDock-Tastatur löst beim Absenden jetzt den YouTube-Music-Suchbutton aus. Beliebige Texteingaben werden als Suchanfrage behandelt; direkte Downloads bleiben für eingefügte YouTube-Links verfügbar. Fehlende Suchwerkzeuge und Fehler beim Starten einer Suche erscheinen in einer sichtbaren Diagnoseansicht.
+
+Der leere Music-Startbildschirm wiederholt nicht mehr den Fenstertitel, zeigt keinen funktionslosen Play-Button und bietet stattdessen eine gestaltete Leerkartenansicht mit direktem Einstieg in die Suche.
+
+## Tests
+
+Alle 13 AppDock-LuaJIT-Testskripte laufen durch. `git diff --check` und die LuaJIT-Syntaxprüfung sind sauber.
