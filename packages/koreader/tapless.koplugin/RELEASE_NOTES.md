@@ -1,3 +1,12 @@
+# v0.5.0 · 2026-10-11
+
+- improved recognition of inaccurate swipe paths
+- better recovery of long words and missed letters
+- faster recognition with a new position-indexed matcher
+- smoother swipe trails and fewer screen refreshes
+- more reliable gesture completion
+- minor language and dictionary fixes
+
 # v0.4.0 · 2026-09-10
 
 - personalized dictionaries

@@ -1,0 +1,25 @@
+# v7.9.101 · 2026-10-11
+
+Pre-release build from the current GitHub main branch (commit d02ef54101fed5f698d1c9178ca735c0bc1d0844). Includes the startup fix that keeps the update dialog visible until the homescreen has finished loading.
+
+# v7.9.100 · 2026-10-11
+
+Pre-release build created directly from the current GitHub main branch (commit d681ca3274d4b9c731180b7fefb1d89815162f1b).\n\nThe plugin archive contains the AppDock plugin directory only. The repository metadata currently reports version 8.0.0 on main; this release is intentionally tagged v7.9.100 as requested.
+
+# v7.9.99 · 2026-10-11
+
+{[0x1BADDESCRIPTION]}
+
+
+
+
+
+THIS RELEASE ISNT REAL. It is an error. DO NOT INSTALL.
+
+# v7.9.49-pre.4 · 2026-10-11
+
+## YouTube-Performance\n\n- Das Frame-Limit pro UI-Tick steigt von 64 auf 128.\n- Das CPU-Zeitfenster steigt kontrolliert von 0,20 auf 0,30 Sekunden.\n- Die globale Job-Sperre, zwei Decode-Threads, ein Filter-Thread und die serielle Audio-Phase bleiben unverändert.\n\nYouTube- und YouTube-Music-Regressionen sind erfolgreich.
+
+# v7.9.49-pre.3 · 2026-10-11
+
+## YouTube-Performance-Fix\n\n- Vier Frames pro UI-Tick statt eines einzelnen Reads reduzieren Lua/FFI-Overhead.\n- Zwei FFmpeg-Decodierthreads beschleunigen die Videoverarbeitung.\n- Filterung bleibt single-threaded, die globale Job-Sperre und die serielle Audio-Phase bleiben aktiv, um die bisherigen Crash-Ursachen zu vermeiden.\n\nYouTube-, YouTube-Music- und Setup-Regressionen sind erfolgreich.

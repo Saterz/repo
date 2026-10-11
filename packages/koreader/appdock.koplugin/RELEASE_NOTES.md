@@ -1,3 +1,21 @@
+# v7.9.48 · 2026-10-11
+
+# AppDock 7.9.48
+
+- Die Tastatur lädt die vollständige deutsche und englische Datenbank über mehrere sichere Plugin-Pfade.
+- Die Datenbank wird nicht mehr durch den aktuellen Arbeitsordner von KOReader verfehlt.
+- Das Release enthält ein vollständiges Installationsarchiv mit `appdock_suggestions.lua` **und** `appdock_suggestions.db`.
+- Die kleine Fallback-Liste bleibt nur als Notfall bei einer wirklich fehlenden oder unlesbaren Datenbank.
+
+# v7.9.47 · 2026-10-11
+
+# AppDock 7.9.47
+
+- **Datenbank wieder aktiv:** Die deutsche und englische Vorschlagsdatenbank wird jetzt sicher direkt aus dem AppDock-Plugin-Ordner geladen.
+- Funktioniert auch dann, wenn KOReader den Plugin-Ordner nicht in `package.path` einträgt.
+- Der Boot-Schutz bleibt erhalten: Nur wenn die Datei wirklich fehlt oder unlesbar ist, wird die kleine Fallback-Liste verwendet.
+- Die mitgelieferte `appdock_suggestions.db` bleibt vollständig Bestandteil des Releases.
+
 # v7.9.46 · 2026-10-11
 
 # AppDock 7.9.46
@@ -27,24 +45,3 @@
 - Die Datenbank ist bewusst TSV statt SQLite, damit sie auf Kobo ohne native Datenbank-Erweiterung funktioniert und direkt bearbeitet werden kann.
 - Eigene Wörter können als weitere Zeilen mit `de` oder `en`, Häufigkeit und Wort ergänzt werden.
 - Optional können Dialoge eine Sprache oder eine eigene `suggestions`-Liste übergeben.
-
-# v7.9.43 · 2026-10-11
-
-# AppDock 7.9.43
-
-- **Tastatur-Cancel repariert:** Bereits geschlossene Eingabedialoge werden nicht mehr ein zweites Mal geschlossen.
-- Der Update-Hinweis verwendet jetzt eine AppDock-eigene helle Modal-Karte statt den gesamten Inhalt in den ButtonDialog-Titel zu packen.
-- Der Feature-Dialog besitzt keinen Timeout und bleibt bei periodischen E-Ink-Vollrefreshes sichtbar.
-- Seitenwechsel, `Weiter`, `Später` und `Fertig` bleiben erhalten.
-
-Hinweis: Die allgemeine Testsuite konnte bis zur Dialogprüfung ausgeführt werden; `test_dapps.lua` benötigt außerhalb einer KOReader-Umgebung das KOReader-Modul `json`.
-
-# v7.9.42 · 2026-10-11
-
-# AppDock 7.9.42
-
-- Größere Tasten für schnellere und sicherere E-Ink-Eingabe.
-- Drei lokale Vervollständigungsvorschläge werden direkt über der Tastatur angezeigt.
-- Ein Vorschlag ersetzt das aktuelle Wort und fügt automatisch ein Leerzeichen ein.
-- Vorschläge funktionieren offline; Dialoge können eigene Vorschlagslisten über `suggestions` übergeben.
-- Tastatur bleibt mit numerischer Eingabe, Secure-Input, Shift, Symbolen und Cancel kompatibel.

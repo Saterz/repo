@@ -1,38 +1,34 @@
-# v2.0.0-beta.12 · 2026-10-11
+# v2.0.0-beta.20 · 2026-10-11
+
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.19...v2.0.0-beta.20
+
+# v2.0.0-beta.19 · 2026-10-11
 
 ## What's Changed
-* Shelf and list changes work offline by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/83
-* Settings: grouped options with folding headings by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/81
-* Reader sheet: Change status; radios for single choices in Settings by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/82
-* Publish any tag containing beta as a pre-release by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/84
+* Book and edition pickers on the shelf screen by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/121
+* Change a linked book's edition from the reader panel by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/122
+* One Add button replaces Shelf and Lists on the book details screen by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/123
 
 
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.11...v2.0.0-beta.12
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.18...v2.0.0-beta.19
 
-# v2.0.0-beta.11 · 2026-10-11
-
-## What's Changed
-* Setting to choose the book search plugin by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/80
-
-
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.8...v2.0.0-beta.11
-
-# v2.0.0-beta.10 · 2026-10-11
+# v2.0.0-beta.18 · 2026-10-11
 
 ## What's Changed
-* Setting to choose the book search plugin by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/80
+* Search results: flash the panel as they appear so covers do not ghost on Home by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/119
+* Scroll bar: hold the up or down triangle to jump to the start or end by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/120
 
 
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.8...v2.0.0-beta.10
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.17...v2.0.0-beta.18
 
-# v2.0.0-beta.9 · 2026-10-10
+# v2.0.0-beta.17 · 2026-10-11
 
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.7...v2.0.0-beta.9
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.16...v2.0.0-beta.17
 
-# v2.0.0-beta.8 · 2026-10-10
+# v2.0.0-beta.16 · 2026-10-11
 
 ## What's Changed
-* Scroll control: rounded track, inset bar by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/79
+* Emulator: wipe the screen between scenario cases by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/118
 
 
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.7...v2.0.0-beta.8
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.15...v2.0.0-beta.16

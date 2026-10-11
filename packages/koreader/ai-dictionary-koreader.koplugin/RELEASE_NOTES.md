@@ -1,3 +1,9 @@
+# v3.2 · 2026-10-11
+
+- Added an experimental feature similar to Kindle's Word Wise, named Word Sense.
+- Improved support for reasoning models across AI providers.
+- Improved text-to-speech for Android.
+
 # v3.1 · 2026-09-27
 
 - Added navigation buttons to recursive lookups
@@ -20,9 +26,3 @@
 - "AI Explain" now has a "Deep Dive" feature. It works by tapping on the bold terms in the AI Explain output.
 - You can now see an enlarged version of images by tapping on them.
 - Moved some of the web queries to the background, speeding up parallel queries.
-
-# v2.6 · 2026-07-12
-
-- Added support for giving the output in languages other than English
-- When helpful, the plugin now shows an image alongside text
-- Bugfixes

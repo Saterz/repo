@@ -1,3 +1,12 @@
+# v1.5.4 · 2026-10-11
+
+## Bug fixes
+
+- **Kavita: chapters are no longer skipped.** ([#5](https://github.com/Craftwork2720/meguru/issues/5)).
+- **Komga: series covers now use the full-size image**.
+
+**Full Changelog**: https://github.com/Craftwork2720/meguru/compare/v1.5.3...v1.5.4
+
 # v1.5.3 · 2026-10-10
 
 ## Bug fixes
@@ -64,9 +73,3 @@
 - Fixed a conflict with `pagenumbercrop.koplugin`: Meguru's own crop takes priority
 
 **Full Changelog**: https://github.com/Craftwork2720/meguru/compare/v1.2.0...v1.3.0
-
-# v1.2.0 · 2026-09-28
-
-new: **Contrast**, **Saturation** and **Dithering** in the bottom menu
-
-**Full Changelog**: https://github.com/Craftwork2720/meguru/compare/v1.1.1...v1.2.0
