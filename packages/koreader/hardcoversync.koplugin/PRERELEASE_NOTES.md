@@ -1,3 +1,11 @@
+# v2.0.0-beta.21 · 2026-10-11
+
+## What's Changed
+* Edition button on the book details screen by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/124
+
+
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.20...v2.0.0-beta.21
+
 # v2.0.0-beta.20 · 2026-10-11
 
 **Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.19...v2.0.0-beta.20
@@ -24,11 +32,3 @@
 # v2.0.0-beta.17 · 2026-10-11
 
 **Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.16...v2.0.0-beta.17
-
-# v2.0.0-beta.16 · 2026-10-11
-
-## What's Changed
-* Emulator: wipe the screen between scenario cases by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/118
-
-
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.15...v2.0.0-beta.16
