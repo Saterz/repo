@@ -10668,7 +10668,7 @@
     {
       "id": "zen-ui",
       "name": "ZenOS",
-      "version": "4.0.1",
+      "version": "4.1.0",
       "description": "A clean, minimal E-Reader experience",
       "author": "ZenLabs",
       "category": "theme",
@@ -10679,7 +10679,7 @@
       "featured_image": "packages/koreader/zen-ui.koplugin/assets/featured.png",
       "featured": true,
       "featured_order": 3,
-      "size": "4001835",
+      "size": "3564287",
       "source": "https://github.com/xZenLabs/zen-os",
       "source_asset": "zenos.koplugin.zip",
       "source_asset_aliases": ["zen_ui.koplugin.zip"],
@@ -10687,16 +10687,16 @@
       "plugin_module_aliases": ["zen_ui"],
       "source_type": "release",
       "stars": "772",
-      "updated_at": "2026-10-11T04:37:07Z",
-      "published_at": "2026-10-03T19:39:21Z",
+      "updated_at": "2026-10-11T05:00:50Z",
+      "published_at": "2026-10-11T05:00:34Z",
       "prerelease_version": "4.1.0-beta3",
       "prerelease_published_at": "2026-10-09T15:31:50Z",
       "alpha_version": "4.1.0-alpha14",
       "alpha_published_at": "2026-10-11T04:36:51Z",
       "readme_url": "packages/koreader/zen-ui.koplugin/README.md",
-      "readme_hash": "04f7616a47ebd48a42404d91795c7056b5386c90",
+      "readme_hash": "64fe3a54efee5c1b2af7cede7014c345e981f19f",
       "release_notes_url": "packages/koreader/zen-ui.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "7609d9c5a6cce009f201e523f16b712bf4c8636826de81e8ebdcfe8299952e7b",
+      "release_notes_hash": "f1ad0a49a0c35725d44c7b8c76b4fc4655e5807192405cedd99a92b047a05104",
       "prerelease_notes_url": "packages/koreader/zen-ui.koplugin/PRERELEASE_NOTES.md",
       "prerelease_notes_hash": "405e4923795420023f51422cc8aad18cf3231d0557dac83a6b06ff6ba08f038f",
       "versions_url": "packages/koreader/zen-ui.koplugin/versions.json",
@@ -10704,14 +10704,14 @@
         {
           "arch": "any",
           "asset": "zenos.koplugin.zip",
-          "url": "https://github.com/xZenLabs/zen-os/releases/download/v4.0.1/zenos.koplugin.zip",
-          "size": "4001835"
+          "url": "https://github.com/xZenLabs/zen-os/releases/download/v4.1.0/zenos.koplugin.zip",
+          "size": "3564287"
         },
         {
           "arch": "any",
           "asset": "zen_ui.koplugin.zip",
-          "url": "https://github.com/xZenLabs/zen-os/releases/download/v4.0.1/zen_ui.koplugin.zip",
-          "size": "4002743"
+          "url": "https://github.com/xZenLabs/zen-os/releases/download/v4.1.0/zen_ui.koplugin.zip",
+          "size": "3565229"
         }
       ]
     },

@@ -1,3 +1,22 @@
+# v4.1.0 · 2026-10-11
+
+## What's Changed
+
+- Add end of book screen
+- Add Date added sorting to library and folder context menus
+- Add OPDS improvements
+- Add option to move Home button to Controls
+- Add setting to treat file updates as New status
+- Add hiding Reader Control buttons from Library
+- Improves organization in Settings
+- Group Authors view to also use series sub-groupings
+- Improve Rakuyomi integration from Zen home page
+- Update visual feedback on tap for UI elements
+- Use KOReader stats plugin offset if set
+- Fix reader settings not loading when starting with last file
+- Fix Airplane Mode control active state
+- Bug fixes
+
 # v4.0.1 · 2026-10-03
 
 ## What's Changed
