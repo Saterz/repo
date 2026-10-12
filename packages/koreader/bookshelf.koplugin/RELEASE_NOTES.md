@@ -1,3 +1,9 @@
+# v5.4.4 · 2026-10-12
+
+- When Auto shows a list on both levels, Shelf style has list columns and rows for each, under Level 1 and Level 2.
+- Spine shelves can face out Finished and On hold books.
+- Fix: on spine shelves, a favourite that faces out shows its heart, and edge-on spines show the favourite icon you chose (heart by default) instead of always a star.
+
 # v5.4.3 · 2026-10-11
 
 - Auto now lets you choose a style for each level of a shelf. In Shelf style, choose Auto and tap Level 1 (the shelf itself) and Level 2 (anything you open from it) to step through Covers, List and Spines. A Genres shelf can list its genres and show each genre's books as covers or on spines, say. Level 1 also applies when the shelf is expanded, so an Auto shelf you haven't changed now shows covers expanded instead of a list. The list and spine settings below follow the styles you pick. A shelf of shelves no longer offers Auto, since each of its shelves has its own style.
@@ -49,13 +55,3 @@
 - Fix: under Most recently read on a series shelf, adding a book no longer counts as reading it: unread books, and the series they join, no longer jump to the front.
 - Fix: every top panel progress bar style (Rounded, Metro, Wave, Pacman) now draws without Bookends installed; the default Rounded bar was square without it.
 - Fix: a UI font with no italic file no longer fills the log with font errors (#501, thanks @Tsukumi233).
-
-# v5.3.1 · 2026-10-03
-
-- Fix: a series, author, genre or collection opened from book details shows all of its books again, instead of only those matching the shelf you opened it from (#480).
-- Fix: on a spine shelf, the D-pad reaches every book on the page, and up and down move between shelves. Before, it stopped after the first few books on each shelf.
-- Fix: on devices without a touchscreen (#361):
-  - the page arrows, page number and start-menu button highlight as you move between them;
-  - the book details tabs switch when you press on them;
-  - the highlight in the shelf editor follows the D-pad instead of staying on the first button;
-  - Back closes Adjust shelf/top panel size, the same as Cancel.

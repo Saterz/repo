@@ -1,3 +1,38 @@
+# v1.9.0 · 2026-10-12
+
+## [1.9.0](https://github.com/Euphoriyy/appearance.koplugin/compare/v1.8.2...v1.9.0) (2026-10-12)
+[![Github Downloads (by release)](https://img.shields.io/github/downloads/Euphoriyy/appearance.koplugin/v1.9.0/total.svg)](#)
+
+
+### Features
+
+* add option to invert icons in day mode ([0be8491](https://github.com/Euphoriyy/appearance.koplugin/commit/0be849140fd9cfb08cfeae2ea43d586d1d3e5ad8))
+* **book/font_color:** add separator after fixed-layout docs option ([55c9978](https://github.com/Euphoriyy/appearance.koplugin/commit/55c997882372d07ac4be33c07dc482513738e4bf))
+* **book:** add toggle for setting the font color on fixed-layout docs ([fe4d20b](https://github.com/Euphoriyy/appearance.koplugin/commit/fe4d20b696fd3c63468dd402d3e87fe659136765))
+* **book:** apply font color to fixed-layout docs ([e575ad8](https://github.com/Euphoriyy/appearance.koplugin/commit/e575ad85da26fb70b9050a293ed9111179047f34))
+* **themes:** add almonds, french blue, grape, and velvet ([b1f24bc](https://github.com/Euphoriyy/appearance.koplugin/commit/b1f24bc51a68549d0ef5c48e7914fffe0c8355c0))
+* **themes:** add golden green and pastel pink ([9fae1ef](https://github.com/Euphoriyy/appearance.koplugin/commit/9fae1ef733f452c513a88264ee87b9863d6e19ba))
+* **themes:** sync icon inversion settings on applying theme presets ([96657a3](https://github.com/Euphoriyy/appearance.koplugin/commit/96657a3febc7d97acbdbdf7d7f105a0206760715))
+* **ui:** add toggleable color-accurate flashing refreshes (e-ink) ([fdcf202](https://github.com/Euphoriyy/appearance.koplugin/commit/fdcf20253acb63d304ae0b3c82c2cf7b9db8c66c))
+* **widgets/colorwheelwidget:** add dithering refresh on show (e-ink) ([98881a0](https://github.com/Euphoriyy/appearance.koplugin/commit/98881a04a39460c3c80234eca4832ab1d122f713))
+
+
+### Bug Fixes
+
+* **book:** skip color replacement when colors are at defaults ([da59099](https://github.com/Euphoriyy/appearance.koplugin/commit/da590995796f5387c5b6ab706619f9fa073d86ee))
+* **themes:** keep menu open on resetting themes ([e53134d](https://github.com/Euphoriyy/appearance.koplugin/commit/e53134d6aa19820182f72fe15c0111d06ad2c641))
+* **themes:** use correct icon inversion defaults on reset ([c58297b](https://github.com/Euphoriyy/appearance.koplugin/commit/c58297b629009db22ba199b0c0246ceee5fccbf5))
+* **ui/background_image:** preserve location and pagination on reload ([88a20bb](https://github.com/Euphoriyy/appearance.koplugin/commit/88a20bb4701332b1358517ef89c09729af20a83b))
+* **ui/font_face:** override font for already loaded widgets ([95685af](https://github.com/Euphoriyy/appearance.koplugin/commit/95685af31cfc7864cb13820708c86b619cbecb53)), closes [#79](https://github.com/Euphoriyy/appearance.koplugin/issues/79)
+* **ui:** prevent excess color-accurate refreshes (e-ink) ([c383ca0](https://github.com/Euphoriyy/appearance.koplugin/commit/c383ca0fc1bf5008b6af816c06bda8b499c4f747))
+
+
+### Performance Improvements
+
+* optimize toggling night mode ([5f45d30](https://github.com/Euphoriyy/appearance.koplugin/commit/5f45d302d35b24a0b49faea54e51de8e8aadd513))
+
+*Supported KOReader Version: **v2026.07***
+
 # v1.8.2 · 2026-09-21
 
 ## [1.8.2](https://github.com/Euphoriyy/appearance.koplugin/compare/v1.8.1...v1.8.2) (2026-09-21)
@@ -86,22 +121,5 @@
 ### Performance Improvements
 
 * optimize toggling night mode ([5f45d30](https://github.com/Euphoriyy/appearance.koplugin/commit/5f45d302d35b24a0b49faea54e51de8e8aadd513))
-
-*Supported KOReader Version: **v2026.07***
-
-# v1.6.1 · 2026-08-19
-
-## [1.6.1](https://github.com/Euphoriyy/appearance.koplugin/compare/v1.6.0...v1.6.1) (2026-08-19)
-[![Github Downloads (by release)](https://img.shields.io/github/downloads/Euphoriyy/appearance.koplugin/v1.6.1/total.svg)](#)
-
-
-### Bug Fixes
-
-* add link color to footnote popup widget ([3f632e8](https://github.com/Euphoriyy/appearance.koplugin/commit/3f632e8bb9acaa167ba318cec529cd89d897943f))
-* apply link color changes properly ([26730f1](https://github.com/Euphoriyy/appearance.koplugin/commit/26730f148eca80806f0d6865f87418e18fdb99c9))
-* **book:** prevent extra inversion of grayscale colors ([fa68be9](https://github.com/Euphoriyy/appearance.koplugin/commit/fa68be9b4cfb263e4cd7420d50987353688d3722))
-* correct inverted night colors in rolling docs ([6dde78a](https://github.com/Euphoriyy/appearance.koplugin/commit/6dde78a3861c4121f1b49cace21c02e87ad38f4b)), closes [#76](https://github.com/Euphoriyy/appearance.koplugin/issues/76)
-* show bookmark colors in the bookmarks list ([c99bd6c](https://github.com/Euphoriyy/appearance.koplugin/commit/c99bd6ce2f9ca670e7bb2da23cdc1e1dff1ebe65)), closes [#78](https://github.com/Euphoriyy/appearance.koplugin/issues/78)
-* **ui:** remove SimpleUI patches to prevent crashes ([a568326](https://github.com/Euphoriyy/appearance.koplugin/commit/a5683266fade21a18621d9c590adfb6130e50441))
 
 *Supported KOReader Version: **v2026.07***

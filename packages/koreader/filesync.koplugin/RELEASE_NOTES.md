@@ -1,3 +1,7 @@
+# v1.11.1 · 2026-10-12
+
+- Updates health endpoint to read device modal and color support
+
 # v1.11.0 · 2026-09-27
 
 ## In-browser text editor
@@ -24,8 +28,3 @@ Thanks to @imsudip for the contribution (#43, closes #42).
 - The server is now reachable at http://filesync.local, so there is no IP to type. Rename it in the plugin menu. Works on macOS, iOS and Windows; Linux needs avahi; Android needs the IP. (#47)
 - Folders can now be uploaded from the web UI, with a Choose Folder button or by dropping one on the page. (#41)
 - Fixed: folders with a leading or trailing space could be listed but not opened on 2024+ Kindles. Failed opens now say why. (#46)
-
-# v1.8.0 · 2026-08-23
-
-- KOReader's *Delete plugin and settings* / *Disable plugin and delete settings* menu entries now work for FileSync: the plugin's settings are removed along with it, and the file server is stopped cleanly before the restart. (#25)
-- Stopping the file server no longer quits KOReader on Android (and macOS/SDL), where the app cannot restart itself. The screen is refreshed instead. The updater's *Restart now* button had the same problem and now asks you to reopen KOReader manually. (#34)

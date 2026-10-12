@@ -1,3 +1,17 @@
+# v1.0.1 · 2026-10-12
+
+Fixes for Ligature 1.0.0.
+
+- no longer crashes KOReader when typing in another plugin's text box,
+  such as Ink-Away's: a space after a swiped word closed KOReader
+- swipes use every touch point, not every other one
+- moving the cursor with the arrow keys or a slide along space after a
+  swipe no longer makes backspace delete the wrong text
+
+### Installing
+
+Unzip `ligature.koplugin.zip`, copy the `ligature.koplugin` folder into KOReader's `plugins` folder (`koreader/plugins` on a Kindle over USB) and restart KOReader.
+
 # v1.0.0 · 2026-10-05
 
 Swipe typing for KOReader, tuned for e-ink and one-handed use. Learns your words and where your thumb lands.

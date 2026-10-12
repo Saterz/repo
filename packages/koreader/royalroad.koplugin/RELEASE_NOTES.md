@@ -1,3 +1,8 @@
+# v0.21.1 · 2026-10-12
+
+## 🐛 Bug Fixes
+- fix(updater): pick up a changed cover on update, even with no new chapters
+
 # v0.21.0 · 2026-09-02
 
 ## 🚀 Features
@@ -39,11 +44,3 @@
 ## 🧰 Maintenance
 - docs(site): restyle landing page and fix walkthrough layout bugs
 - docs: refresh README screenshots and note reading progress
-
-# v0.18.8 · 2026-08-20
-
-## 🚀 Features
-- feat: show reading progress on manage-downloads page
-
-## 🐛 Bug Fixes
-- fix(parser): strip hidden watermark elements from chapter content
