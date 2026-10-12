@@ -1,3 +1,14 @@
+# 26.10.12-beta · 2026-10-12
+
+## What's Changed
+* Fix series context for fractional series indices (1.5, 2.5, …) by @tristinbaker in https://github.com/ultimatejimmy/xray.koplugin/pull/151
+* Update gemini, claude, and deepseek model lists
+
+## New Contributors
+* @tristinbaker made their first contribution in https://github.com/ultimatejimmy/xray.koplugin/pull/151
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.10-beta...26.10.12-beta
+
 # 26.10.10-beta · 2026-10-10
 
 - Update gemini models
@@ -42,11 +53,3 @@ This release focuses on memory optimizations and stability improvements to keep 
 * @misko903 made their first contribution in https://github.com/ultimatejimmy/xray.koplugin/pull/138
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.30.1...26.10.2-beta
-
-# 26.9.29-beta · 2026-09-29
-
-- Fix series bug
-- Fix alias/lookup bug 
-- fix overlapping save bug
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.23-beta...26.9.29-beta

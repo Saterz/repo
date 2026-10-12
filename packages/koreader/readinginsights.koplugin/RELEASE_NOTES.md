@@ -1,3 +1,22 @@
+# v7.7.0 · 2026-10-12
+
+### New
+**Reading insights: "Last 7 days"**
+- **Comparison with the previous week** (new, off by default): below the chart, after a thin divider, shows how the total and the daily average changed compared to the 7 days before, e.g. `+01:20 vs prev. week | +00:18 daily avg time`. When the chart is in pages mode it shows pages instead, e.g. `-115 pages vs prev. week | +16 daily avg pages`.
+- **Time and pages row** (new, off by default): a second row with the other metric (pages when the chart shows time, and vice versa).
+- The compact row (total + daily average) is now always shown. The *Compact / Full* layout choice is removed; the Full layout's extra values are covered by the new "time and pages row" option.
+- Both new options are in the Reading insight popup settings and can be toggled independently.
+
+### Fixed
+
+The gap between bars for 7-day and Monthly chart is now the same.
+
+# v7.6.5 · 2026-10-12
+
+### Changed
+- **Reading insights popup (portrait):** the automatic font-size reduction that previously only ran in landscape now also applies in portrait. If the page is still taller than the screen after the bar charts have been sized, all fonts are scaled down together (down to 50%) so the scroll bar is no longer needed. Layouts that already fit keep their configured font sizes.
+- **Months chart layout:** the default is now "12 months in one row" instead of "2 rows of 6 months". The layout is still switchable under Settings > Reading insight popup > Months chart layout.
+
 # v7.6.4 · 2026-10-11
 
 ### Changed 
@@ -20,21 +39,3 @@ With only a few months of reading data the bar chart looks better than the line 
   - Shows "Goal reached" once the yearly goal is met.
   - Pace is based on the day of the year and counts whole books only.
 - **Closed years:** past years show "Goal reached" or "Goal not reached" instead of the percentage (only if a goal was set for that year).
-
-# v7.6.1 · 2026-10-11
-
-### Changed
-- Yearly chart: months that haven't happened yet are cut off. The line ends at the current month, and the bar style no longer shows "00:00" for upcoming months. Their month names stay on the axis, and past years still show all 12 months.
-
-# v7.6.0 · 2026-10-11
-
-### New
-- **Yearly (months) chart is now a smooth line chart by default.** A monotone-cubic curve passes through one dot per month. The curve never overshoots below zero or above the peak.
-  - **Values sit above the dots.** A value moves up one row only if it would overlap its neighbour, so compact formats like `0:04` never move.
-  - **The current month's dot uses the active colour.** Tapping a month still opens its books.
-- **"Last 7 days" chart can also be shown as a line with dots**, with the same smooth curve. Today is highlighted and still opens the timeline. The "Today on the left/right" order and the time/pages toggle keep working. Bars remain the default here.
-
-### Changed
-
-- **"Days read" view is now scaled to the length of each month.** Every fully read month stands equally high, whether it has 28, 29, 30 or 31 days, and the label still shows the real day count. This applies to both the bar and line styles. The Hours and Books views are unchanged.
-- Some settings reorganized

@@ -1,3 +1,8 @@
+# v8.0.0 · 2026-10-12
+
+# Thanks to Quin Easwar
+(Biggest release ever)
+
 # v7.9.48 · 2026-10-11
 
 # AppDock 7.9.48
@@ -34,14 +39,3 @@
 - Normale Buchstaben-, Zahlen-, Symbol- und Steuerungstasten sind größer geworden.
 - Caps Lock funktioniert auch mit deutschen Sonderzeichen wie `ä`, `ö`, `ü` und `ß`.
 - Optional kann ein Dialog `caps_lock = true` beim Öffnen voraktivieren.
-
-# v7.9.44 · 2026-10-11
-
-# AppDock 7.9.44
-
-- Die Tastatur verwendet jetzt eine echte editierbare Offline-Datenbank: `appdock_suggestions.db`.
-- Enthalten sind **3.000 deutsche und 3.000 englische Wörter** mit Häufigkeitswerten.
-- Vorschläge werden nach Wortfrequenz priorisiert und weiterhin sofort lokal gefiltert.
-- Die Datenbank ist bewusst TSV statt SQLite, damit sie auf Kobo ohne native Datenbank-Erweiterung funktioniert und direkt bearbeitet werden kann.
-- Eigene Wörter können als weitere Zeilen mit `de` oder `en`, Häufigkeit und Wort ergänzt werden.
-- Optional können Dialoge eine Sprache oder eine eigene `suggestions`-Liste übergeben.
