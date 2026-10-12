@@ -1,3 +1,11 @@
+# v0.2.3 · 2026-10-12
+
+## What's Changed
+* Send Weread Skill 1.0.5 and release v0.2.3 by @MsReverie in https://github.com/MsReverie/Weread_Annotation_Lite.koplugin/pull/18
+
+
+**Full Changelog**: https://github.com/MsReverie/Weread_Annotation_Lite.koplugin/compare/v0.2.2...v0.2.3
+
 # v0.2.2 · 2026-10-07
 
 ## What's Changed
