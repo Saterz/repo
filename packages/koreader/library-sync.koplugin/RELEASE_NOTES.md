@@ -1,3 +1,17 @@
+# v0.7.1 · 2026-10-13
+
+## What's new
+
+- Use BookOrbit's download response filename when **Server file name** is selected, avoiding unnecessary `Title - Author` fallback names.
+- Preserve existing local paths during metadata refresh so manifest tracking remains stable.
+- Validate response filenames against the expected EPUB or CBZ format before using them.
+- Keep an existing server-named destination untouched instead of overwriting it.
+- Improve `Content-Disposition` parsing and add regression coverage for EPUB, CBZ, refresh paths, and invalid extensions.
+
+Thanks to @kai-arsenault for the original fix in #8.
+
+Both ZIP assets are included for new and legacy OTA installations.
+
 # v0.7.0 · 2026-08-30
 
 ## What's new
@@ -38,18 +52,3 @@ Fixes the BookOrbit reconciliation confirmation crash caused by a Lua gettext na
 - Lua and LuaJIT provider contract tests.
 - Full Lua syntax validation.
 - OTA ZIP integrity and directory-layout validation for both current and legacy plugin names.
-
-# v0.6.9 · 2026-08-28
-
-## Metadata refresh safety hotfix
-- Stop metadata refresh before replacing files when configured BookOrbit/Grimmory API metadata cannot be loaded.
-- Reject incomplete paginated BookOrbit API responses and unexpectedly low OPDS-to-API match coverage.
-- Require a second confirmation before an unusually large manual metadata refresh.
-- Stop unusually large automatic refresh queues and direct the user to review them manually.
-- Keep `Sync missing books` able to continue without optional API metadata.
-
-## Verification
-- Regression coverage for API failure, incomplete API pagination, low metadata match coverage, and large queue detection.
-- Lua and LuaJIT contract tests.
-- Full Lua syntax validation.
-- ZIP integrity and directory-layout validation for both OTA assets.
