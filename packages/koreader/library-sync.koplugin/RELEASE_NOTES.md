@@ -1,3 +1,17 @@
+# v0.7.2 · 2026-10-13
+
+## What's new
+
+- Add compatibility with BookOrbit 3.4.0's plain-text OPDS descriptions.
+- Compare description content semantically, treating equivalent HTML and plain text as unchanged.
+- Migrate existing HTML-based manifest signatures locally instead of downloading and replacing unchanged EPUB/CBZ files.
+- Continue detecting genuine description text changes.
+- Add regression coverage for HTML-to-text migration and real description changes.
+
+After updating, cancel any previously prepared mass refresh and run **Refresh existing metadata** again. The first scan may take its usual time while old signatures are migrated, but equivalent descriptions should be skipped rather than downloaded.
+
+Both ZIP assets are included for new and legacy OTA installations.
+
 # v0.7.1 · 2026-10-13
 
 ## What's new
@@ -39,16 +53,3 @@ Fixes the BookOrbit reconciliation confirmation crash caused by a Lua gettext na
 - Regression test confirms 205 links are committed as 100 + 100 + 5.
 - Lua and LuaJIT provider contract tests.
 - Full Lua syntax validation and both OTA ZIP integrity checks.
-
-# v0.6.10 · 2026-08-28
-
-## BookOrbit file registration
-- Automatically register verified EPUB downloads and metadata replacements in the BookOrbit plugin state.
-- Add **BookOrbit integration -> Register existing Library Sync books** for previously downloaded files.
-- Preserve exact BookOrbit book and file/edition IDs from OPDS, with match API fallback for older manifests.
-- Reconciliation does not open books or change reading status.
-
-## Verification
-- Lua and LuaJIT provider contract tests.
-- Full Lua syntax validation.
-- OTA ZIP integrity and directory-layout validation for both current and legacy plugin names.

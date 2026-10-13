@@ -1,3 +1,17 @@
+# 26.10.13 · 2026-10-13
+
+## What's Changed
+* sk: translate "plugin" as "doplnok", translate [draft] by @misko903 in https://github.com/ultimatejimmy/storefront.koplugin/pull/5069
+* Show download progress while installing plugins by @dmaglio in https://github.com/ultimatejimmy/storefront.koplugin/pull/5070
+* Fix font issue when a font is missing #5071 
+* Various memory and performance improvements 
+
+## New Contributors
+* @misko903 made their first contribution in https://github.com/ultimatejimmy/storefront.koplugin/pull/5069
+* @dmaglio made their first contribution in https://github.com/ultimatejimmy/storefront.koplugin/pull/5070
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.2...26.10.13
+
 # 26.10.2 · 2026-10-02
 
 - Address memory issues with lower powered devices
@@ -42,14 +56,3 @@
 
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.9.15...26.9.25
-
-# 26.9.15 · 2026-09-15
-
-## What's Changed
-
-- **Install from branch**: You can now install plugins directly from any Git branch, making it easy to test experimental features, pull requests, and preview builds right on your device ([#5057](https://github.com/ultimatejimmy/storefront.koplugin/issues/5057)).
-- **Update notifications**: Added an update notification system to let you know when new versions are available for your installed items, with customizable options in settings.
-- **Screensavers catalog performance**: Updating the screensaver catalog is much faster and more efficient, especially on lower powered devices
-- **Screensavers refresh**: Triggering a catalog refresh now automatically updates the screensavers catalog as well, ensuring you always see the latest additions without needing extra steps.
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.9.9...26.9.15

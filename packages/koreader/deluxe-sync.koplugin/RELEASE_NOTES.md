@@ -1,3 +1,10 @@
+# v0.2.0.6 · 2026-10-13
+
+
+- Fixed false progress-sync failures on slower servers where LuaSec surfaced wantread after the previous 5-second background block timeout even though the server continued processing and returned HTTP 200.
+- Increased only the forked background HTTP timeout budget to 30/60 seconds so slow enhanced-server progress and optional-data requests can complete without blocking the KOReader UI; the emergency synchronous fallback remains tightly bounded.
+- Added transport regression coverage for a slow-but-successful response while preserving real wantread failures for normal retry handling.
+
 # v0.2.0.5 · 2026-10-07
 
 
@@ -31,14 +38,3 @@
 - Saved KOReader doc_props remain authoritative, with document properties used as a fallback. Zero and decimal series indexes are preserved, while invalid indexes are omitted.
 - Existing Book Metadata consent, capability checks, retry sanitization, and standard KOSync compatibility remain unchanged; unsupported servers do not receive the new metadata fields.
 - Refreshed the README capability summary to document Vocabulary Builder synchronization and the current per-server data-sharing controls.
-
-# v0.2.0.1 · 2026-09-14
-
-
-- Added conservative ASIN extraction from KOReader document metadata. Explicitly labeled `asin`, `mobi-asin`, and Amazon-ASIN forms are normalized to uppercase and included in the existing Book Metadata payload for compatible servers.
-- Unlabeled 10-character identifiers are never guessed to be ASINs, preventing ISBN-10 values from being misclassified.
-- Existing Book Metadata consent, metadata compatibility fallback, and ordinary KOSync behavior remain unchanged.
-- Restored the intended enhanced-server client notice flow so compatible servers can surface actionable account or linked-service warnings on the reader, keep an attention marker on affected server entries, and suppress repeated display of the same notice for 24 hours.
-- Fixed Authenticate / Sign in capability refresh so the complete enhanced capability set is cached through the shared path; client notices and future enhanced capabilities are no longer skipped by the server test flow.
-- Progress pushes now allow a longer asynchronous response window before declaring a compatible server unavailable, preventing slower successful writes from being queued as false failures while keeping the tight synchronous fallback bounded.
-- Manual queued-update retry status now closes before the refreshed queue result is shown, so the retry message no longer remains over the result.
