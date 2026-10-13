@@ -1,3 +1,16 @@
+# v1.20 · 2026-10-13
+
+## AI Assistant v1.20 - Bug fix release
+
+### Fixes
+
+- **Waiting animation kept running after a cancelled or failed request.** Closing the stream dialog before the first response text arrived, or any request that ended with an error, empty response, tool-only response, or exception before text, left the waiting animation scheduled. On Kobo devices this blocked suspend and drained the battery. The animation is now cancelled on close and on every exit path. Thanks to @fernandeslouro for the report and the patch in #215.
+- **Slovak translation corrections.** Several Slovak strings were corrected after an audit.
+
+### Upgrade notes
+
+- If you are updating from v1.18 or earlier and an OTA download failed with an error such as `attempt to compare number with string`, the cause was an interrupted network transfer, just try again until the download finished. This is fixed from v1.19 onward. Use the current release to update.
+
 # v1.19 · 2026-10-09
 
 ## v1.19
@@ -174,37 +187,3 @@ When the provider returns **HTTP 429 Too Many Requests** (rate limit / quota exc
 
 #### Translations & Details
 All 42+ languages updated. The plugin now reuses KOReader's native translation module directly instead of bundling a stale copy of `gettext` — only the adapter entry is customized — with translations shipped as compiled `.mo` files for faster loading. This format change is why OTA requires two passes; fresh installs via zip are not affected.
-
-# v1.15 · 2026-08-26
-
-## v1.15 Release Notes
-
-### Changes since v1.14
-
-This is a usability-focused iteration around provider setup, web search, and prompt context.
-
-#### Highlights
-
-- **UI-managed Provider Keys — zero-config start** — After installing from the KOReader Plugin Store, you can configure everything directly in the UI. No `configuration.lua` editing required. Add, edit, and delete custom providers in Settings, with `display_name`, built-in presets, and per-handler **Browse Models** (fetches via the handler's own `FetchModels`). The plugin also starts cleanly with no file-based config at all.
-- **Web search configuration UI** — Web search moves from config file to UI: manage multiple search APIs, long-press to edit/delete, and see configured state at a glance via menu icons. The Ask dialog now has a dedicated **Use web search** checkbox.
-- **Notebook & context improvements** — Multiple general notebooks with a folder picker and dedicated settings submenu. Prompts can now optionally include **book metadata** and **nearby page text** as context, with related settings regrouped for clarity.
-- **Settings & menu polish** — Reorganized menus, unified Title Case labels, dynamic navigation, and conditional display of Custom Prompts.
-
-#### Fixes & Improvements
-
-- Fixed ~20s delay before the Wi-Fi prompt on every AI action; consolidated `runWhenOnline` handling across 21 call sites.
-- Fixed forwarding of the `thinking` parameter to OpenAI-compatible handlers, `null tool_calls` crashes, Gemini OpenAI-compat response tolerance, and OpenRouter model filtering via `/models/user`.
-- Improved stream error handling (surface server messages), auto-scroll behavior, and Responses API `reasoning_summary` handling.
-- Hardened `ai_translate.py` and `l10n/Makefile` (now fails on `.po` syntax errors).
-- Added headless test framework and `wbuilder` UI preview tooling.
-
-#### Thanks
-
-Special thanks to contributors in this cycle:
-
-- @SUBHAM-ROY — web search toggle for Ask, OpenRouter guardrail-aware model filtering
-- @jdbway — Wi-Fi delay fix (#197)
-- @anhnn2010 — multiple general notebooks (#192)
-- @Craftwork2720 — `thinking` parameter forwarding (#188)
-
-And everyone who helped with translations, feedback, and testing.
