@@ -1,3 +1,39 @@
+# v0.7 · 2026-10-13
+
+Kindle Fetch can now search Internet Archive and Z-Library as well as Library Genesis. Z-Library needs an account, which you log in to once. Searches on Library Genesis can load more books again. Kindles like the first Paperwhite can now update a curl that's too old to reach GitHub. Kindle Fetch also tells you when your network seems to block Library Genesis or when it's too busy. The README has new GIFs and a Troubleshooting section.
+
+If your Kindle couldn't update curl before, the version you have can't download this update. Install it by hand from this page instead.
+
+Changes since v0.6:
+
+- Key books by an id rather than their md5, as other sites don't have one (0b29c64)
+- Keep each site's searches apart in the cache, as each finds other books (682ee39)
+- Look a book's download link up on the site it was found on (a98ffc6)
+- Say a Kindle's curl is too old to download books, rather than from Library Genesis (f5bcb06)
+- Search and download from Internet Archive, the books on it that anyone can download (9863063)
+- Open Internet Archive's search from a gesture too (b25c1ac)
+- Test searching and downloading from Internet Archive end to end (3f281a7)
+- Give curl options in a file, for what mustn't be on its command line (9348f48)
+- Post forms and send cookies, without putting them on curl's command line (0c8d333)
+- Move the message saying what's being waited for into a module of its own, to show while logging in too (ab307f3)
+- Look Z-Library's addresses up on Wikipedia, as Library Genesis' mirrors are (1706773)
+- Log in to Z-Library, keeping the key it logs in with rather than the password (ceb5585)
+- Log in to Z-Library, or out of it, from the settings (08ea93e)
+- Search and download from Z-Library, logging in first, while the account can download more today (aa8a020)
+- Ask Z-Library for another download link when the server the link went to fails (19f845b)
+- Open Z-Library's search from a gesture too (77ad596)
+- Test logging in to, searching and downloading from Z-Library end to end, when given an account (26ed3f4)
+- Say no books were found when Library Genesis has none, rather than that its mirrors failed (b8c10b4)
+- Carry on to Library Genesis' next page while it says it has one, as it now sends 25 results a page Fixes william-spongberg/KindleFetch.koplugin#56 (5673f98)
+- Download curl's update with KOReader's own HTTP, as a Kindle's own curl can be too old to connect to GitHub Fixes william-spongberg/KindleFetch.koplugin#57 (f683c94)
+- Only install the curl build that was released, and put the old curl back if the new one doesn't run (7eee97f)
+- Offer to update curl at most once a day, even when the latest release can't be looked up (419c013)
+- Say when none of Library Genesis' sites can be found on the network, which may be blocking them Fixes william-spongberg/KindleFetch.koplugin#55 (cc0f67e)
+- Look up and download plugin updates with KOReader's own HTTP where curl can't, when asked to check (dfaa146)
+- Say when Library Genesis is too busy to search, keeping its mirrors rather than looking them up again (13c416f)
+- Update README screenshots (dfce43a)
+- Add GIFs of searching, downloading, each site and the settings to the README (2cedbc4)
+
 # v0.6 · 2026-10-08
 
 Searches say what they're looking for, and are called off with a Cancel button rather than any tap, keeping the books found so far. The search box offers your last 10 searches and books you've downloaded already are marked in the results. Covers now show up as each one arrives, and a page of them arrives in about a third of the time. Downloads look up their link without holding KOReader up, say what they're waiting for and when they've stalled, and carry on from where a stalled download stopped rather than starting the book again. Kindles with an older curl are offered curl 8.21.0, and told how to update it when theirs is too old to download books, and KOReader offers to restart once Kindle Fetch has updated. Plus a clearer download prompt and settings.
@@ -175,15 +211,3 @@ UX upgrades all around thanks to community feedback
 - **Simplify download prompt**: only have path + download buttons, and tap outside to close (suggested by [IbnRami](https://www.reddit.com/user/IbnRami/))
 - **Extend search caches**: search caches now expire after 2 weeks and have max 1000 entries
 - **Prompt updates**: plugin and curl updates will prompt the user first rather than being triggered automatically
-
-# v0.2 · 2026-07-12
-
-Big update this one
-
-- **Caching**: Caches search results (72 hours), mirror URLs (7 days), and book covers (for length of search) to minimise network requests and improve performance
-- **Preferences**: Filter results by preferred languages, file types, and book types
-- **Book Cover Previews**: Display cover images in download previews
-- **Background Downloads**: Downloads run in the background using curl, with non-blocking UI updates
-- **Automatic Curl Updates**: Ensures a compatible curl version (8.17.0+) is available
-- **Automatic Retry Logic**: Fallback to other available urls if connection fails
-- **Safe File Handling**: Automatic filename sanitisation and directory management

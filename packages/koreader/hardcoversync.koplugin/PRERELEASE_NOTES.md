@@ -1,3 +1,14 @@
+# v2.0.0-beta.24 · 2026-10-13
+
+## What's Changed
+* Book details: use the full width when the page does not scroll by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/131
+* Open the home screen with a full refresh by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/130
+* Home: fit the Read shelf on a small screen by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/125
+* Fix offline Currently Reading shelf after cancel and for uncached books by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/133
+
+
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.23...v2.0.0-beta.24
+
 # v2.0.0-beta.23 · 2026-10-12
 
 ## What's Changed
@@ -28,13 +39,3 @@
 # v2.0.0-beta.20 · 2026-10-11
 
 **Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.19...v2.0.0-beta.20
-
-# v2.0.0-beta.19 · 2026-10-11
-
-## What's Changed
-* Book and edition pickers on the shelf screen by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/121
-* Change a linked book's edition from the reader panel by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/122
-* One Add button replaces Shelf and Lists on the book details screen by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/123
-
-
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.18...v2.0.0-beta.19

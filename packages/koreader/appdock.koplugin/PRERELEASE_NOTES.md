@@ -16,10 +16,10 @@ Pre-release build created directly from the current GitHub main branch (commit d
 
 THIS RELEASE ISNT REAL. It is an error. DO NOT INSTALL.
 
-# v7.9.49-pre.4 · 2026-10-11
-
-## YouTube-Performance\n\n- Das Frame-Limit pro UI-Tick steigt von 64 auf 128.\n- Das CPU-Zeitfenster steigt kontrolliert von 0,20 auf 0,30 Sekunden.\n- Die globale Job-Sperre, zwei Decode-Threads, ein Filter-Thread und die serielle Audio-Phase bleiben unverändert.\n\nYouTube- und YouTube-Music-Regressionen sind erfolgreich.
-
 # v7.9.49-pre.3 · 2026-10-11
 
 ## YouTube-Performance-Fix\n\n- Vier Frames pro UI-Tick statt eines einzelnen Reads reduzieren Lua/FFI-Overhead.\n- Zwei FFmpeg-Decodierthreads beschleunigen die Videoverarbeitung.\n- Filterung bleibt single-threaded, die globale Job-Sperre und die serielle Audio-Phase bleiben aktiv, um die bisherigen Crash-Ursachen zu vermeiden.\n\nYouTube-, YouTube-Music- und Setup-Regressionen sind erfolgreich.
+
+# v7.9.49-pre.2 · 2026-10-11
+
+## Fixes\n\n- Der Neuigkeiten-Dialog bleibt sichtbar, auch wenn beim Start ein Recovery-Hinweis angezeigt wird.\n- Das Testbild im Dialog wird quadratisch und ohne Seitenverzerrung dargestellt.\n\nDie fokussierten Dialog- und Starttests sind erfolgreich.

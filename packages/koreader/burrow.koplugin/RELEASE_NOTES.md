@@ -1,3 +1,24 @@
+# v0.4.12 · 2026-10-13
+
+## What's Changed
+* Burrow 0.4.11 beta 1: prewarm opposite EPUB tone by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/65
+* Burrow 0.4.11 beta 2: reduce reader transition latency by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/66
+* Burrow 0.4.11 beta 3: speed up reader transitions by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/67
+* Burrow 0.4.11 beta 4: remove Kindle transition stalls by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/68
+* Promote Burrow 0.4.11 beta 4 to stable by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/69
+* Burrow 0.4.12 beta 1: restore Kindle Wi-Fi reconnect behavior by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/70
+* Burrow 0.4.12 beta 2: isolate Kindle Wi-Fi recovery by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/71
+* Burrow 0.4.12 beta 3: make Bionic Reading interactive sooner by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/72
+* Burrow 0.4.12 beta 4: restore Bionic ornaments and fix Kindle wake lag by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/73
+* Burrow 0.4.12 beta 5: fix Bionic boundary restore and dark ornaments by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/74
+* Burrow 0.4.12 beta 6: fix mixed-image Bionic ornaments by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/75
+* Burrow 0.4.12 beta 7: restore proven ornament pipeline over Bionic by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/76
+* Burrow 0.4.12 beta 8: add Kindle idle soak maintenance by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/77
+* Promote Burrow 0.4.12 beta 8 to stable by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/82
+
+
+**Full Changelog**: https://github.com/richbeatty/burrow.koplugin/compare/v0.4.10...v0.4.12
+
 # v0.4.11 · 2026-09-15
 
 ## What's Changed
@@ -47,13 +68,3 @@
 
 
 **Full Changelog**: https://github.com/richbeatty/burrow.koplugin/compare/v0.4.7...v0.4.8
-
-# v0.4.7 · 2026-09-02
-
-## What's Changed
-* Fix OPDS sync persistence across restarts by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/44
-* Refresh hero cover immediately after sync extraction by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/45
-* Promote Burrow 0.4.7 to stable by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/46
-
-
-**Full Changelog**: https://github.com/richbeatty/burrow.koplugin/compare/v0.4.6...v0.4.7
