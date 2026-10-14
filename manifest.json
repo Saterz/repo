@@ -1881,7 +1881,7 @@
     {
       "id": "fluent-icon-pack",
       "name": "Fluent Icon Pack",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "description": "Icons for ZenOS, KOReader, and ZenPM, from Fluent icons",
       "author": "xZenLabs",
       "category": "iconpacks",
@@ -1891,25 +1891,25 @@
       "source": "https://github.com/xZenLabs/fluent-icon-pack",
       "source_type": "release",
       "stars": "0",
-      "updated_at": "2026-10-14T13:23:46Z",
-      "published_at": "2026-10-14T06:11:06Z",
+      "updated_at": "2026-10-14T13:48:26Z",
+      "published_at": "2026-10-14T13:38:11Z",
       "readme_url": "packages/koreader/fluent-icon-pack.iconpack/README.md",
-      "readme_hash": "4b9751753389c644e72d90edd1ddb6b48f77228d",
+      "readme_hash": "f66ecf3fa6e1ac3a9d717070177a82183265ceb4",
       "release_notes_url": "packages/koreader/fluent-icon-pack.iconpack/RELEASE_NOTES.md",
-      "release_notes_hash": "399ecef2c4ef28187801c7317b9ca9ea726cf85bc390d8296d9342e7989b157a",
+      "release_notes_hash": "486cb2edd2c31e7d480d4e972938ec0d46430e7f6616b977dbf270cdfe4bd3c3",
       "versions_url": "packages/koreader/fluent-icon-pack.iconpack/versions.json",
       "assets": [
         {
           "arch": "any",
           "asset": "zen-fluent-color.zip",
-          "url": "https://github.com/xZenLabs/fluent-icon-pack/releases/download/v1.0.2/zen-fluent-color.zip",
+          "url": "https://github.com/xZenLabs/fluent-icon-pack/releases/download/v1.0.3/zen-fluent-color.zip",
           "size": "158068",
           "color": true
         },
         {
           "arch": "any",
           "asset": "zen-fluent-mono.zip",
-          "url": "https://github.com/xZenLabs/fluent-icon-pack/releases/download/v1.0.2/zen-fluent-mono.zip",
+          "url": "https://github.com/xZenLabs/fluent-icon-pack/releases/download/v1.0.3/zen-fluent-mono.zip",
           "size": "141336",
           "color": false
         }
@@ -3242,31 +3242,31 @@
     {
       "id": "glyphs-poly-icon-pack",
       "name": "Glyphs Poly Icon Pack",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "description": "Glyphs Poly color icons for ZenOS, KOReader, and ZenPM",
       "author": "xZenLabs",
       "category": "iconpacks",
       "platforms": ["koreader"],
       "dependencies": [],
       "tags": ["zen-icon-pack", "zenos"],
-      "size": "165535",
+      "size": "165536",
       "source": "https://github.com/xZenLabs/glyphs-poly-icon-pack",
       "source_asset": "zen-glyphs-poly.zip",
       "source_type": "release",
       "stars": "0",
-      "updated_at": "2026-10-14T13:23:46Z",
-      "published_at": "2026-10-14T07:06:57Z",
+      "updated_at": "2026-10-14T13:48:29Z",
+      "published_at": "2026-10-14T13:38:15Z",
       "readme_url": "packages/koreader/glyphs-poly-icon-pack.iconpack/README.md",
-      "readme_hash": "57f630a60ceec590d291c63a89b7f682f2d8a4a8",
+      "readme_hash": "56791336f77ce24e350ef71639b38457ee24f0b6",
       "release_notes_url": "packages/koreader/glyphs-poly-icon-pack.iconpack/RELEASE_NOTES.md",
-      "release_notes_hash": "276f616cd03cad0050f63dce7575bd9700b4c1cccb948754919fe9fdd9e64a69",
+      "release_notes_hash": "f53b255d2c310c28c979869ee8c8b5ba51c6e3631a2c242148a774aa6fe361f8",
       "versions_url": "packages/koreader/glyphs-poly-icon-pack.iconpack/versions.json",
       "assets": [
         {
           "arch": "any",
           "asset": "zen-glyphs-poly.zip",
-          "url": "https://github.com/xZenLabs/glyphs-poly-icon-pack/releases/download/v1.0.3/zen-glyphs-poly.zip",
-          "size": "165535",
+          "url": "https://github.com/xZenLabs/glyphs-poly-icon-pack/releases/download/v1.0.4/zen-glyphs-poly.zip",
+          "size": "165536",
           "color": true
         }
       ]
@@ -3593,7 +3593,7 @@
     {
       "id": "icons8-icon-pack",
       "name": "Icons8 Icon Pack",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "description": "Icons for ZenOS, KOReader, and ZenPM, from Icons8 icons",
       "author": "xZenLabs",
       "category": "iconpacks",
@@ -3603,25 +3603,25 @@
       "source": "https://github.com/xZenLabs/icons8-icon-pack",
       "source_type": "release",
       "stars": "0",
-      "updated_at": "2026-10-14T13:23:46Z",
-      "published_at": "2026-10-14T06:11:59Z",
+      "updated_at": "2026-10-14T13:48:22Z",
+      "published_at": "2026-10-14T13:38:03Z",
       "readme_url": "packages/koreader/icons8-icon-pack.iconpack/README.md",
-      "readme_hash": "cf86a699d34895f93691096b5fef76296dcb9c28",
+      "readme_hash": "57bb4123873dd35cf5766c9445ebb3496550ad67",
       "release_notes_url": "packages/koreader/icons8-icon-pack.iconpack/RELEASE_NOTES.md",
-      "release_notes_hash": "0a56c5b3be290d2c8ef5da85a5686b3dab8886803f29a48c434263b6db8114ac",
+      "release_notes_hash": "580a8c5a6ca9de553eec833a15c52711333b55ea4e21dcc84db21bff6b1adfa9",
       "versions_url": "packages/koreader/icons8-icon-pack.iconpack/versions.json",
       "assets": [
         {
           "arch": "any",
           "asset": "zen-icons8-colour.zip",
-          "url": "https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.3/zen-icons8-colour.zip",
-          "size": "120081",
+          "url": "https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.4/zen-icons8-colour.zip",
+          "size": "120082",
           "color": true
         },
         {
           "arch": "any",
           "asset": "zen-icons8-mono.zip",
-          "url": "https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.3/zen-icons8-mono.zip",
+          "url": "https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.4/zen-icons8-mono.zip",
           "size": "104213",
           "color": false
         }
@@ -9674,7 +9674,7 @@
     {
       "id": "solariconpack-zen",
       "name": "Solar Icons",
-      "version": "1.2.4",
+      "version": "1.2.5",
       "description": "Modern, rounded icons for KOReader and ZenOS, in Colour or Mono. Based on the Solar icon set by 480 Design.",
       "author": "xZenLabs",
       "category": "iconpacks",
@@ -9684,26 +9684,26 @@
       "source": "https://github.com/xZenLabs/solariconpack-zen",
       "source_type": "release",
       "stars": "0",
-      "updated_at": "2026-10-14T13:23:46Z",
-      "published_at": "2026-10-14T06:10:23Z",
+      "updated_at": "2026-10-14T13:48:19Z",
+      "published_at": "2026-10-14T13:38:01Z",
       "readme_url": "packages/koreader/solariconpack-zen.iconpack/README.md",
-      "readme_hash": "c9c747ce033e7bef0480fc036d1754c779df454a",
+      "readme_hash": "487283e9014912e84ae7ec7b16cfcbf3193af823",
       "release_notes_url": "packages/koreader/solariconpack-zen.iconpack/RELEASE_NOTES.md",
-      "release_notes_hash": "e16f3147b0c0a1c2b22c12eba4a8cdf454eae1ab6ec8f724b129faf88104f810",
+      "release_notes_hash": "416eded46e9a6887207eb3ae883f7cff76e35dbc6390b098aa8154b72834471c",
       "versions_url": "packages/koreader/solariconpack-zen.iconpack/versions.json",
       "assets": [
         {
           "arch": "any",
           "asset": "zen-solar-colour.zip",
-          "url": "https://github.com/xZenLabs/solariconpack-zen/releases/download/v1.2.4/zen-solar-colour.zip",
-          "size": "221971",
+          "url": "https://github.com/xZenLabs/solariconpack-zen/releases/download/v1.2.5/zen-solar-colour.zip",
+          "size": "221972",
           "color": true
         },
         {
           "arch": "any",
           "asset": "zen-solar-mono.zip",
-          "url": "https://github.com/xZenLabs/solariconpack-zen/releases/download/v1.2.4/zen-solar-mono.zip",
-          "size": "218741",
+          "url": "https://github.com/xZenLabs/solariconpack-zen/releases/download/v1.2.5/zen-solar-mono.zip",
+          "size": "218742",
           "color": false
         }
       ]
@@ -9890,31 +9890,31 @@
     {
       "id": "streamline-flex-gradient-icon-pack",
       "name": "Streamline Flex Gradient Icon Pack",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "description": "Icons for ZenOS, KOReader, and ZenPM, from Streamline's Flex Gradient icons",
       "author": "xZenLabs",
       "category": "iconpacks",
       "platforms": ["koreader"],
       "dependencies": [],
       "tags": ["zen-icon-pack", "zenos"],
-      "size": "282686",
+      "size": "282687",
       "source": "https://github.com/xZenLabs/streamline-flex-gradient-icon-pack",
       "source_asset": "zen-streamline-flex-gradient.zip",
       "source_type": "release",
       "stars": "0",
-      "updated_at": "2026-10-14T13:23:46Z",
-      "published_at": "2026-10-14T06:11:32Z",
+      "updated_at": "2026-10-14T13:48:24Z",
+      "published_at": "2026-10-14T13:38:06Z",
       "readme_url": "packages/koreader/streamline-flex-gradient-icon-pack.iconpack/README.md",
-      "readme_hash": "0b5d24a623f3ac70d96799836bef700ba88d0570",
+      "readme_hash": "6ff550c8edd84d5faaa8929f79c25db895895c96",
       "release_notes_url": "packages/koreader/streamline-flex-gradient-icon-pack.iconpack/RELEASE_NOTES.md",
-      "release_notes_hash": "cb816e43f5f59a1531c098aae9fd04d0fd5d8083aff744c8d293e4c34ff397ce",
+      "release_notes_hash": "dc199581497b5810455d9ce128b9cce5b6d0727d75b8f0beb793933dc1f24b9a",
       "versions_url": "packages/koreader/streamline-flex-gradient-icon-pack.iconpack/versions.json",
       "assets": [
         {
           "arch": "any",
           "asset": "zen-streamline-flex-gradient.zip",
-          "url": "https://github.com/xZenLabs/streamline-flex-gradient-icon-pack/releases/download/v1.0.3/zen-streamline-flex-gradient.zip",
-          "size": "282686",
+          "url": "https://github.com/xZenLabs/streamline-flex-gradient-icon-pack/releases/download/v1.0.4/zen-streamline-flex-gradient.zip",
+          "size": "282687",
           "color": true
         }
       ]
