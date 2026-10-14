@@ -1,3 +1,11 @@
+# v4.2.0-beta1 · 2026-10-14
+
+## What's Changed
+
+- Add accent color
+- Scale opening banner and badge font
+- Bug fixes
+
 # v4.1.0-beta3 · 2026-10-09
 
 ## What's Changed
@@ -63,14 +71,3 @@
 - Fix Android reader bottom status bar painting over the page browser
 - Fix History gestures not working
 - Fix rare bug in autoresume on kindle after deep sleep
-
-# v4.0.1-beta1 · 2026-10-03
-
-## What's Changed
-
-- Add option to align Reader Status Bars with book margins
-- Improve dark mode ghosting on color e-ink
-- Fix Pocketbook Wi-Fi toggling on
-- Fix stale navbar after disabling wallpaper
-- Fix KLC flashing when wallpaper enabled
-- Fix Android reader bottom status bar painting over the page browser
