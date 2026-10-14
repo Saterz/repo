@@ -1,3 +1,15 @@
+# v1.16.0 · 2026-10-14
+
+### What's new
+
+- Putting a book on hold in KOReader now pauses it in Seekquel instead of marking it Did not finish. Picking it up again carries on with the same read, so your place and the time you have already spent on it stay together. Books you put on hold before this update are left as they are until you change their status again.
+
+### Install
+
+Already paired? The add-on updates itself: open Seekquel in KOReader's menu and accept the update when it is offered.
+
+New install: download seekquel.koplugin-v1.16.0.zip below, unzip it, and copy the seekquel.koplugin folder into KOReader's plugins folder. Restart KOReader, then open Seekquel from the menu to pair.
+
 # v1.15.1 · 2026-10-14
 
 ### What's new
@@ -42,13 +54,3 @@ Download `seekquel.koplugin-v1.14.0.zip`, unzip it, and copy the `seekquel.koplu
 ### Install
 
 Download `seekquel.koplugin-v1.13.0.zip`, unzip it, and copy the `seekquel.koplugin` folder into KOReader's `plugins` folder on your e-reader. Restart KOReader, then open the Seekquel menu to pair. If the add-on is already installed and paired, it updates itself and you do not need to do anything.
-
-# v1.12.1 · 2026-09-25
-
-### What's new
-
-- When the add-on cannot update itself, it now says what went wrong: the download stopped partway, arrived damaged, or could not be installed on this device, and what to try next. Before, every failure read "Could not reach Seekquel".
-
-### Install
-
-Download `seekquel.koplugin-v1.12.1.zip`, unzip it, and copy the `seekquel.koplugin` folder into KOReader's `plugins` folder. Restart KOReader. If the add-on is already installed and paired, it updates itself from Seekquel.

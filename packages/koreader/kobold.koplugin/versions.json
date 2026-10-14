@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0","assets":[{"name":"Kobold.koplugin.zip","url":"https://github.com/unitreign/kobold/releases/download/v1.0/Kobold.koplugin.zip","size":93293,"digest":"sha256:096da812ac5a5bf95f896361bedf95603fa0bc2a522393eadd61bac83ccdce7f"}],"name":"v1.0"}]
+}

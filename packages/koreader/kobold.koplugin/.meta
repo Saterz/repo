@@ -1,0 +1,23 @@
+# Kobold plugin for KOReader
+# https://github.com/unitreign/kobold
+# zenpm:auto-scraped
+id=kobold
+name=Kobold
+version=1.0
+description=yet another home screen for koreader
+author=unitreign
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/unitreign/kobold
+stars=5
+updated_at=2026-10-14T22:06:32Z
+published_at=2026-10-14T19:19:42Z
+readme_url=packages/koreader/kobold.koplugin/README.md
+readme_hash=3880e95d89c138b57a2989b456db321fac305868
+release_notes_url=packages/koreader/kobold.koplugin/RELEASE_NOTES.md
+release_notes_hash=3c2212aa93b72343abf7848ac01e8eef983c2cb1d80e749608fb5327b2716290
+releases=[{"tag_name":"v1.0","assets":[{"name":"Kobold.koplugin.zip","url":"https://github.com/unitreign/kobold/releases/download/v1.0/Kobold.koplugin.zip","size":93293,"digest":"sha256:096da812ac5a5bf95f896361bedf95603fa0bc2a522393eadd61bac83ccdce7f"}],"name":"v1.0"}]
+source_type=release
+source_asset=Kobold.koplugin.zip
+size=93293

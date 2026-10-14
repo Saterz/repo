@@ -1,3 +1,22 @@
+# v7.9.2 · 2026-10-14
+
+### Fixes
+
+- Book info popup opens faster.
+- Rating lists load faster and refresh less often.
+- Ratings are never saved to the wrong book.
+
+# v7.9.1 · 2026-10-14
+
+### Changed
+- Faster Book info from lists: no more library-wide file search for books
+  without a sidecar; books are matched by checksum, then by title and author
+  among the known sidecar books. The sidecar scan is cached for one hour.
+
+### Fixed
+- The "Reading insight popup" settings order: the "Last 7 days" options
+  are grouped together again.
+
 # v7.9.0 · 2026-10-14
 
 ### Changed
@@ -21,21 +40,3 @@ _Note: That row shows the time left rather than a percentage, so a bar under it 
 
 ### Changed 
 In the Book progress popup, the "This book" section now shows the read percentage row first again, with its progress bar directly under the percentage (inside that cell only, matching the chapter bar), This makes it more consistent across the plugin.
-
-# v7.8.7 · 2026-10-14
-
-### Changed
-
-- In the Last 7 days comparison row (pages view), when a long value leaves no room for the full labels, both cells switch to shorter ones (“pg vs prev. 7d” / “daily avg pg”) instead of wrapping onto two lines.
-Added: short label translations for all languages (en, hu, fr, de, pt_PT, uk, zh_CN).
-
-# v7.8.6 · 2026-10-14
-
-### Fixed
-
-- The “vs previous 7 days” row in Last 7 days now respects KOReader’s duration format (classic / modern / letters) and the “long durations as days” option.
-
-### Changed
-
-- The time label is now “time vs prev. 7d” (translated in all languages). It automatically falls back to the shorter “vs prev. 7d” when a long value leaves no room for it.
-- With the “letters” duration format, the monthly reading time chart shows compact labels in the 12-month single-row layout: decimal hours (1.9h / 1,9h) from one hour up, minutes (45m) below that. The 2×6 layout keeps the full duration.
