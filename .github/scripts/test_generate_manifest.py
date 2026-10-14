@@ -48,7 +48,7 @@ class GenerateManifestTests(unittest.TestCase):
                     "version=1.0.0\n"
                     "description=Package without release history\n"
                     "author=Tester\n"
-                    "category=iconpacks\n"
+                    "category=utility\n"
                     "tags=zen-icon-pack,zenos\n"
                     "platforms=koreader\n"
                     "dependencies=\n"
@@ -89,9 +89,49 @@ class GenerateManifestTests(unittest.TestCase):
             self.assertEqual(
                 packages["empty"]["versions_url"], "packages/empty/versions.json"
             )
-            self.assertEqual(packages["empty"]["category"], "iconpacks")
+            self.assertEqual(packages["empty"]["category"], "utility")
             self.assertEqual(packages["empty"]["tags"], ["zen-icon-pack", "zenos"])
             self.assertEqual(empty_releases, [])
+
+    def test_icon_packs_require_release_zips_and_preserve_asset_color_booleans(self):
+        for include_released in (True, False):
+            with self.subTest(include_released=include_released), tempfile.TemporaryDirectory() as temp_dir:
+                script = os.path.join(temp_dir, "generate-manifest.sh")
+                shutil.copyfile(os.path.join(REPO_ROOT, "generate-manifest.sh"), script)
+                metadata = {
+                    "a-unreleased": "source_type=source\nsource_url=https://example.com/source.zip\n",
+                    "z-no-assets": "source_type=release\n",
+                }
+                if include_released:
+                    metadata["solar"] = (
+                        "source_type=release\n"
+                        "assets.0.arch=any\nassets.0.asset=colour.zip\n"
+                        "assets.0.url=https://example.com/colour.zip\nassets.0.color=true\n"
+                        "assets.1.arch=any\nassets.1.asset=mono.zip\n"
+                        "assets.1.url=https://example.com/mono.zip\nassets.1.color=false\n"
+                    )
+                for package_id, fields in metadata.items():
+                    package_dir = os.path.join(temp_dir, "packages", package_id)
+                    os.makedirs(package_dir)
+                    with open(os.path.join(package_dir, ".meta"), "w", encoding="utf-8") as meta:
+                        meta.write(f"id={package_id}\nname={package_id}\ncategory=iconpacks\n" + fields)
+                    with open(os.path.join(package_dir, "versions.json"), "w") as versions:
+                        versions.write('{"releases": []}')
+                subprocess.run(["sh", script], cwd=temp_dir, check=True, capture_output=True)
+                with open(os.path.join(temp_dir, "manifest.json"), encoding="utf-8") as manifest:
+                    packages = json.load(manifest)["packages"]
+                self.assertEqual([package["id"] for package in packages], ["solar"] if include_released else [])
+                for package_id in ("a-unreleased", "z-no-assets"):
+                    self.assertFalse(os.path.exists(os.path.join(temp_dir, "packages", package_id, "versions.json")))
+                if include_released:
+                    self.assertIs(packages[0]["assets"][0]["color"], True)
+                    self.assertIs(packages[0]["assets"][1]["color"], False)
+                    meta_path = os.path.join(temp_dir, "packages", "solar", ".meta")
+                    with open(meta_path, "a", encoding="utf-8") as meta:
+                        meta.write("assets.2.asset=invalid.zip\nassets.2.color=invalid\n")
+                    invalid = subprocess.run(["sh", script], cwd=temp_dir, capture_output=True, text=True)
+                    self.assertNotEqual(invalid.returncode, 0)
+                    self.assertIn("Invalid asset color", invalid.stderr)
 
 
 if __name__ == "__main__":

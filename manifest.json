@@ -9679,7 +9679,11 @@
       "source": "https://github.com/xZenLabs/solariconpack-zen",
       "source_type": "release",
       "stars": "0",
+<<<<<<< Updated upstream
       "updated_at": "2026-10-14T07:13:39Z",
+=======
+      "updated_at": "2026-10-14T07:16:59Z",
+>>>>>>> Stashed changes
       "published_at": "2026-10-14T06:10:23Z",
       "readme_url": "packages/koreader/solariconpack-zen.iconpack/README.md",
       "readme_hash": "c9c747ce033e7bef0480fc036d1754c779df454a",
@@ -9691,13 +9695,23 @@
           "arch": "any",
           "asset": "zen-solar-colour.zip",
           "url": "https://github.com/xZenLabs/solariconpack-zen/releases/download/v1.2.4/zen-solar-colour.zip",
+<<<<<<< Updated upstream
           "size": "221971"
+=======
+          "size": "221971",
+          "color": true
+>>>>>>> Stashed changes
         },
         {
           "arch": "any",
           "asset": "zen-solar-mono.zip",
           "url": "https://github.com/xZenLabs/solariconpack-zen/releases/download/v1.2.4/zen-solar-mono.zip",
+<<<<<<< Updated upstream
           "size": "218741"
+=======
+          "size": "218741",
+          "color": false
+>>>>>>> Stashed changes
         }
       ]
     },

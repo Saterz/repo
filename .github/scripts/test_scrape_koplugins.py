@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Tests for reconciling manually added KOReader plugins."""
 
+import io
+import json
 import os
 import sys
 import tempfile
 import unittest
+import urllib.error
+import zipfile
 from unittest import mock
 
 import scrape_common
@@ -13,6 +17,49 @@ import scrape_kopatches
 
 
 class PluginScraperTests(unittest.TestCase):
+    def test_icon_pack_colors_come_from_each_release_zip(self):
+        for color in (True, False, None, "false", 1):
+            with self.subTest(color=color):
+                data = io.BytesIO()
+                with zipfile.ZipFile(data, "w") as archive:
+                    archive.writestr("solar/pack.json", json.dumps({} if color is None else {"color": color}))
+                asset = {"name": "unrelated-name.zip", "browser_download_url": "https://example.com/pack.zip", "digest": "sha256:abc"}
+                response = mock.MagicMock()
+                response.__enter__.return_value.read.return_value = data.getvalue()
+                with mock.patch.object(scrape_koplugins.urllib.request, "urlopen", return_value=response):
+                    colors = scrape_koplugins.fetch_icon_pack_colors([{"assets": [asset]}])
+                if isinstance(color, bool):
+                    self.assertIs(asset["color"], color)
+                else:
+                    self.assertNotIn("color", asset)
+                fields = {"icon_pack_colors": json.dumps(colors)}
+                unchanged = {key: value for key, value in asset.items() if key != "color"}
+                with mock.patch.object(scrape_koplugins.urllib.request, "urlopen") as urlopen:
+                    scrape_koplugins.fetch_icon_pack_colors([{"assets": [unchanged]}], fields)
+                    urlopen.assert_not_called()
+                if isinstance(color, bool):
+                    self.assertIs(unchanged["color"], color)
+                else:
+                    self.assertNotIn("color", unchanged)
+                changed = unchanged | {"digest": "sha256:changed"}
+                with mock.patch.object(scrape_koplugins.urllib.request, "urlopen", return_value=response) as urlopen:
+                    scrape_koplugins.fetch_icon_pack_colors([{"assets": [changed]}], fields)
+                    urlopen.assert_called_once()
+
+    def test_unreadable_icon_pack_does_not_invent_a_color(self):
+        for result in (b"not a ZIP", urllib.error.URLError("unavailable")):
+            with self.subTest(result=result):
+                asset = {"name": "pack.zip", "browser_download_url": "https://example.com/pack.zip"}
+                response = mock.MagicMock()
+                response.__enter__.return_value.read.return_value = result
+                with mock.patch.object(
+                    scrape_koplugins.urllib.request, "urlopen",
+                    side_effect=result if isinstance(result, Exception) else None,
+                    return_value=response,
+                ):
+                    scrape_koplugins.fetch_icon_pack_colors([{"assets": [asset]}])
+                self.assertNotIn("color", asset)
+
     def test_icon_pack_topic_discovers_release_zips_and_reclassifies_plugins(self):
         repo = {
             "owner": {"login": "owner"}, "name": "solar.koplugin",
@@ -32,8 +79,16 @@ class PluginScraperTests(unittest.TestCase):
                 "browser_download_url": "https://example.com/solar-arm.zip",
             }],
         }
-        for existing, releases, collision in ((False, [release], False), (True, [release], False), (False, [], False), (False, [release], True)):
-            with self.subTest(existing=existing, releases=bool(releases)), tempfile.TemporaryDirectory() as temp_dir:
+        cases = (
+            (False, [release], False, False), (True, [release], False, False),
+            (False, [], False, False), (False, [release], True, False),
+            (True, [], False, False), (True, None, False, False),
+            (True, [release | {"assets": []}], False, False),
+            (True, [release | {"prerelease": True}], False, False),
+            (True, [], False, True),
+        )
+        for existing, releases, collision, dry_run in cases:
+            with self.subTest(existing=existing, releases=releases, dry_run=dry_run), tempfile.TemporaryDirectory() as temp_dir:
                 koreader_dir = os.path.join(temp_dir, "packages", "koreader")
                 folder = "solar.koplugin" if existing else "solar-2.iconpack" if collision else "solar.iconpack"
                 meta_path = os.path.join(koreader_dir, folder, ".meta")
@@ -45,6 +100,8 @@ class PluginScraperTests(unittest.TestCase):
                             "category=utility\nplatforms=koreader\n"
                             "source=https://github.com/owner/solar.koplugin\n"
                         )
+                    with open(os.path.join(os.path.dirname(meta_path), "versions.json"), "w") as versions:
+                        versions.write('{"releases": []}')
                 with mock.patch.object(scrape_common, "REPO_ROOT", temp_dir), mock.patch.object(
                     scrape_common, "KOREADER_DIR", koreader_dir
                 ), mock.patch.multiple(
@@ -53,15 +110,21 @@ class PluginScraperTests(unittest.TestCase):
                     existing_repo_refs=mock.Mock(return_value=(set(), {"solar"} if collision else set())),
                     fetch_repo=mock.Mock(return_value=repo),
                     fetch_releases=mock.Mock(return_value=releases),
+                    fetch_icon_pack_colors=mock.Mock(return_value={}),
                     cache_readme=mock.Mock(return_value=(None, None, False, True)),
                     cache_release_notes=mock.Mock(return_value=(None, None, False, True)),
                     load_blacklist=mock.Mock(return_value=set()),
                     load_category_cache=mock.Mock(return_value={"owner/solar.koplugin": "utility"}),
-                    save_category_cache=mock.Mock(), write_results=mock.Mock(),
-                ), mock.patch.object(sys, "argv", ["scrape_koplugins.py"]):
+                    save_category_cache=mock.Mock(), write_results=mock.DEFAULT,
+                ) as mocks, mock.patch.object(sys, "argv", ["scrape_koplugins.py"] + (["--dry-run"] if dry_run else [])):
                     self.assertEqual(scrape_koplugins.main(), 0)
-                if not releases:
-                    self.assertFalse(os.path.exists(meta_path))
+                if releases is None:
+                    self.assertTrue(os.path.exists(meta_path))
+                    continue
+                if not scrape_common.newest_stable_release(releases).get("assets"):
+                    self.assertEqual(os.path.exists(meta_path), existing and dry_run)
+                    self.assertEqual(os.path.exists(os.path.join(os.path.dirname(meta_path), "versions.json")), existing and dry_run)
+                    self.assertEqual(len(mocks["write_results"].call_args.args[1]), int(existing))
                     continue
                 with open(meta_path, encoding="utf-8") as meta:
                     content = meta.read()

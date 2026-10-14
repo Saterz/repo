@@ -323,6 +323,31 @@ class CachedPackageMetadataTests(unittest.TestCase):
             },
         ])
 
+    def test_icon_pack_meta_and_versions_keep_color_and_skip_source_archives(self):
+        repo = {
+            "owner": {"login": "owner"}, "name": "solar", "full_name": "owner/solar",
+            "html_url": "https://github.com/owner/solar",
+        }
+        release = {"tag_name": "v1", "assets": [
+            {"name": "colour.zip", "browser_download_url": "https://example.com/colour.zip", "color": True},
+            {"name": "mono.zip", "browser_download_url": "https://example.com/mono.zip", "color": False},
+        ]}
+        _meta_id, content, _summary = scrape_common.build_meta(
+            repo, release, set(), "iconpacks", kind=scrape_common.KIND_ICON_PACK,
+            releases=[release, {"tag_name": "v0", "zipball_url": "https://example.com/source.zip"}],
+            icon_pack_colors={"https://example.com/colour.zip": {"revision": "sha256:abc", "color": True}},
+        )
+        self.assertIn("assets.0.color=true\n", content)
+        self.assertIn("assets.1.color=false\n", content)
+        fields = dict(line.split("=", 1) for line in content.splitlines() if "=" in line)
+        self.assertEqual(json.loads(fields["icon_pack_colors"]), {
+            "https://example.com/colour.zip": {"revision": "sha256:abc", "color": True},
+        })
+        versions = json.loads(fields["releases"])
+        self.assertEqual(len(versions), 1)
+        self.assertIs(versions[0]["assets"][0]["color"], True)
+        self.assertIs(versions[0]["assets"][1]["color"], False)
+
     def test_build_meta_includes_cached_documentation_fields(self):
         repo = {
             "owner": {"login": "owner"},

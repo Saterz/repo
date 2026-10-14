@@ -233,7 +233,7 @@ def newest_alpha_release(releases):
     )
 
 
-def installable_releases(releases):
+def installable_releases(releases, kind=KIND_PLUGIN):
     """Return release metadata needed by ZenPM's version picker."""
     result = []
     for release in releases or []:
@@ -252,13 +252,17 @@ def installable_releases(releases):
                 cached_asset["size"] = asset["size"]
             if asset.get("digest"):
                 cached_asset["digest"] = asset["digest"]
+            if kind == KIND_ICON_PACK and isinstance(asset.get("color"), bool):
+                cached_asset["color"] = asset["color"]
             assets.append(cached_asset)
 
-        if not assets:
+        if not assets and kind != KIND_ICON_PACK:
             source_url = str(release.get("zipball_url") or "").strip()
             if not source_url:
                 continue
             assets.append({"name": "source-code.zip", "url": source_url})
+        if not assets:
+            continue
         cached_release = {"tag_name": tag_name, "assets": assets}
         name = str(release.get("name") or "").replace("\r", " ").replace("\n", " ").strip()
         if name:
@@ -623,7 +627,8 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
                name_override=None, patch_assets=None, readme_url=None,
                readme_hash=None, release_notes_url=None, release_notes_hash=None,
                prerelease=None, prerelease_notes_url=None, prerelease_notes_hash=None,
-               releases=None, preserved_fields=None, scraped_at=None, alpha=None):
+               releases=None, preserved_fields=None, scraped_at=None, alpha=None,
+               icon_pack_colors=None):
     owner = repo["owner"]["login"]
     repo_name = repo["name"]
     full_name = repo["full_name"]
@@ -690,6 +695,10 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
     ])
     if kind == KIND_ICON_PACK:
         lines.append("tags=zen-icon-pack,zenos")
+        if icon_pack_colors is not None:
+            lines.append("icon_pack_colors=" + json.dumps(
+                icon_pack_colors, ensure_ascii=False, separators=(",", ":")
+            ))
 
     for field in PLUGIN_IDENTITY_FIELDS:
         value = (preserved_fields or {}).get(field, "")
@@ -741,7 +750,7 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
             f"prerelease_notes_hash={prerelease_notes_hash}",
         ])
 
-    cached_releases = installable_releases(releases)
+    cached_releases = installable_releases(releases, kind)
     if cached_releases:
         lines.append("releases=" + json.dumps(
             cached_releases, ensure_ascii=False, separators=(",", ":")
@@ -792,6 +801,8 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
             lines.append(f"assets.{i}.asset={aname}")
             lines.append(f"assets.{i}.url={asset.get('browser_download_url', '')}")
             lines.append(f"assets.{i}.size={asset.get('size', 0)}")
+            if kind == KIND_ICON_PACK and isinstance(asset.get("color"), bool):
+                lines.append(f"assets.{i}.color={str(asset['color']).lower()}")
         summary["assets"] = len(zip_assets)
     elif len(zip_assets) == 1:
         asset = zip_assets[0]

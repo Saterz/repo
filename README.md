@@ -68,10 +68,18 @@ Patch discovery rejects repositories containing a directory ending in
 - Publish a **stable GitHub release with at least one uploaded `.zip` asset**.
   Each ZIP is listed separately for installation, like individual user patches.
   Source-code archives are not used for icon packs.
+  Packs without a stable release ZIP are excluded from the catalog; an existing
+  scraped entry is removed when a successful refresh confirms it has none.
 - Each ZIP must contain one `<pack-id>/` folder with a schema version 1
   `pack.json` whose `id` matches the folder, and root-level SVG or PNG icons.
   ZenPM validates the pack before installing it under
   `koreader/icons/zen/<pack-id>/`. Restart KOReader and select the pack in ZenOS.
+- Set `color` in each ZIP's `pack.json` to the boolean `true` for color icons
+  or `false` for monochrome icons. The scraper copies it to `assets.N.color`
+  in `.meta` and each asset's `color` field in the manifest and `versions.json`.
+  Missing or invalid flags remain unspecified; filenames are not used to infer color.
+  Results are cached in `.meta` as `icon_pack_colors`, keyed by download URL and
+  asset digest (or GitHub's asset update timestamp), so unchanged ZIPs are not downloaded again.
 
 ### Exceptions and scan results
 

@@ -2,8 +2,12 @@
 """Scrape GitHub for KOReader plugins and ZenOS icon packs."""
 
 import argparse
+import io
+import json
 import os
 import sys
+import urllib.request
+import zipfile
 
 from scrape_common import (
     KIND_PLUGIN,
@@ -52,6 +56,50 @@ EXTRA_PLUGIN_REPOS = {
     "xzenlabs/zen-fm": {"id": "zenfm", "name": "ZenFM"},
     "xzenlabs/zen-pm": {"id": "zenpm", "name": "ZenPM"},
 }
+
+
+def fetch_icon_pack_colors(releases, preserved_fields=None):
+    """Cache pack.json color flags until the release asset changes."""
+    try:
+        cached_colors = json.loads((preserved_fields or {}).get("icon_pack_colors", "{}"))
+    except ValueError:
+        cached_colors = {}
+    if not isinstance(cached_colors, dict):
+        cached_colors = {}
+    colors = {}
+    for release in releases:
+        if release.get("draft"):
+            continue
+        for asset in release.get("assets", []):
+            url = asset.get("browser_download_url", "")
+            if not asset.get("name", "").lower().endswith(".zip") or not url:
+                continue
+            revision = asset.get("digest") or asset.get("updated_at")
+            cached = cached_colors.get(url)
+            if isinstance(cached, dict) and revision and cached.get("revision") == revision:
+                colors[url] = cached
+                if isinstance(cached.get("color"), bool):
+                    asset["color"] = cached["color"]
+                continue
+            try:
+                request = urllib.request.Request(url, headers={"User-Agent": "zenpm-koreader-scraper"})
+                with urllib.request.urlopen(request, timeout=30) as response:
+                    data = response.read()
+                with zipfile.ZipFile(io.BytesIO(data)) as archive:
+                    manifests = [
+                        info for info in archive.infolist()
+                        if len(info.filename.split("/")) == 2 and info.filename.endswith("/pack.json")
+                    ]
+                    if len(manifests) != 1 or manifests[0].file_size > 65536:
+                        raise ValueError("Expected one pack.json of at most 64 KiB")
+                    pack = json.loads(archive.read(manifests[0]))
+                    color = pack.get("color") if isinstance(pack, dict) else None
+                if isinstance(color, bool):
+                    asset["color"] = color
+                colors[url] = {"revision": revision, "color": color if isinstance(color, bool) else None}
+            except (OSError, ValueError, zipfile.BadZipFile, RuntimeError) as exc:
+                print(f"Could not read icon pack color from {url}: {exc}", file=sys.stderr)
+    return colors
 
 
 def is_koplugin(repo):
@@ -169,7 +217,15 @@ def main():
             continue
         release = newest_stable_release(releases)
         if kind == KIND_ICON_PACK and not any(asset.get("name", "").lower().endswith(".zip") for asset in (release or {}).get("assets", [])):
+            verb = "Would remove" if args.dry_run else "Removing"
+            print(f"{verb} {record['rel_path']}: no stable release ZIP", file=sys.stderr)
+            if not args.dry_run:
+                for path in (record["path"], os.path.join(os.path.dirname(record["path"]), "versions.json")):
+                    if os.path.isfile(path):
+                        os.remove(path)
+            updated.append({"id": record["id"], "path": record["rel_path"], "removed": True})
             continue
+        icon_pack_colors = fetch_icon_pack_colors(releases, record["fields"]) if kind == KIND_ICON_PACK else None
         prerelease = newest_prerelease(releases)
         alpha = newest_alpha_release(releases) if record["id"] == "zen-ui" else None
         package_dir = os.path.dirname(record["path"])
@@ -203,6 +259,7 @@ def main():
             prerelease_notes_hash=prerelease_notes_hash,
             releases=releases, preserved_fields=record["fields"], scraped_at=scraped_at,
             alpha=alpha,
+            icon_pack_colors=icon_pack_colors,
         )
         summary["path"] = record["rel_path"]
         summary["versions_path"] = os.path.join(
@@ -269,11 +326,12 @@ def main():
         release = newest_stable_release(releases)
         if kind == KIND_ICON_PACK and not any(asset.get("name", "").lower().endswith(".zip") for asset in (release or {}).get("assets", [])):
             continue
+        icon_pack_colors = fetch_icon_pack_colors(releases) if kind == KIND_ICON_PACK else None
         prerelease = newest_prerelease(releases)
         meta_id, meta_text, summary = build_meta(
             repo, release, known_ids, category, meta_id=candidate_id,
             kind=kind, name_override=extra["name"] if extra else None,
-            releases=releases, scraped_at=scraped_at
+            releases=releases, scraped_at=scraped_at, icon_pack_colors=icon_pack_colors,
         )
         known_refs.add(norm)
         if candidate_identity:
@@ -298,6 +356,7 @@ def main():
             prerelease=prerelease, prerelease_notes_url=prerelease_notes_url,
             prerelease_notes_hash=prerelease_notes_hash,
             releases=releases, scraped_at=scraped_at,
+            icon_pack_colors=icon_pack_colors,
         )
         if readme_url:
             summary["readme_path"] = readme_url

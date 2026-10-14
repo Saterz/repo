@@ -37,8 +37,8 @@ jobs:
           meta_count="$(find packages -name '.meta' | wc -l | tr -d ' ')"
           package_count="$(jq '.packages | length' manifest.json)"
           versions_count="$(find packages -name 'versions.json' | wc -l | tr -d ' ')"
-          test "$meta_count" = "$package_count"
-          test "$meta_count" = "$versions_count"
+          test "$package_count" -le "$meta_count"
+          test "$package_count" = "$versions_count"
           find packages -name 'versions.json' -exec jq empty {} +
 
       - name: Sign manifest.json

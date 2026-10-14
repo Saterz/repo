@@ -64,14 +64,11 @@ fi
 
 # --- collect .meta files ---
 meta_files="$(find packages -name '.meta' | sort)"
-count=$(printf '%s\n' "$meta_files" | wc -l | tr -d ' ')
 seen_sources="$(mktemp)"
 trap 'rm -f "$seen_sources"' EXIT
 
 i=0
 for meta_file in $meta_files; do
-    i=$((i + 1))
-
     # Parse .meta into temp file (filter comments/blank lines)
     tmp="$(mktemp)"
     while IFS= read -r line; do
@@ -125,6 +122,11 @@ for meta_file in $meta_files; do
     releases=$(grep '^releases=' "$tmp" 2>/dev/null | sed 's/^releases=//' | head -1)
     versions_url="$(dirname "$meta_file")/versions.json"
 
+    if [ "$category" = "iconpacks" ] && { [ "$source_type" != "release" ] || ! grep -Eq '^assets\.[0-9]+\.asset=.*\.[zZ][iI][pP]$' "$tmp"; }; then
+        rm -f "$tmp" "$versions_url"
+        continue
+    fi
+
     # Override featured from central featured.txt if present
     if [ -n "$featured_lookup" ]; then
         central_order=$(printf '%s\n' "$featured_lookup" | grep "^${id}=" | sed "s/^${id}=//")
@@ -176,6 +178,10 @@ for meta_file in $meta_files; do
     fi
 
     # Build package JSON
+    if [ "$i" -gt 0 ]; then
+        printf ',\n' >> "$OUTPUT"
+    fi
+    i=$((i + 1))
     {
         printf '    {\n'
         printf '      "id": "%s",\n' "$(json_escape "$id")"
@@ -241,6 +247,7 @@ for meta_file in $meta_files; do
             a_asset=$(grep "^assets\.$idx\.asset=" "$tmp" 2>/dev/null | sed "s/^assets\.$idx\.asset=//" | head -1)
             a_url=$(grep "^assets\.$idx\.url=" "$tmp" 2>/dev/null | sed "s/^assets\.$idx\.url=//" | head -1)
             a_size=$(grep "^assets\.$idx\.size=" "$tmp" 2>/dev/null | sed "s/^assets\.$idx\.size=//" | head -1)
+            a_color=$(grep "^assets\.$idx\.color=" "$tmp" 2>/dev/null | sed "s/^assets\.$idx\.color=//" | head -1)
 
             if $af_first; then af_first=false; else printf ',' >> "$OUTPUT"; fi
             printf '\n        {\n' >> "$OUTPUT"
@@ -248,6 +255,11 @@ for meta_file in $meta_files; do
             printf '          "asset": "%s",\n' "$(json_escape "$a_asset")" >> "$OUTPUT"
             printf '          "url": "%s"' "$(json_escape "$a_url")" >> "$OUTPUT"
             [ -n "$a_size" ] && printf ',\n          "size": "%s"' "$a_size" >> "$OUTPUT"
+            case "$a_color" in
+                true|false) printf ',\n          "color": %s' "$a_color" >> "$OUTPUT" ;;
+                '') ;;
+                *) echo "Invalid asset color in $meta_file: $a_color" >&2; rm -f "$tmp"; exit 1 ;;
+            esac
             printf '\n        }' >> "$OUTPUT"
         done
         printf '\n      ]' >> "$OUTPUT"
@@ -304,15 +316,10 @@ for meta_file in $meta_files; do
 
     printf '\n    }' >> "$OUTPUT"
 
-    if [ "$i" -lt "$count" ]; then
-        printf ',' >> "$OUTPUT"
-    fi
-    printf '\n' >> "$OUTPUT"
-
     rm -f "$tmp"
 done
 
 # --- footer ---
-printf '  ]\n}\n' >> "$OUTPUT"
+printf '\n  ]\n}\n' >> "$OUTPUT"
 
 echo "Generated $OUTPUT with $i packages"
