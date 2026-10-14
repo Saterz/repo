@@ -1,3 +1,30 @@
+# v8.0.0 · 2026-10-14
+
+## Panel View Update
+
+- **Detail panel in split view:** Tap an annotation or bookmark row in the split menu to preview its page. Tap the same page again to open the detail panel, which shows the full content of that item (the quote, note, chapter, and page) instead of only the page preview. You can now swipe through annotations inside the detail panel. A "Show in book" link jumps to that page in the book. You can expand the panel to use more of the screen.
+
+- **New Images tab in the split menu:** It works like the annotation tabs. The right menu lists the pages that contain images. Tap a row to preview that page, and tap it again to open the detail panel, where you can pinch-zoom the image or expand the panel for a bigger view and more room to zoom.
+  - Can be turned off in Settings > Layout > Disable Image Tab.
+  - Only scans images up to the point you've read, which avoids spoilers and keeps it from loading every image at once.
+  - Creates two files in the conf folder to store the image data.
+
+- **Selection menu:** Text selection, Dictionary, Wikipedia, and Translate can now be added to the main selection menu from Settings > Buttons in selection menu. Buttons left off stay in the More row.
+
+## Fixes
+
+- Minor visual improvements to the quick menu and settings (gray divider lines).
+- Long-pressing a highlight and choosing a color now paints it with that color. Previously it sometimes showed as the default yellow.
+- Toggles that are off by default were shown as enabled in the selection menu settings.
+- If the pinned page has a bookmark, it now also shows up in the bookmarks list.
+
+## Installation
+1. Download the zip named `page_scrubber.koplugin-<version>.zip` from the **Assets** section below (not "Source code").
+2. Unzip it and copy the `page_scrubber.koplugin` folder into `koreader/plugins/`.
+3. Restart KOReader.
+
+To update, replace the folder. To uninstall, delete it (and `koreader/patches/2--page-scrubber-font.lua` if you used the system font).
+
 # v7.7.7 · 2026-10-09
 
 ## New Features
@@ -80,34 +107,3 @@ To update, replace the folder. To uninstall, delete it (and `koreader/patches/2-
 3. Restart KOReader.
 
 To update, replace the folder. To uninstall, delete it (and `koreader/patches/2--page-scrubber-font.lua` if you used the system font).
-
-# v7.7.0 · 2026-10-03
-
-## What's new
-
-### System font selector
-Page Scrubber can now change KOReader's system (UI) font from **⚙ Configuration → Appearance → System Font**. The list shows each available family and flags the ones without a bold variant ("no bold"), that only ship bold ("bold only"), or that only ship italics ("italic only"). The change applies after a restart.
-
-**How it works:** the first time you open the selector (or pick a font), the plugin copies a small file, `ui_font_patch.lua`, to `patches/2--page-scrubber-font.lua`. After a plugin update, the patch is refreshed the next time you open the selector, and the new version takes effect on the following restart.
-
-**Why a patch:** KOReader's widgets fix their font when they load, and plugins load after the core interface. Applying the font from the plugin would only reach part of the UI. A patch runs before everything else, so the font covers the whole interface.
-
-**Why the patch also works on its own:** it has its own **System font** entry in KOReader's native Settings menu (file manager and reader), where you can enable/disable the replacement and pick a font. If you ever remove the plugin, you can still manage or turn off the font from there. Both use the same settings.
-
-**Compatibility**
-- **SimpleUI:** if SimpleUI's custom font is active, Page Scrubber doesn't touch the font and discards its own choice. The option stays visible and tells you the font is managed by SimpleUI.
-- **ZenOS:** the option is disabled when ZenOS is detected.
-
-> To remove the font patch completely, delete `patches/2--page-scrubber-font.lua`.
-
-### Menu tweaks
-- Small polish to our entries in KOReader's native menus so they look more consistent with the rest of the system (⚙ icon and separators).
-
-### Fixes
-- Fixed Wiki and Search buttons doing nothing in the dictionary pop-up and selection menu (thanks @DerailleurAgile, #6).
-- Fixed ghosting on the bottom bar of the index.
-
-### Translations
-- Spanish updated with the new strings and updated more languages.
-
-[page_scrubber.koplugin.zip](https://github.com/user-attachments/files/33009934/page_scrubber.koplugin.zip)

@@ -1,3 +1,72 @@
+# v0.2.4 · 2026-10-14
+
+## 月读 v0.2.4
+
+KOReader 插件包：`book.koplugin-v0.2.4.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.4.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.4.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.3`：
+
+#### 新功能
+
+- :sparkles: (kindle): 新增 Kindle 书库源（对接 kindle.koplugin） (f3c1fde4)
+- :sparkles: (local): 新增「按文件夹分类」开关，编辑分类时按开关决定是否移动文件 (dbe6d17c)
+- :sparkles: (ui): 新增错误页“关闭月读”选项 (c3a60471)
+- :sparkles: (ai): 添加 OCR 文字识别功能支持 (fb3ed540)
+- :sparkles: (ai): 添加 OCR 文字识别功能支持 (b24f86b5)
+- :sparkles: (desktop): add physical page-turn keys support (de382566)
+- :sparkles: (ui): 支持顶栏独立字号与高度设置 (69be326f)
+- :sparkles: (sync): 实现书架同步节流与并发登录重试机制 (c747a7e1)
+
+#### 修复
+
+- :bug: 海报锁屏：未打开过的网络书联网时预取封面 (653e38f6)
+- :bug: (book): 修复书架刷新偶尔显示为空 (3c2eb376)
+- :bug: (jdread): 修复京东扫码确认后仍停留在扫码页 (#36) (ff783987)
+- :bug: (local): 修复系统 documents 目录扫不到：放开扫描深度、按 KOReader 格式表识别书籍、默认使用主目录 (84085ba8)
+- :bug: (cache): 清理缓存后自动重新生成封面，复位本地扫盘封面标记并作废内存缓存 (37108a42)
+- :bug: (desktop): fix exit hang by properly closing residual windows on exit (ce4ac42a)
+- :bug: (copymanga): 修复并发请求时令牌过期重登逻辑 (d121fc54)
+- :bug: (ui): 修复面板编辑手势事件未正确初始化的问题 (bde89f70)
+
+#### 界面
+
+- :lipstick: (ui): 重启后书架封面解码前留白，不再先闪色块封面 (b1cf5f8d)
+
+#### 重构
+
+- :recycle: (ai): 过滤 KOReader 的 .sdr 边车目录 (a9c3c784)
+- :recycle: (local): 精简 documents 扫描修复 (df10019c)
+- :recycle: (ui): 统一顶栏/底栏字体策略并规范水平留白 (ee42b04f)
+- :recycle: (ai): 统一复用上传进度框实现通用操作进度反馈 (3bb5cfa6)
+- :recycle: (ui): 重构远程管理页面结构与交互逻辑 (4aa90c2f)
+- :recycle: (http): 统一超时管理，支持 AI/网络超时独立配置与倍率扩展 (bea815bf)
+- :recycle: (desktop): 优化混合模式下书架同步节流逻辑 (cf98b31c)
+- :recycle: (ui): 优化极窄屏下数字输入框宽度计算逻辑 (064d82d5)
+
+#### 变更
+
+- :green_heart: (tests): 每个 spec 独立进程运行，修复 CI 段错误 (486027c7)
+- :green_heart: tests: 基线前预加载 ffi，避免卸载后重建 ctype 表导致段错误 (ed95deea)
+- :speech_balloon: (local): 选择 Kindle documents 目录时提醒选子目录 (4d215a20)
+- :lock: (local): 扫盘跳过带 DRM 的 mobi / azw / azw3 (fbf8693b)
+- :adhesive_bandage: (book): 修复启动横幅加载失败导致插件崩溃的问题 (89d6c35b)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.3...v0.2.4
+
 # v0.2.3 · 2026-10-14
 
 ## 月读 v0.2.3
@@ -406,47 +475,3 @@ KOReader 插件包：`book.koplugin-v0.2.0.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.1.9...v0.2.0
-
-# v0.1.9 · 2026-09-27
-
-## 月读 v0.1.9
-
-KOReader 插件包：`book.koplugin-v0.1.9.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.1.8`：
-
-#### 新功能
-
-- :sparkles: (ui): 添加设置项并启用桌面图标打开桌面功能 (2a16975)
-- :sparkles: (ai): 优化上下文显示逻辑和实体处理 (c5dcbd8)
-- :sparkles: (ai): 优化锁屏组件显示逻辑 (10b2fe4)
-- :sparkles: (ai): 优化锁屏组件显示逻辑 (fcd5112)
-- :sparkles: (ai): 优化 X-Ray 数据获取逻辑，增加首次初始化和章节增量逻辑 (ebf5ff3)
-
-#### 修复
-
-- :bug: (local): fix book scanning crash and retry logic (176336d)
-- :bug: (ui): 修复登录流程中的取消逻辑 (9bc4408)
-- :bug: (ui): 修复登录流程中的取消逻辑 (e3766ee)
-- :bug: (db): 修复文件移动/重命名逻辑 (9d8ea63)
-
-#### 重构
-
-- :recycle: (auth): 重构 auth 模块逻辑以适配 token 与 wlfstk_smdl 的配对校验 (5b4f2cb)
-
-#### 文档
-
-- :memo: (docs): 更新 xray README.md (2e5dd7f)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.1.8...v0.1.9
