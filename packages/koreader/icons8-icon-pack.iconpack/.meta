@@ -1,0 +1,30 @@
+# Icons8 Icon Pack icon pack for KOReader
+# https://github.com/xZenLabs/icons8-icon-pack
+# zenpm:auto-scraped
+id=icons8-icon-pack
+name=Icons8 Icon Pack
+version=1.0.1
+description=
+author=xZenLabs
+category=iconpacks
+platforms=koreader
+dependencies=
+source=https://github.com/xZenLabs/icons8-icon-pack
+tags=zen-icon-pack,zenos
+stars=0
+updated_at=2026-10-14T03:28:24Z
+published_at=2026-10-14T02:54:56Z
+readme_url=packages/koreader/icons8-icon-pack.iconpack/README.md
+readme_hash=5575458dc24f2401123d1a43e0af95705c2f5a3c
+release_notes_url=packages/koreader/icons8-icon-pack.iconpack/RELEASE_NOTES.md
+release_notes_hash=ffca0b879318ce3d6af7f20fd8d259aa0f71f5b346fcc24d6ff9a3492bc37da1
+releases=[{"tag_name":"v1.0.1","assets":[{"name":"zen-icons8-colour.zip","url":"https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.1/zen-icons8-colour.zip","size":97114,"digest":"sha256:7a13bb998fe38cc4a0012cba6e6905c708221478f211b803ea0bf859ab9caccb"},{"name":"zen-icons8-mono.zip","url":"https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.1/zen-icons8-mono.zip","size":85298,"digest":"sha256:f888c5bfc5974c0533d8e67c0cf5454992e430c65338c860c24ac7bb09469a0e"}],"name":"Icon Packs for ZenOS v1.0.1"}]
+source_type=release
+assets.0.arch=any
+assets.0.asset=zen-icons8-colour.zip
+assets.0.url=https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.1/zen-icons8-colour.zip
+assets.0.size=97114
+assets.1.arch=any
+assets.1.asset=zen-icons8-mono.zip
+assets.1.url=https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.1/zen-icons8-mono.zip
+assets.1.size=85298

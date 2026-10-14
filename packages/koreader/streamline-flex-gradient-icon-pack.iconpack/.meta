@@ -1,0 +1,28 @@
+# Streamline Flex Gradient Icon Pack icon pack for KOReader
+# https://github.com/xZenLabs/streamline-flex-gradient-icon-pack
+# zenpm:auto-scraped
+id=streamline-flex-gradient-icon-pack
+name=Streamline Flex Gradient Icon Pack
+version=1.0.1
+description=
+author=xZenLabs
+category=iconpacks
+platforms=koreader
+dependencies=
+source=https://github.com/xZenLabs/streamline-flex-gradient-icon-pack
+tags=zen-icon-pack,zenos
+stars=0
+updated_at=2026-10-14T03:28:24Z
+published_at=2026-10-14T02:54:44Z
+readme_url=packages/koreader/streamline-flex-gradient-icon-pack.iconpack/README.md
+readme_hash=d9c4051578045e6f6a9560275239a3e53764cdef
+release_notes_url=packages/koreader/streamline-flex-gradient-icon-pack.iconpack/RELEASE_NOTES.md
+release_notes_hash=c74a1c0953b4dca98e9c3ada8873f3d5ff477cd4a0c04f90b47e06b16bd8daa5
+releases=[{"tag_name":"v1.0.1","assets":[{"name":"zen-streamline-flex-gradient.zip","url":"https://github.com/xZenLabs/streamline-flex-gradient-icon-pack/releases/download/v1.0.1/zen-streamline-flex-gradient.zip","size":219595,"digest":"sha256:434d09cc0ef6f3ef4ac39edb9e8e57ad73174f47fc9130f7073beb83e2ce7159"}],"name":"Icon Packs for ZenOS v1.0.1"}]
+source_type=release
+source_asset=zen-streamline-flex-gradient.zip
+size=219595
+assets.0.arch=any
+assets.0.asset=zen-streamline-flex-gradient.zip
+assets.0.url=https://github.com/xZenLabs/streamline-flex-gradient-icon-pack/releases/download/v1.0.1/zen-streamline-flex-gradient.zip
+assets.0.size=219595

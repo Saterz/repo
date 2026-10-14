@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.1","assets":[{"name":"zen-icons8-colour.zip","url":"https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.1/zen-icons8-colour.zip","size":97114,"digest":"sha256:7a13bb998fe38cc4a0012cba6e6905c708221478f211b803ea0bf859ab9caccb"},{"name":"zen-icons8-mono.zip","url":"https://github.com/xZenLabs/icons8-icon-pack/releases/download/v1.0.1/zen-icons8-mono.zip","size":85298,"digest":"sha256:f888c5bfc5974c0533d8e67c0cf5454992e430c65338c860c24ac7bb09469a0e"}],"name":"Icon Packs for ZenOS v1.0.1"}]
+}
