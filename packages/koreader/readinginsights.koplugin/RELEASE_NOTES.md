@@ -1,3 +1,16 @@
+# v7.9.0 · 2026-10-14
+
+### Changed
+
+- Book info: tap the stars to open the rating popup (long press still works).
+- Ratings changed outside the plugin (e.g. in the file manager) now show up in Book info and the book lists right away instead of after the cache expires. Book info reads the rating straight from the book's own sidecar when its file is known.
+- Opening Book info or a book list no longer restarts the slow sidecar-folder scan, which could take seconds on an e-ink reader.
+- Rating a book from a list now writes to the book's own sidecar when its file is known, so the file manager and status page agree. The old plugin-only override no longer shadows it.
+- Rating a book from a list now shows a message when the rating couldn't be saved, instead of showing stars that were never stored. Save failures are also written to the log.
+- Rating popup rebuilt on KOReader's ButtonDialog, so it matches the plugin's other popups.
+- Ratings changed outside the plugin (e.g. in the file manager) now show up right away in Book info when the book's file is known, because it reads the rating straight from the book's own sidecar. Book lists pick such changes up when the short rating cache expires.
+- Menu: "Progress bars" renamed to "Progress bar" (all translations updated).
+
 # v7.8.9 · 2026-10-14
 
 ### Changed 
@@ -26,17 +39,3 @@ Added: short label translations for all languages (en, hu, fr, de, pt_PT, uk, zh
 
 - The time label is now “time vs prev. 7d” (translated in all languages). It automatically falls back to the shorter “vs prev. 7d” when a long value leaves no room for it.
 - With the “letters” duration format, the monthly reading time chart shows compact labels in the 12-month single-row layout: decimal hours (1.9h / 1,9h) from one hour up, minutes (45m) below that. The 2×6 layout keeps the full duration.
-
-# v7.8.5 · 2026-10-14
-
-## Changed
-
-- **Default colors now follow KOReader's own palette.** Tried to match the colors KOReader uses for its thin status bar, so the plugin looks consistent with the rest of the UI:
-  - Active columns and progress indicators (bar charts, skim bar, donut chart, daily streak days): `#555555` (`COLOR_GRAY_5`)
-  - Inactive columns and remaining/unread portions (bar charts, skim bar, donut chart, weekly streak gap days): `#AAAAAA` (`COLOR_GRAY`)
-  - Separator lines: `#888888` (`COLOR_DARK_GRAY`)
-- The heatmap scale, trend line and text colors are unchanged.
-
-## Notes
-
-- Colors you have already customized under the Colors menu are kept. To switch to the new defaults, use "Reset to default" on the respective color.

@@ -1,3 +1,15 @@
+# v1.15.1 · 2026-10-14
+
+### What's new
+
+- **Sync no longer says "Sync complete" for a book Seekquel has not matched yet.** If the book you are reading is not linked to a Seekquel book, Sync now tells you to choose which book it is, because nothing is sent until you do. If Seekquel could not be reached to look the book up, it says your reading is still waiting to sync instead.
+
+### Install
+
+Already using the add-on? It updates itself; open the Seekquel menu in KOReader and accept the update.
+
+Installing for the first time: download `seekquel.koplugin-v1.15.1.zip`, unzip it, and copy the `seekquel.koplugin` folder into KOReader's `plugins` folder on your e-reader. Restart KOReader, then pair from the Seekquel menu.
+
 # v1.15.0 · 2026-10-10
 
 ### What's new
@@ -40,16 +52,3 @@ Download `seekquel.koplugin-v1.13.0.zip`, unzip it, and copy the `seekquel.koplu
 ### Install
 
 Download `seekquel.koplugin-v1.12.1.zip`, unzip it, and copy the `seekquel.koplugin` folder into KOReader's `plugins` folder. Restart KOReader. If the add-on is already installed and paired, it updates itself from Seekquel.
-
-# v1.12.0 · 2026-09-23
-
-### What's new
-
-- A book you finish in Seekquel is now marked finished in KOReader too. The next time you open it on your e-reader, KOReader's own status changes to finished. A status you set on the e-reader since always stands, and a book you are reading again is left alone.
-- Sync now sends today's reading up to the page you are on. KOReader only saves its reading statistics every fifty page turns, so a sync mid-sitting could leave out the last few dozen pages. The add-on now asks KOReader to save them first.
-
-### Install
-
-Already using the add-on? It updates itself, so there is nothing to do.
-
-New install: download `seekquel.koplugin-v1.12.0.zip`, unzip it into KOReader's `plugins` folder so you have a `seekquel.koplugin` folder there, restart KOReader, then pair it from the Seekquel menu with the code shown in the app.
