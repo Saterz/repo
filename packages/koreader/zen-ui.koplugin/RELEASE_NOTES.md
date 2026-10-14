@@ -68,9 +68,3 @@
 - Open KOReader + menu outside home in context menu
 - Fix even home widget spacing
 - Bug fixes & performance improvements
-
-# v3.3.1 · 2026-09-15
-
-## What's Changed
-
-- Fix TBR applying Library filter hiding all TBR books

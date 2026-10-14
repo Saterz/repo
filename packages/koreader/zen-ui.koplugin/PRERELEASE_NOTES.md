@@ -1,3 +1,12 @@
+# v4.2.0-beta2 · 2026-10-14
+
+## What's Changed
+
+- Add accent color (Interface > Accent color)
+- Better support for icon packs
+- Scale opening banner and badge font
+- Bug fixes
+
 # v4.2.0-beta1 · 2026-10-14
 
 ## What's Changed
@@ -56,18 +65,3 @@
 - Fix reader settings not loading when starting with last file
 - Fix Airplane Mode control active state
 - Bug fixes
-
-# v4.0.1-beta2 · 2026-10-03
-
-## What's Changed
-
-- Add option to align Reader Status Bars with book margins
-- Add Navbar active tab filled option
-- Improve rendering, ghosting, and dark mode on color e-ink
-- Fix Pocketbook Wi-Fi toggling on
-- Fix stale navbar after disabling wallpaper
-- Fix KLC flashing when wallpaper enabled
-- Fix themed reader status bar backgrounds after waking on Colorsoft
-- Fix Android reader bottom status bar painting over the page browser
-- Fix History gestures not working
-- Fix rare bug in autoresume on kindle after deep sleep
