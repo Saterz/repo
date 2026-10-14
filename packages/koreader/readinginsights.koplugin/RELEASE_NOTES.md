@@ -1,3 +1,32 @@
+# v7.8.9 · 2026-10-14
+
+### Changed 
+Removed the progress bar from the "This chapter" row in the Book progress popup. 
+_Note: That row shows the time left rather than a percentage, so a bar under it looked out of place. The bar is now only shown under the book's read percentage._
+
+# v7.8.8 · 2026-10-14
+
+### Changed 
+In the Book progress popup, the "This book" section now shows the read percentage row first again, with its progress bar directly under the percentage (inside that cell only, matching the chapter bar), This makes it more consistent across the plugin.
+
+# v7.8.7 · 2026-10-14
+
+### Changed
+
+- In the Last 7 days comparison row (pages view), when a long value leaves no room for the full labels, both cells switch to shorter ones (“pg vs prev. 7d” / “daily avg pg”) instead of wrapping onto two lines.
+Added: short label translations for all languages (en, hu, fr, de, pt_PT, uk, zh_CN).
+
+# v7.8.6 · 2026-10-14
+
+### Fixed
+
+- The “vs previous 7 days” row in Last 7 days now respects KOReader’s duration format (classic / modern / letters) and the “long durations as days” option.
+
+### Changed
+
+- The time label is now “time vs prev. 7d” (translated in all languages). It automatically falls back to the shorter “vs prev. 7d” when a long value leaves no room for it.
+- With the “letters” duration format, the monthly reading time chart shows compact labels in the 12-month single-row layout: decimal hours (1.9h / 1,9h) from one hour up, minutes (45m) below that. The 2×6 layout keeps the full duration.
+
 # v7.8.5 · 2026-10-14
 
 ## Changed
@@ -11,25 +40,3 @@
 ## Notes
 
 - Colors you have already customized under the Colors menu are kept. To switch to the new defaults, use "Reset to default" on the respective color.
-
-# v7.8.4 · 2026-10-13
-
-### Changed
-
-- Book progress popup: in the "This book" section, the remaining reading time now comes before the time read so far (classic and donut chart styles).
-
-# v7.8.3 · 2026-10-13
-
-### Changed
-- Shortened the "Last 7 days" popup labels to fit wider values: `daily avg time/pages`, `vs prev. 7d`, `pages vs prev. 7d`.
-
-# v7.8.2 · 2026-10-13
-
-### Fixed
-- Unified the "daily average" labels. The "Last 7 days" popup and the book stats popup now share the same strings: `daily average time` and `daily average page(s)` (previously `daily avg ...` and `avg time/day` / `avg pages/day`).
-
-# v7.8.1 · 2026-10-13
-
-### Changed
-- **Chapter progress:** the first page of a chapter now counts as 0%, not as progress. The percentage only starts to grow once you turn to the next page.
-- **Chapter bar chart:** the chapters now follow your e-reader's own table of contents, so the chart and the chapter percentage always agree. Books with a multi-level contents list may show more columns.
