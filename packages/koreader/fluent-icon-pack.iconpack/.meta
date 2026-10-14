@@ -1,0 +1,30 @@
+# Fluent Icon Pack icon pack for KOReader
+# https://github.com/xZenLabs/fluent-icon-pack
+# zenpm:auto-scraped
+id=fluent-icon-pack
+name=Fluent Icon Pack
+version=1.0.1
+description=Icons for ZenOS, KOReader, and ZenPM, from Fluent icons
+author=xZenLabs
+category=iconpacks
+platforms=koreader
+dependencies=
+source=https://github.com/xZenLabs/fluent-icon-pack
+tags=zen-icon-pack,zenos
+stars=0
+updated_at=2026-10-14T05:28:51Z
+published_at=2026-10-14T05:04:29Z
+readme_url=packages/koreader/fluent-icon-pack.iconpack/README.md
+readme_hash=5545dd0dff1db0ebb9b48648aeaeda1e56b080aa
+release_notes_url=packages/koreader/fluent-icon-pack.iconpack/RELEASE_NOTES.md
+release_notes_hash=4b6366d1f10e50611052954015f0c2823e86857d9def15d54059a3a01da9d711
+releases=[{"tag_name":"v1.0.1","assets":[{"name":"zen-fluent-color.zip","url":"https://github.com/xZenLabs/fluent-icon-pack/releases/download/v1.0.1/zen-fluent-color.zip","size":158060,"digest":"sha256:4fae1cb49194e84eaf4b014a7292c9da3f3d342858a26f8e7984e8c49f4aa3eb"},{"name":"zen-fluent-mono.zip","url":"https://github.com/xZenLabs/fluent-icon-pack/releases/download/v1.0.1/zen-fluent-mono.zip","size":141327,"digest":"sha256:61eae9557552dc84a198a7f9c8b4cbd319f04afb2723c940813c8804cc859d10"}],"name":"Fluent Icon Packs for ZenOS v1.0.1"}]
+source_type=release
+assets.0.arch=any
+assets.0.asset=zen-fluent-color.zip
+assets.0.url=https://github.com/xZenLabs/fluent-icon-pack/releases/download/v1.0.1/zen-fluent-color.zip
+assets.0.size=158060
+assets.1.arch=any
+assets.1.asset=zen-fluent-mono.zip
+assets.1.url=https://github.com/xZenLabs/fluent-icon-pack/releases/download/v1.0.1/zen-fluent-mono.zip
+assets.1.size=141327

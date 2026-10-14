@@ -258,9 +258,13 @@ Copy `panels_plus.koplugin` over your existing folder and restart KOReader. Your
 
 - KristanLaimon
 
-# 1.4.0 Release Notes:
-- [Saturday, 12 September 2026]: The release from day-0 apparently came out with some metadata problems with ZenPM and a weird bug that never shoul've belong to 1.4.0, if you downloaded the plugin this day, I recommend you to download again `panels_plus.koplugin.zip` (now they include correct metadata and no bugs ofc haha).
-In case you downloaded Panels+ through a package manager, uninstall it and install it again trough the same package manager.
+---
+
+Update: 13th October 2026 
+## New Supported Language: `Chinese Simplified` thanks to @IMJXXL from ["PR"](https://github.com/KristanLaimon/PanelsPlus/issues/12)
+<img width="40%" alt="image" src="https://github.com/user-attachments/assets/0cad18fe-b526-4b03-a0f1-cfa44217d17f" /> <img width="40%" alt="image" src="https://github.com/user-attachments/assets/e34333a0-15f1-4cbb-8c7d-60881df1c1be" />
+<em>You can access this by simply changing your KOReader language.</em>
+Available in `panelsplus_1-4-0-with-chinese-simplified.zip` release.
 
 You can download any zip, both are Identical. The canonical zip is `panels_plus.koplugin.zip`, but kept `panels_plus-1.4.0.zip` for compatibility in ZenPM database's plugin metadata.
 
