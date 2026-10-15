@@ -11084,7 +11084,7 @@
     {
       "id": "zenpm",
       "name": "ZenPM",
-      "version": "1.7.1",
+      "version": "1.7.2",
       "description": "Zen Package Manager - A package manager (App Store) for E-Readers using KOReader and Kindles",
       "author": "ZenLabs",
       "category": "utility",
@@ -11093,47 +11093,47 @@
       "source": "https://github.com/xZenLabs/zen-pm",
       "source_type": "release",
       "stars": "96",
-      "updated_at": "2026-10-15T13:28:47Z",
-      "published_at": "2026-10-15T11:40:07Z",
+      "updated_at": "2026-10-15T16:27:58Z",
+      "published_at": "2026-10-15T16:27:45Z",
       "prerelease_version": "1.7.2-beta2",
       "prerelease_published_at": "2026-10-15T13:28:33Z",
       "readme_url": "packages/koreader/zenpm.koplugin/README.md",
       "readme_hash": "8578d042d725563ca71921d8648c9738b3976703",
       "release_notes_url": "packages/koreader/zenpm.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "1fb8549c2c2c53f8fd4cc4681b1fe311f0c6dca57e48ff59492b2766b77128f6",
+      "release_notes_hash": "cc4d1ec69046621fc676a5c86a0b261a1f860de39b99e0ac69911b84ddb23d54",
       "prerelease_notes_url": "packages/koreader/zenpm.koplugin/PRERELEASE_NOTES.md",
       "prerelease_notes_hash": "5d2a4aae9e7ad278d2dbf2bf672fb71122df747c011d5e8401148d8334fca089",
       "versions_url": "packages/koreader/zenpm.koplugin/versions.json",
       "assets": [
         {
           "arch": "kindle",
-          "asset": "ZenPM-kindle-standalone-1.7.1.zip",
-          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.1/ZenPM-kindle-standalone-1.7.1.zip",
-          "size": "10116873"
+          "asset": "ZenPM-kindle-standalone-1.7.2.zip",
+          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.2/ZenPM-kindle-standalone-1.7.2.zip",
+          "size": "10118665"
         },
         {
           "arch": "any",
-          "asset": "ZenPM-koreader-android-1.7.1.zip",
-          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.1/ZenPM-koreader-android-1.7.1.zip",
-          "size": "302414"
+          "asset": "ZenPM-koreader-android-1.7.2.zip",
+          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.2/ZenPM-koreader-android-1.7.2.zip",
+          "size": "302497"
         },
         {
           "arch": "any",
-          "asset": "ZenPM-koreader-ereader-1.7.1.zip",
-          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.1/ZenPM-koreader-ereader-1.7.1.zip",
-          "size": "9881260"
+          "asset": "ZenPM-koreader-ereader-1.7.2.zip",
+          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.2/ZenPM-koreader-ereader-1.7.2.zip",
+          "size": "9883129"
         },
         {
           "arch": "any",
-          "asset": "ZenPM-koreader-linux-1.7.1.zip",
-          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.1/ZenPM-koreader-linux-1.7.1.zip",
-          "size": "7437985"
+          "asset": "ZenPM-koreader-linux-1.7.2.zip",
+          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.2/ZenPM-koreader-linux-1.7.2.zip",
+          "size": "7607467"
         },
         {
           "arch": "any",
-          "asset": "ZenPM-koreader-macos-1.7.1.zip",
-          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.1/ZenPM-koreader-macos-1.7.1.zip",
-          "size": "10182201"
+          "asset": "ZenPM-koreader-macos-1.7.2.zip",
+          "url": "https://github.com/xZenLabs/zen-pm/releases/download/v1.7.2/ZenPM-koreader-macos-1.7.2.zip",
+          "size": "10182078"
         }
       ]
     },

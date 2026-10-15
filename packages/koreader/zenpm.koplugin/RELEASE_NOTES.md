@@ -1,3 +1,11 @@
+# v1.7.2 · 2026-10-15
+
+## What's Changed
+
+- Round button feedback
+- Show all stable + beta release notes on betas
+- Fix icon pack installed name
+
 # v1.7.1 · 2026-10-15
 
 ## What's Changed
@@ -36,13 +44,3 @@
 - Allow using Github token and direct requests
 - Bug fixes
 - Performance improvements
-
-# v1.5.0 · 2026-08-28
-
-## What's Changed
-
-- Add/remove new KOReader plugins to the ZenOS Launcher automatically
-- Add auto selection for ZenFM
-- Update ZenFM's Android companion APK alongside the plugin
-- Better arch selection
-- Improve README url/image handling
