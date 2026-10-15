@@ -1,3 +1,12 @@
+# v1.7.0 · 2026-10-15
+
+## What's Changed
+
+- Add support for Zen Icon Packs
+- Update screensaver tags and categories sections
+- Add sort by date to screensavers
+- Add ZenOS button feedback + accent colors
+
 # v1.6.1 · 2026-10-03
 
 ## What's Changed
@@ -38,10 +47,3 @@
 
 - Disable Kindle scriptlets and Kindleforge by default (enable via settings)
 - Use stable koreader location for kpm installs
-
-# v1.4.1 · 2026-08-22
-
-## What's Changed
-
-- Fix an edge case on android where backend can close while a package is updating
-- Fix android permissions
