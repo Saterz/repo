@@ -4,14 +4,14 @@
 id=notebook
 name=Notebook
 version=1.9.0
-description=
+description=Plugin for KOReader that adds the possibility to create, annotate and share notebooks easily
 author=pierspad
 category=utility
 platforms=koreader
 dependencies=
 source=https://github.com/pierspad/notebook.koplugin
 stars=25
-updated_at=2026-10-15T13:09:21Z
+updated_at=2026-10-15T18:04:30Z
 published_at=2026-10-10T23:14:59Z
 prerelease_version=1.9.0-dev.1
 prerelease_published_at=2026-10-10T08:47:12Z

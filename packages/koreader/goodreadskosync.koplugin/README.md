@@ -12,6 +12,37 @@ Your support helps with development, maintenance, bug fixes, and keeping the plu
 
 A Community KOReader plugin. Install it from **KOReader Storefront** or manually from [Releases](https://github.com/gkgangavarapu/goodreadskosync/releases).
 
+## New in 2.0 — native Goodreads UI (browser-free)
+
+A native Goodreads experience built with KOReader widgets — **no browser engine**.
+Shelves with covers, Currently Reading, book detail with reviews, search, author
+pages, on-device caching, and manual refresh.
+
+| Home / shelves | Currently Reading |
+| --- | --- |
+| <img src="docs/2.0-screenshots/01-home.png" width="380"> | <img src="docs/2.0-screenshots/02-currently-reading.png" width="380"> |
+
+| Book detail | Reviews |
+| --- | --- |
+| <img src="docs/2.0-screenshots/03-book-detail.png" width="380"> | <img src="docs/2.0-screenshots/04-reviews.png" width="380"> |
+
+<details>
+<summary><b>More 2.0 screenshots</b></summary>
+
+| Search | Shelf picker |
+| --- | --- |
+| <img src="docs/2.0-screenshots/05-search.png" width="380"> | <img src="docs/2.0-screenshots/06-shelf-picker.png" width="380"> |
+
+| Menu + sync toast | Shelf change (queued) |
+| --- | --- |
+| <img src="docs/2.0-screenshots/07-menu-and-sync-toast.png" width="380"> | <img src="docs/2.0-screenshots/08-shelf-queued-toast.png" width="380"> |
+
+| Cache settings | Support |
+| --- | --- |
+| <img src="docs/2.0-screenshots/09-cache-settings.png" width="380"> | <img src="docs/2.0-screenshots/10-support.png" width="380"> |
+
+</details>
+
 ## Screenshots
 
 | Reading Challenge | Main menu |
@@ -58,6 +89,7 @@ A Community KOReader plugin. Install it from **KOReader Storefront** or manually
 - **Sync presets** — Fastest, Faster, Medium, or Relaxed, to balance freshness against battery use.
 - **Manual controls** — Sync now (works with or without a book open), change status, rate books, and find books on Goodreads.
 - **Diagnostic logging** — Optional, off by default, for troubleshooting.
+- **Built-in diagnostics** — A connection doctor, plus a one-tap "Export diagnostic log" that bundles your checks, settings and recent activity into a single file you can attach to a bug report.
 - **OTA updates** — Download and install plugin updates directly from KOReader.
 - **No telemetry** — No analytics or tracking.
 
@@ -89,6 +121,8 @@ Kindle is tested. Other platforms may work but are less tested.
 Found a bug or have a feature request?
 
 **[Open an issue on GitHub](https://github.com/gkgangavarapu/goodreadskosync/issues)**.
+
+Please include a diagnostic report: open the plugin's **Menu** tab, then **Diagnostics > Export diagnostic log**. It writes a single file (path shown on screen) into the plugin's settings folder — `koreader/settings/goodreadskosync/` over USB — with your connection checks, settings and recent activity, and no credentials.
 
 If you enjoy using the plugin, the best way to support continued development is:
 

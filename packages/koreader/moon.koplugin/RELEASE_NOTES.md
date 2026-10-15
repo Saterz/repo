@@ -1,3 +1,84 @@
+# v0.2.7 · 2026-10-15
+
+## 月读 v0.2.7
+
+KOReader 插件包：`book.koplugin-v0.2.7.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.7.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.7.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.6`：
+
+#### 变更
+
+- fix(wechat): 进度上传使用阅读会话并补全想法分页 (cde009e4)
+- fix(jdread): 修正登录跳转地址并提示京东安全验证 (1b86caa7)
+- fix(home): 添加组件列表支持分页 (3fa396e1)
+- feat(reviews): 导入书和京东读书关联正版段评 (1bfc5fef)
+- perf(http): assets 下载支持多镜像自动切换，优先上次成功的源 (274fbb04)
+- perf(lockscreen): 缓存 logo 解码结果，颗粒纹理直接读写像素 (7069bef5)
+- perf(fonts): 按字体路径解析，只读取所选字体信息，不再扫描整个字体目录 (c6512bbd)
+- docs(readme): 更新查词窗口、生僻字注音、文字海报与单向历说明及截图 (42c8dd11)
+- fix(lockscreen): 选择海报字体时不再提前重新生成 (5065bfab)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.6...v0.2.7
+
+# v0.2.6 · 2026-10-15
+
+## 月读 v0.2.6
+
+KOReader 插件包：`book.koplugin-v0.2.6.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.6.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.6.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.5`：
+
+#### 变更
+
+- perf(lockscreen): 词表改为数值存储并在排版后释放，挑句按划线变更戳缓存 (d99161c3)
+- feat(lockscreen): 新增单向历锁屏背景，本地绘制日历页，农历干支节气读摸鱼日报缓存 (6f047979)
+- feat(lockscreen): 新增文字海报锁屏背景，分词挑关键词排版，支持多种版式与海报字体选择 (d04f612b)
+- feat(myrl): 解析日期、干支、生肖、节气、节日字段，兼容 almanac 新结构 (445adbac)
+- fix(rare): 注音全屏统一字号，点注音或被注音字打开查词窗口，英文词库补常用词档位 (2998941e)
+- feat(lookup): 统一查词窗口，底部 词典/翻译/AI/百科 标签切换，词典可手动切换并渲染 HTML 词条，移除旧翻译弹窗 (9af1f1e8)
+- feat(xray): 全书文本提取与「按当前位置更新」改为后台任务，共用任务键，查词可取消 (0be948dc)
+- fix(wechat): 「注」图标固定为 0.8 字高并上标对齐，样式表缺失时不再显示成大方块 (2240121d)
+- chore(reviews): 段评匹配失败时记录诊断日志（多处命中、引擎未找到、用字不一致） (3768edd3)
+- fix(local): 扫描跳过无权限目录只写日志并保留其中的书，有跳过时中止 WebDAV 同步；不再跟随软链接，提交阶段失败注明步骤 (4e70de08)
+- fix(exit): 退出流程开始后不再弹出新窗口，修复退出后错误页残留导致 KOReader 卡死 (4b7db044)
+- feat(rare): 生僻字注音，页面图层在生僻字上方画拼音/音标；词库复用输入法在线下载（assets/rare 经 jsdelivr），中文仅收通用规范汉字表 8105 字，英文整词匹配 (3e84f38b)
+- feat(reflow/translate): 全书翻译与重新排版改为后台任务，可取消、可放后台；重新排版去掉预览确认，分析到生成全程后台运行 (4a50cc0d)
+- fix(fonts): 在线字体下载校验完整性与 zip 格式，按写出大小判定解压成功并记录失败原因 (d70e5225)
+- fix(remote): 修复手机端「更多」按钮触摸区域铺满列表，导致点哪都弹菜单且列表无法滚动 (5766989e)
+- docs: 更新 README 与远程管理截图 (b72e830e)
+- fix(fonts): 本地字体列表跳过粗体/斜体文件，修复选择后不生效 (554d9852)
+- fix(home): 首页组件只有一页时隐藏翻页箭头，编辑模式下保留 (944cda2b)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.5...v0.2.6
+
 # v0.2.5 · 2026-10-15
 
 ## 月读 v0.2.5
@@ -144,76 +225,3 @@ KOReader 插件包：`book.koplugin-v0.2.3.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.2...v0.2.3
-
-# v0.2.2 · 2026-10-14
-
-## 月读 v0.2.2
-
-KOReader 插件包：`book.koplugin-v0.2.2.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.2.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.2.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.1`：
-
-#### 修复
-
-- :bug: (sync): 混合模式下同步全部已启用源的书架，不再只拉活跃源 (#42) (90ca523d)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.1...v0.2.2
-
-# v0.2.1 · 2026-10-13
-
-## 月读 v0.2.1
-
-KOReader 插件包：`book.koplugin-v0.2.1.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.1.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.1.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.0`：
-
-#### 新功能
-
-- :sparkles: (insight): 统计页柱状图加纵坐标，按时长标刻度 (b74503c0)
-
-#### 修复
-
-- :bug: (lockscreen): 海报墙竖屏排版在高分屏不再挤成十列，无封面改用生成封面 (a43343fb)
-- :bug: (home): 年份与新闻序号不再被截成省略号 (602112aa)
-
-#### 界面
-
-- :lipstick: (lockscreen): 美化阅读统计与当前阅读锁屏 (a87d6387)
-- :lipstick: (store): 书城工具条搜索改为图标，去掉清除按钮 (0a5ea438)
-- :lipstick: (library): 分组页返回按钮去掉边框和文字，只留图标 (e8f89dc7)
-
-#### 变更
-
-- :green_heart: (tests): 补 bottomcontainer 桩，柱状图测试在没有 KOReader 源码的 CI 上也能跑 (1fa06d32)
-- :loud_sound: (log): 启动时在 book.log 写一行月读版本、KOReader 版本与设备型号 (44ed67b1)
-- :ambulance: (lockscreen): 修复灰度 Kindle 上斜边海报墙导致启动崩溃 (d9c13aee)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.0...v0.2.1

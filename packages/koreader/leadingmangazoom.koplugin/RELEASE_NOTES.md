@@ -1,3 +1,23 @@
+# v1.3.1 · 2026-10-15
+
+Fixes from Kindle Colorsoft feedback. This is the first release with the free zoom zip attached (v1.3.0 went out without it), so if you downloaded "latest" in the last few hours, please grab this one.
+
+### 🔧 Fixes
+- **Moving between quadrants with swipes:** if *swipe to go back* or *swipe to follow nearest link* is turned on in KOReader, those swipes used to take priority while a quadrant was zoomed. Quadrant swipes now win while zoomed, and link swipes work as before otherwise.
+- **Zoom mode kept when closing mid-zoom:** closing a book (or an autosave) while zoomed in no longer replaces the book's zoom mode with the temporary free zoom.
+
+### Included from v1.3.0
+- **Free zoom** for newspapers, magazines and textbooks: spread to zoom by how far you spread, drag or swipe (diagonals too) to move anywhere, pinch to zoom out.
+- Fixed the crash when opening the zoom tab of the bottom menu while zoomed.
+- Quadrant navigation from v1.2.0 (swipe, side taps or page buttons to move between quadrants).
+
+### 📥 Installation
+Download **leadingmangazoom.koplugin.zip** below and extract it into KOReader's `plugins/` folder, replacing the old `leadingmangazoom.koplugin` folder. You should end up with `plugins/leadingmangazoom.koplugin/main.lua`. Restart KOReader, and keep Reflow off for the document.
+
+> Don't use GitHub's "Source code" zip. It has an extra outer folder, and the plugin won't show up.
+
+Changes: #11
+
 # v1.3.0 · 2026-10-15
 
 Free zoom for newspapers, magazines and textbooks, plus quadrant navigation for manga. This release also includes v1.2.0, which never got its own release.
@@ -52,13 +72,3 @@ v1.1.1 Release: Fix physical page-turn button remapping bug on Kobo Sage, Kobo L
 # v1.1.0 · 2026-07-16
 
 v1.1.0 release: Add CZB support, fix zoom coordinates, pinch gesture, and RTL split-page navigation
-
-# v1.0.0 · 2026-04-11
-
-Initial release of LeadingMangaZoom for KOReader.
-
-Two-finger tap to zoom into any quadrant. Tap to zoom back out. Spread/pinch for page zoom. Auto-rotate and page split for landscape pages.
-
-**Installation:** Extract the zip and copy the `leadingmangazoom.koplugin` folder into KOReader's `plugins/` directory. Restart KOReader.
-
-Supports CBZ, CBR, and PDF files. Requires touch-enabled device.

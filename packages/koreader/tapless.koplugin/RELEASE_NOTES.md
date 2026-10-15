@@ -1,3 +1,8 @@
+# v0.6.0 · 2026-10-15
+
+- native C acceleration for dictionary lookup and swipe recognition
+- performance and reliability improvements
+
 # v0.5.0 · 2026-10-11
 
 - improved recognition of inaccurate swipe paths

@@ -1,3 +1,25 @@
+# v1.8.0 · 2026-10-15
+
+## modern_menu 1.8.0
+
+Modern Menu now complements [Kobold](https://github.com/unitreign/kobold): the same type and spacing, and a menu that stays available on Kobold’s screens.
+
+### Changes
+- The pull-down menu opens on the file browser and on Kobold’s Home, My Books, and More screens, including after you open Kobold from the reader
+- A **Kobold** tab, when that plugin is installed, sits after any quick-action tabs and before Library, and opens Kobold Home
+- The file-browser shortcut row is pinned at the bottom of the menu, the same way the reader shortcut row is
+- Header aligned with the clock: title on the same inset, close with the status icons, back only inside a submenu
+- Dialogs opened from the menu stay on top of it. Battery, Wi‑Fi, brightness, and Kobold navigation close the menu first
+- Tab icons are centered on their labels and evenly spaced. The selected tab is bold, without an underline, and the labels sit clear of the rule below them
+- Defaults match a compact Kobold-style sheet: option padding −4, tab label 12, tab icon 20, height fit to content, and Noto Sans when KOReader includes that face
+- Tab label size can go down to 8 and tab icon size down to 10. **Reset to defaults** writes these values
+
+### Install
+1. Download **modern_menu.koplugin-v1.8.0.zip**
+2. Extract into your KOReader `plugins/` directory
+3. Restart KOReader and enable **Modern Menu**
+4. Install Kobold, Simple UI, Quick Menu, Neo Quick Settings, or Shortcuts Toolbar as well if you use those
+
 # v1.7.0 · 2026-10-14
 
 ## modern_menu 1.7.0
@@ -72,21 +94,3 @@ Hosts Neo Quick Settings the same way as Quick Menu, and adds a menu font picker
 2. Extract into your KOReader `plugins/` directory
 3. Restart KOReader and enable **Modern Menu**
 4. Install [quickmenu.koplugin](https://github.com/jbreizh/quickmenu.koplugin) or Neo Quick Settings as well if you want that tab
-
-# v1.3.0 · 2026-10-12
-
-## modern_menu 1.3.0
-
-Hosts Quick Menu as the first tab when that plugin is installed, and refreshes button state as soon as a toggle runs.
-
-### Changes
-- Quick Menu panel and footer render inside Modern Menu
-- Opens on the Quick Menu tab when “Always start on quick menu tab” is on
-- Hold the Quick Menu tab to open its settings
-- Button active state, icons, and labels update on toggle
-
-### Install
-1. Download **modern_menu.koplugin-v1.3.0.zip**
-2. Extract into your KOReader `plugins/` directory
-3. Restart KOReader and enable **Modern Menu**
-4. Install [quickmenu.koplugin](https://github.com/jbreizh/quickmenu.koplugin) as well if you want the Quick Menu tab

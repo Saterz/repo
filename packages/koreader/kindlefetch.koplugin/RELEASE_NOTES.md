@@ -1,3 +1,93 @@
+# v0.8 · 2026-10-15
+
+Kindle Fetch now searches every site at once from a single Search, showing each site's books as soon as it finds them, and adds Project Gutenberg as a search engine. Tick the sites to search with Sites in the search box: all of them to begin with, Z-Library once you've logged in. The menu at the top left of the results shows only some of the books found, by site, language, file type, book type, decade, size or whether you've downloaded them, without searching again. Searches can also be narrowed to titles, authors or ISBNs on Library Genesis and Internet Archive, or started from a book's author or highlighted text.
+
+Kindle Fetch can also download books without curl, as on Kobos that don't have it, and checks that each book that arrives is the book rather than a web page sent in its place. Downloads carry on through sleep and Wi-Fi drops. When a search or download fails, Kindle Fetch offers what fixes it, such as logging in again or using encrypted DNS where the network blocks the sites. Updates keep the version before, to go back to from the settings, and there's a Diagnostics page to copy or save when asking for help.
+
+Changes since v0.7:
+
+- Stop curl when a download is cancelled, rather than only the shell waiting for it (ec2de05)
+- Keep curl's exit code when it's checked on while still being written, rather than losing a finished download (40871f3)
+- List each book found with its title, authors and file type, as KOReader exited when Go to letter looked through them (cfc3849)
+- Look through the books found for a title, author or file type, from a menu at the top of the results or the page number (966f483)
+- Keep the errors modules act on in one place, rather than each saying them its own way (2fa380d)
+- Cancel downloads when KOReader closes for the device to power off, restart or share its storage over USB (af2fb59)
+- Say that mirrors are being looked up on a download's progress, rather than in a notification from what looks them up (44ef780)
+- Catch errors in what KOReader runs later, logging where they happened and cleaning up, rather than KOReader exiting (9c96fe3)
+- Keep the device awake while books download, as going to sleep turns Wi-Fi off (a8915ec)
+- Keep a Kindle's curl until the new one has been copied over in full and runs, rather than copying over it, which left none that would run once the storage filled up (4a49024)
+- Translate every message and what it says went wrong, with what's said in it in its place rather than tacked on after (8d15438)
+- Tell a mirror's error page and DDoS protection apart from it not having the book when finding a download link, and only use one that's just an address (8baf949)
+- Give up on covers that can't be listed for curl, as when the device's storage is full, rather than KOReader exiting (a835ee5)
+- Wait while the device sleeps or Wi-Fi is off, carrying on from what had downloaded once it's back, rather than failing (1d770dd)
+- Offer a newer curl automatically once an older update was turned down, rather than never again (0701101)
+- Say what went wrong in curl's words when KOReader's own HTTP fetched the page too, and explain every curl error that can come up (fcefcf1)
+- Name a book's file after its title in brackets, or its id, when that's all there is, rather than leaving it hidden as only its file type (916629f)
+- Give each search, download and login its own Cancel, rather than one's calling off another's (0e757c3)
+- Tell when a download has stalled by how long it has been checked on, rather than by the clock, which can be put back (8b95cf0)
+- Give up on downloading an update once it has taken 5 minutes, or nothing has arrived for 30 seconds, rather than KOReader freezing (3a90ee0)
+- Explain the same failures the same way on each site: Library Genesis' HTTP errors, its blocking whichever mirror it was, Z-Library's addresses blocked, and Internet Archive's file types (52894ab)
+- Say a site's results couldn't be read when none of them can be, and count only those that can as results read, rather than offering the settings (abe1ede)
+- Carry on past errors KOReader's HTTP and folder listings raise, and caches and settings saved wrongly or before the clock was put back (e277e8f)
+- Keep a hidden download hidden while it tries another mirror or asks for another link, rather than showing it again (91ce8c6)
+- Unzip updates with KOReader's own archiver where it has one, as not every device has unzip, saying why an update failed and leaving none of it behind (e2e065c)
+- Log what a site answered with when it can't be used, and cover downloads retried through the proxy, without logging download links' keys (75a7266)
+- Leave out Internet Archive's private files, which only those who can borrow the book can download (5c99af4)
+- Say when curl couldn't be started to fetch a page, rather than taking it to have been called off (0eb4882)
+- Dim a download's Cancel and Hide while KOReader's own HTTP looks up its link, as their taps would only arrive once it's over (2fa492d)
+- Say why checking for updates failed, and don't look the latest release up again while it's being looked up (88e96f4)
+- Say why the mirrors couldn't be looked up on Wikipedia, such as a secure connection failing as it does when the clock is wrong, rather than always that there's no connection (f16c317)
+- Ask Z-Library for a book's link again the same day once the account's downloads are used up, as asking again doesn't count (9810c5a)
+- Start downloads in the background and wait for them with separate functions, each failing one way, and remove what nothing used (cbf9eb2)
+- Check a book can be saved where it's going before looking up its link: that the folder is there and can be written to, and no other book is downloading to its name (018dde8)
+- Keep the version installed before an update, to go back to from Kindle Fetch's menu if the new one doesn't work (ad20e3b)
+- Say when a setting couldn't be saved, as when the storage is full, rather than it going back to what it was unsaid (27bbfc9)
+- Only remember searches that found books, rather than typos and searches that failed (8ebbe67)
+- Keep how many results earlier pages read when a later one fails, and say when loading more fails rather than that there are no more (04f8629)
+- Turn Wi-Fi on before keeping searching, as for a new search, rather than searching while it's off (1c5cd66)
+- Keep Kindle Fetch in KOReader's menu when it can't start, saying why and offering to go back to the version before (671b4d5)
+- Remove the Z-Library account's key from the settings KOReader keeps from before, on logging out (b0edbb0)
+- Name a book safely for the folder chosen in the download prompt, rather than for the one it was to go to (226d529)
+- Download covers one after another with a curl too old to download them at once, rather than none at all (7525306)
+- List the books found as KOReader's own menu does, without covers, on versions of KOReader whose menu can't lay them out (43d008c)
+- Fetch pages with KOReader's own HTTP where curl can't connect securely, rather than failing (c00a36c)
+- Close a settings menu with nothing ticked when KOReader's Home key closes it, leaving it as it was, rather than Home being sent again forever (3266abb)
+- Call a search off when KOReader closes its message, as its Home key does, rather than showing what it found once it's over (fcf9fd2)
+- Read a download's size from the response that sends the book, rather than a redirect before it (0f30b25)
+- Hide a download's progress with the Back key, and reach its buttons with the others, on devices with keys (40f2dd9)
+- Download books and covers with KOReader's own HTTP where curl can't, as on a Kobo without curl Fixes william-spongberg/KindleFetch.koplugin#63 (a3abbc7)
+- Offer to show a downloaded book's folder, add it to collections or see its information, and list it in the file browser straight away (ce5102d)
+- Check a downloaded book is the one listed, by how it starts, its size and its MD5, rather than saving a web page sent in its place, and leave out covers that aren't images (54426b5)
+- Offer the other sites when a search finds nothing or fails, and change the languages, file types and book types from the results, searching again (e9cc218)
+- Fall back on the mirrors looked up before, or known when released, when Wikipedia can't be reached, and try a mirror that doesn't answer after the others rather than forgetting it (9b9aebf)
+- Add a diagnostics page to copy or save for help with a problem, with a test of the connection to each site (00d5f4a)
+- Search for more by a book's author, from KOReader's dialog for it or while reading it, and for text highlighted in a book (ccf2dd7)
+- Go through KOReader's HTTP proxy for everything, set from the settings too, giving it to curl in a file rather than on its command line (803edcc)
+- Offer what fixes a failed search or download, then try again, and log in to Z-Library before downloading from it (7aed239)
+- Look the sites up with encrypted DNS where the network's own DNS can't find them, offered when it can't, and in the settings (3021d08)
+- Test against the live sites every day, rather than on every push, which they failed whenever a site was down (aa6af22)
+- Narrow a search down to the books' titles, authors or ISBNs, on the sites that can be (2b58d4e)
+- Check whether a search can go ahead without Wi-Fi in one place, and whether there's a backup proxy straight from ProxyUtil (82f03e2)
+- Save and look up each site's searches in one place, SearchCache, rather than each site doing so itself (91db944)
+- Log the start of a page a site answered with, check on a download again and write HttpDownload's files each one way (bd301aa)
+- Join a book's details one way, in StringUtil, for the results, the download prompt and looking through them (931df8e)
+- Give up on a page once nothing has arrived for 20 seconds, and only search the mirrors looked up again that weren't just tried, rather than waiting minutes for mirrors that never answer (c7dd766)
+- Say which mirror or address is being tried, and why the one before didn't work, beneath what a search or download is waiting for (2722b0c)
+- Update README screenshots (b90d50a)
+- Show searching Internet Archive in the README, while Library Genesis can't be reached, and describe the diagnostics, encrypted DNS and what's said while mirrors are tried (b2c9c87)
+- Shorten the README's features to a line each, moving what they said to How It Works (d861621)
+- Go through KOReader's HTTP proxy alone, set in the settings, rather than trying again through PROXY_URL, which most devices can't set (1487b5d)
+- Offer to go back to the version before in the settings, rather than Kindle Fetch's menu (f3a298d)
+- Search and download Project Gutenberg's free ebooks too, with its own catalogue (ecff031)
+- Search from one Search for the sites ticked in the search box, searching them at once and showing each one's books as soon as it has found them (48bbef1)
+- Describe searching and downloading from Project Gutenberg in the README (d7f4040)
+- Describe searching several sites at once, and going back to the version before from the settings, in the README (30c197f)
+- Offer Z-Library first and tick every site by default, searching Z-Library once logged in (201b9fd)
+- Show only some of the books found, by site, language, file type, book type or whether they're downloaded, without searching again (36af1b2)
+- Show only the books found from some decades, or of some sizes, too (d5c1ce3)
+- Update README screenshots (2ce62a5)
+- Describe showing only some of the books found in the README, with screenshots of it (941b25b)
+
 # v0.7 · 2026-10-13
 
 Kindle Fetch can now search Internet Archive and Z-Library as well as Library Genesis. Z-Library needs an account, which you log in to once. Searches on Library Genesis can load more books again. Kindles like the first Paperwhite can now update a curl that's too old to reach GitHub. Kindle Fetch also tells you when your network seems to block Library Genesis or when it's too busy. The README has new GIFs and a Troubleshooting section.
@@ -198,14 +288,3 @@ Changes since v0.3:
 - Fix luacheck warnings (08c0f3f)
 - Check formatting and lint in CI (49e7699)
 - Leave the Lua that CI installs out of linting (da19045)
-
-# v0.3 · 2026-07-19
-
-UX upgrades all around thanks to community feedback
-
-- **Automatic plugin updating**: checks latest release version on Github, and prompts the user for an update with patch note information (suggested by [kelmi3D](https://www.reddit.com/user/kelmi3D/))
-- **Show book covers in search**: optionally show book covers alongside books in search results. Better formatted book information using a custom menu (suggested by [2211mg](https://www.reddit.com/user/2211mg/)). Note that book cover downloads can be hit or miss on older Kindles so there is a toggle for it in settings.
-- **Tap book cover to expand to full screen** (suggested by [IbnRami](https://www.reddit.com/user/IbnRami/))
-- **Simplify download prompt**: only have path + download buttons, and tap outside to close (suggested by [IbnRami](https://www.reddit.com/user/IbnRami/))
-- **Extend search caches**: search caches now expire after 2 weeks and have max 1000 entries
-- **Prompt updates**: plugin and curl updates will prompt the user first rather than being triggered automatically
