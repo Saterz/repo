@@ -1,3 +1,12 @@
+# v4.2.0 · 2026-10-15
+
+## What's Changed
+
+- Add accent color (Interface > Accent color)
+- Better support for icon packs
+- Scale opening banner and badge font
+- Bug fixes
+
 # v4.1.0 · 2026-10-11
 
 ## What's Changed
