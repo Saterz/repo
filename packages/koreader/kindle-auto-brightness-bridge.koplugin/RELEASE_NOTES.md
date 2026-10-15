@@ -1,3 +1,21 @@
+# v0.2.1 · 2026-10-15
+
+## Changes
+
+- Keep KOReader's frontlight on/off queries and toggles synchronized with the Kindle's current hardware state, including changes made by native auto-brightness. Preserve remembered brightness when the light is off. Fixes #6.
+- Remove three forced line breaks from the brightness and scheduled-warmth help popups so sentences wrap to the available width. Thanks to @mergen3107 for #5.
+
+## Installation
+
+Extract `kindle-auto-brightness-bridge-v0.2.1.zip` into KOReader's `plugins` directory, replacing the existing `kindleautobrightness.koplugin` files, then restart KOReader. Existing settings are preserved.
+
+## Validation
+
+- All 33 regression tests pass on the merged release source against the local KOReader source snapshot.
+- Lua syntax and whitespace checks pass. The ZIP contains exactly the two plugin modules, byte-for-byte identical to the release source.
+- The frontlight on/off change was previously verified in the running KOReader session on the target Kindle with 18 device checks.
+- This release's plugin files were installed on the Kindle running KOReader v2026.07.2, with native Lua syntax checks and SHA-256 verification. The help-text change was not newly rendered on the device during this release.
+
 # v0.2.0 · 2026-08-27
 
 ## What changed

@@ -1,3 +1,13 @@
+# v.7.9.4 · 2026-10-15
+
+### Changed
+
+- Ratings file cache: star ratings are cached in reading_insights_ratings_cache.lua. A rebuild only re-opens sidecars that changed (checked by modification time and size), so book lists open faster after a restart or after closing a book.
+- Sidecar scan persisted: the sidecar-folder scan result is saved too and no longer repeated on every restart.
+- Reload data: the insights title-bar reload now wipes the ratings cache completely. The “Mark book finished” list’s “Reload data” refreshes ratings from the cache.
+- Faster finished-books list: books ticked as finished by hand are looked up individually (and cached) instead of re-querying the whole year.
+- No more “Loading ratings…” popup when opening book lists.
+
 # v7.9.3 · 2026-10-15
 
 ### Changed
@@ -36,9 +46,3 @@
 - Rating popup rebuilt on KOReader's ButtonDialog, so it matches the plugin's other popups.
 - Ratings changed outside the plugin (e.g. in the file manager) now show up right away in Book info when the book's file is known, because it reads the rating straight from the book's own sidecar. Book lists pick such changes up when the short rating cache expires.
 - Menu: "Progress bars" renamed to "Progress bar" (all translations updated).
-
-# v7.8.9 · 2026-10-14
-
-### Changed 
-Removed the progress bar from the "This chapter" row in the Book progress popup. 
-_Note: That row shows the time left rather than a percentage, so a bar under it looked out of place. The bar is now only shown under the book's read percentage._
