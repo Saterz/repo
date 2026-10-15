@@ -348,6 +348,34 @@ class CachedPackageMetadataTests(unittest.TestCase):
         self.assertIs(versions[0]["assets"][0]["color"], True)
         self.assertIs(versions[0]["assets"][1]["color"], False)
 
+    def test_build_meta_remaps_github_author_for_new_and_existing_packages(self):
+        for kind in (scrape_common.KIND_PLUGIN, scrape_common.KIND_PATCH, scrape_common.KIND_ICON_PACK):
+            for owner, preserved_fields, expected in (
+                ("xZenLabs", {}, "ZenLabs"),
+                ("XZENLABS", {}, "ZenLabs"),
+                ("xZenLabs", {"author": "xZenLabs"}, "ZenLabs"),
+                ("xZenLabs", {"author": "xzenlabs"}, "ZenLabs"),
+                ("xZenLabs", {"author": "neura & ZenLabs"}, "neura & ZenLabs"),
+                ("other", {}, "other"),
+            ):
+                with self.subTest(kind=kind, owner=owner, preserved_fields=preserved_fields):
+                    repo = {
+                        "owner": {"login": owner},
+                        "name": "example",
+                        "full_name": f"{owner}/example",
+                        "html_url": f"https://github.com/{owner}/example",
+                    }
+                    _meta_id, content, _summary = scrape_common.build_meta(
+                        repo, None, set(), "utility", kind=kind,
+                        preserved_fields=preserved_fields,
+                    )
+                    self.assertIn(f"author={expected}\n", content)
+                    self.assertIn(f"source={repo['html_url']}\n", content)
+                    self.assertIn(
+                        f"source_url=https://codeload.github.com/{owner}/example/zip/refs/heads/main\n",
+                        content,
+                    )
+
     def test_build_meta_includes_cached_documentation_fields(self):
         repo = {
             "owner": {"login": "owner"},

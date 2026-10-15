@@ -638,6 +638,8 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
 
     name = name_override or display_name(repo_name)
     author = (preserved_fields or {}).get("author") or owner
+    if author.lower() == "xzenlabs":
+        author = "ZenLabs"
     stars = repo.get("stargazers_count", 0)
     updated_at = scraped_at or scraper_timestamp()
     published_at = release.get("published_at") if isinstance(release, dict) else ""
