@@ -1,3 +1,12 @@
+# v1.7.0-beta5 · 2026-10-15
+
+## What's Changed
+
+- Add support for Zen Icon Packs
+- Update screensaver tags and categories sections
+- Add sort by date to screensavers
+- Add ZenOS button feedback + accent colors
+
 # v1.7.0-beta4 · 2026-10-14
 
 ## What's Changed
@@ -30,14 +39,6 @@
 ## What's Changed
 
 - Add support for Zen Icon Packs
-- Update screensaver tags and categories sections
-- Add sort by date to screensavers
-- Add ZenOS button feedback
-
-# v1.6.2-beta1 · 2026-10-07
-
-## What's Changed
-
 - Update screensaver tags and categories sections
 - Add sort by date to screensavers
 - Add ZenOS button feedback
