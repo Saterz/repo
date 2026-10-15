@@ -2,8 +2,6 @@
 
 Kindle Fetch can now search Internet Archive and Z-Library as well as Library Genesis. Z-Library needs an account, which you log in to once. Searches on Library Genesis can load more books again. Kindles like the first Paperwhite can now update a curl that's too old to reach GitHub. Kindle Fetch also tells you when your network seems to block Library Genesis or when it's too busy. The README has new GIFs and a Troubleshooting section.
 
-If your Kindle couldn't update curl before, the version you have can't download this update. Install it by hand from this page instead.
-
 Changes since v0.6:
 
 - Key books by an id rather than their md5, as other sites don't have one (0b29c64)

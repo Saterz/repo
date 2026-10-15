@@ -1,3 +1,13 @@
+# v8.0.0 · 2026-10-15
+
+## Changes
+
+**Sleep screen**
+- New Sleep screen settings: you can choose what is shown (Reading insights, heatmap, streak, Book progress, Book progress calendar, Book info, Records), the background (book cover, follow theme, or your own image / random from a folder) and the image fit (Fit, Stretch, Zoom).
+- A Use as sleep screen switch in the same menu.
+- The book popups (Book progress, calendar, Book info) also work when going to sleep from the file manager. The plugin keeps a snapshot of the last book’s data when you close it.
+- Removed the old “(sleeping…)” title indicator.
+
 # v.7.9.4 · 2026-10-15
 
 ### Changed
@@ -33,16 +43,3 @@
 ### Fixed
 - The "Reading insight popup" settings order: the "Last 7 days" options
   are grouped together again.
-
-# v7.9.0 · 2026-10-14
-
-### Changed
-
-- Book info: tap the stars to open the rating popup (long press still works).
-- Ratings changed outside the plugin (e.g. in the file manager) now show up in Book info and the book lists right away instead of after the cache expires. Book info reads the rating straight from the book's own sidecar when its file is known.
-- Opening Book info or a book list no longer restarts the slow sidecar-folder scan, which could take seconds on an e-ink reader.
-- Rating a book from a list now writes to the book's own sidecar when its file is known, so the file manager and status page agree. The old plugin-only override no longer shadows it.
-- Rating a book from a list now shows a message when the rating couldn't be saved, instead of showing stars that were never stored. Save failures are also written to the log.
-- Rating popup rebuilt on KOReader's ButtonDialog, so it matches the plugin's other popups.
-- Ratings changed outside the plugin (e.g. in the file manager) now show up right away in Book info when the book's file is known, because it reads the rating straight from the book's own sidecar. Book lists pick such changes up when the short rating cache expires.
-- Menu: "Progress bars" renamed to "Progress bar" (all translations updated).
