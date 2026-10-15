@@ -1,3 +1,22 @@
+# 3.1.0 · 2026-10-15
+
+### Changed
+- **Bookshelf Integration**:
+  - Komga now joins [Bookshelf](https://github.com/AndyHazz/bookshelf.koplugin) through its official shelf source API instead of hooking into Bookshelf's internals, so Komga shelves keep working across Bookshelf updates. Requires Bookshelf v5.4.0 or later; with an older Bookshelf, Komga shelves don't appear.
+  - Komga's list, sort and filters are now set in Bookshelf's shelf editor (long-press a Komga shelf), where its "Server order" would be. Picking Komga as a shelf's source just asks which list to show.
+  - Add Komga shelves from Bookshelf's shelf editor (**Source / grouping → Komga**). **Options → Add Komga Shelf to Bookshelf** has been removed.
+  - Series show their cover in the shelf's folder style, and their badge counts books read out of the total (e.g. 8/12), like a local folder's.
+- **Fewer Notices**:
+  - "Saved" is shown only when nothing opens the book afterwards (Download & Open, the next-chapter prompt and Bookshelf open it instead).
+  - Bulk downloads show one notice when they start and one when they finish, instead of two per book. A failure still shows.
+  - No "Updated" notice after changing a setting (the menu shows the new value), and no "Checking server progress" notice before a manual pull's result.
+
+### Fixed
+- **Bookshelf Integration**:
+  - A series or collection opened for the first time loads with its first page of covers behind one "Loading from Komga…" notice, instead of drawing empty, then without covers, then whole.
+  - Returning from a book to a Komga series in Bookshelf no longer leaves the series empty.
+  - Download & Open from a book's long-press dialog now opens the book once it has downloaded.
+
 # 3.0.0 · 2026-09-25
 
 ### Added
@@ -70,11 +89,3 @@ Just fixed the version string in metadata.
   - Fixed the manual sync action (`komga_sync_now`) which had an incorrect `"none"` category and missing event method, ensuring it now correctly dispatches and triggers manual synchronization.
 - **Home Screen Return Behavior**:
   - Aligned browser window stack properties and resolved settings menu stack retention to ensure closing the browser correctly returns to launcher/homescreen plugins (e.g. Simple UI) instead of showing the book file manager.
-
-# 2.0.1 · 2026-07-10
-
-### Fixed
-- **File Extension Handling**:
-  - Fixed an issue where books ending with decimal volume or chapter numbers (e.g., `xxx-vol-12.5`) would be downloaded without their extensions, preventing KOReader from recognizing them.
-  - Refined extension validation to check specifically for the expected extension when the media type is known, ensuring even mismatched metadata extensions are corrected (e.g., ensuring a `.cbz` file is always saved as `.cbz` even if named `.pdf` on the server).
-  - Maintained general non-numeric extension validation for fallback cases when the media type is unknown.

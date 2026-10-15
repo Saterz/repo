@@ -26,8 +26,9 @@ Copy the `bookcard.koplugin` folder to `koreader/plugins/`, restart KOReader.
 - Tools > Book card: Preview, Background (follow night mode / light / dark,
   wallpaper picture, text background opacity), Cover (rounded corners,
   shadow, cover/statistics spacing), Colors, Fonts, Card elements
-  (battery / streak / reader type toggles, statistics rows), Advanced
-  Settings (orientation, clear cache), Updates.
+  (battery / streak / reader type toggles, statistics rows: show / hide,
+  order, separators and reading goals), Advanced
+  Settings (orientation, clear cache), Updates, About.
 - Assign a gesture to open it.
 
 ## Android
@@ -83,7 +84,7 @@ rotates the screen - it always renders at the screen's current orientation,
 regardless of this setting.
 
 ## Wallpaper
-Tools > Book card > Background > Wallpaper lets you pick a background
+Tools > Book card > Appearance > Background > Wallpaper lets you pick a background
 picture, read from `settings/bookcard/wallpapers/` (drop your own image
 files there - png/jpg/jpeg/bmp/gif/webp - then reopen the menu to see them
 listed; pick "None" to go back to the plain background). With a wallpaper
@@ -99,6 +100,31 @@ same pages-left call, same capped reading time, same streak logic; the weekly
 streak follows Reading Insights' week-start setting). The reader type is the
 part of the day (night 0-6, morning 6-12, afternoon 12-18, evening 18-24) with
 the most reading time over all books.
+
+### Configuring the statistics rows
+Card elements > **Configure statistics items** is the one place
+to manage the statistics rows:
+- **Show / hide**: tap the checkbox on the left of a row.
+- **Reorder**: tap a row to select it, then move it up or down.
+- **Separator lines**: long-press a row to add a thin line below it, long-press
+  again to remove it. Rows with a line are underlined across the whole row in
+  that list. The color (default `#888888`) is set under Colors > Separator line
+  color.
+
+### Goals and pages today
+These statistics rows are all off by default (enable them in the configure
+dialog above):
+- **Pages Read Today (This Book / All Books)** - distinct pages read today.
+- **Daily Goal / Weekly Goal** - time read today / this calendar week (all
+  books) against a goal, e.g. `12 min / 30 min`, with a check mark once it is
+  met. The goals are set in Card elements > **Reading goal
+  settings** (hours + minutes) and are stored under Reading Insights' own keys
+  (`reading_insights_daily_goal_min`, `reading_insights_weekly_goal_min`, in
+  minutes; defaults 30 min / 5 h), so changing one in either plugin changes it
+  in both. Without Reading Insights the key is simply created when you first
+  set a goal here.
+
+The author line is no longer italic by default (Fonts > Author can still set it).
 
 ## Updates
 `lib/updater.lua` is the Reading Insights updater. Set `GITHUB_REPO` at the top

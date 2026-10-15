@@ -1,3 +1,10 @@
+# v7.9.3 · 2026-10-15
+
+### Changed
+
+- Settings menu reorganized into General, Date & time, Appearance and one group per view.
+- Book progress options grouped into Chapters, This book and Pace; bar chart heights moved next to their views.
+
 # v7.9.2 · 2026-10-14
 
 ### Fixes
@@ -35,8 +42,3 @@
 ### Changed 
 Removed the progress bar from the "This chapter" row in the Book progress popup. 
 _Note: That row shows the time left rather than a percentage, so a bar under it looked out of place. The bar is now only shown under the book's read percentage._
-
-# v7.8.8 · 2026-10-14
-
-### Changed 
-In the Book progress popup, the "This book" section now shows the read percentage row first again, with its progress bar directly under the percentage (inside that cell only, matching the chapter bar), This makes it more consistent across the plugin.
