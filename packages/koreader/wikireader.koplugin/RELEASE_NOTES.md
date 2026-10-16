@@ -1,3 +1,8 @@
+# v2.0.0 · 2026-10-16
+
+- Article images are now supported
+- More layout tweaks and improvements
+
 # v1.0.2 · 2026-09-13
 
 - Fixed WikiReader menu access issues with plugins Shortcuts Toolbar and Menu Customizer

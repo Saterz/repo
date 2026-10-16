@@ -1,3 +1,23 @@
+# 26.10.16-beta · 2026-10-16
+
+## What's Changed
+
+### Story Arc Fixes & Consistency
+* **Updated Settings Naming**: Renamed all remaining menu items and descriptions to **Story Arc Settings** across all languages for consistency.
+* **Support for Part-Only Books**: Fixed an issue where books divided into large "Parts" rather than regular numbered chapters (such as Stephen King's *Carrie*) resulted in missing character arcs. The plugin now automatically breaks oversized sections into smaller segments during prefetch so characters evolve naturally across the entire story.
+* **Prefetch Truncation Fix**: Fixed a bug where starting full-book pre-generation or horizon prefetch from early pages could prematurely truncate the first chapter.
+
+### Stability & Performance on E-Readers
+* **Reduced Memory Footprint**: Fixed an issue where extracted chapter text was kept in memory during background pre-generation. Text buffers are now freed immediately once sent.
+* **Low Memory Guards**: Added checks that monitor free memory between prefetch batches and pause background scanning if system RAM runs low, preventing crashes on memory-constrained devices like Kindles.
+* **Fetch Collision Prevention**: Page turns and chapter transitions while reading will no longer trigger conflicting background fetches while pre-generation is actively running.
+
+### Unit Converter
+* **Language-Aware Cache Versioning**: The unit converter now tracks rule changes per language and category rather than using a single global version bump. Updates to vocabulary or aliases in other languages will no longer invalidate your existing scanned books, eliminating unnecessary re-scans.
+* **Legacy Cache Migration**: Existing unit caches are now automatically recognized and preserved across updates.
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.15-beta...26.10.16-beta
+
 # 26.10.15-beta · 2026-10-16
 
 ## New Features: Prefetch Horizon & Entity Evolution
@@ -42,16 +62,3 @@
 * @Gargoyle-Gecko made their first contribution in https://github.com/ultimatejimmy/xray.koplugin/pull/146
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.2-beta3...26.10.6-beta
-
-# 26.10.2-beta3 · 2026-10-02
-
-## What's Changed
-
-This release focuses on memory optimizations and stability improvements to keep X-Ray running smoothly, especially on older or low-memory e-ink devices like earlier Kindles and Kobos.
-
-* **Low-memory protection**: X-Ray now dynamically monitors available device RAM. If system memory is running critically low, silent background tasks (like automatic chapter fetches and weekly update checks) will quietly step aside to prevent crashes or freezes. Manual requests from the menu still work as usual.
-* **Smoother book opening**: Background tasks and automatic unit scans are now deferred for a few moments after opening a book. This gives KOReader the breathing room it needs to render pages and load fonts without competing for CPU and RAM.
-* **Unit scanner memory cleanup**: Searching an entire book for units now cleans up temporary search tables in stages rather than holding them in memory, noticeably lowering peak memory usage during book scans.
-* **Leaner AI data handling**: Background network requests now clean up raw downloaded buffers and temporary structures immediately after parsing book details.
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.2-beta...26.10.2-beta3
