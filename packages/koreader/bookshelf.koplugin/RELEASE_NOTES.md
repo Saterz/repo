@@ -1,3 +1,27 @@
+# v5.5.0 · 2026-10-16
+
+- Series boxes: long-press a shelf > Shelf style > Series boxes. On a Spines shelf each series stands as an open slipcase holding its books, with the first book's cover on the front and how many you've read. Tap it to open the series face-out, in series order (thanks @komadorirobin).
+- Find author photos online: Settings > Library & search > Find author images online…, or long-press an author. Looks on Open Library, then Wikipedia, and saves each photo, sized for a tile, in your image library. Progress shows in the status line, with Stop. On an Authors shelf each photo sits in a frame at its own shape.
+- Page badge replaces Show page count in Settings > Cover display: show pages, percent read or both, the number without the "p" (#499), and printed page counts first instead of the count at your reading settings.
+- New sort keys: Added or opened, where new books and the book you just opened both go to the front, like a Kindle's home (#519); and Favorites first (thanks @dmaglio).
+- Recently read module: the covers of the books you last opened (based on @rapinoinfeliz's PR).
+- Books in formats that other plugins add, such as Meguru, now show on your shelves (thanks @AcidWeb).
+- OPDS books that can be streamed (Komga, Kavita, Suwayomi) get Page stream, Stream from page and Resume buttons.
+- For patch and plugin authors: add your own tokens, draw the placeholder for books without a cover, and add buttons to OPDS book details. See README and SOURCE_API.md.
+- Moved: Extra wallpaper folder is now in Theme > Wallpaper, so Library & search is back on the first page of Settings.
+- Fix: on a shelf inside a Shelf of shelves, turning a page no longer redraws the whole screen, which could show the shelf going white before it painted in.
+- Fix: Scan all library metadata no longer stops straight away in French and some other languages (#516).
+- Fix: one book that crashes the page count scan no longer takes KOReader down on every scan (#518).
+- Fix: a book with progress but no reading status, e.g. from another app, shows its progress bar (#524).
+- Fix: in list view a wrapped line keeps the style it started with and no longer covers the divider above (#510).
+- Fix: accented letters written as HTML codes in descriptions now show as letters.
+- Fix: On This Day, Trivia and Daily Fun no longer ask to turn on Wi-Fi when the home screen is drawn offline; tap them to fetch.
+- Fix: shelf and tag button labels sit centred in UI fonts that put them high or low.
+- Fix: opening a face-out book you had already selected no longer draws its shadow on the wall.
+- Fix: re-linking a book to Hardcover keeps its cover and description choices.
+- Fix: OPDS login details are no longer sent when a catalog redirects to another server.
+- Fix: a plugin source's new books show straight away on Spines shelves (#511).
+
 # v5.4.4 · 2026-10-12
 
 - When Auto shows a list on both levels, Shelf style has list columns and rows for each, under Level 1 and Level 2.
@@ -22,36 +46,3 @@
 - A shelf inside a shelf of shelves can now have its own theme. Until you choose one it wears its shelf of shelves' theme, shown as "Same as …" in Shelf style and the Theme menu, and the Theme menu's This shelf row now sets the shelf you're on.
 - The line under each cover is now called a cover caption: Settings > Cover display > Cover captions, and Settings > Text size > Cover captions.
 - Show text below groups is now a single switch, Show author below series. The Custom option for groups is gone: the only thing it could add was a series' author. If you had Author or Custom chosen, the switch is on.
-
-# v5.4.0 · 2026-10-10
-
-- Each shelf can now have its own theme (#495). Choose one in the new Theme library: a card for each theme, and the shelf behind changes as you tap. Shelves you leave alone use your Default theme.
-- Any theme can be edited. Change its wallpaper, plank, colours or ornaments and the changes stay with that theme; Reset in the Theme library puts it back.
-- Your own wallpaper, plank and colours are now a theme of their own, Custom theme, and choosing a pack no longer overwrites them. There is also a new built-in Plain theme: no wallpaper, Oak plank, default colours.
-- Every ornament pack can be chosen as a theme.
-- Your shelf looks the same after updating: a pack you were using becomes your Default theme, and your own settings become Custom theme.
-- One Theme menu replaces Shelf theme and Wallpaper, ornaments and colours. Shelf style (long-press a shelf) also starts with a Theme row.
-- Shelf of shelves: a new shelf source that holds other shelves, as many levels deep as you like, each with all the options of any shelf. On Spines it shows the books from all of them (#489).
-- Taking a face-out book off a spine shelf now shows it in 3D, pulled off the shelf and turned so you see its pages and boards.
-- Ornaments no longer stand in the same places on every page, and each shelf keeps its own ornaments in its own order. Swap and Shuffle this shelf only change the shelf you're on.
-- Custom text below covers: Settings > Cover display > Show text below covers > Custom… builds the line from tokens, e.g. %book_pct · %size for how far you've read and the file size.
-- Show text below groups: a separate line under series and other stacks, so you can have titles under books and the author under series (#486). Choose None, Author or Custom… in Settings > Cover display.
-- Panel shading is now in Theme > Wallpaper and part of the theme, so a pack can bring its own. Two new options sit with it: Blur wallpaper behind panels, and Panel behind Covers shelves for the same solid panel list view has (#483).
-- The shelf editor applies each change as you make it, so Close replaces Cancel and Save.
-- The Kobo shelf is now a shelf source: add a shelf and choose Kobo library. The Kobo setting under Advanced is gone.
-- Other plugins can now add their own shelf sources (#452). See SOURCE_API.md.
-- Moved: Extra wallpaper folder is now under Settings. Colours > Colours for: Light | Dark switches the set you're editing without turning on night mode. Transparent is now a choice in Colours > Shelf menu background.
-- For pack makers: plank_solid plank ends; in theme.json a "hero" ornament for the pack's card and panel_shading, panel_blur and covers_panel; a per-piece "trim" in pack.json.
-- Fix: on a shelf with a filter, opening a series or other stack shows all its matching books, not only the first (#485).
-- Fix: in list view, a book marked finished without being opened shows a full progress bar (#487).
-- Fix: books from Calibre-Web no longer start their description with its RATING, TAGS and SERIES lines, books already downloaded included (#490).
-- Fix: on a new KOReader install with no home folder set, Home shows the device's books instead of none.
-- Fix: closing a picker while its search keyboard was open no longer leaves the keyboard behind with KOReader looking frozen.
-- Fix: an ornament in the bottom-left corner no longer takes taps meant for the start menu button.
-- Fix: Transparent panel shading no longer makes the shelf menu transparent too. If you had that look, it is kept as Shelf menu background: Transparent.
-- Fix: with a plank design, hanging ornaments stay on the wall instead of overlapping a plank, and plank ends are no longer cut short after an animated page turn.
-- Fix: switching a shelf to another style and back no longer changes the size of the top panel.
-- Fix: covers added by a fallback cover patch no longer disappear after the first draw (#500).
-- Fix: under Most recently read on a series shelf, adding a book no longer counts as reading it: unread books, and the series they join, no longer jump to the front.
-- Fix: every top panel progress bar style (Rounded, Metro, Wave, Pacman) now draws without Bookends installed; the default Rounded bar was square without it.
-- Fix: a UI font with no italic file no longer fills the log with font errors (#501, thanks @Tsukumi233).

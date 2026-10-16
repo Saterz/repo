@@ -1,3 +1,13 @@
+# v0.5.1 · 2026-10-16
+
+Just a quick fix for a login issue
+
+## What's Changed
+* Login fix by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/55
+
+
+**Full Changelog**: https://github.com/IntrovertedMage/AO3Downloader.koplugin/compare/v0.5.0...v0.5.1
+
 # v0.5.0 · 2026-09-04
 
 This update mainly is made up of features and bug fixes made by @JayBigGuy10 on their fork. I'd like to thank them so much for submitting all these code requests to this version of the plugin.
@@ -58,13 +68,3 @@ The menu option to open the plugins menu should then be found under the search t
 
 
 **Full Changelog**: https://github.com/IntrovertedMage/AO3Downloader.koplugin/compare/v0.3.0...v0.3.1
-
-# v0.3.0 · 2025-11-22
-
-## What's Changed
-* Add filename template setting by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/7
-* Implemented event for opening plugin menu so it can now be assigned to a gesture. by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/10
-* Add setting to change which folder fanfic are saved to  by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/11
-
-
-**Full Changelog**: https://github.com/IntrovertedMage/AO3Downloader.koplugin/compare/v0.2.2...v0.3.0

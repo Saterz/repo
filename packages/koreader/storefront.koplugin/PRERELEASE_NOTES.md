@@ -1,3 +1,14 @@
+# 26.10.17-beta · 2026-10-16
+
+- Catalog logic tweak
+- memory fix
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.16-beta2
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.16.1-beta
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.17-beta
+
 # 26.10.15-beta · 2026-10-16
 
 ## What's Changed
@@ -31,14 +42,3 @@
 Fix bug with filter button
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.10-beta...26.10.10-beta2
-
-# 26.10.10-beta · 2026-10-10
-
-### Improvements and Fixes
-
-* **Fixed memory leaks on low-RAM devices**: Fixed an issue where background ratings requests could get stuck and leak memory if they timed out, leading to out-of-memory crashes on memory-constrained e-readers (such as the Kindle Paperwhite 2). All background processes now have strict timeouts and are guaranteed to terminate cleanly.
-* **Low-memory voting protection**: When available RAM is running low, Storefront avoids spawning heavy background processes altogether when you rate a plugin. It now submits your vote directly with a brief *"Submitting vote..."* status message so your vote goes through reliably without crashing KOReader.
-* **Faster store browsing**: Ratings are now baked directly into the catalog. Storefront no longer fires off heavy background requests every time you open the browser dialog, resulting in faster dialog load times and lower overall memory usage.
-* **Reduced memory footprint**: The in-memory ratings cache now discards unrated zero-entry items, cutting down memory usage by roughly 90%.
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.9-beta...26.10.10-beta

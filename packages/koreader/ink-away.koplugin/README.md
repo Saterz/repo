@@ -80,7 +80,7 @@ Export a transparent or white PNG, or a paged PDF, at your exact screen size.
 | **Hold to straighten** | Hold the pen still at the end of a stroke and a rough line, box, ellipse or triangle snaps clean. Writing is left alone. |
 | **Shapes** | Lines, curves, single and double arrows, rectangles, ellipses and triangles, filled or outlined, snapped to the grid or to 45°. A paint bucket fills an area in one tap. |
 | **Eraser** | Clears ink back to transparent, or removes whole strokes. It leaves pictures alone unless you ask, and can spare text too. |
-| **Text** | Text boxes in any installed font, with bold, italic, underline, sizes, alignment, line spacing, lists and checklists you tick with a tap, snapped to a notebook's lines. On colour screens, coloured text and highlights in yellow, orange, blue, green, pink or your own colours. Turn a box to any angle, or stand it on end for a book's margin. |
+| **Text** | Text boxes in any installed font, with bold, italic, underline, sizes, alignment, line spacing, lists and checklists you tick with a tap, snapped to a notebook's lines. On colour screens, coloured text and highlights in yellow, orange, blue, green, pink or your own colours. Turn a box to any angle, or stand it on end for a book's margin. A Bluetooth or USB keyboard that KOReader has set up types into it too. |
 | **Pictures** | From a file or found online (Wikimedia or Openverse), then moved, resized, turned and cut out of their background. A picture can also sit behind a drawing to trace over. |
 | **Symmetry** | Draw mirrored left to right, top to bottom, or four ways. |
 
@@ -130,10 +130,45 @@ Sketch, ink and colour each on a layer of its own, as in a desktop or tablet dra
 |             |                                                                                                                                          |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | **Library** | Every drawing and notebook is a file that saves itself. Folders, thumbnails, rename, move, duplicate and delete, all without a computer. |
+| **Folder colours** | Give a folder one of twelve colours and an icon from your KOReader, your own koreader/icons folder included, so you spot it at a glance. |
 | **Browse**  | A folder's notebooks as coloured tabs beside their pages, with a starred-only view. Move or copy pages to any notebook.                   |
 | **Search**  | By name, or by the text inside pages, handwriting turned into text included.                                                             |
 | **Trash**   | Deleted notebooks, drawings, folders and pages wait 30 days and go back exactly where they were if restored.                             |
-| **On Bookshelf** | With the Bookshelf plugin installed, your notebooks stand on a shelf with their covers in six styles, and your drawings hang on one in twelve frames, from gilded Baroque to an instant photo. A tap opens one, a long press changes its cover or frame. |
+
+<details>
+<summary><b>Screenshot</b></summary>
+<br>
+<a href="assets/screenshots/library-folder-look.png"><img src="assets/screenshots/library-folder-look.png" alt="Folder colour and icon" width="50%"></a><br><sub>Hold a folder in the library for its colour and icon.</sub>
+</details>
+
+### On Bookshelf
+
+With the [Bookshelf](https://github.com/AndyHazz/bookshelf.koplugin) plugin installed, your notebooks and drawings can each have a shelf of their own.
+
+| | |
+|---|---|
+| **Notebooks shelf** | Every notebook stands face out on its cover: Front page, Hardcover, Composition book, Reporter pad, Kraft with window or Legal pad, in its tab colour or one you pick. |
+| **Drawings shelf** | Every drawing hangs in a frame, from Gilded Baroque, Louis XVI and Art Deco to Museum Mat, Painted Box, Canvas Wrap and Instant Photo, each in a few finishes. A new drawing gets one at random. |
+| **Tap and hold** | A tap opens a notebook or drawing in Ink Away. A long press picks its cover or frame, and so does its menu in the library. |
+| **Quick** | A cover is a picture Ink Away keeps as you close the notebook or drawing, made again only when it changed, so the shelf opens at once and never draws your strokes again. |
+
+<details>
+<summary><b>Screenshots</b></summary>
+<br>
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="assets/screenshots/bookshelf-notebooks.png"><img src="assets/screenshots/bookshelf-notebooks.png" alt="Notebooks shelf"></a><br><sub>Notebooks on a Bookshelf shelf, each in its cover style and colour.</sub></td>
+    <td width="50%" valign="top"><a href="assets/screenshots/bookshelf-drawings.png"><img src="assets/screenshots/bookshelf-drawings.png" alt="Drawings shelf"></a><br><sub>Drawings on a Bookshelf shelf, each in its own frame.</sub></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td width="33%" valign="top"><a href="assets/screenshots/bookshelf-covers.png"><img src="assets/screenshots/bookshelf-covers.png" alt="Cover styles"></a><br><sub>Hold a notebook to pick its cover style, or its colour.</sub></td>
+    <td width="33%" valign="top"><a href="assets/screenshots/bookshelf-frames.png"><img src="assets/screenshots/bookshelf-frames.png" alt="Frames"></a><br><sub>Hold a drawing to pick its frame from twelve, shown on the drawing itself.</sub></td>
+    <td width="33%" valign="top"><a href="assets/screenshots/bookshelf-finishes.png"><img src="assets/screenshots/bookshelf-finishes.png" alt="Finishes"></a><br><sub>Each frame comes in a few finishes, here gold, antique gold and silver gilt.</sub></td>
+  </tr>
+</table>
+</details>
 
 ### Export
 
