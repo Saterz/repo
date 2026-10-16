@@ -1,3 +1,28 @@
+# v8.1.2 · 2026-10-16
+
+### Changed
+
+- Reading streak is now called Reading calendar.
+
+### Added
+
+- Reading calendar settings submenu (Settings > Reading calendar).
+  - Show streak bar under covers option in the new Reading calendar settings. Default off. Covers already shows the streaks beginning and end.
+- Long-pressing the “Reading calendar” title reloads the covers (clears the cover cache and loads them again).
+- A third stacked cover in calendar day cells. Each cover sits one step up and to the right of the one in front, and covers are slightly smaller when three are shown.
+  - A +1, +2, … tag on the front cover when a day has more than three books, counting the books beyond the third.
+
+# v8.1.1 · 2026-10-16
+
+### Changed
+
+- Book progress calendar style matches more the Reading Streak.
+
+### Fixed
+
+- Day number alignment on Book progress calendar: the day number sat at a different height on days with a progress bar than on days without one.
+- Percentages not always adding up to 100% on Book progress calendar.
+
 # v8.1.0 · 2026-10-16
 
 ### New
@@ -34,18 +59,3 @@ Streak calendar covers: each day cell now shows the cover of that day’s most-r
 - Reload data: the insights title-bar reload now wipes the ratings cache completely. The “Mark book finished” list’s “Reload data” refreshes ratings from the cache.
 - Faster finished-books list: books ticked as finished by hand are looked up individually (and cached) instead of re-querying the whole year.
 - No more “Loading ratings…” popup when opening book lists.
-
-# v7.9.3 · 2026-10-15
-
-### Changed
-
-- Settings menu reorganized into General, Date & time, Appearance and one group per view.
-- Book progress options grouped into Chapters, This book and Pace; bar chart heights moved next to their views.
-
-# v7.9.2 · 2026-10-14
-
-### Fixes
-
-- Book info popup opens faster.
-- Rating lists load faster and refresh less often.
-- Ratings are never saved to the wrong book.
