@@ -1,3 +1,97 @@
+# v0.2.9 · 2026-10-16
+
+## 月读 v0.2.9
+
+KOReader 插件包：`book.koplugin-v0.2.9.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.9.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.9.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.8`：
+
+#### 变更
+
+- docs(readme): 补充扩展开发说明 (a0af48a3)
+- feat(extension): 插件自行声明能力并支持注入首页组件 (b7c1f518)
+- feat(library): 工具栏增加随机一本 (62cf0d75)
+- feat(home): 新增随机一本与书架组件 (84fdd08b)
+- feat(library): 最近阅读排序列出整个书架并使用云端阅读时间 (6995b206)
+- fix(bluetooth): 顶栏蓝牙设备名最多显示 4 个字 (c8a8c960)
+- docs: 删除开发文档，要点移入源码注释并更新 README (dd6493c9)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.8...v0.2.9
+
+# v0.2.8 · 2026-10-16
+
+## 月读 v0.2.8
+
+KOReader 插件包：`book.koplugin-v0.2.8.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.8.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.8.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.7`：
+
+#### 变更
+
+- test(remote): 备份用例打桩 dump，兼容无 KOReader 的 CI (f8328a81)
+- feat(remote): 远程管理支持配置备份与恢复 (bd501f19)
+- fix(library): 删书后同步书架数量异常 (2923dad3)
+- fix(progress): 无章节的已读进度按末章上报，推不上的行标记丢弃且不中断整次同步 (11f8ea22)
+- perf(ui): 书籍文件复制改为分块流式 (4105ef64)
+- refactor(ui): 封面格打开动作由页面注入，字体排版偏好移回面板层 (c4d99039)
+- fix(settings): 补齐功能设置项登记并加校验用例 (33daeb2f)
+- refactor(utils): 事件监听由 main 注入，utils 不再反向依赖 features (4603aa35)
+- fix(xray): 释放标记缓存 (ae9733ef)
+- fix(features): 词典与输入法下载出错时关闭文件句柄 (4f4ae293)
+- fix(book): 分页文档划线按坐标内容去重 (a44b0c41)
+- fix(jdread): 详情缺 ebook_id 时不写入缓存 (16f3911e)
+- fix(copymanga): 收藏接口使用重登后的最新 token (efab2358)
+- fix(wechat): 取消后不再回调并加快划线定位 (3e1bf8dd)
+- perf(fanqie): Cookie 未变化时不重复写设置 (cc73a46d)
+- fix(registry): 第三方源 new() 出错时记日志并跳过 (00087908)
+- fix(source): 回调同步触发时不再用旧句柄覆盖在途请求 (5344ac04)
+- fix(chapter): 没有书籍记录时准备框不再崩溃 (c64c905a)
+- fix(local): 解析元数据出错时也关闭文档 (d59ea7ce)
+- fix(fanqie): 19 位设备 id 按 uint64 精确编码 (eaf34522)
+- perf(sync): 判断笔记待上传只查存在性不读整份快照 (48811301)
+- fix(reader): 标记已读失败时同一会话不再每次翻页重试 (b6723050)
+- fix(remote): 停服释放静态资源缓存并补路径越界用例 (530b5b40)
+- fix(wechat): 段评跳过已删除条目与缺作者数据 (6b913dbb)
+- fix(webdav): 兼容默认命名空间的目录列表 (761dba64)
+- fix(http): 镜像同步失败换源时取消正在进行的请求 (0cf1e236)
+- test(runner): 补齐沙盒并接入模拟器 sqlite，新增扫码登录与想法推送用例 (d784676e)
+- fix(http): Android 上 turbo 响应头查找缺少 strncasecmp 导致崩溃 (53c682e1)
+- fix(remote): 日志打包脱敏避免长串超时导致空包 (ed365573)
+- fix(baike): 百科查询改用四合一查词窗口 (d2f71bcb)
+- fix(rare): 点击普通文字不再弹出生僻字窗口 (9d285f89)
+- fix(local): azw3 书籍扫描取不到封面 (97968a17)
+- feat(topbar): 蓝牙图标移到 Wi-Fi 旁边 (eca377cc)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.7...v0.2.8
+
 # v0.2.7 · 2026-10-15
 
 ## 月读 v0.2.7
@@ -128,100 +222,3 @@ KOReader 插件包：`book.koplugin-v0.2.5.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.4...v0.2.5
-
-# v0.2.4 · 2026-10-14
-
-## 月读 v0.2.4
-
-KOReader 插件包：`book.koplugin-v0.2.4.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.4.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.4.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.3`：
-
-#### 新功能
-
-- :sparkles: (kindle): 新增 Kindle 书库源（对接 kindle.koplugin） (f3c1fde4)
-- :sparkles: (local): 新增「按文件夹分类」开关，编辑分类时按开关决定是否移动文件 (dbe6d17c)
-- :sparkles: (ui): 新增错误页“关闭月读”选项 (c3a60471)
-- :sparkles: (ai): 添加 OCR 文字识别功能支持 (fb3ed540)
-- :sparkles: (ai): 添加 OCR 文字识别功能支持 (b24f86b5)
-- :sparkles: (desktop): add physical page-turn keys support (de382566)
-- :sparkles: (ui): 支持顶栏独立字号与高度设置 (69be326f)
-- :sparkles: (sync): 实现书架同步节流与并发登录重试机制 (c747a7e1)
-
-#### 修复
-
-- :bug: 海报锁屏：未打开过的网络书联网时预取封面 (653e38f6)
-- :bug: (book): 修复书架刷新偶尔显示为空 (3c2eb376)
-- :bug: (jdread): 修复京东扫码确认后仍停留在扫码页 (#36) (ff783987)
-- :bug: (local): 修复系统 documents 目录扫不到：放开扫描深度、按 KOReader 格式表识别书籍、默认使用主目录 (84085ba8)
-- :bug: (cache): 清理缓存后自动重新生成封面，复位本地扫盘封面标记并作废内存缓存 (37108a42)
-- :bug: (desktop): fix exit hang by properly closing residual windows on exit (ce4ac42a)
-- :bug: (copymanga): 修复并发请求时令牌过期重登逻辑 (d121fc54)
-- :bug: (ui): 修复面板编辑手势事件未正确初始化的问题 (bde89f70)
-
-#### 界面
-
-- :lipstick: (ui): 重启后书架封面解码前留白，不再先闪色块封面 (b1cf5f8d)
-
-#### 重构
-
-- :recycle: (ai): 过滤 KOReader 的 .sdr 边车目录 (a9c3c784)
-- :recycle: (local): 精简 documents 扫描修复 (df10019c)
-- :recycle: (ui): 统一顶栏/底栏字体策略并规范水平留白 (ee42b04f)
-- :recycle: (ai): 统一复用上传进度框实现通用操作进度反馈 (3bb5cfa6)
-- :recycle: (ui): 重构远程管理页面结构与交互逻辑 (4aa90c2f)
-- :recycle: (http): 统一超时管理，支持 AI/网络超时独立配置与倍率扩展 (bea815bf)
-- :recycle: (desktop): 优化混合模式下书架同步节流逻辑 (cf98b31c)
-- :recycle: (ui): 优化极窄屏下数字输入框宽度计算逻辑 (064d82d5)
-
-#### 变更
-
-- :green_heart: (tests): 每个 spec 独立进程运行，修复 CI 段错误 (486027c7)
-- :green_heart: tests: 基线前预加载 ffi，避免卸载后重建 ctype 表导致段错误 (ed95deea)
-- :speech_balloon: (local): 选择 Kindle documents 目录时提醒选子目录 (4d215a20)
-- :lock: (local): 扫盘跳过带 DRM 的 mobi / azw / azw3 (fbf8693b)
-- :adhesive_bandage: (book): 修复启动横幅加载失败导致插件崩溃的问题 (89d6c35b)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.3...v0.2.4
-
-# v0.2.3 · 2026-10-14
-
-## 月读 v0.2.3
-
-KOReader 插件包：`book.koplugin-v0.2.3.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.3.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.3.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.2`：
-
-#### 修复
-
-- :bug: (copymanga): 令牌失效时用保存的账号自动重登重试，不再只报 HTTP 401 (#42) (11fd49f3)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.2...v0.2.3

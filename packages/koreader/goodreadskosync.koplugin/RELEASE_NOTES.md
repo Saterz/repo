@@ -1,3 +1,17 @@
+# v2.0.5 · 2026-10-16
+
+
+- **The right edition, not just the first hit.** When a search returns several editions of one book, the plugin now shows them to pick from instead of silently linking the first result. The list shows what tells editions apart - page count, and the ISBN/ASIN when the search carried one - and marks the one that matched your file's identifier. A file's ISBN or ASIN is preferred when matching; if it finds nothing on Goodreads, the plugin falls back to a title/author search so there is still a list to choose from, and a weak match is never linked on its own.
+
+# v2.0.4 · 2026-10-16
+
+
+Android sign-in works now, and the diagnostic report explains itself.
+
+- **Sign-in on Android completes.** The plugin saves your session the moment Goodreads accepts it, and on Android the crypto library it used raised instead of falling back, so a successful sign-in was reported as a failure - Goodreads would email "a new device logged in" while the plugin said the login failed. Crypto failures now fall back to plaintext (Android has no OS keystore) instead of breaking the login. Kindle behaviour is unchanged.
+- **Connection doctor: new "Secure connection" check**, and the exported report gained a **"platform" section** (where the plugin keeps its files, whether a KOReader crash log exists). Handy when a report comes from a phone.
+- **Saving plugin state no longer depends on a shell.** The settings folder, the diagnostic log and the cover cache are created with KOReader's own `util.makePath` instead of `mkdir`.
+
 # v2.0.3 · 2026-10-15
 
 
@@ -14,14 +28,3 @@ Minor bug fixes.
 # v2.0.1 · 2026-10-15
 
 - **Find on Goodreads now accepts a Goodreads link or numeric ID.** Pasting a book's Goodreads link (for example `https://www.goodreads.com/book/show/17306293-shift`) or typing its numeric ID in "Find manually" now finds the book. Until now those searches reported "No matches found"; searching by title, author or ISBN was unaffected. An all-digit title (like 1984) still searches by title.
-
-# v2.0.0 · 2026-09-30
-
-Release v2.0.0
-
-# v1.26.1 · 2026-09-30
-
-- **Browse Goodreads — crash fix.** If the image cache directory was missing, pruning threw and the whole page failed ("Couldn't load the page"). Pruning is now a safe no-op and image/CSS enrichment can never fail a page. Added a regression test.
-- **Browse Goodreads — better home + messages.** It opens **My Books** (`/review/list`) instead of the anti-bot-challenged root `/`, and shows clearer "sign-in required" / "blocked" messages.
-- **Browse Goodreads is now experimental and dev-channel only** (hidden on stable), labelled "Browse Goodreads (experimental)…".
-- **Reader-style rendering by default** (skips the site's modern CSS, which CRE can't lay out); dev toggle for Site vs Reader style.
