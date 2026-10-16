@@ -1,3 +1,20 @@
+# v8.1.0 · 2026-10-16
+
+### New
+
+- Streak calendar covers: each day cell now shows the cover of that day’s most-read book, with the runner-up behind it. Covers are cached on disk, so the calendar opens faster. Books without a cover get a placeholder card.
+- Image export (Settings > Image export): saves the sleep screen as a PNG, JPG or BMP file that refreshes itself on a timer (5 min to 1 hour), when a book is opened or closed, and on suspend. It is drawn offscreen, so nothing flashes while reading.
+  - Android: use the file as your wallpaper, or copy it to a shared folder for a wallpaper-changer app.
+  - PocketBook: optionally write it as the power-off / boot logo.
+Includes a “Save image now” button.
+- Sleep screen preview (Sleep screen > Preview): try your settings without putting the device to sleep. Tap, swipe or press any key to close it.
+Streak calendar covers: each day cell now shows the cover of that day’s most-read book, with the runner-up behind it. Covers are cached on disk, so the calendar opens faster. Books without a cover get a placeholder card.
+
+### Fixed
+
+- The sleep screen message and the “Exit sleep screen” gesture now stay on top of the Reading insights popups. #84 
+- The sleep screen closes only when KOReader’s own sleep screen is really over, which fixes it closing too early on a delayed wake-up. #84
+
 # v8.0.0 · 2026-10-15
 
 ## Changes
@@ -32,14 +49,3 @@
 - Book info popup opens faster.
 - Rating lists load faster and refresh less often.
 - Ratings are never saved to the wrong book.
-
-# v7.9.1 · 2026-10-14
-
-### Changed
-- Faster Book info from lists: no more library-wide file search for books
-  without a sidecar; books are matched by checksum, then by title and author
-  among the known sidecar books. The sidecar scan is cached for one hour.
-
-### Fixed
-- The "Reading insight popup" settings order: the "Last 7 days" options
-  are grouped together again.

@@ -76,7 +76,7 @@ Export a transparent or white PNG, or a paged PDF, at your exact screen size.
 |---|---|
 | **Pens** | Fineliner, Ballpoint, Fountain, Calligraphy with its own nib angle, Pencil, Highlighter, Marker, Watercolor and Smudge, each with size, opacity, greys everywhere and full colour on colour screens. The highlighter, marker and watercolor blend with the page, and text stays black under the highlighter. A brush maker makes your own. |
 | **Pen case** | Up to 20 saved pens, each shown at its real size, with a floating strip of your first ones. |
-| **Pen pressure** | On the Kindle Scribe and Kobo readers with a stylus the line follows how hard you press. |
+| **Pen pressure** | On the Kindle Scribe and Kobo readers with a stylus the line can follow how hard you press. It is a Beta, turned on in Pen and input. |
 | **Hold to straighten** | Hold the pen still at the end of a stroke and a rough line, box, ellipse or triangle snaps clean. Writing is left alone. |
 | **Shapes** | Lines, curves, single and double arrows, rectangles, ellipses and triangles, filled or outlined, snapped to the grid or to 45°. A paint bucket fills an area in one tap. |
 | **Eraser** | Clears ink back to transparent, or removes whole strokes. It leaves pictures alone unless you ask, and can spare text too. |
@@ -112,7 +112,7 @@ Sketch, ink and colour each on a layer of its own, as in a desktop or tablet dra
 | **Papers and planners** | Blank, lined, grid, dotted, isometric, margin ruled and Cornell, plus handwriting practice, checklist, two columns, storyboard, music, daily, weekly, week columns, monthly, meeting notes and a habit tracker. You set the line spacing and strength, and drawings can use any of them as a guide. |
 | **Paper colours** | Twelve papers on colour screens, from cream and legal pad to kraft, blueprint and chalkboard, and white or black on grey ones. Black ink and text turn white on a dark paper, and exports come out on the same paper. |
 | **Annotate PDFs** | Open any PDF as a notebook and write on its pages. |
-| **Links and contents** | Make anything a link to a page of this or another notebook, with a Back button to return. A contents page lists the titled pages, each one a link. |
+| **Links and contents** | Make anything a link to a page of this or another notebook, with a Back button to return; tap a link with Pan, or with a finger while palm rejection is on, to follow it. A contents page lists the titled pages, each one a link, and Go to the contents page in the page menu (or on a gesture) gets you there. |
 
 ### Write on your books
 
@@ -120,7 +120,7 @@ Sketch, ink and colour each on a layer of its own, as in a desktop or tablet dra
 |---|---|
 | **Any book** | EPUB, MOBI, FB2, PDF, DjVu, CBZ and every other format KOReader opens. Pen, eraser, shapes, text and pictures work right on the page. |
 | **Ink follows the text** | On a reflowing book each stroke is anchored to the words beside it, so it stays with them when you change the font size, margins or orientation. On PDFs and comics it keeps its place on the page. |
-| **Smart highlighter** | A highlighter stroke over text becomes KOReader's own highlight in the pen's colour and shows in your highlights list. Strokes that wobble or run into the margin still snap; over empty space it stays ink. |
+| **Smart highlighter** | A highlighter stroke over text becomes KOReader's own highlight in the pen's colour and shows in your highlights list. Strokes that wobble or run into the margin still snap; over empty space it stays ink. The eraser takes highlights away like ink, and a long press on one offers to remove it. |
 | **Book notes** | A notebook for each book with a page for each chapter, in a window over the page that expands to full screen. |
 | **Toolbar** | On any side of the screen, and it folds away. It can also fit in the book's margin, clear of the text. |
 | **Kept with the book** | Annotations live beside the book's own KOReader data and follow it when it is moved or renamed. Deleting them puts them in Ink Away's trash for 30 days. |
@@ -149,8 +149,8 @@ Sketch, ink and colour each on a layer of its own, as in a desktop or tablet dra
 | **Dark mode** | Light, Dark or following KOReader's night mode, for Ink Away's toolbars, menus and library. Your page and colours are never changed. |
 | **Palm rejection** | Rest your hand on the screen while the pen writes (on by default on Kindle Scribe and reMarkable). The pen can still tap the toolbar and menus. |
 | **Stylus buttons** | The eraser end erases, and holding the side button makes the pen a highlighter, on pens that have them. You can set them to anything else. |
-| **Colour screens** | A theme colour, Ink Away green by default, and colour ink that shows as you draw. |
-| **E-ink** | Light refreshes while you draw, an optional clean-up refresh every few strokes, portrait or landscape, and bars that fold away for more room. |
+| **Colour screens** | A theme colour, Ink Away green by default, and colour ink that shows as you draw. In KOReader's night mode ink keeps its colour: blue stays blue, and dark ink turns light to read on the dark page. |
+| **E-ink** | Light refreshes while you draw, an optional clean-up refresh every few strokes, a full refresh whenever you like from Settings or a gesture, portrait or landscape, and bars that fold away for more room. |
 
 ### Help and updates
 
@@ -168,6 +168,8 @@ Sketch, ink and colour each on a layer of its own, as in a desktop or tablet dra
 | Two-finger double tap | Redo |
 | Two-finger swipe left or right | Turn a notebook's page |
 | Long two-finger swipe up | Open Browse in a notebook, or the Library from a drawing |
+| Long two-finger swipe down | Refresh the screen, clearing ghosting and anything a quick refresh missed |
+| Page turn buttons | Turn a notebook's page, or the book's in annotation mode |
 | Pinch | Zoom |
 | Two-finger drag | Move around the page |
 | Hold Prev or Next | Jump to the first or last page |

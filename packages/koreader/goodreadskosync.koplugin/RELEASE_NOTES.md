@@ -1,3 +1,9 @@
+# v2.0.6 · 2026-10-16
+
+
+- **Noticeably lighter on slow devices.** The plugin re-read and re-parsed its state files on every access - book mappings on every page turn, sync state on every progress tick. Those stores are now kept in memory. On a PW3, 200 mapping lookups went from 0.98s to 0.001s, and 200 sync-state reads from 0.91s to 0.006s.
+- **The Tools menu entry shows how fresh your data is**, e.g. "Goodreads KO Sync · synced 5 min ago".
+
 # v2.0.5 · 2026-10-16
 
 
@@ -24,7 +30,3 @@ Minor bug fixes.
 
 - **Author search works again.** Goodreads replaced the author search page with a client-side (React) app that returns no author data to a scraper, so it always reported "No matches". Author candidates are now derived from the autocomplete payload, which carries each book's author id and name.
 - **"Find on Goodreads" is more reliable by id or link.** A book link (or `goodreads id N`) is now resolved directly — autocomplete never resolves those forms — and a bare numeric id still falls back to a direct lookup even when the autocomplete request fails or is challenged, instead of reporting an error.
-
-# v2.0.1 · 2026-10-15
-
-- **Find on Goodreads now accepts a Goodreads link or numeric ID.** Pasting a book's Goodreads link (for example `https://www.goodreads.com/book/show/17306293-shift`) or typing its numeric ID in "Find manually" now finds the book. Until now those searches reported "No matches found"; searching by title, author or ISBN was unaffected. An all-digit title (like 1984) still searches by title.
