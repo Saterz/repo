@@ -1,3 +1,15 @@
+# v8.2.3 · 2026-10-17
+
+### Fixed
+
+- Line charts (7-day, 8-week, monthly): value labels still stand above their dots, but now move up only as far as needed so the line never runs through them.
+
+# v8.2.2 · 2026-10-17
+
+### Fixed
+
+- The Reading calendar no longer shows the close X when used as the sleep screen.
+
 # v8.2.1 · 2026-10-17
 
 ### Changed
@@ -17,15 +29,3 @@
 ### Fixed
 
 - Layout fixes for the Streak History Popup
-
-# v8.1.6 · 2026-10-16
-
-### Fixed
-
-- Some more layout fixes. Unifying padding across the plugin views.
-
-# v8.1.5 · 2026-10-16
-
-### Fixed
-
-- Faded previous/next-month days in the calendars being too bright in night mode; they now fade towards the dark background.

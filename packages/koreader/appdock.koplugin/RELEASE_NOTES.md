@@ -1,3 +1,7 @@
+# v8.0.2 · 2026-10-17
+
+Hotfix for startup stability after the new setup wizard.\n\n- Loads the optional Wi-Fi migration module only when migration is opened.\n- Removes the obsolete DockUpdate password confirmation; installation still requires the normal visible confirmation.
+
 # v8.0.0 · 2026-10-12
 
 # Thanks to Quin Easwar
@@ -29,13 +33,3 @@
 - Die Datenbank wird erst beim tatsächlichen Erzeugen einer Tastatur lazy geladen.
 - Falls die Datenbank oder ihr Modul fehlt bzw. fehlerhaft ist, startet die Tastatur mit einer kleinen eingebetteten Fallback-Liste.
 - Caps Lock und die größeren Tasten aus 7.9.45 bleiben erhalten.
-
-# v7.9.45 · 2026-10-11
-
-# AppDock 7.9.45
-
-- Die Tastatur hat jetzt eine sichtbare **CAPS**-Taste für dauerhafte Großschreibung.
-- Die vorhandene **Shift**-Taste bleibt als einmalige Großschreibung erhalten.
-- Normale Buchstaben-, Zahlen-, Symbol- und Steuerungstasten sind größer geworden.
-- Caps Lock funktioniert auch mit deutschen Sonderzeichen wie `ä`, `ö`, `ü` und `ß`.
-- Optional kann ein Dialog `caps_lock = true` beim Öffnen voraktivieren.
