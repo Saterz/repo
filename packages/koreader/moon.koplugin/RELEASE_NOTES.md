@@ -1,3 +1,90 @@
+# v0.2.10 · 2026-10-17
+
+## 月读 v0.2.10
+
+KOReader 插件包：`book.koplugin-v0.2.10.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.10.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.10.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.9`：
+
+#### 新功能
+
+- :sparkles: feat(lookup): 统一查词窗口支持加入原生生词本 (48f43268)
+- :sparkles: feat(subscribe): 新增订阅功能，支持 RSS/Atom、网页与微信公众号 (9d013250)
+- :sparkles: feat(wechat): 公众号文章图落地，公众号不再进书库并清理旧数据 (a1081a09)
+- :sparkles: feat(reader): 支持只读不记的 ephemeral 源与隐藏源注册，补章号重排和 emoji 清理 (32520437)
+
+#### 修复
+
+- :bug: fix(subscribe): 图片跳转不得落到内网，ephemeral 收成身份字段并清理吞错与重复 (71bd52d3)
+
+#### 文档
+
+- :memo: (readme): 新增游戏板块（小黑屋、阿页的阁楼） (8a23676d)
+- :memo: docs: README 补充订阅功能与相关说明 (d7c0fcaa)
+
+#### 变更
+
+- :fire: chore: 删除误提交的 ocr-integration.diff (8224d061)
+- :fire: refactor(rare): 去掉点击注音弹出查词窗口 (48ef475e)
+- :globe_with_meridians: chore(l10n): 补订阅功能的繁体与英文翻译 (8b4aa507)
+- feat(remote): 远程管理支持功能扩展页面与路由 (176898a1)
+- fix(wechat): 优化微信读书认证续期与重试 (1bfd9179)
+- fix(translate): 修复翻译与JSON中emoji代理对乱码 (b1ec8ad0)
+- feat(rare): 生僻字注音改进：词库补繁体、生字本注音、快捷面板开关 (345a6900)
+- refactor(features): 核心经通用扩展点接入 feature，移除端口表与核心直连 (86cf3317)
+- fix(cover): 本地 mobi 按 EXTH 封面记录兜底取封面 (d7b0e0da)
+- feat(sidebar): 阅读侧栏新增统计页 (47b154c6)
+- feat(desktop): 支持反转实体翻页键 (ac64c739)
+- fix(ui): 弹窗遮罩仅受全局设置控制 (d0b0869a)
+- feat(reader): 默认关闭书籍内嵌字体 (5bd4fa11)
+- feat(lockscreen): 锁屏支持透明背景图片 (c238fa42)
+- feat(reader): 阅读面板支持保存为默认配置 (c55ed798)
+- feat(translate): 章节书源支持双语对照 (3ddf194f)
+- style(ai): 「AI token 上限」副标题改为「X-Ray 查询，AI 解释最大上限」 (aa42c644)
+- feat(ai): AI 接口新增可配置的「AI token 上限」（步进器，默认 4000） (9502a50a)
+- chore: 本地笔记加入 gitignore（.scratch/ 设计文档、GLOSSARY.md 术语表） (10b302b5)
+- docs: README 更新阅读统计口径（合并开关按天/按时段、云端按本机时区换算、时段含云端） (bd5bcab8)
+- feat(kavita): 云端按 UTC 时刻在本机时区分日/分时，阅读时段含云端时段桶 (005057ff)
+- fix(kavita): 撤回物化变更信号的核心透传，回到核心零改动 (f358718b)
+- docs: README 补充 Kavita 统计能力与多设备合并说明（P4） (0e9a11d8)
+- refactor(kavita): 收紧 stats 头注并删除未用导出（P5） (9601778e)
+- fix(kavita): 日桶替换窗口上界改到最后观测日日终（P6） (e753a41c)
+- fix(kavita): 物化写入计入统计变更信号（P2） (ce11bccf)
+- fix(kavita): 统计确认推送改 defer，返回可取消句柄（P3） (ee6e3f6e)
+- fix(kavita): 卷物化标题改用持久化卷名，兜底标题不覆盖既有行（P1） (6bac00b4)
+- test(kavita): 对账验收：全量 fixture 走拉取 → 入库 → 展示口径（151 断言） (db48cd95)
+- feat(kavita): 缺行卷物化：云端读过的卷补隐藏身份行 (0eb838a7)
+- fix(local): 优先使用 KOReader 中用户设置的自定义封面 (f100d84d)
+- feat(kavita): 源统计钩子：能力申报 + 本地确认推送 + 分页拉全量 (a42aa91d)
+- feat(kavita): 阅读统计纯核心：历史条目 → 单书 / 账户行与替换指令 (bc1fee23)
+- feat(l10n): 「多设备统计合并」文案入 en / zh_TW 目录 (3e1ea48f)
+- feat(kavita): 扩展设置页新增「多设备统计合并」开关 (87544792)
+- feat(auth): 登录过期时自动重登或提示重新登录 (d9d83871)
+- fix(wechat): 章节返回空响应时指数退避重试，修复部分章节缺失 (50c788e2)
+- fix(remote): 日志发送完成后再删除压缩包，修复下载为 0KB (47a563db)
+- fix(library): 最近阅读不再重复列出换身份重新上架的书 (e592d4f4)
+- fix(remote): 日志打包 zip 条目权限改为 0644，修复解压后文件不可读 (2c52233f)
+- fix(home): 书架小组件「更多 ›」靠右对齐 (b3554985)
+- docs(readme): 补充扩展功能挂点说明 (2810bf2d)
+- feat(extension): 第三方插件可扩展设置页、快捷面板、顶栏、数据事件与阅读器就绪钩子 (21a1b9bc)
+- fix(selection): 防止滑动选词时事件循环导致栈溢出 (da84976a)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.9...v0.2.10
+
 # v0.2.9 · 2026-10-16
 
 ## 月读 v0.2.9
@@ -172,53 +259,3 @@ KOReader 插件包：`book.koplugin-v0.2.6.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.5...v0.2.6
-
-# v0.2.5 · 2026-10-15
-
-## 月读 v0.2.5
-
-KOReader 插件包：`book.koplugin-v0.2.5.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.5.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.5.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.4`：
-
-#### 新功能
-
-- :sparkles: (kavita): 请求超时与进度心跳间隔可在设置里调，慢设备不再 30s 拉不完书架 (5ca6ec29)
-
-#### 修复
-
-- :bug: (kavita): 卷行元数据只写真正变化的行、计入同步变更，开书取重读后的容器行 (56bfe0f2)
-- :bug: (panel): 顶栏副标题取 book.authors，字段名写错成单数 author 一直读不到 (b4ea9673)
-- :bug: (reader): 整本书冷打开按本地记录回落位置，sidecar 缺失不再停在开头 (e3ee1906)
-- :bug: (cache): 清缓存保留 KOReader .sdr 边车，重下后位置/书签/标注还在 (81710d6b)
-- :bug: (panel): 编辑态手势表不能为 nil，否则一点就崩 (139d90b2)
-- :bug: (kavita): 页级进度按 spine 判，不再按百分比 (f978e057)
-- :bug: (kavita): 阅读时间按服务器本地时间解析，刚读完的书不再排在旧书后面 (bcdfaee2)
-- :bug: (library): 「最近阅读」只列读过的书，没读过的不再排在后头 (d68006cc)
-- :bug: (kavita): 修复图书馆元数据/已读与首页继续阅读的高度、排序 (77c10241)
-
-#### 变更
-
-- fix: 业务代码不再静默吞错（锁屏预取、http 超时、诊断导出） (1ea6bfcd)
-- fix: 审计修复（页级进度 nil 崩溃、最近阅读口径测试、封面预取吞错） (9d4b1a0f)
-- fix(kavita): 心跳间隔与设置一致、清理过时注释、补 spineCmp 远端无 spine 测试 (348870ee)
-- fix(bars): 微信读书页码模式按全书估算页码 (c37a4d0d)
-- fix(remote): 上传默认覆盖同名文件 (2250e448)
-- :feat: (kavita): 阅读期进度心跳，Kavita 阅读会话不再恒为 0 秒 (ff392961)
-- :feat: (kavita): 最近阅读显示当前在读的卷；卷行继承容器（series 级）元数据 (42bd7207)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.4...v0.2.5

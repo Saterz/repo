@@ -1,3 +1,17 @@
+# v8.2.1 · 2026-10-17
+
+### Changed
+
+- The 8-week trend now shows whole calendar weeks (following the week start day setting) instead of rolling 7-day periods.
+
+# v8.2.0 · 2026-10-17
+
+### Changed
+
+- Redesigned the 8-week trend popup: "8-week reading trend" title, with total and daily average in a row under a thin divider.
+  - One line with dots exactly on it and the value above each dot. Tap the chart to switch between totals and daily averages (last choice is saved); tap anywhere else to close.
+  - Opens with time or pages depending on which value was tapped on the insights page.
+
 # v8.1.7 · 2026-10-16
 
 ### Fixed
@@ -15,17 +29,3 @@
 ### Fixed
 
 - Faded previous/next-month days in the calendars being too bright in night mode; they now fade towards the dark background.
-
-# v8.1.4 · 2026-10-16
-
-### Changes
-- Some more minor padding fix.
-
-# v8.1.3 · 2026-10-16
-
-### Changed
-
-- Heatmap: the "Days of the week" bar chart now uses the same maximum bar height as "When you read" (was 60%).
-- Compact layout: popup sections, headers and chart labels now use small,uniform vertical spacing
-- Streak history popup: new bottom block showing the streak length in days and weeks, each with its date range ("123 days | from – to"). It replaces the old separate info message.
-- Book progress calendar: tapping a day with reading data cycles the cell content (percent → time → pages) and remembers the last choice; the tap no longer opens the day detail popup. The separate settings menu is removed.
