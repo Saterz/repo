@@ -1,3 +1,22 @@
+# v8.2.3 · 2026-10-17
+
+# AppDock 8.2.3
+
+A bug-fix release for the public Sleep-Screen catalog.
+
+- Fixes a crash when rendering public catalog results by avoiding a loop variable that shadowed the gettext translation function.
+- Adds regression coverage for loading and rendering a non-empty public preset list in the AppStore.
+
+# v8.2.2 · 2026-10-17
+
+# AppDock 8.2.2
+
+A bug-fix release for publishing Sleep-Screen presets.
+
+- Fixes publication failures caused by ambiguous PostgreSQL column references in the `tbs_publish_sleepscreen` RPC.
+- Adds an additive Supabase migration to repair databases where the original Sleep-Screen migration was already applied.
+- Updates the deployment guide with the migration order and clarifies that public catalog availability does not confirm that private publishing is configured correctly.
+
 # v8.2.1 · 2026-10-17
 
 Fixes AppStore Sleepscreens tab and Settings → Other → Sleepscreen editor module loading when KOReader uses another plugin’s Lua search paths.
@@ -23,22 +42,3 @@ A small stability release for TBS account setup and manual installation.
 
 - Refreshes the active AppDock screen after the one-time TBS recovery-code dialog closes, so the new signed-in state is shown reliably.
 - Clarifies that GitHub's automatically generated source ZIP contains an outer project folder; install only the inner `appdock.koplugin` directory.
-
-# v8.1.0 · 2026-10-17
-
-# AppDock 8.1.0
-
-A homescreen and account update focused on the Android-inspired setup flow, app organization, and device migration.
-
-- Repairs the new setup wizard entry in Settings and makes its multi-step dialog flow resilient to E-Ink redraws and modal transitions.
-- Adds a bundled default homescreen wallpaper for first-time setup.
-- Adds Android-style app groups: one homescreen-sized tile can contain multiple apps.
-- Adds TBS account registration and recovery-code migration between readers, with compact settings sync and an installed-app manifest.
-- Requires a TBS account to open AppStore, YouTube, YouTube Music, and DockUpdate.
-- Keeps reader-specific files and paths, books, DChat messages, lockscreen secrets, and server keys out of TBS cloud snapshots. App installs on a new reader remain individually confirmed.
-- Adds the TBS Supabase migration and Edge Function. TBS cloud features require the operator to apply the SQL migration and deploy the `tbs-account` Edge Function to the existing DChat Supabase project first. See [`TBS_SUPABASE_EINFACH.md`](TBS_SUPABASE_EINFACH.md).
-- Updates DockUpdate's allowlist so it can install the new AppDock modules and the static default wallpaper.
-
-# v8.0.2 · 2026-10-17
-
-Hotfix for startup stability after the new setup wizard.\n\n- Loads the optional Wi-Fi migration module only when migration is opened.\n- Removes the obsolete DockUpdate password confirmation; installation still requires the normal visible confirmation.

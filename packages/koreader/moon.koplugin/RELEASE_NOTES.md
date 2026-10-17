@@ -1,3 +1,83 @@
+# v0.2.11 · 2026-10-17
+
+## 月读 v0.2.11
+
+KOReader 插件包：`book.koplugin-v0.2.11.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.11.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.11.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.10`：
+
+#### 新功能
+
+- :sparkles: (qqreader): 接入 QQ阅读，扫码登录与章节进度 (6454f1f0)
+- :sparkles: (source): 起点和七猫同步章节进度 (c7229a57)
+- :sparkles: (bars): 阅读页顶栏、底栏可选分割线 (073492eb)
+- :sparkles: (qidian): 接入起点中文网，书架同步与 Cookie 登录 (033be26e)
+- :sparkles: (jjwxc): 接入晋江文学城书源，收藏同步与 Cookie 登录 (def24014)
+- :sparkles: (cookie): 加入京东浏览器授权并精简远程导航 (45e65238)
+- :sparkles: (qimao): 接入七猫书源与浏览器授权登录 (d600440f)
+- :sparkles: (wechat): 书架分类优先用自建分组名，没分组回退官方分类 (5139ff10)
+- :sparkles: (dictionary): 新增「加载所有词典」，查词面板列出全部已安装词典 (33ff58be)
+- :sparkles: (subscribe): 新增「网页本身」订阅与列表排序，修标题栏加图标后溢出 (9d559c99)
+- :sparkles: (sidebar): 侧栏页面支持自定义排序 (940048ab)
+- :sparkles: (remote): 新增「截图分享后自动删除」开关，默认关闭 (e2c11791)
+- :sparkles: feat(ime): 候选条浅灰底并加粗首选词，新增九宫格拼音 (69b5610e)
+- :sparkles: feat(remote): 备份改为整个 .moon 打包（不含日志缓存），入口移到首页 (6726fab4)
+- :sparkles: feat(remote): 配置备份包含全部配置（登录态、Cookie、密钥、锁屏密码） (0cd0f0bb)
+
+#### 修复
+
+- :bug: (qimao): 章节正文加章名并去掉段首空白，避免双份缩进 (1758fdc0)
+- :bug: (wechat): 公众号请求带上 ticket/wrpa 凭据头，-2041 与验证页先续期再重试 (257d31db)
+- :bug: (subscribe): 订阅与网页正文按声明编码转 UTF-8，GBK 站点不再乱码 (63d63801)
+- :bug: (rare): 子进程取框的时间预算放宽，首次翻到的页不再漏注音 (0363b7f2)
+- :bug: (dictionary): 划词点「查词」固定打开词典栏，不再沿用上次的标签 (83cf1184)
+- :bug: (lookup): 修复「加入生词本」按钮不显示 (bb552fca)
+- :bug: fix(ime): 开关开着但键盘布局列表被重置时，启动补回 zh_CN，地球键才能切中文 (72388844)
+- :bug: fix(remote): addPath 正常结束返回假，备份/打包误判失败 (b2ab4cd5)
+- :bug: fix(remote): 备份按钮处理代码误嵌在 renderForms 内，移到文件末尾 (f332aba8)
+- :bug: fix(remote): 备份下载增加进度反馈，设置页卡片间距 (8ef02c6f)
+- :bug: fix(panel): 快捷面板页脚时间/电量在面板分支不刷新 (6bcd863e)
+
+#### 界面
+
+- :lipstick: feat(remote): 备份下载/恢复改用进度弹窗，可取消 (b8ff865b)
+
+#### 性能
+
+- :zap: (reviews): 关联书段评扫页改子进程，翻页不再同步 findText (bc11cb1d)
+- :zap: (rare): 生僻字注音改子进程取框，翻页不再卡顿 (40af53e2)
+
+#### 重构
+
+- :recycle: (ai): 分批处理扫描结果以避免内存溢出 #47 (104c3ee1)
+
+#### 文档
+
+- :memo: (docs): README 补充游戏合集 ko-games 与订阅类型 (1e1ae70e)
+- :memo: docs: README 增加 LINUX DO 社区链接 (9dbc382f)
+
+#### 变更
+
+- :white_check_mark: (source): 示例源断言不再写死内置源个数 (19b539fc)
+- :fire: (remote): 文件管理不再限制在快捷入口内 (63caead6)
+- :children_crossing: feat(rare): 选择「全部」注音范围时提示可能拖慢翻页 (af051170)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.10...v0.2.11
+
 # v0.2.10 · 2026-10-17
 
 ## 月读 v0.2.10
@@ -214,48 +294,3 @@ KOReader 插件包：`book.koplugin-v0.2.7.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.6...v0.2.7
-
-# v0.2.6 · 2026-10-15
-
-## 月读 v0.2.6
-
-KOReader 插件包：`book.koplugin-v0.2.6.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.6.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.6.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.5`：
-
-#### 变更
-
-- perf(lockscreen): 词表改为数值存储并在排版后释放，挑句按划线变更戳缓存 (d99161c3)
-- feat(lockscreen): 新增单向历锁屏背景，本地绘制日历页，农历干支节气读摸鱼日报缓存 (6f047979)
-- feat(lockscreen): 新增文字海报锁屏背景，分词挑关键词排版，支持多种版式与海报字体选择 (d04f612b)
-- feat(myrl): 解析日期、干支、生肖、节气、节日字段，兼容 almanac 新结构 (445adbac)
-- fix(rare): 注音全屏统一字号，点注音或被注音字打开查词窗口，英文词库补常用词档位 (2998941e)
-- feat(lookup): 统一查词窗口，底部 词典/翻译/AI/百科 标签切换，词典可手动切换并渲染 HTML 词条，移除旧翻译弹窗 (9af1f1e8)
-- feat(xray): 全书文本提取与「按当前位置更新」改为后台任务，共用任务键，查词可取消 (0be948dc)
-- fix(wechat): 「注」图标固定为 0.8 字高并上标对齐，样式表缺失时不再显示成大方块 (2240121d)
-- chore(reviews): 段评匹配失败时记录诊断日志（多处命中、引擎未找到、用字不一致） (3768edd3)
-- fix(local): 扫描跳过无权限目录只写日志并保留其中的书，有跳过时中止 WebDAV 同步；不再跟随软链接，提交阶段失败注明步骤 (4e70de08)
-- fix(exit): 退出流程开始后不再弹出新窗口，修复退出后错误页残留导致 KOReader 卡死 (4b7db044)
-- feat(rare): 生僻字注音，页面图层在生僻字上方画拼音/音标；词库复用输入法在线下载（assets/rare 经 jsdelivr），中文仅收通用规范汉字表 8105 字，英文整词匹配 (3e84f38b)
-- feat(reflow/translate): 全书翻译与重新排版改为后台任务，可取消、可放后台；重新排版去掉预览确认，分析到生成全程后台运行 (4a50cc0d)
-- fix(fonts): 在线字体下载校验完整性与 zip 格式，按写出大小判定解压成功并记录失败原因 (d70e5225)
-- fix(remote): 修复手机端「更多」按钮触摸区域铺满列表，导致点哪都弹菜单且列表无法滚动 (5766989e)
-- docs: 更新 README 与远程管理截图 (b72e830e)
-- fix(fonts): 本地字体列表跳过粗体/斜体文件，修复选择后不生效 (554d9852)
-- fix(home): 首页组件只有一页时隐藏翻页箭头，编辑模式下保留 (944cda2b)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.5...v0.2.6

@@ -1,9 +1,14 @@
+
+
+
+
+
 <p align="center">
-  <img width="3606" height="877" alt="image" src="https://github.com/user-attachments/assets/16887793-0bd2-4712-9b1e-75d832152b55" />
+  <img width="3606" height="877" alt="PanelsPlus_Cover" src="https://github.com/user-attachments/assets/16887793-0bd2-4712-9b1e-75d832152b55" />
   <br>
   <strong>Panels+</strong>
   <br>
-  <span style="display:block;font-size:1.25rem;">Read manga and comics <strong>panel by panel</strong>, without losing the page and other panel zooming utilities with no setup required</span>
+  <span style="display:block;font-size:1.25rem;">Read manga and comics <strong>panel by panel</strong>, without losing the page and other panel zooming utilities with no setup required. Read them the way they were intended: <strong>Panel by Panel</strong></span>
   <br><br>
   <a href="https://github.com/KristanLaimon/BetterPanels/releases/latest"><img src="https://img.shields.io/github/v/release/KristanLaimon/BetterPanels?color=blue&style=flat-square" alt="Latest Release"></a>
   <a href="https://github.com/KristanLaimon/BetterPanels/releases"><img src="https://img.shields.io/github/downloads/KristanLaimon/BetterPanels/total?color=brightgreen&style=flat-square" alt="Downloads"></a>
@@ -17,9 +22,9 @@
 <table>
   <tr>
     <td align="center" width="50%">
-      <video src="https://github.com/user-attachments/assets/fff9ba07-565e-4f48-b016-1466bb74a609" controls width="420"></video>
+      <video src="https://github.com/user-attachments/assets/25a1068f-4e4f-42cb-8dde-26466f53c21a" controls width="420"></video>
       <br>
-      <sub>Core feature: Panel by panel smooth travelling. Battle-tested for performance on low-specs e-readers and old KOReader versions support. (Starting from 2025 versions)</sub>
+      <sub>Core feature: Panel by panel reading. Battle-tested for performance on low-specs e-readers and old KOReader versions support. (Starting from 2025 versions). This demo includes features from the <a href="https://github.com/KristanLaimon/PanelsPlus/releases/tag/v1.5.0-nightly">next release v1.5.0</a></sub>
     </td>
     <td align="center" width="50%">
       <video src="https://github.com/user-attachments/assets/4ee8e78c-77a4-4432-a6e3-f841912c864b" controls width="420"></video>
@@ -29,8 +34,7 @@
   </tr>
 </table>
 
-
-> New update v1.5.0 coming soon!, want to test it out ASAP? You can install it by folowing (🛠️ Manual Installation) guide below from [the latest releases](https://github.com/KristanLaimon/PanelsPlus/releases/tag/v1.5.0-nightly). This is a release candidate, not battle-tested but stable. If you want the previous stable release you can download it [here](https://github.com/KristanLaimon/PanelsPlus/releases/latest).
+> New update v1.5.0 coming soon!, want to test it out sooner? You can install it by folowing (🛠️ Manual Installation) guide below from [latest nightly release](https://github.com/KristanLaimon/PanelsPlus/releases/tag/v1.5.0-nightly). This is a release candidate, not battle-tested but stable. If you want the previous stable release you can download it [here](https://github.com/KristanLaimon/PanelsPlus/releases/latest).
 
 Panels+ is a KOReader plugin that improves manga and comic reading by replacing the default KOReader single-panel zoom flow with a custom direction-aware panel reader with in-live panel scanning. No complex pre-mangas-scanning setup required, install Panels+ and *it just works*.
 

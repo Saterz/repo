@@ -1,3 +1,11 @@
+# v5.5.3 · 2026-10-17
+
+- Shelf of shelves: the stack count badge now shows on its shelves' tiles, under Folders only or All stacks (#527), and Random book on "current shelf only" picks from the shelves inside it (#528).
+- Spines: face-out covers keep the theme's border, so a custom Border colour no longer outlines them apart from the book.
+- Fix: the section labels on Spines shelves show your Folder overlay colour instead of a grey (#525).
+- Fix: Calibre metadata is found on a Kobo whose home folder was never set (#517).
+- Fix: About now warns about another copy of bookshelf in a custom plugin folder.
+
 # v5.5.2 · 2026-10-16
 
 - Random book can open the book straight away: long-press the module > Module settings… > On tap > Open book directly.
@@ -36,10 +44,3 @@
 - When Auto shows a list on both levels, Shelf style has list columns and rows for each, under Level 1 and Level 2.
 - Spine shelves can face out Finished and On hold books.
 - Fix: on spine shelves, a favourite that faces out shows its heart, and edge-on spines show the favourite icon you chose (heart by default) instead of always a star.
-
-# v5.4.3 · 2026-10-11
-
-- Auto now lets you choose a style for each level of a shelf. In Shelf style, choose Auto and tap Level 1 (the shelf itself) and Level 2 (anything you open from it) to step through Covers, List and Spines. A Genres shelf can list its genres and show each genre's books as covers or on spines, say. Level 1 also applies when the shelf is expanded, so an Auto shelf you haven't changed now shows covers expanded instead of a list. The list and spine settings below follow the styles you pick. A shelf of shelves no longer offers Auto, since each of its shelves has its own style.
-- Fix: the top panel no longer changes height between shelves that show captions under their covers and shelves that don't, such as Home holding only folders.
-- Fix: on a spine shelf, each folder, author or genre you open gets its own ornaments, instead of the same pieces in the same places every time.
-- Fix: opening the book shown in the top panel from the cover grid no longer leaves a white frame around the cover over a wallpaper.
