@@ -1,3 +1,9 @@
+# 26.10.17-beta2 · 2026-10-16
+
+Version number fix
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.17-beta2
+
 # 26.10.17-beta · 2026-10-16
 
 - Catalog logic tweak
@@ -36,9 +42,3 @@
 - **Cleaned up background tasks**: Prevented background processes and lingering network tasks from stacking up behind the scenes when browsing screensavers and catalog items.
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.10-beta2...26.10.10-beta3
-
-# 26.10.10-beta2 · 2026-10-10
-
-Fix bug with filter button
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.10-beta...26.10.10-beta2

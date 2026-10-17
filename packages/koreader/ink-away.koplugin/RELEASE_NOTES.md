@@ -137,8 +137,6 @@ To update from inside Ink Away: Settings, Updates, Install. Or download `ink-awa
   opens that one.
 
 ## Fixed
-- Over a book, the tab that hides the toolbar covered the start of the text
-  beside it. It now sits in its own space at the end of the toolbar.
 - Over a book with the toolbar along the bottom, a tool's settings opened at
   the top of the screen. They now open just above the toolbar, as they open
   beside it on the other sides.

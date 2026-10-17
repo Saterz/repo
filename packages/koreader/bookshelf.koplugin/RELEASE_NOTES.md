@@ -1,3 +1,12 @@
+# v5.5.2 · 2026-10-16
+
+- Random book can open the book straight away: long-press the module > Module settings… > On tap > Open book directly.
+- Fix: on PocketBook colour readers such as the Era Color, panel shading and the plates under cover captions are see-through instead of solid (#520).
+
+# v5.5.1 · 2026-10-16
+
+- Fix: a series' own image, set from its menu or in the image library's series folder, now shows on the front of its box set instead of the first book's cover.
+
 # v5.5.0 · 2026-10-16
 
 - Series boxes: long-press a shelf > Shelf style > Series boxes. On a Spines shelf each series stands as an open slipcase holding its books, with the first book's cover on the front and how many you've read. Tap it to open the series face-out, in series order (thanks @komadorirobin).
@@ -34,15 +43,3 @@
 - Fix: the top panel no longer changes height between shelves that show captions under their covers and shelves that don't, such as Home holding only folders.
 - Fix: on a spine shelf, each folder, author or genre you open gets its own ornaments, instead of the same pieces in the same places every time.
 - Fix: opening the book shown in the top panel from the cover grid no longer leaves a white frame around the cover over a wallpaper.
-
-# v5.4.2 · 2026-10-11
-
-- Spine shelves now show every book. Home, folders and search shown as spines stopped at 5,000 books before.
-- A theme of your own can now be just a wallpaper: make a folder in koreader/settings/bookshelf/ornaments, put a folder called theme inside it, and put your wallpaper.png in that. It shows in the Theme library under the folder's name, with no theme.json or ornaments needed. Optional wallpaper.dark.png, wallpaper.full.png and wallpaper.full.dark.png cover dark mode and full screen shelves.
-
-# v5.4.1 · 2026-10-10
-
-- Each shelf can choose its own cover captions: long-press a shelf, then Shelf style > Cover captions. For example, series names on your Series shelf and titles everywhere else. Shelves you leave alone follow Settings > Cover display.
-- A shelf inside a shelf of shelves can now have its own theme. Until you choose one it wears its shelf of shelves' theme, shown as "Same as …" in Shelf style and the Theme menu, and the Theme menu's This shelf row now sets the shelf you're on.
-- The line under each cover is now called a cover caption: Settings > Cover display > Cover captions, and Settings > Text size > Cover captions.
-- Show text below groups is now a single switch, Show author below series. The Custom option for groups is gone: the only thing it could add was a series' author. If you had Author or Custom chosen, the switch is on.
