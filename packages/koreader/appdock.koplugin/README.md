@@ -1,6 +1,12 @@
 # AppDock Homescreen für KOReader
 
-**AppDock** ist ein KOReader-Plugin für einen anpassbaren Homescreen *innerhalb* von KOReader. Version **7.9.33** verbessert Theme-Kontrast, Lockscreen, YouTube-Stabilität, Files-Sortierung und die DuckDuckGo-API-Suche. [Details](RELEASE_NOTES_7.9.30.md).
+**AppDock** ist ein KOReader-Plugin für einen anpassbaren Homescreen *innerhalb* von KOReader. Version **8.2.1** behebt das Laden des Sleepscreen-Katalogs und Editors, wenn KOReader die Lua-Modulsuchpfade anderer Plugins verwendet. [Details](RELEASE_NOTES_8.2.1.md).
+
+### Sleepscreen-Presets
+
+Unter **AppStore → Sleepscreens** lassen sich eigene Schlafbildschirme erstellen, lokal speichern und aktivieren sowie Presets aus dem globalen Katalog herunterladen. Der native Editor zeigt eine Live-Vorschau für Texte, Bilder/Bildwechsel, Schriften, Farben, Widgets und Info-Cards. Uhrzeit, Datum und Akkustand werden auf dem Reader eingesetzt; die Vorschau benutzt Beispieldaten. Lokal gespeicherte Sleepscreens funktionieren ohne Internet und ohne Konto.
+
+Zum Veröffentlichen ist ein **TBS-Konto** erforderlich. Der Store zeigt den vom Server zugeordneten Creator, Namen und die Layout-Vorschau; das Öffnen lädt auch Bilder und Schriften für die vollständige Vorschau. Nur ausdrücklich ausgewählte Preset-Medien werden geteilt, niemals lokale Pfade, Bücher oder TBS-Zugangsdaten. Presets sind validierte JSON-Daten, keine ausführbaren DApps. Für den globalen Katalog muss der Betreiber die zusätzliche Migration und Edge Function bereitstellen: [Architektur und Format](docs/SLEEPSCREENS.md), [Server-Einrichtung](docs/SLEEPSCREENS_DEPLOYMENT.md). Der installierbare aktuelle Plugin-Code liegt in `appdock.koplugin/`, nicht in den älteren Root-Kopien.
 
 > **E-Ink-Ansatz:** AppDock übernimmt bewusst Androids Formensprache, nicht dessen Daueranimationen, Unschärfen oder Transparenzeffekte. Auf E-Ink wechseln App-Seiten und Recently-used-Drawer direkt und ohne Zwischenanimation. Damit bleibt die Darstellung auf monochromen Readern kontrastreich, sparsam und frei von unnötigem Ghosting.
 
@@ -124,6 +130,8 @@ Ein Antippen startet die zugewiesene Aktion. Langes Drücken auf eine App starte
 | Integrität | **Settings → Storage** zeigt den lokalen Zustand installierter Store-Dateien, geöffneter Apps und Arbeitsbereichsmetadaten. Die Ansicht ist rein lesend und ändert oder löscht keine Dateien selbstständig. |
 
 ## Installation
+
+**Wichtig bei GitHub:** Das automatisch erzeugte **Source code (zip)** ist kein direkt installierbarer Pluginordner. Öffne darin den äußeren Projektordner `appdock.koplugin-<Version>` und kopiere **nur den darin liegenden Ordner `appdock.koplugin`** nach `…/plugins/`. Benenne den äußeren Projektordner nicht in `.koplugin` um; KOReader braucht `_meta.lua` und `main.lua` direkt im `appdock.koplugin`-Ordner.
 
 Entpacke das Installationsarchiv und kopiere den vollständigen Ordner `appdock.koplugin` in den Plugin-Ordner deiner KOReader-Installation:
 

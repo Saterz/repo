@@ -1,3 +1,13 @@
+# 1.8.0 · 2026-10-17
+
+- (feat) 🌟 Add LibraryThing sync: sign in with a username and password or browser session cookies (which the cookie helper can fetch with `--service librarything`), link books (adding one to your library if needed), sync Currently reading / To read / Read through LibraryThing's collections and reading dates, set the finished date (a re-read gets reading dates of its own, keeping the earlier ones), choose which collection read books go to (Your library by default), and save ratings and reviews. LibraryThing has no reading progress, so none is sent. 🌟
+- (fix) Say why "Link book" couldn't search (e.g. no network), instead of doing nothing (all providers).
+
+
+---
+
+Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#180)
+
 # 1.7.0 · 2026-10-07
 
 - (feat) 🌟 Keep progress and finished status from KOReader that can't be sent (e.g. with Wi-Fi off) for up to 4 weeks, and send them once the network is back, even after the book is closed or from the file browser. On Goodreads and Fable, progress is only sent within a day. 🌟
@@ -57,16 +67,3 @@ Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHAN
 ---
 
 Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#150)
-
-# 1.4.4 · 2026-10-01
-
-##### Plugin
-- Show one gesture sync message listing providers being updated, followed by a combined result summary.
-- Skip inactive providers from the all-provider progress gesture without showing per-provider failure popups.
-- Fix Pagebound transport failures crashing while formatting error responses or being reported as authentication failures.
-- Fix book syncing when Wi-Fi is turned on only when needed by waiting for it to connect before syncing.
-
-
----
-
-Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#144)
