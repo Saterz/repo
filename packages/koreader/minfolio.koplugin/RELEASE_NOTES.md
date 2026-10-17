@@ -1,3 +1,7 @@
+# 1.2.1 · 2026-10-17
+
+fixes reported issue with keys here: https://github.com/koreader/koreader/issues/16186#event-33482114141
+
 # 1.2 · 2026-08-05
 
 Some small improvements: Pairing with desktop integrated into the main app and KUAL support dropped.

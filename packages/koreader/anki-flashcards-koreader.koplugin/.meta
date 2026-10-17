@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=anki-flashcards-koreader
 name=Anki Flashcards Koreader
-version=1.0.0
+version=1.1.0
 description=A KOReader plugin that generates AI-powered Anki flashcards from highlighted text on your Kobo e-reader. Highlight a phrase, tap Anki Card, and get a full flashcard—definition, IPA, synonyms, cloze...
 author=lgallard
 category=theme
@@ -11,13 +11,13 @@ platforms=koreader
 dependencies=
 source=https://github.com/lgallard/anki-flashcards-koreader
 stars=14
-updated_at=2026-10-17T18:14:51Z
-published_at=2026-09-30T21:48:21Z
+updated_at=2026-10-17T21:18:10Z
+published_at=2026-10-17T21:22:24Z
 readme_url=packages/koreader/anki-flashcards-koreader.koplugin/README.md
 readme_hash=2a4b976fca6b3b1dc44389fe9cae89b0301688fb
 release_notes_url=packages/koreader/anki-flashcards-koreader.koplugin/RELEASE_NOTES.md
-release_notes_hash=70bfef02b4d5cb24e89e598219cd544f1d97b09799b7a28cc8c4e8648e58e203
-releases=[{"tag_name":"v1.0.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.0.0/AnkiFlashcards.koplugin.zip","size":51899,"digest":"sha256:a1c53c4dd86df0126e7aaec5c756fc61560d68a1e4b076d47d682cd10ee554d0"}],"name":"v1.0.0"}]
+release_notes_hash=88ba33d359d28882f923b8a10f7c45fd4ec153afc661900cd5d11f8c0e48f027
+releases=[{"tag_name":"v1.1.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.1.0/AnkiFlashcards.koplugin.zip","size":52460,"digest":"sha256:5814eb07a17809a0714fcc732cbf4734c4b89b1db228d1df9c01a6520a14a49c"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.0.0/AnkiFlashcards.koplugin.zip","size":51899,"digest":"sha256:a1c53c4dd86df0126e7aaec5c756fc61560d68a1e4b076d47d682cd10ee554d0"}],"name":"v1.0.0"}]
 source_type=release
 source_asset=AnkiFlashcards.koplugin.zip
-size=51899
+size=52460

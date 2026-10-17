@@ -1,3 +1,25 @@
+# v1.1.1 · 2026-10-17
+
+## Kobold 1.1.1
+
+<!--kobold-->
+Fixes the search button in the status bar.
+<!--/kobold-->
+
+### Fixed
+
+- **Search button** in the status bar works again. Taps on Kobold's own buttons near a screen corner no longer trigger KOReader corner gestures
+
+### Install
+
+1. Download `Kobold.koplugin.zip` below
+2. Extract it and copy the `Kobold.koplugin` folder into KOReader's `plugins` folder
+3. Restart KOReader and open Kobold, or set it under **Start with > Kobold Home**
+
+On 1.1 already? Use **More > Check for updates** in Kobold.
+
+To uninstall, delete the `Kobold.koplugin` folder and restart KOReader.
+
 # v1.1 · 2026-10-16
 
 ## Kobold 1.1

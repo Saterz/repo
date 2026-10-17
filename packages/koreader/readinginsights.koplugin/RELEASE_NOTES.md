@@ -1,3 +1,9 @@
+# v8.2.4 · 2026-10-17
+
+### Fixed
+
+- Unify section header spacing across Reading calendar, Book progress and heatmap, and align the bottom of Reading insights with the Reading calendar.
+
 # v8.2.3 · 2026-10-17
 
 ### Fixed
@@ -23,9 +29,3 @@
 - Redesigned the 8-week trend popup: "8-week reading trend" title, with total and daily average in a row under a thin divider.
   - One line with dots exactly on it and the value above each dot. Tap the chart to switch between totals and daily averages (last choice is saved); tap anywhere else to close.
   - Opens with time or pages depending on which value was tapped on the insights page.
-
-# v8.1.7 · 2026-10-16
-
-### Fixed
-
-- Layout fixes for the Streak History Popup
