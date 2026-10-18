@@ -1,3 +1,106 @@
+# v0.2.14 · 2026-10-18
+
+## 月读 v0.2.14
+
+KOReader 插件包：`book.koplugin-v0.2.14.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.14.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.14.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.13`：
+
+#### 新功能
+
+- :sparkles: (iread): 支持浏览器扩展授权，用网页 Cookie 登录 (a7059c43)
+- :sparkles: (store): 合并 Z站 / OPDS 为书城，支持切换来源搜索与总开关 (a4384828)
+- :sparkles: (source): 微信、七猫、拷贝、晋江、QQ阅读、起点、iRead 支持书城搜索 (b0e362de)
+
+#### 修复
+
+- :bug: (wechat): 续期超时或断网不再判登录失效，只有服务器明确拒绝才算 (50aebf33)
+- :bug: (charset): 设备缺 GBK 的 iconv 模块时用纯 Lua 兜底，修复晋江授权报 gb18030 (9c0af571)
+- :bug: (legado): 空白正文不再当成功章节缓存 (ffe6a736)
+- :bug: (store): 书城开关与 OPDS 地址变更不再跳回首页 (e50cd7ae)
+
+#### 文档
+
+- :memo: (docs): README 补充 WebDAV 上传停手与起点跨章崩溃修复说明 (0196add9)
+
+#### 变更
+
+- :loud_sound: (legado): 章节为空时记录书地址与序号 (717dc270)
+- :children_crossing: (legado): 章节为空的提示带上章节序号 (a08f3b95)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.13...v0.2.14
+
+# v0.2.13 · 2026-10-18
+
+## 月读 v0.2.13
+
+KOReader 插件包：`book.koplugin-v0.2.13.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.13.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.13.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.12`：
+
+#### 新功能
+
+- :sparkles: (ai): 新增全局 AI 回答语言，繁体、英文用本地用语 (fccb7703)
+- :sparkles: (iread): 接入 iRead 源，个人 Token 登录与在线阅读 (de2e6175)
+- :sparkles: (wallpaper): 新增界面壁纸，桌面与弹窗可铺自定义图 (43b8fff5)
+- :sparkles: (source): 新增阅读（Legado）数据源，直连阅读 App 的 Web 服务 (f012c31d)
+
+#### 修复
+
+- :bug: (local): WebDAV 上传超时后本轮停手，失败的书 1 小时内不重传 (5b134307)
+- :bug: (ui): 开壁纸后底栏选中格底色被摘掉，白字落在白底上 (16b7c4db)
+- :bug: (online): 没放对应组件时不再后台拉天气、一言、日报、必应 (7c074ff1)
+- :bug: (qidian): VIP 章节解密放进子进程并关 JIT，修复 Kindle 上跳章崩溃 (320c838c)
+- :bug: (kindle): 修复 Kindle 书库同步报 no such collation sequence: icu (eaaff12d)
+- :bug: (topbar): 旧版 KOReader 的 df 没有 available，剩余存储读不到 (d1696d71)
+
+#### 界面
+
+- :lipstick: (panel): 快捷面板磁贴改灰色胶囊，换 Wi-Fi 图标 (2b1b1612)
+
+#### 性能
+
+- :zap: (nightmode): 自动亮度不再自己拉天气，只读首页缓存 (eee4d92b)
+
+#### 变更
+
+- :rewind: (panel): 撤回 bold 主题快捷面板的灰色胶囊，保留 Wi-Fi 新图标 (782cd40a)
+- :children_crossing: (library): 随机抽书后先弹详情页 (8e8a2bf9)
+- :globe_with_meridians: (l10n): 补回答语言文案，繁体「刮削」改「資料抓取」 (f12b02a9)
+- :label: (wallpaper): 补 BlitBuffer 类型标注，消除 LuaLS 警告 (989e355e)
+- :globe_with_meridians: (webdav): 补上传失败汇总提示的繁体与英文文案 (d60e153b)
+- :children_crossing: (webdav): 上传失败时汇总提示失败本数和原因 (7f6a29d6)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.12...v0.2.13
+
 # v0.2.12 · 2026-10-18
 
 ## 月读 v0.2.12
@@ -209,97 +312,3 @@ KOReader 插件包：`book.koplugin-v0.2.10.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.9...v0.2.10
-
-# v0.2.9 · 2026-10-16
-
-## 月读 v0.2.9
-
-KOReader 插件包：`book.koplugin-v0.2.9.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.9.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.9.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.8`：
-
-#### 变更
-
-- docs(readme): 补充扩展开发说明 (a0af48a3)
-- feat(extension): 插件自行声明能力并支持注入首页组件 (b7c1f518)
-- feat(library): 工具栏增加随机一本 (62cf0d75)
-- feat(home): 新增随机一本与书架组件 (84fdd08b)
-- feat(library): 最近阅读排序列出整个书架并使用云端阅读时间 (6995b206)
-- fix(bluetooth): 顶栏蓝牙设备名最多显示 4 个字 (c8a8c960)
-- docs: 删除开发文档，要点移入源码注释并更新 README (dd6493c9)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.8...v0.2.9
-
-# v0.2.8 · 2026-10-16
-
-## 月读 v0.2.8
-
-KOReader 插件包：`book.koplugin-v0.2.8.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.8.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.8.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.7`：
-
-#### 变更
-
-- test(remote): 备份用例打桩 dump，兼容无 KOReader 的 CI (f8328a81)
-- feat(remote): 远程管理支持配置备份与恢复 (bd501f19)
-- fix(library): 删书后同步书架数量异常 (2923dad3)
-- fix(progress): 无章节的已读进度按末章上报，推不上的行标记丢弃且不中断整次同步 (11f8ea22)
-- perf(ui): 书籍文件复制改为分块流式 (4105ef64)
-- refactor(ui): 封面格打开动作由页面注入，字体排版偏好移回面板层 (c4d99039)
-- fix(settings): 补齐功能设置项登记并加校验用例 (33daeb2f)
-- refactor(utils): 事件监听由 main 注入，utils 不再反向依赖 features (4603aa35)
-- fix(xray): 释放标记缓存 (ae9733ef)
-- fix(features): 词典与输入法下载出错时关闭文件句柄 (4f4ae293)
-- fix(book): 分页文档划线按坐标内容去重 (a44b0c41)
-- fix(jdread): 详情缺 ebook_id 时不写入缓存 (16f3911e)
-- fix(copymanga): 收藏接口使用重登后的最新 token (efab2358)
-- fix(wechat): 取消后不再回调并加快划线定位 (3e1bf8dd)
-- perf(fanqie): Cookie 未变化时不重复写设置 (cc73a46d)
-- fix(registry): 第三方源 new() 出错时记日志并跳过 (00087908)
-- fix(source): 回调同步触发时不再用旧句柄覆盖在途请求 (5344ac04)
-- fix(chapter): 没有书籍记录时准备框不再崩溃 (c64c905a)
-- fix(local): 解析元数据出错时也关闭文档 (d59ea7ce)
-- fix(fanqie): 19 位设备 id 按 uint64 精确编码 (eaf34522)
-- perf(sync): 判断笔记待上传只查存在性不读整份快照 (48811301)
-- fix(reader): 标记已读失败时同一会话不再每次翻页重试 (b6723050)
-- fix(remote): 停服释放静态资源缓存并补路径越界用例 (530b5b40)
-- fix(wechat): 段评跳过已删除条目与缺作者数据 (6b913dbb)
-- fix(webdav): 兼容默认命名空间的目录列表 (761dba64)
-- fix(http): 镜像同步失败换源时取消正在进行的请求 (0cf1e236)
-- test(runner): 补齐沙盒并接入模拟器 sqlite，新增扫码登录与想法推送用例 (d784676e)
-- fix(http): Android 上 turbo 响应头查找缺少 strncasecmp 导致崩溃 (53c682e1)
-- fix(remote): 日志打包脱敏避免长串超时导致空包 (ed365573)
-- fix(baike): 百科查询改用四合一查词窗口 (d2f71bcb)
-- fix(rare): 点击普通文字不再弹出生僻字窗口 (9d285f89)
-- fix(local): azw3 书籍扫描取不到封面 (97968a17)
-- feat(topbar): 蓝牙图标移到 Wi-Fi 旁边 (eca377cc)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.7...v0.2.8

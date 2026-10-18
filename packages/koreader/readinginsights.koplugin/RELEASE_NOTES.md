@@ -1,3 +1,12 @@
+# v8.2.5 · 2026-10-18
+
+### Fixed
+
+- Checking for new achievements is now much quicker, especially with a long reading history. Achievements you already have are no longer re-checked.
+  - Which achievements you have, and the dates you earned them, stay exactly the same.
+- Faster donut chart.
+- Faster yearly line chart.
+
 # v8.2.4 · 2026-10-17
 
 ### Fixed
@@ -21,11 +30,3 @@
 ### Changed
 
 - The 8-week trend now shows whole calendar weeks (following the week start day setting) instead of rolling 7-day periods.
-
-# v8.2.0 · 2026-10-17
-
-### Changed
-
-- Redesigned the 8-week trend popup: "8-week reading trend" title, with total and daily average in a row under a thin divider.
-  - One line with dots exactly on it and the value above each dot. Tap the chart to switch between totals and daily averages (last choice is saved); tap anywhere else to close.
-  - Opens with time or pages depending on which value was tapped on the insights page.
