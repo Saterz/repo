@@ -1,3 +1,15 @@
+# v5.5.4 · 2026-10-18
+
+- Spines: an optional Paperback binding, per shelf (long-press the shelf > Shelf style > Book binding) or per series (long-press a series > Book binding). Thanks @komadorirobin (#536).
+- New: Advanced > Performance tweaks > Use E-ink refresh rate for shelf pages. Shelf page turns flash clean as often as KOReader's own full refresh rate, to clear ghosting (#529).
+- Micro-modules open much faster: the full-screen view's first open after a restart went from about 4 seconds to half a second on a PW5, and Shelf size and Reading goal fill in their numbers in the background.
+- About links the new user guide, andyhazz.github.io/bookshelf-docs.
+- Fix: on Spines shelves of folders (Home, or a folder shelf), status, Opened, rating and the other progress sorts order the books in each folder (#534).
+- Fix: Action cards in the full-screen micro-modules view work straight after closing a book (#533).
+- Fix: KOReader gestures (brightness swipes, corner taps) and LiveLight's edge slides work over the shelf, book details and the ornament zoom while a closed book is still finishing.
+- Fix: Shelf size in the full-screen view catches up after you finish a book.
+- Fix: the About logo shows properly in night mode.
+
 # v5.5.3 · 2026-10-17
 
 - Shelf of shelves: the stack count badge now shows on its shelves' tiles, under Folders only or All stacks (#527), and Random book on "current shelf only" picks from the shelves inside it (#528).
@@ -38,9 +50,3 @@
 - Fix: re-linking a book to Hardcover keeps its cover and description choices.
 - Fix: OPDS login details are no longer sent when a catalog redirects to another server.
 - Fix: a plugin source's new books show straight away on Spines shelves (#511).
-
-# v5.4.4 · 2026-10-12
-
-- When Auto shows a list on both levels, Shelf style has list columns and rows for each, under Level 1 and Level 2.
-- Spine shelves can face out Finished and On hold books.
-- Fix: on spine shelves, a favourite that faces out shows its heart, and edge-on spines show the favourite icon you chose (heart by default) instead of always a star.
