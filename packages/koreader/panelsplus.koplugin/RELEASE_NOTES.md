@@ -1,12 +1,9 @@
 # v1.5.0 · 2026-10-18
 
-<div align="center">
-<h1>v1.5.0 | The Texty Texty Update</h1>
-</div>
-
 <p align="center">
 <img width="95%" height="auto" alt="v_1_5_0-CoverComicc" src="https://github.com/user-attachments/assets/f07bd34c-dafd-4102-8d07-a3b9f7ea9c9b" />
 </p>
+<a href="https://github.com/user-attachments/assets/90663d6f-c401-4194-b637-90d4ea7baebf">Comic in HD here.</a>
 
 
 Hello, **Panels+ users**. This update is mainly about taking OCR support to the next level and finally removing the **[Experimental]** tag.
