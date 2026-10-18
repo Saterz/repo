@@ -1,10 +1,5 @@
-
-
-
-
-
 <p align="center">
-  <img width="3606" height="877" alt="PanelsPlus_Cover" src="https://github.com/user-attachments/assets/16887793-0bd2-4712-9b1e-75d832152b55" />
+  <img width="99%" height="auto" alt="PanelsPlus_Cover" src="https://github.com/user-attachments/assets/16887793-0bd2-4712-9b1e-75d832152b55" />
   <br>
   <strong>Panels+</strong>
   <br>
@@ -12,7 +7,7 @@
   <br><br>
   <a href="https://github.com/KristanLaimon/PanelsPlus/releases/latest"><img src="https://img.shields.io/github/v/release/KristanLaimon/PanelsPlus?color=blue&style=flat-square" alt="Latest Release"></a>
   <a href="https://github.com/KristanLaimon/PanelsPlus/releases"><img src="https://img.shields.io/github/downloads/KristanLaimon/PanelsPlus/total?color=brightgreen&style=flat-square" alt="Downloads"></a>
-  <a href="https://koreader.rocks"><img src="https://img.shields.io/badge/KOReader-v2025.04%20--%20v2026.03%20%26%20Newer-006699?style=flat-square" alt="KOReader Compatibility"></a>
+  <a href="https://koreader.rocks"><img src="https://img.shields.io/badge/KOReader-v2025.04%20--%20v2026.07.1%20%26%20Newer-006699?style=flat-square" alt="KOReader Compatibility"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational?style=flat-square" alt="MIT License"></a>
   <a href="https://github.com/KristanLaimon/PanelsPlus/stargazers"><img src="https://img.shields.io/github/stars/KristanLaimon/PanelsPlus?style=flat-square" alt="GitHub Stars"></a>
   <a href="https://github.com/sponsors/KristanLaimon"><img src="https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=github&style=flat-square" alt="Sponsor on GitHub"></a>
@@ -21,20 +16,18 @@
 
 <table>
   <tr>
-    <td align="center" width="50%">
+    <td align="center" width="49%">
       <video src="https://github.com/user-attachments/assets/25a1068f-4e4f-42cb-8dde-26466f53c21a" controls width="420"></video>
       <br>
-      <sub>Core feature: Panel by panel reading. Battle-tested for performance on low-specs e-readers and old KOReader versions support. (Starting from 2025 versions). This demo includes features from the <a href="https://github.com/KristanLaimon/PanelsPlus/releases/tag/v1.5.0-nightly">next release v1.5.0</a></sub>
+      <sub>Core feature: Panel by panel reading. Battle-tested for performance on low-specs e-readers and old KOReader versions support. (From Koreader-2025 and newer). </sub>
     </td>
-    <td align="center" width="50%">
+    <td align="center" width="49%">
       <video src="https://github.com/user-attachments/assets/4ee8e78c-77a4-4432-a6e3-f841912c864b" controls width="420"></video>
       <br>
       <sub>Comics showcase: Reading comic books panel by panel with custom panel flow and navigation.</sub>
     </td>
   </tr>
 </table>
-
-> New update v1.5.0 coming soon!, want to test it out sooner? You can install it by folowing (🛠️ Manual Installation) guide below from [latest nightly release](https://github.com/KristanLaimon/PanelsPlus/releases/tag/v1.5.0-nightly). This is a release candidate, not battle-tested but stable. If you want the previous stable release you can download it [here](https://github.com/KristanLaimon/PanelsPlus/releases/latest).
 
 Panels+ is a KOReader plugin that improves manga and comic reading by replacing the default KOReader single-panel zoom flow with a custom direction-aware panel reader with in-live panel scanning. No complex pre-mangas-scanning setup required, install Panels+ and *it just works*.
 
@@ -71,9 +64,9 @@ Panels+ is a KOReader plugin that improves manga and comic reading by replacing 
 - Zoom-friendly screenshot support while reading panels.
 - Open panels with a long press or, if you prefer, a two-finger tap.
 - Panels finding on dark-background pages.
-- Safe panel detection (default) preserves conservative v1.4.0 grouping; Smart separates more complex layouts.
-- Configurable reading order, progress, OCR language, navigation, and crop, transitions& more.
-- Comics & Mangas support
+- Animated panel transitions (or even page transitions, optional).
+- Configurable reading order, progress, OCR language, navigation, and crop, transitions & more.
+- Comics & Mangas support.
 - Customizable and performant in low-end e-ink devices.
 - Move between panels with swipes and/or taps on edges.
 - And much more.
@@ -94,7 +87,7 @@ This plugin is compatible with KOReader across the following version range:
 | Environment               | Supported Version                         |
 | ------------------------- | ----------------------------------------- |
 | **Oldest Tested Version** | KOReader `v2025.04` *"Full Moon"*         |
-| **Newest Tested Version** | KOReader `v2026.03` *"SnowFlake"* & Newer |
+| **Newest Tested Version** | KOReader `v2026.07.1` *"Sailing Walrus"* & Newer |
 
 This could work with even older versions, but not personally tested. If any issues with versions outside the previous range, open a github issue in this repo.
 
@@ -106,7 +99,7 @@ This could work with even older versions, but not personally tested. If any issu
         <li><em>.cbr (digital comic book archive):</em> Usual standard format for western comics</li>
         <li><em>.cbz (Comic Book Zip Archive):</em> The standard for mangas, usually found in this format when downloading from internet or in (.cbr). I strongly recommend using <a href="https://github.com/manga-download/hakuneko">Hakuneko (Downloader)</a> and <a href="https://github.com/ciromattia/kcc">KCC (Kindle Comic Converter)</a> to adapt hakuneko downloads to .cbz for mangas. This is the top priority format I give support/compatibility with this plugin</li>
         <li><em>.pdf (Portable Document Format):</em> Another common format when downloading mangas/comics.</li>
-        <li><em>.epub / .kepub / .mobi:</em> Panels+ has native support for embedded images in these formats. Text remains handled by KOReader's normal reader.</li>
+        <li><em>.epub / .kepub / .mobi:</em> Recognizes embbeded images from these file-formats. Normal text remains handled by KOReader's normal reader.</li>
       </ul>
     </td>
     <td width="50%" valign="top">
@@ -123,6 +116,17 @@ This could work with even older versions, but not personally tested. If any issu
 
 ## 📦 Installation
 
+### Choose your edition
+
+Both editions include the same panel-reading features. Choose **one**—do not install both, because KOReader treats them as the same plugin.
+
+| Edition | Choose this if… | Plugin folder |
+| --- | --- | --- |
+| **Panels+ Vanilla** | You do not use OCR, or you need an OCR language other than English or Spanish. You can add Tesseract language data later. | `panelsplus.koplugin` |
+| **Panels+ with bundled OCR models** | You want bundled OCR ready immediately for English or Spanish manga and comic text. | `panelsplus.koplugin` |
+
+> **Recommendation:** Choose **Panels+ with bundled OCR models** if you read English or Spanish and want to use word lookup. Otherwise, choose **Panels+ Vanilla**.
+
 ### 🛍️ Package managers
 
 Panels+ is structured for installation via KOReader package and plugin managers:
@@ -132,16 +136,23 @@ Panels+ is structured for installation via KOReader package and plugin managers:
 | [**Plugin Appstore**](https://github.com/omer-faruq/appstore.koplugin) (`appstore.koplugin`)                       | [`Panels+`](https://omer-faruq.github.io/appstore.koplugin/?q=panels+plus) (`panelsplus.koplugin`) | Search and install directly inside the KOReader Plugin Appstore (or view on the [Appstore Web Catalog](https://omer-faruq.github.io/appstore.koplugin/?q=panels+plus))                                                                                                                                                                                                                        |
 | [**ZEN Package Manager**](https://github.com/AnthonyGress/zen_ui.koplugin) (`zen_ui.koplugin` or `zenos.koplugin`) | (`panelsplus`)                                                                                     | Available directly in the ZEN package manager catalog.<br><br><table><tr><td><img width="220" alt="zenpm_plugin_showcase" src="https://github.com/user-attachments/assets/334afd85-9260-446e-861e-c5d7d4bec515" /></td><td><img width="220" alt="search_zenpm_showcase" src="https://github.com/user-attachments/assets/218ac4b5-4c68-4806-a802-14db4e93e218" /></td></tr></table> |
 
+> **Appstore:** installs the Vanilla edition only. To use the bundled OCR-model edition, download it from the releases page and install it manually. **ZEN Package Manager** lets you choose the edition to install.
 
 ### 🛠️ Manual Installation
 
-1. Download `panels_plus.koplugin.zip` from the [releases page](https://github.com/KristanLaimon/PanelsPlus/releases/latest) and unzip it.
-2. You should now have this folder: `panelsplus.koplugin`
+1. Open the [latest release](https://github.com/KristanLaimon/PanelsPlus/releases/latest) and download **one** ZIP file:
+
+   | If you chose… | Download | Extracted folder |
+   | --- | --- | --- |
+   | **Panels+ Vanilla** | `panels_plus.koplugin.zip` | `panelsplus.koplugin` |
+   | **Panels+ with bundled OCR models** | `panelsplus_with_ocrmodels.koplugin.zip` | `panelsplus.koplugin` |
+
+2. Extract the ZIP. You should have the folder shown in the last column above.
 
 > [!NOTE]
-> **GUI zip extractors note:** Some desktop GUI archive managers (such as GNOME Archive Manager, Ark, or Windows Explorer "Extract All") may create an extra parent folder level matching the zip filename (e.g. `panels_plus.koplugin/panelsplus.koplugin/`). Take this into account when extracting: make sure you copy the actual `panelsplus.koplugin` folder (the one directly containing `_meta.lua` and `main.lua`) into your KOReader `plugins/` directory.
+> **GUI zip extractors note:** Some desktop GUI archive managers (such as GNOME Archive Manager, Ark, or Windows Explorer "Extract All") may create an extra parent folder level (for example, `panelsplus.koplugin/panelsplus.koplugin/`). Copy the actual `.koplugin` folder—the one directly containing `_meta.lua` and `main.lua`—into KOReader's `plugins/` directory.
 
-3. Copy the **whole `panelsplus.koplugin` folder** into your KOReader `plugins` directory. (Do not copy only the files inside it).
+3. Copy the **whole extracted `.koplugin` folder** into your KOReader `plugins` directory. Do not copy only the files inside it.
 
 Common plugin paths:
 
@@ -200,16 +211,22 @@ Of course if you prefer vertical, with margin, loose cropped or even animated, t
 
 ### 🔍 OCR Word Lookup Setup
 
-Panels+ introduces OCR support natively, allowing you to touch & hold text inside a zoomed-in panel to look up words in the dictionary—even in comics/manga! Works across `.CBZ`, `.CBR`, and `.PDF`.
+Panels+ introduces OCR support, allowing you to touch & hold text inside a zoomed-in panel to look up words in the dictionary—even in comics/manga! Works across `.CBZ`, `.CBR`, and `.PDF`.
 
-<strong>IMPORTANT:</strong> To use this feature, you'll need to set up a couple of things first:
+***Phrase grouping is experimental*** and may miss unusual bubble layouts.
+
+<strong>IMPORTANT:</strong> To use dictionary lookup, install a dictionary first:
 
 <ul>
-  <li><em>Install an OCR engine in KOReader by <a href="https://koreader.rocks/user_guide/#L2-ocr">following the official KOReader guide</a>.</em></li>
   <li><em>Install at least one dictionary. You can do this by <a href="https://www.youtube.com/watch?v=fthGMdpUfR0">following this tutorial for manual installation</a>, or by using KOReader's built-in online dictionary installer.</em></li>
 </ul>
 
-<em>(Note: Even though a lot of effort has been put into Panels+ internal OCR algorithm detection, word detection is tricky on hand-lettered or stylized comic text and might not always get it exactly right. As a workaround, I recommend binding a comfortable multi-swipe gesture to "Open dictionary lookup" as a fallback just in case.)</em>
+- **Panels+ Vanilla** (`panelsplus.koplugin`) includes no OCR language data. To use OCR, install the language files you need in KOReader's `data/tessdata` directory, then select that language in KOReader.
+- **Panels+ with bundled OCR models** (`panelsplus_with_ocrmodels.koplugin.zip`) includes a fine-tuned English model and an unmodified Spanish model. English is selected by default for zoomed-panel word lookup.
+
+Open **KOReader menu → Panels+ → OCR language** to select a bundled language or **Use KOReader's**, which uses KOReader's current OCR language. The active choice is marked **(Selected)** and applies only inside Panels+.
+
+<em>(Note: Word detection is tricky on hand-lettered or stylized comic text and might not always get it exactly right, there are many variations of text and fonts across all mangas/comics... it's not 100% perfect, and never will be)</em>
 
 ## 🎯 Why This Exists
 
@@ -225,7 +242,7 @@ This supports screenshots while zoomed into panels, so you can capture the exact
 
 ## 🌐 For Translators
 
-Starting from version **v1.4.0**, Panels+ includes localization support, and we'd love to translate the plugin into as many languages as possible!
+Panels+ includes localization support, and we'd love to translate the plugin into as many languages as possible!
 
 Rather than relying on machine or AI translation slop, we are looking for community collaborators to help craft authentic, high-quality human translations.
 
@@ -239,38 +256,13 @@ Currently supported languages are ***English***, ***Spanish***, and ***Simplifie
 
 ## 🛠️ Pull Requests\Developer Setup
 
-You would need the following to start developing in Panels+
-
-1. [KOReader](https://github.com/koreader/koreader). Can be obvious, but needed. My recommendation is to set a WSL environment if windows, or directly use a linux distro.
-
-2. [LuaJIT](https://luajit.org/install.html) or [Lua 5.1](https://www.lua.org/download.html). It's the main language of this plugin. So your PR code must run without errors in both of them (Compatibility with KOReader emmbeded lua runtime).
-
-3. [uv](https://docs.astral.sh/uv/getting-started/installation/) (not python3). Is the python manager used in this repo and used for dataset tools extraction, also needed to run the tests with `./run-tests.sh`.
-
-4. [Stylua](https://github.com/JohnnyMorganz/StyLua) (Codebase's Formatter). Used to have a consistent code style (indentation, tabs, etc...)
-
-5. [Luacheck](https://github.com/mpeterv/luacheck) (Codebase's Linter). Used to have consistent code patterns (Which globals are available in intelissense, function declaration styles, etc...)
-
-From the repository root, create the development environment and install the Python dependencies using the following command:
-
-```bash
-uv sync
-```
-
-With Lua, LuaJIT, StyLua, and Luacheck installed, run the full test suite through uv so `run-tests.sh` uses the synced Python environment with the following:
-
-```bash
-# Unix environment
-./run-tests.sh
-```
-
-Now you're ready, now go to [CONTRIBUTING.md](CONTRIBUTING.md) for the rest of the contribution guidelines, project documentation, linting, building, guides, etc...
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, testing instructions, project documentation, and contribution guidelines.
 
 ---
 
 ### 🏗️ Building From Source
 
-Clone or download this repository, then run:
+You don't need to do any of the setup from [CONTRIBUTING.md](CONTRIBUTING.md), just clone or download this repository, then run:
 
 ```bash
 ./build.sh
@@ -282,7 +274,7 @@ On Windows PowerShell, run:
 .\build.ps1
 ```
 
-The script creates `dist/panels_plus.koplugin`. Copy that generated folder into your KOReader plugins directory, then restart KOReader.
+The script creates both editions: Vanilla in `dist/panelsplus.koplugin` and bundled OCR models in `dist/with_ocrmodels/panelsplus.koplugin`. Copy **one** of these `panelsplus.koplugin` folders into your KOReader plugins directory, then restart KOReader.
 
 ---
 

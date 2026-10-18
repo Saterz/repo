@@ -1,3 +1,32 @@
+# v1.21.0 · 2026-10-18
+
+# RSS Reader v1.21.0
+
+## New: Instapaper sanitizer
+
+You can now use Instapaper's own article parser, through its API v2, to fetch full articles (`type = "instapaper"`).
+
+- **Setup:** create an application and a personal access token at [instapaper.com/developers/applications](https://www.instapaper.com/developers/applications). Put the token in the `token` field of the new sanitizer entry and set `active = true`. No other plugin is needed.
+- **How it works:** Instapaper only parses articles that are saved in your account. Each story is therefore saved as a bookmark, its parsed text is read back, and the bookmark is deleted again.
+- **Cost:** parsing is free for personal use up to Instaparser's free credit. Once that runs out, Instapaper answers `402` and the next sanitizer in your chain is tried.
+- **Your existing bookmarks are safe:** if a link is already saved in your account, the plugin keeps that bookmark and never deletes it. This covers bookmarks that are archived, liked, in a folder, tagged, partly read, or saved more than two minutes earlier.
+  > ⚠️ A link you saved moments ago and never touched looks the same as the plugin's temporary copy. If you also read with Instapaper, **use a separate Instapaper account for this sanitizer**.
+- **Rate limiting:** parse calls are spaced like Instaparser's (`seconds_between_calls`, default **2 s**), and the spacing also applies across Offline Mode's parallel workers. If a save or parse is rate-limited (`429`), it is retried once.
+- **Fails fast:** a `401` (token refused), `402` (credit used up) or `403` (application suspended) pauses the sanitizer for an hour. The stories after it skip it instead of each spending a save and a delete to find out. Restarting KOReader clears the pause.
+
+### Configuration
+
+Copy the new entry from `rssreader_configuration.sample.lua`:
+
+```lua
+{
+    order = 5,
+    type = "instapaper",
+    active = false,
+    token = "your_instapaper_access_token",
+    seconds_between_calls = 2, -- 0 = no limit
+},
+
 # v1.20.1 · 2026-10-10
 
 # RSS Reader v1.20.1
@@ -134,42 +163,3 @@ the plugin falls back to that automatically.
 - **FreshRSS favourites** — star and unstar articles, browse them in a Starred
   feed, and see the star in the list.
 - **FreshRSS 404 fix** — the error that hid every feed on some servers is gone.
-
-# v1.17.1 · 2026-09-21
-
-
-## v1.17.0
-- **Faster article downloads.** Images in an article are now fetched in parallel
-  (4 at a time) instead of one after another, so opening an image-heavy article
-  is noticeably quicker. You can still cancel mid-download.
-- **FreshRSS favourites.** Star and unstar articles from FreshRSS, and browse
-  everything you've starred in its own list — the same way the other backends
-  already worked.
-- **Fixed: FreshRSS showed no feeds.** Opening a feed or folder returned a 404,
-  which left the feed list empty. Feed and folder browsing works again.
-
-## v1.17.1
-### Fixed
-
-- **Diffbot now returns content instead of silently timing out.** It extracts
-  server-side and answers only when done — typically 4–23 s — but the plugin
-  gave up after 8. It now waits for Diffbot's own budget (`timeout`, default
-  30000 ms). Fast articles still open as fast as before.
-- **Diffbot rate limiting is handled.** The free plan allows about one call
-  every 10 s and rejects the rest with `429`, which was treated as a failure.
-  The plugin now honours `Retry-After` once before falling through, and the
-  wait can be cancelled with a tap. Six articles opened in a row used to give
-  one success; now they all succeed.
-- **Non-article Diffbot responses** (section and index pages) are no longer
-  discarded as empty.
-- **Feed links with escaped characters** no longer produce broken URLs. RSS
-  item links skipped the entity decoding that titles and Atom links get,
-  affecting 4% of links across 26 live feeds.
-
-### Changed
-
-- Request timeouts are now enforced across all sanitizers and the direct
-  article download; the total-timeout setting previously had no effect.
-- The README documents the measured speed gap: Diffbot is ~3× slower than
-  Instaparser and rate-limited on the free plan, so listing Instaparser first
-  is usually the better default.

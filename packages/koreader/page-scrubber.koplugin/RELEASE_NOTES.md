@@ -1,3 +1,37 @@
+# v8.1.0 · 2026-10-18
+
+## Settings & Split Menu Redesign
+
+### Visual updates
+- **Settings menu redesign:** new header with back and close buttons, options grouped into sections, the current value shown on the right of each row, and a cleaner, lighter look.
+- **Split menu refresh:** the selected row is now a rounded pill, the pinned row has a softer selected state, the color filter arrows are chevron icons, and page numbers are centered. Landscape got the same changes.
+- The book title and chapter name now match the size of the "Library" label, and the selection menu has a thicker outline.
+
+### New book title style: Bar
+- Under **Settings > Appearance > Top bar > Book title style** there is a new **Bar** style. It draws the book title on a full-width white bar, vertically centered.
+- Turn on **Top bar separator line** together with the **Bar** style and the result looks very similar to the Kindle's own top bar.
+
+### Selection menu
+- **New option: Size of selection menu** (Small / Medium / Large) under Settings > Reading Pop-Ups. It scales the icons, the buttons and the outline. Medium is the previous size.
+
+### New: Advanced settings
+A new **Advanced** submenu (Settings > Other > Advanced):
+- **Settings**
+  - **Back up settings:** saves all your PageScrubber options and your favorite images to `page_scrubber_backup.lua` in KOReader's `settings` folder.
+  - **Restore settings from backup:** brings back the options and favorite images saved in that file. To restore on another device, copy the file to the same folder first.
+  - **Reset all settings:** back to defaults. Asks for confirmation, and also clears your favorite fonts, quick actions and favorite images. Back up first if you want to keep them.
+- **Cache**
+  - **Clear image cache:** deletes the scan cache of the Images tab (the current size is shown next to it). Your favorite images are kept.
+- **Updates**
+  - **Check for updates:** looks for a newer release on GitHub, shows its notes and installs it from the reader. It keeps a backup and restores the previous version if the install fails. Restart KOReader when it finishes.
+
+## Installation
+1. Download the zip named `page_scrubber.koplugin-<version>.zip` from the **Assets** section below (not "Source code").
+2. Unzip it and copy the `page_scrubber.koplugin` folder into `koreader/plugins/`.
+3. Restart KOReader.
+
+To update, replace the folder. To uninstall, delete it (and `koreader/patches/2--page-scrubber-font.lua` if you used the system font).
+
 # v8.0.0 · 2026-10-14
 
 ## Panel View Update
@@ -91,18 +125,6 @@ To update, replace the folder. To uninstall, delete it (and `koreader/patches/2-
 
 ## Installation
 1. Download the zip named `page_scrubber.koplugin-<version>.zip` from the **Assets** section below (not "Source code").
-2. Unzip it and copy the `page_scrubber.koplugin` folder into `koreader/plugins/`.
-3. Restart KOReader.
-
-To update, replace the folder. To uninstall, delete it (and `koreader/patches/2--page-scrubber-font.lua` if you used the system font).
-
-# v7.7.1 · 2026-10-03
-
-### Bug Fix
-- Fixed a crash when tapping the AI button with AI Assistant v1.18 (thanks @DerailleurAgile, #7).
-
-## Installation
-1. Download `page_scrubber.koplugin-vX.Y.Z.zip` from the [latest release](../../releases/latest) (under Assets, not "Source code").
 2. Unzip it and copy the `page_scrubber.koplugin` folder into `koreader/plugins/`.
 3. Restart KOReader.
 

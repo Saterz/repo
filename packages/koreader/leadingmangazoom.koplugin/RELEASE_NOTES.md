@@ -1,3 +1,59 @@
+# v1.5.1 · 2026-10-18
+
+Double tap to zoom, with a zoom level you choose.
+
+### 👆 Double-tap to zoom
+- **Double tap** anywhere on the page to zoom in on that spot; double tap again to go back to the page. Drag, swipe and pinch work as usual while zoomed.
+- Turn it on in **Leading Manga Zoom › Double-tap to zoom** and pick a **Zoom level**: 1.5×, 2×, 2.5×, 3× or 4×. Off by default.
+- KOReader normally ignores double taps. While this option is on, the plugin turns them on for supported books only, so single taps (like page turns) wait a moment to check for a second tap.
+
+### 🔄 Updating
+On v1.5.0, use **Leading Manga Zoom › Updates › Check for updates**. On older versions, download **leadingmangazoom.koplugin.zip** below and replace the `leadingmangazoom.koplugin` folder in KOReader's `plugins/` folder.
+
+Closes #12 · Changes: #17
+
+# v1.5.0 · 2026-10-18
+
+Update the plugin from inside KOReader, no computer needed.
+
+### 🔄 Updates from inside KOReader
+- **Leading Manga Zoom › Updates › Check for updates** checks GitHub, shows what's new in the latest release and installs it with one tap, then offers to restart KOReader. Wi-Fi is turned on if needed.
+- **Check automatically once a day** (off by default) looks for a new version only when Wi-Fi is already on, and never turns Wi-Fi on by itself.
+- Before anything is replaced, the download is checked: it must be this plugin's release zip, contain its main files and carry the expected version. It's unpacked into a temporary folder first, so a broken download leaves your installed version untouched, and the message says why.
+
+### Other changes
+- The plugin menu now opens for any book, so **About** and **Updates** are always reachable. Reading options still need a supported file.
+
+### 📥 Installation
+**Install this version by hand once**; from here on, the plugin can update itself.
+
+Download **leadingmangazoom.koplugin.zip** below and extract it into KOReader's `plugins/` folder, replacing the old `leadingmangazoom.koplugin` folder. You should end up with `plugins/leadingmangazoom.koplugin/main.lua`. Restart KOReader, and keep Reflow off for the document.
+
+> Don't use GitHub's "Source code" zip. It has an extra outer folder, and the plugin won't show up.
+
+Changes: #16
+
+# v1.4.1 · 2026-10-18
+
+Desktop controls for KOReader on Linux, macOS and Windows. This release includes v1.4.0, which didn't get its own release.
+
+### 🖱️ Desktop controls
+- **Ctrl + mouse wheel** zooms in and out, keeping the spot under the mouse pointer in place, like Okular.
+- **Ctrl + / Ctrl −** zoom from the keyboard, main keys or keypad. **Ctrl 0** returns to the full page.
+- **Mouse wheel** scrolls while zoomed in. **Shift + wheel** (or a sideways wheel/trackpad) scrolls left and right. On the full page the wheel turns pages as before.
+- **Click and drag** moves the page around.
+
+### 🔧 Fixes
+- The mouse wheel no longer turns the page while you're zoomed in.
+- Keypad +, − and 0 now work. KOReader's desktop builds didn't recognise them.
+
+### 📥 Installation
+Download **leadingmangazoom.koplugin.zip** below and extract it into KOReader's `plugins/` folder, replacing the old `leadingmangazoom.koplugin` folder. You should end up with `plugins/leadingmangazoom.koplugin/main.lua`. Restart KOReader, and keep Reflow off for the document.
+
+> Don't use GitHub's "Source code" zip. It has an extra outer folder, and the plugin won't show up.
+
+Requested in [Euphoriyy/KOReader.patches#26](https://github.com/Euphoriyy/KOReader.patches/issues/26) · Changes: #13, #15
+
 # v1.3.1 · 2026-10-15
 
 Fixes from Kindle Colorsoft feedback. This is the first release with the free zoom zip attached (v1.3.0 went out without it), so if you downloaded "latest" in the last few hours, please grab this one.
@@ -47,28 +103,3 @@ Download **leadingmangazoom.koplugin.zip** below and extract it into KOReader's 
 Regression tests pass (34), including touch-dispatch checks against KOReader's real gesture code. An earlier build of free zoom was tried by @shuvashish76 on Android and a Kobo Clara BW (thanks!); the fixes above came from that feedback.
 
 Requested in [Euphoriyy/KOReader.patches#26](https://github.com/Euphoriyy/KOReader.patches/issues/26) · Changes: #8, #9, #10
-
-# v1.1.2 · 2026-09-06
-
-Fixes for module loading, gestures, and split-page navigation on KOReader.
-
-- Fix settings crashes and duplicate menus caused by module-name collisions with Maximum or other plugins.
-- Make two-finger tap, spread, pinch, and tap-to-collapse take priority while enabled, with normal gesture fallback when disabled.
-- Fix split-page navigation using taps, swipes, and physical buttons, including RTL and backward navigation between spreads.
-- Apply landscape modes immediately and on the opening page; keep auto-rotate and split defaults mutually exclusive.
-- Cancel stale pan callbacks and restore previous zoom, pan, reading direction, and continuous-view settings after temporary zooming.
-- Retain the v1.1.1 physical-button fix and correct layout updates when restoring portrait orientation.
-
-Installation: download **leadingmangazoom.koplugin.zip**, extract it into KOReader's **plugins/** directory, replace the existing **leadingmangazoom.koplugin** folder, and restart KOReader. Disable Reflow for the document.
-
-Validation: regression tests pass on Lua 5.1 and LuaJIT, with touch-dispatch integration checks against KOReader 2026.03 and 2026.07. Physical-device testing was not available.
-
-Changes: https://github.com/Auri3l/leadingmangazoom.koplugin/pull/6
-
-# v1.1.1 · 2026-07-24
-
-v1.1.1 Release: Fix physical page-turn button remapping bug on Kobo Sage, Kobo Libra 2, Kobo Forma, PocketBook, and Kindle Oasis devices when auto-rotating landscape pages.
-
-# v1.1.0 · 2026-07-16
-
-v1.1.0 release: Add CZB support, fix zoom coordinates, pinch gesture, and RTL split-page navigation

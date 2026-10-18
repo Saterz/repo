@@ -100,6 +100,8 @@ If you prefer not to enter your password in ShelfSync, use browser cookies inste
 
 Linking a book that isn't in your LibraryThing library adds it to **Your library** and **Currently reading**, using the edition LibraryThing picks for the work.
 
+A book that no LibraryThing member has added yet has no work on LibraryThing to link to. When **Link book** finds none, it searches a book source instead, as LibraryThing's **Add books** page does, and picking an edition adds it to your library, which creates the work. Choose the source under **LibraryThing > Books not on LibraryThing**: Amazon.com by default, or e.g. the **Vlaamse Centrale Catalogus** for Dutch-language books. Linking on its own (by ISBN or title) never adds a book from a source.
+
 ## Usage
 
 Everything lives under a single **ShelfSync** menu in **Tools > More tools** when a document is active, with a **Providers** sub-menu containing **StoryGraph**, **Hardcover**, **Goodreads**, **Fable**, **Pagebound**, and **LibraryThing**. They work independently and can be used together.
@@ -121,7 +123,7 @@ Before updates can be sent, a document needs to be linked to a book on each serv
 ### Reviews
 With a book open, choose **ShelfSync > Review** to open the review composer. Add a rating, review text, or both, then choose which providers should receive it. Enabled providers where you are signed in and the book is linked are selected by default; unavailable providers show why they cannot receive the review. If submission fails for a provider, the draft stays available so you can retry it.
 
-Ratings range from 0 to 5 in quarter-star steps. Goodreads rounds down to whole stars; Hardcover, LibraryThing, and Pagebound round down to half stars; StoryGraph and Fable preserve quarter-star ratings. When ShelfSync detects that you finished a book, it offers to open the composer if at least one provider is eligible.
+Ratings range from 0 to 5 in quarter-star steps. Hardcover, LibraryThing, and Pagebound round down to half stars; StoryGraph, Fable, and Goodreads preserve quarter-star ratings. When ShelfSync detects that you finished a book, it offers to open the composer if at least one provider is eligible.
 
 ### Automatically Track Progress
 When enabled (per service), the plugin will periodically sync your progress:

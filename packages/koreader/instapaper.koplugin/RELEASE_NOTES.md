@@ -1,3 +1,27 @@
+# v1.7.1 · 2026-10-18
+
+# Instapaper for KOReader v1.7.1
+
+This release fixes the freezes and slow screens some users hit when the plugin talks to Instapaper. It adds no new features.
+
+## Fixes
+
+### KOReader stays responsive during Instapaper requests
+Before this release, KOReader stopped responding to taps and screen updates while it waited for Instapaper. Closing an article, opening a list or downloading an article could take 5–11 seconds on a Kobo.
+
+- **Sends in the background:** reading progress, archiving after you finish an article, queued links and the **Add to Instapaper** link button now run in the background. You can keep reading while they finish.
+- **Lists, downloads and article actions:** opening a list, **Load more**, refresh, folders, article downloads (including building the EPUB) and archive, delete and star now show a progress message you can dismiss. The screen keeps responding, and a tap cancels the request.
+- **Failed downloads:** if an article download fails or you cancel it, you stay in the article list.
+
+### No more freezes from a slow network
+Opening or closing a book, waking the device and Wi-Fi reconnecting no longer freeze touch input for 5–15 seconds when the network responds slowly.
+
+- **Nothing queued:** the plugin skips the network check when it has nothing to send.
+- **Slow network:** background syncs now give up after 5 seconds instead of 60. Anything that didn't go through stays queued for the next sync.
+
+### Crash when opening a downloaded article
+Opening a downloaded article from the reader could crash with `doccache.lua:72: attempt to compare number with nil`, usually after the device woke from a long sleep. This is fixed.
+
 # v1.7.0 · 2026-10-10
 
 # Instapaper for KOReader v1.7.0
@@ -79,11 +103,3 @@ and asks you to try again. You can also switch by hand under **Settings → API*
 - show popup on bulk download process
 - name downloads after the article title, without the bookmark id 
 - add author, excerpt, cover and chapters to downloaded articles
-
-# v1.3.3 · 2026-07-20
-
-- fix: don't crash on non-http(s) image URLs
-  Articles can contain `<img src="file://...">` or other non-web schemes
-  (leftover from broken exports); socket.http has no handler for these
-  and throws uncaught, crashing the reader. Reject unsupported schemes
-  in resolveUrl and wrap http.request in pcall as a backstop.

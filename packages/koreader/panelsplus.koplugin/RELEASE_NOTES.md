@@ -1,3 +1,324 @@
+# v1.5.0 · 2026-10-18
+
+<div align="center">
+<h1>v1.5.0 | The Texty Texty Update</h1>
+</div>
+
+<p align="center">
+<img width="95%" height="auto" alt="v_1_5_0-CoverComicc" src="https://github.com/user-attachments/assets/f07bd34c-dafd-4102-8d07-a3b9f7ea9c9b" />
+</p>
+
+
+Hello, **Panels+ users**. This update is mainly about taking OCR support to the next level and finally removing the **[Experimental]** tag.
+
+Panels+ now features significantly improved, faster, and more reliable native OCR support. Whether you're reading a PDF with an embedded text layer or a manga made entirely of images, **Panels+ can now recognize text directly from the page.**
+
+This release also brings a redesigned configuration menu, improved panel detection algorithms, new quality-of-life features, and several bug fixes. Let's get into what's new.
+
+---
+
+# Main Features
+
+## 1. Significantly Improved OCR
+
+<p align="center">
+  <em>No PDF text layer required. Just images, and it works</em>
+</p>
+
+Panels+ can recognize words directly from images and send them to your dictionary for lookup, far better than before. **No preprocessing, no embedded text layer, and no extra steps required**
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th width="50%" align="center">Native OCR — Images Only</th>
+        <th width="50%" align="center">Force PDF Text Layer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="50%" align="center" valign="top">
+          <video src="https://github.com/user-attachments/assets/f9c2908d-21ad-4fbd-a528-8db51af4ddc6" controls width="100%"></video>
+        </td>
+        <td width="50%" align="center" valign="top">
+          <video src="https://github.com/user-attachments/assets/7742d6a0-c2dd-4f9f-822c-c9b81871cf2c" controls width="100%"></video>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" valign="top">
+          <strong>Native OCR:</strong> Recognizes text directly from manga images with no embedded text layer.
+        </td>
+        <td align="left" valign="top">
+          <strong>PDF text-layer option:</strong> Uses the PDF's existing text layer instead of native OCR (opt-in).
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+These improvements applies for all supported formats: .CBZ, .CBR, .PDF, .EPUB, .MOBI, .KEPUB.
+
+As long as you have the appropriate Tesseract language model installed in KOReader, you can use OCR with different languages
+
+- **English:** For English manga and comics.
+- **Spanish:** For Spanish-translated manga.
+- **Other languages:** Depending on the Tesseract language models installed on your device.
+- etc...
+
+Simply select the appropriate OCR language model in the Panels+ configuration menu.
+
+Panels+ includes OCR models fine-tuned for manga & comics, for English and Spanish (You can read more about this at the very end of these release notes):
+
+Why only English and Spanish? you may ask. Those are the only languages I dominate myself so I can test the quality of those models natively. I don't feel confident to train italian, russian, chinese, etc -> models if I don't know how to read them in first place, probably they could be made with AI tools, but I don't like slop translations/lang related features. Despite that, I don't ignore the possibility to gradually add them in the future.
+
+---
+
+## 2. Redesigned Panels+ Configuration Menu
+
+<p align="center">
+  <img width="49%" alt="Panels+ Redesigned Configuration Menu - View 1" src="https://github.com/user-attachments/assets/717bf138-e21d-46a5-8f63-04bcb76f0379" /><img width="49%" height="auto" alt="image" src="https://github.com/user-attachments/assets/6bcae9e4-9358-41c0-801d-8955a6bd22a6" />
+
+  <img width="99%" alt="Panels+ Redesigned Configuration Menu - View 2" src="https://github.com/user-attachments/assets/36aec568-6a5f-435f-adb3-9a8763f13c9a" />
+
+</p>
+
+With so many new configuration options introduced in this release, the old menu was starting to feel a little overcrowded.
+To address this, I've **redesigned the Panels+ configuration interface** to make it cleaner, easier to navigate, and more comfortable to use (I hope so).
+
+- **Improved navigation:** Less clutter and fewer unnecessary buttons.
+- **Responsive interface:** Buttons automatically adjust their layout depending on whether your device is in portrait or landscape orientation.
+- **Iconofied:** Added icons for settings in "More Config..." button.
+
+The goal was simple: **more features without sacrificing usability.**
+
+---
+
+## 3. Improved Panel Detection Algorithms — Introducing `Smart(er)`
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th width="50%" align="center">Safe mode (Default)</th>
+        <th width="50%" align="center">Smart mode (Opt-in config)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="50%" align="center" valign="top">
+          <video src="https://github.com/user-attachments/assets/87c7670e-67ee-4bd2-bae7-856d0dc2c6ec" controls width="100%"></video>
+        </td>
+        <td width="50%" align="center" valign="top">
+          <video src="https://github.com/user-attachments/assets/4aac4f57-0d1e-4805-b466-f628b83ae81e" controls width="100%"></video>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" valign="top">
+          <strong>Safe Mode: Prioritizes stability</strong> <br></br> It's the previous version (v1.4.0) improved but kept the phylosophy to keep panels together if neccesary. <br></br>As you can see in the demo, it takes the entire panel as one single panel, it's has sense because almost all the panels are connected either by a character or a dialog bubble.
+        </td>
+        <td align="left" valign="top">
+          <strong>Smart Mode: Prioritizes to find every panel possible</strong> <br></br> It's an alternative algorithm (an aggresive overhaul of Safe Mode) to find every panel, even those that are interconnected a little by a character or bubble dialog. <br></br>if the bubble dialog is really in the middle of 2 panels, it fallsback to Safe Mode behavior for that panel, thanks to this is capable to recognize panels that Safe mode prefer not to show you. <br></br> But, due to the aggresive nature of it, sometimes it could find false positives, some blank panels, but looks cool though. Optional to set. By default Panels+ uses Safe Mode. <br></br> As you can see in the demo, it finds all the panels taking into account that is a really hard layout manga page!
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+---
+
+## 4. Smooth Transitions "ease" styles
+
+<div align="center">
+  <video
+    src="https://github.com/user-attachments/assets/81d1e9e2-f607-4c24-8af1-6371b057a770"
+    width="25%"
+    controls>
+  </video>
+</div>
+
+This is a small addition to Smooth transition. It looks way better on android + desktop/linux devices, not that great in e-ink based ones like Kindle, but still available. I took inspiration from CSS transitions values. In case you're frontend dev, I've added the CSS equivalent just to make clearer how it works.
+
+| Style | Timing | Description | CSS equivalent |
+| --- | --- | --- | --- |
+| `linear` | Progress changes evenly throughout the transition. | Steady movement without deliberate acceleration or deceleration. | `linear` |
+| `ease` **(default)** | Starts slowly, accelerates early, then slows down toward the destination. | A quick movement with a gentle landing; the acceleration and deceleration are not symmetrical. | `cubic-bezier(0.25, 0.1, 0.25, 1)` |
+| `ease-in` | Starts slowly and accelerates toward the end. | Builds momentum as it approaches the next panel. | `cubic-bezier(0.42, 0, 1, 1)` |
+| `ease-out` | Starts quickly and decelerates toward the end. | Responds quickly, then settles gently onto the next panel. | `cubic-bezier(0, 0, 0.58, 1)` |
+| `ease-in-out` | Accelerates through the first half and decelerates through the second half. | A balanced slow start and slow finish, with faster movement in the middle. | `cubic-bezier(0.42, 0, 0.58, 1)` |
+| **Classic** | Uses linear timing with the earlier fixed-zoom camera pan. | Slides between panels at the destination's zoom instead of gradually zooming in or out. | No direct CSS equivalent: Classic changes the rendering approach, not just the timing curve. |
+
+
+---
+
+## 5. Profile Settings
+
+<div align="center">
+  <video
+    src="https://github.com/user-attachments/assets/d590f554-23ce-45e2-a19a-99577f40cd40"
+    width="25%"
+    controls>
+  </video>
+</div>
+
+I realized there are combos of "settings" that worked better together specifically, but I needed to remember them every time i wanted to switch a group of settings. 
+
+> Why not creating stored profile settings?. Create them, edit them, break them, or never use them. 
+
+By default Panels+ includes some recommended Profiles by me, for e-readers and android/desktop. You'll see them the first time you download this update, otherwise, use the option: "Add defaults" to add them.You can found this option in the button "Profile Setting: ####" at the end of options. It's not in the video because I'm too lazy to update it just to add that new button in the showcase.
+
+--- 
+
+`Probably there are other little features related to those, but it will make this release too "texty". Discover them by your own!.` 
+
+---
+
+# Secondary Features & Quality-of-Life Improvements
+
+## 1. New Two-Finger Tap Gesture | Made by @Pixxel123 
+
+Panels+ now supports an alternative activation gesture: **double-finger tap**. Previously, the plugin relied on long-press interactions a l w a y s, which could conflict with gestures used by other KOReader plugins of yours.
+
+With this new option, you can choose a different way to trigger Panels+ without interfering with your existing setup. Completely optional and configurable.
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th width="50%" align="center">Demo (Recorded)</th>
+        <th width="50%" align="center">How to configure it</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="50%" align="center" valign="top">
+          <video src="https://github.com/user-attachments/assets/46cfb6a1-3f66-48fc-a8eb-0ecc5a7a6921" controls width="100%"></video>
+        </td>
+        <td width="50%" align="center" valign="top">
+          <video src="https://github.com/user-attachments/assets/8b774ac0-1d66-46f5-8052-d5b99cf21e84" controls width="100%"></video>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" valign="top">
+            Testing it with two-fingers. Can't be made in desktop/android for obvious reasons, only clicks there.
+        </td>
+        <td align="left" valign="top">
+          Configure path
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+
+## 2 & 3. Auto-Rotate Double-Page Spreads & Remove Fold Lines | Made by @Pixxel123
+
+Panels+ now supports **automatic rotation for double-page illustrations**, alongside a feature to remove those annoying black fold lines that some manga scans have in the middle. Added double-page spread automatic orientation, and return to your previous orientation when you move to a normal page. No need to manually rotate your device every time.
+
+You can configure this behavior to work:
+- **Off:** No automatic rotation.
+- **Panel Viewer only:** Rotates double-page illustrations when using Panels+.
+- **While reading:** Rotates your screen directly in KOReader's normal reading view.
+- **Both:** Enables rotation in both cases.
+- **Rotation direction**: clockwise, counter-clockwise, or follow KOReader's default orientation.
+
+<div align="center">
+  <img width="75%" alt="Double-page spread fold strip removal example" src="https://github.com/user-attachments/assets/61ef544c-b595-4b5d-9d4b-7415bf739563" />
+  <p><em>Example of the black fold strip between two manga pages.</em></p>
+</div>
+
+This works directly while reading or inside Panels+ Panel Viewer. Fold removal is **enabled by default**, but you can disable it whenever you want.
+
+**NOTE:** This feature works with double-page illustrations stored as a single wide page/image. It doesn't combine two separate physical pages into one illustration (yet). Also, if the original manga scan lost some artwork at the fold, removing the black strip obviously won't magically recover it.
+
+All of these features are configurable from the Panels+ menu, under the rotation settings in "More Panel Viewer Settings".
+
+> If you use [KCC](https://github.com/ciromattia/kcc) to pre-process your mangas/comics, this won't be an issue for you at all.
+
+---
+
+## 4. Better PDF Text-Layer OCR Support | Made by @MartinoAichner
+
+He made the first OCR improvement which I based my following work until make the current OCR support today. OCR Recognition improved for PDF documents containing embedded text layers.
+These changes help Panels+ handle text-based PDF content more reliably, improving the overall dictionary lookup experience.
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th width="50%" align="center">Demonstration provided by @MartinoAichner</th>
+        <th width="50%" align="center">How to configure it</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="50%" align="center" valign="top">
+            <img width="800" alt="PDF Text-Layer OCR Improvements" src="https://github.com/user-attachments/assets/2a72596c-efb5-48bc-9d1c-caa8eb33b2d4" />
+        </td>
+        <td width="50%" align="center" valign="top">
+          <video src="https://github.com/user-attachments/assets/a5d0da55-79d3-4c7e-8410-ce942f333aa4" controls width="100%"></video>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" valign="top">
+            Demo. What else can I say?
+        </td>
+        <td align="left" valign="top">
+          Configure path
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## 5. Simplified Chinese Translation added | Translated by @IMJXXL
+
+<img width="49%" alt="image" src="https://github.com/user-attachments/assets/0cad18fe-b526-4b03-a0f1-cfa44217d17f" /> <img width="49%" alt="image" src="https://github.com/user-attachments/assets/e34333a0-15f1-4cbb-8c7d-60881df1c1be" />
+<em>You can access this by simply changing your KOReader language.</em>
+
+And many overall bug fixes here and there.
+
+# New Contributors
+
+Thanks to everyone who made their first contribution to Panels+:
+
+- **@Pixxel123** — Made their first contribution in [Pull Request #7](https://github.com/KristanLaimon/PanelsPlus/pull/7).
+- **@MartinoAichner** — Made their first contribution in [Pull Request #9](https://github.com/KristanLaimon/PanelsPlus/pull/9).
+- **@IMJXXL** — Contributed a **Simplified Chinese translation**.
+
+---
+
+## Panels+ downloading
+
+Starting from now, Panels+ comes in **two different builds/flavors**, allowing you to choose the one that best fits your needs.
+
+| | **Vanilla / Standard Build** | **OCR-Embedded Build** |
+|:---|:---|:---|
+| **Description** | The classic Panels+ experience, with all the improvements introduced in this update. | Everything from the standard build, plus **two specially fine-tuned OCR models** designed for manga lettering. |
+| **Installation size** | Lightweight (~192KB) | Little larger, due to the included OCR models (~4.09MB) |
+| **Native OCR** | ✅ Supported | ✅ Supported |
+| **Included OCR models** | None (uses your existing KOReader Tesseract models) | ✅ English and Spanish, fine-tuned for manga lettering |
+| **OCR accuracy** | Standard Tesseract recognition | Approximately **10–15% better accuracy** compared to generic Tesseract models for Spanish and English OCR models only. |
+| **Custom OCR models** | ✅ Supported | ✅ Supported |
+| **Default OCR language** | Depends on your installed models and configuration | English |
+| **Switch OCR models** | ✅ Supported | ✅ Supported |
+| **New features & QOL improvements** | ✅ All included | ✅ All included |
+| **Download** | `panelsplus-1-5-0-RC1.koplugin.zip` | `panelsplus-1-5-0-RC1-OCR-EmbbededVersion.koplugin.zip` |
+
+> **Which version should I choose?**
+>
+> Choose **Vanilla** if you prefer a lightweight installation and already have your preferred OCR models.
+>
+> Choose **OCR-Embedded** if you want the additional manga-optimized English and Spanish OCR models included out of the box.
+
+Both versions are available in the **Assets / Downloads** section below.
+
+**If you enjoy Panels+, consider giving the repository a ⭐ on GitHub. It helps more people discover this project.**
+
 # v1.4.0 · 2026-09-12
 
 <img width="1578" height="840" alt="image" src="https://github.com/user-attachments/assets/a0765887-4b37-4169-8588-902db0aecd89" />
@@ -638,49 +959,6 @@ This release adds a `docs/` folder describing how the plugin works, with diagram
 ## Upgrading
 
 Copy `panels_plus.koplugin` over your existing folder and restart KOReader. Your settings are kept; the detector and cache values tuned in this release are applied automatically.
-
-## Author
-
-- KristanLaimon
-
-# v1.0.0-RC4 · 2026-05-23
-
-<img width="1922" height="818" alt="Panels+ Release Candidate 4 banner" src="https://github.com/user-attachments/assets/0377fbfc-baa2-4e01-bd22-acaad0b71871" />
-
-# Panels+ | Quality of Life Update
-
-Built from tag: `v1.0.0-RC4`
-
-This release focuses on improving the panel-focused reading experience. It adds more control over the viewer UI, improves gesture behavior while Panels+ is active, and makes zooming and navigation feel smoother.
-
-## Highlights
-
-<div align="center">
-
-| Feature | Description |
-| :---: | :--- |
-| **Feature 1** | **Toggle the bottom progress bar**<br><br>Added an option to hide or show KOReader's bottom progress bar while reading in focused-panel mode.<br><br><p align="center"><img width="360" alt="Bottom progress bar toggle option" src="https://github.com/user-attachments/assets/349d7107-5a76-48d3-bfaf-9288307a88b7" /></p> |
-| **Feature 2** | **Use configured document gestures inside Panels+**<br><br>Document gestures configured in KOReader can now be used while reading through the Panels+ viewer. |
-| **Feature 3** | **Switch back to KOReader native panel focus zoom**<br><br>Added an easy way to return to KOReader's native panel focus zoom behavior when preferred.<br><br><p align="center"><img width="360" alt="Native panel focus zoom option" src="https://github.com/user-attachments/assets/871b9536-deb5-4413-a0f0-063475e3a6fb" /></p> |
-| **Feature 4** | **Mouse wheel zoom and improved panning**<br><br>Added mouse wheel zoom support and improved panning behavior for smoother navigation. |
-
-</div>
-
-## Fixes
-
-- Fixed a `refreshfunc` issue that could affect viewer refresh behavior.
-- Fixed spread and pinch gesture handling while a panel is focused.
-- Spread and pinch gestures are no longer incorrectly forwarded as normal gestures.
-- This also fixes the issue where zoom in and zoom out could be implicitly disabled.
-
-## Included Commits
-
-- `59a1b9c` feat: Added toggle bottom progress bar
-- `51704ed` fix: Spread and Pinch gesture forwarded to plugins when panel focused
-- `a50d0f7` fix: Fixed `refreshfunc` bug
-- `0f4ae71` feat: Now user document gestures usable when using plugin
-- `1b69e63` feat: Easily switch to native focus zoom
-- `f15da0f` feat: Mouse zooming support and panning features
 
 ## Author
 

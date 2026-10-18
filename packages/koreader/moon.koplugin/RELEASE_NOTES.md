@@ -1,3 +1,93 @@
+# v0.2.17 · 2026-10-18
+
+## 月读 v0.2.17
+
+KOReader 插件包：`book.koplugin-v0.2.17.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.17.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.17.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.16`：
+
+#### 新功能
+
+- :sparkles: (ai): 支持多窗口时限制插件固定数量 (fd63f271)
+- :sparkles: (extensions): 支持根据屏幕宽度动态限制扩展页签最大 pinned 数量 (dd55fb1b)
+- :sparkles: (extensions): 拓展入口可固定到底栏并自选图标，与拓展菜单互斥 (1167bf6f)
+
+#### 修复
+
+- :bug: (wechat): App 协议续期改用 guest_token 防重放签名，修复 -2041 (94583edf)
+- :bug: (text): RSS 正文解码常见 HTML 命名实体（&nbsp; &mdash; 等） (8d15df46)
+- :bug: (subscribe): 修复翻章取消预取时图片下载句柄 cancel 崩溃 (63245c6b)
+
+#### 性能
+
+- :zap: (subscribe): 订阅刷新 4 路并发，被截断的 RSS 摘要改抓原文 (584082b0)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.16...v0.2.17
+
+# v0.2.16 · 2026-10-18
+
+## 月读 v0.2.16
+
+KOReader 插件包：`book.koplugin-v0.2.16.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.16.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.16.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.15`：
+
+#### 新功能
+
+- :sparkles: (fanqie): 漫画章节解密后打成 CBZ，按漫画文档打开 (7999dc59)
+- :sparkles: (fanqie): 免登录搜索、书架同步、段评、漫画与进度定时上传 (7f954c10)
+- :sparkles: (reader): 段评改为段尾对话气泡，不再画线 (046cd433)
+- :sparkles: (library): 新增 Kindle / Kobo 封面风格与图书馆显示设置 (577348d8)
+
+#### 修复
+
+- :bug: (wechat): 旧 eink 前缀设备 ID 登录时换成数字 ID，避免手机渠道续期被风控 -2041 (43ff983f)
+
+#### 界面
+
+- :lipstick: (library): Kobo 底栏未下载改用下载图标，进度条右侧显示百分比 (07d8e546)
+- :lipstick: (cover): 封面被高度压矮时向格子宽度拉伸，减小列间空隙 (7fc6975a)
+
+#### 重构
+
+- :recycle: (source): CBZ 打包抽成公共 source/cbz，章节载荷支持 file 直接登记 (5cd8af1c)
+- :recycle: (fanqie): 定位器移到 book/annotations，清理 qrlogin 冗余 (d1b3bd12)
+- :recycle: (setting): 重排设置项：界面显示拆成外观 / 屏幕与亮度 / 启动与按键，书架显示并入桌面 (d27f2346)
+
+#### 变更
+
+- :fire: (fanqie): 去掉阅读中定时上传进度，沿用关书 / 换章上传 (9e091113)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.15...v0.2.16
+
 # v0.2.15 · 2026-10-18
 
 ## 月读 v0.2.15
@@ -144,128 +234,3 @@ KOReader 插件包：`book.koplugin-v0.2.13.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.12...v0.2.13
-
-# v0.2.12 · 2026-10-18
-
-## 月读 v0.2.12
-
-KOReader 插件包：`book.koplugin-v0.2.12.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.12.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.12.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.11`：
-
-#### 新功能
-
-- :sparkles: (qidian): 已购 VIP 章节正文本地解密 (5d5274e2)
-
-#### 修复
-
-- :bug: (remote): 远程输入同时认主题输入面板和原生输入框 (5bc134a7)
-- :bug: (reviews): 段评扫描结果经 JSON 回传后序号变字符串键导致空指针 (5f289b9e)
-- :bug: (wechat): 公众号刷新遇 -2041 时也走凭据续期再重试 (2d43ca95)
-- :bug: (lockscreen): 文字海报关键词不再被按字节削成半个字 (90b9e501)
-- :bug: (remote): 恢复备份不再删换被 mmap 的字体，避免 KOReader 崩溃 (7d0ec5b3)
-
-#### 文档
-
-- :memo: (ui): 更新 README 中数据源与功能描述 (760528b9)
-
-#### 变更
-
-- :green_heart: (test): 热力图用例周日没有留空格子时不再误报 (ac8d8644)
-- :children_crossing: (reader): 超大 EPUB 默认关内嵌字体样式，首次打开前提示可能卡死 (724216cc)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.11...v0.2.12
-
-# v0.2.11 · 2026-10-17
-
-## 月读 v0.2.11
-
-KOReader 插件包：`book.koplugin-v0.2.11.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.11.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.11.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.10`：
-
-#### 新功能
-
-- :sparkles: (qqreader): 接入 QQ阅读，扫码登录与章节进度 (6454f1f0)
-- :sparkles: (source): 起点和七猫同步章节进度 (c7229a57)
-- :sparkles: (bars): 阅读页顶栏、底栏可选分割线 (073492eb)
-- :sparkles: (qidian): 接入起点中文网，书架同步与 Cookie 登录 (033be26e)
-- :sparkles: (jjwxc): 接入晋江文学城书源，收藏同步与 Cookie 登录 (def24014)
-- :sparkles: (cookie): 加入京东浏览器授权并精简远程导航 (45e65238)
-- :sparkles: (qimao): 接入七猫书源与浏览器授权登录 (d600440f)
-- :sparkles: (wechat): 书架分类优先用自建分组名，没分组回退官方分类 (5139ff10)
-- :sparkles: (dictionary): 新增「加载所有词典」，查词面板列出全部已安装词典 (33ff58be)
-- :sparkles: (subscribe): 新增「网页本身」订阅与列表排序，修标题栏加图标后溢出 (9d559c99)
-- :sparkles: (sidebar): 侧栏页面支持自定义排序 (940048ab)
-- :sparkles: (remote): 新增「截图分享后自动删除」开关，默认关闭 (e2c11791)
-- :sparkles: feat(ime): 候选条浅灰底并加粗首选词，新增九宫格拼音 (69b5610e)
-- :sparkles: feat(remote): 备份改为整个 .moon 打包（不含日志缓存），入口移到首页 (6726fab4)
-- :sparkles: feat(remote): 配置备份包含全部配置（登录态、Cookie、密钥、锁屏密码） (0cd0f0bb)
-
-#### 修复
-
-- :bug: (qimao): 章节正文加章名并去掉段首空白，避免双份缩进 (1758fdc0)
-- :bug: (wechat): 公众号请求带上 ticket/wrpa 凭据头，-2041 与验证页先续期再重试 (257d31db)
-- :bug: (subscribe): 订阅与网页正文按声明编码转 UTF-8，GBK 站点不再乱码 (63d63801)
-- :bug: (rare): 子进程取框的时间预算放宽，首次翻到的页不再漏注音 (0363b7f2)
-- :bug: (dictionary): 划词点「查词」固定打开词典栏，不再沿用上次的标签 (83cf1184)
-- :bug: (lookup): 修复「加入生词本」按钮不显示 (bb552fca)
-- :bug: fix(ime): 开关开着但键盘布局列表被重置时，启动补回 zh_CN，地球键才能切中文 (72388844)
-- :bug: fix(remote): addPath 正常结束返回假，备份/打包误判失败 (b2ab4cd5)
-- :bug: fix(remote): 备份按钮处理代码误嵌在 renderForms 内，移到文件末尾 (f332aba8)
-- :bug: fix(remote): 备份下载增加进度反馈，设置页卡片间距 (8ef02c6f)
-- :bug: fix(panel): 快捷面板页脚时间/电量在面板分支不刷新 (6bcd863e)
-
-#### 界面
-
-- :lipstick: feat(remote): 备份下载/恢复改用进度弹窗，可取消 (b8ff865b)
-
-#### 性能
-
-- :zap: (reviews): 关联书段评扫页改子进程，翻页不再同步 findText (bc11cb1d)
-- :zap: (rare): 生僻字注音改子进程取框，翻页不再卡顿 (40af53e2)
-
-#### 重构
-
-- :recycle: (ai): 分批处理扫描结果以避免内存溢出 #47 (104c3ee1)
-
-#### 文档
-
-- :memo: (docs): README 补充游戏合集 ko-games 与订阅类型 (1e1ae70e)
-- :memo: docs: README 增加 LINUX DO 社区链接 (9dbc382f)
-
-#### 变更
-
-- :white_check_mark: (source): 示例源断言不再写死内置源个数 (19b539fc)
-- :fire: (remote): 文件管理不再限制在快捷入口内 (63caead6)
-- :children_crossing: feat(rare): 选择「全部」注音范围时提示可能拖慢翻页 (af051170)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.10...v0.2.11

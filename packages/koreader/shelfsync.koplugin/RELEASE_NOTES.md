@@ -1,3 +1,14 @@
+# 1.8.1 · 2026-10-18
+
+- (feat) Send Goodreads ratings in quarter stars, now that Goodreads takes them, instead of rounding down to whole stars.
+- (feat) LibraryThing: when "Link book" finds no work (e.g. a new translation no member has added yet), search a book source such as the Vlaamse Centrale Catalogus or Amazon, and add the picked edition to create it.
+- (fix) Don't ask to mark a book that's Read on LibraryThing as reading again when it's opened at its end; LibraryThing has no reading progress to sync.
+
+
+---
+
+Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#181)
+
 # 1.8.0 · 2026-10-17
 
 - (feat) 🌟 Add LibraryThing sync: sign in with a username and password or browser session cookies (which the cookie helper can fetch with `--service librarything`), link books (adding one to your library if needed), sync Currently reading / To read / Read through LibraryThing's collections and reading dates, set the finished date (a re-read gets reading dates of its own, keeping the earlier ones), choose which collection read books go to (Your library by default), and save ratings and reviews. LibraryThing has no reading progress, so none is sent. 🌟
@@ -54,16 +65,3 @@ Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHAN
 ---
 
 Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#160)
-
-# 1.5.0 · 2026-10-02
-
-- Add Hardcover OAuth device-code sign-in, based on [hardcoverapp.koplugin PR #70](https://github.com/Billiam/hardcoverapp.koplugin/pull/70). OAuth is used when signed in; the configured API token remains available as a fallback.
-- Confirm Hardcover journal writes using the mutation ID, without requiring journal-read access.
-- Redact credentials, search terms, and personal content from logs while retaining safe request and error diagnostics.
-- Prevent Goodreads session cookies from being sent if a request redirects to another host or an unencrypted URL.
-- Reduce reader stalls when the GitHub version check encounters a slow or unreachable connection by adding short request timeouts ([#16](https://github.com/Lyfts/ShelfSync/pull/16)).
-
-
----
-
-Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#150)

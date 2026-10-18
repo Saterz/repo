@@ -12,9 +12,11 @@ A KOReader plugin for reading fixed-layout pages up close: manga and comics, but
 ## 🚀 Features
 
 - **Quadrant Zoom**: Two-finger tap anywhere to instantly zoom into that quadrant.
+- **Double-Tap Zoom** (optional): double tap anywhere to zoom in on that spot at the level you choose (1.5× to 4×), double tap again to return. Handy on small e-readers.
 - **Quadrant Navigation**: While zoomed, swipe, tap the left/right side of the screen or press the page buttons to move to the next quadrant, continuing onto the next page.
 - **Free Zoom**: Spread to zoom in as far as you like (repeat to go further), drag or swipe to pan in any direction (diagonals included), pinch to zoom back out. Made for newspapers, magazines and textbooks, and handy for manga too.
 - **Desktop Controls**: Ctrl + mouse wheel or Ctrl +/− to zoom, the wheel to scroll, Ctrl 0 to return to the page, like Okular and other desktop readers.
+- **Updates from inside KOReader**: *Leading Manga Zoom › Updates* checks GitHub, shows what's new and installs the latest release, no computer needed.
 - **E-ink Friendly**: Panning redraws once when you lift your finger, so the screen doesn't flash while you move around.
 - **RTL Support**: Toggle Right-to-Left reading direction for authentic manga navigation.
 - **Landscape Handling**: 
@@ -51,13 +53,17 @@ A KOReader plugin for reading fixed-layout pages up close: manga and comics, but
     - **Spread** zooms in on the spot between your fingers; the wider you spread, the more it zooms. Spread again to zoom further (up to 8× the fitted page). Spreading on a zoomed quadrant switches to free zoom.
     - **Drag** with one finger to move around the page in any direction; the screen redraws once when you lift your finger. A quick **swipe** pans the same way, in any direction including diagonals, so you can jump straight to the next article.
     - **Pinch** zooms out step by step; pinch back to about full-page size to return to the page view. A **tap** also returns to the page view.
-6. **On a computer** (KOReader for Linux, macOS or Windows):
-    - **Ctrl + mouse wheel** up/down zooms in/out. **Ctrl +** and **Ctrl −** do the same from the keyboard.
+6. **Double-Tap Zoom** (off by default): turn it on in **Leading Manga Zoom › Double-tap to zoom** and pick a **Zoom level** from 1.5× to 4×.
+    - **Double tap** anywhere to zoom in on that spot; double tap again to go back to the page. From there you can drag, swipe and pinch as usual.
+    - KOReader normally ignores double taps. This option turns them on for supported books only, which makes single taps (like page turns) wait a moment to check for a second tap.
+    - Tap turns it on for this book; hold sets it as the default. The zoom level is remembered.
+7. **On a computer** (KOReader for Linux, macOS or Windows):
+    - **Ctrl + mouse wheel** up/down zooms in/out, keeping the spot under the mouse pointer in place. **Ctrl +** and **Ctrl −** (main keys or keypad) zoom around the middle of the window.
     - **Mouse wheel** scrolls up and down while zoomed in; **Shift + wheel** (or a sideways wheel/trackpad swipe) scrolls left and right. When you're not zoomed in, the wheel turns pages as usual.
     - **Click and drag** moves the page around, like dragging with a finger.
     - **Ctrl 0** or a click returns to the full page.
-7. **Zoom modes**: Picking a zoom mode from KOReader's bottom menu while zoomed in switches straight to that mode.
-8. **Manage Settings**: Access the **Leading Manga Zoom** menu from the main KOReader menu.
+8. **Zoom modes**: Picking a zoom mode from KOReader's bottom menu while zoomed in switches straight to that mode.
+9. **Manage Settings**: Access the **Leading Manga Zoom** menu from the main KOReader menu.
     - *Tip: Hold any menu option to set it as the default for all future books.*
 
 ### Gestures you've already set up
@@ -70,6 +76,7 @@ You don't need to change KOReader's *Gesture manager*. On supported documents th
 | Pinch | Zoom out, while zoomed in | Your action |
 | Drag / swipe / short diagonal swipe | Pan (free zoom) or move between quadrants, while zoomed in | Page turns or your action |
 | Two-finger tap | Quadrant zoom (when Grid is on) | Your action |
+| Double tap | Zoom in or out (when Double-tap zoom is on) | Your action |
 
 Reflowable books (EPUB, MOBI, PDFs with Reflow on) are never touched, so font-size gestures and the like keep working there.
 
@@ -99,6 +106,14 @@ LeadingMangaZoom is optimized for **fixed-layout** documents. It supports:
 3. Restart KOReader. The plugin appears as **Leading Manga Zoom** in the main menu and in *Plugin management*.
 4. Make sure **Reflow** is off for the document.
 
+### Updating
+
+From v1.5.0 on, the plugin updates itself. Open a book, then go to **Leading Manga Zoom › Updates › Check for updates**. If there's a newer release, you'll see what's new; tap **Update**, then **Restart**. Wi-Fi is turned on if needed.
+
+- **Check automatically once a day** (off by default) looks for a new version when Wi-Fi is already on, and never turns Wi-Fi on by itself.
+- The update downloads the release's `leadingmangazoom.koplugin.zip`, checks that it really is this plugin and the version it claims to be, and only then replaces the plugin's files. If anything goes wrong, your installed version is left as it was and you'll see why.
+- To update from v1.4.1 or older, install v1.5.0 by hand once, as above.
+
 > [!TIP]
 > Downloading the source code zip from GitHub instead gives you an extra outer folder (`leadingmangazoom.koplugin-master/`). Copy only the inner `leadingmangazoom.koplugin` folder, or the plugin won't show up.
 
@@ -108,6 +123,7 @@ LeadingMangaZoom is optimized for **fixed-layout** documents. It supports:
 
 - Based on [maximum.koplugin](https://github.com/Shac0x/maximum.koplugin) by [@Shac0x](https://github.com/Shac0x)
 - Auto-rotate logic inspired by [koreader-autorotate](https://github.com/Extraltodeus/koreader-autorotate) by [@Extraltodeus](https://github.com/Extraltodeus)
+- Update feature modelled on [Bookshelf](https://github.com/AndyHazz/bookshelf.koplugin)'s in-app updates
 - Free zoom requested and tested by [@shuvashish76](https://github.com/shuvashish76), with thanks to [@Euphoriyy](https://github.com/Euphoriyy) ([KOReader.patches#26](https://github.com/Euphoriyy/KOReader.patches/issues/26))
 
 ## 🧪 Developer checks
@@ -127,6 +143,18 @@ features at a time if both are configured to handle the same gesture.
 ---
 
 ## 📅 Changelog
+
+### v1.5.1 (2026-10-18)
+- **Double-tap to zoom** ([#12](https://github.com/Auri3l/leadingmangazoom.koplugin/issues/12)): double tap anywhere to zoom in on that spot, double tap again to return. Choose the zoom level (1.5×, 2×, 2.5×, 3× or 4×) in the menu. Off by default. While on, the plugin turns on KOReader's double taps for supported books, so single taps wait briefly for a possible second tap.
+
+### v1.5.0 (2026-10-18)
+- **Update from inside KOReader**: *Leading Manga Zoom › Updates* checks the latest GitHub release, shows its notes, downloads and installs it, then offers to restart. KOReader has no plugin store, so this replaces downloading and copying the zip by hand. Optional daily check, off by default, which never turns Wi-Fi on by itself.
+- The download is checked before anything is replaced: it must be a release zip of this plugin, contain its main files, and carry the expected version. It's unpacked into a temporary folder first, so a broken download can't leave the plugin half-updated.
+- The plugin menu now opens for any book, so About and Updates are always reachable. Reading options still need a supported file.
+
+### v1.4.1 (2026-10-18)
+- **Ctrl + wheel zooms at the mouse pointer**: the spot under the pointer stays in place, like Okular, instead of zooming into the middle of the window.
+- **Keypad + and −** now work with Ctrl (and keypad 0 for Ctrl 0). KOReader's desktop builds didn't recognise these keys at all.
 
 ### v1.4.0 (2026-10-17)
 - **Desktop controls** ([Euphoriyy/KOReader.patches#26](https://github.com/Euphoriyy/KOReader.patches/issues/26)): Ctrl + mouse wheel and Ctrl +/− zoom in and out, the mouse wheel scrolls while zoomed (Shift + wheel or a sideways wheel scrolls horizontally), and Ctrl 0 returns to the page. Previously the wheel always turned the page, even while zoomed. Ctrl + wheel and the keys follow the *Page Zoom* setting.
