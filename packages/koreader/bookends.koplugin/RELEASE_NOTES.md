@@ -1,3 +1,15 @@
+# v5.31.0 · 2026-10-18
+
+**New**
+
+- Conditionals can now check what another plugin is showing in the status bar. `[if:plugin_content{readtimer}]` is true while Read Timer has a countdown running, so a line like `[if:plugin_content{readtimer}]%plugin_content{readtimer}[else]%time[/if]` shows the timer while it runs and the clock the rest of the time. `[if:plugin_content]` on its own checks any plugin.
+- Traditional Chinese translation, and corrections to Simplified Chinese, thanks to @GOSENGWONG.
+
+**Fixed**
+
+- `%calibre{}` found nothing when no home folder had been set, on devices where Calibre puts `metadata.calibre` in KOReader's default home (e.g. Kobo).
+- Book descriptions that write accented letters as HTML codes (`P&aacute;nfilo`) now show the letters.
+
 # v5.30.0 · 2026-10-06
 
 **Fixed**
@@ -24,10 +36,3 @@ Submitting a preset to the gallery now always asks who to credit and for its des
 **New**
 
 - Full-width progress bars can now be placed relative to the lines of text at the top or bottom, instead of at a fixed distance from the edge of the screen. Turn on *Position relative to line text* in a bar's settings and it keeps its place beside the text, even on a screen where the text comes out bigger or smaller. The new *Inverted header* preset in the gallery uses it to look the same on any device.
-
-# v5.27.0 · 2026-09-27
-
-**New**
-
-- The background fill can now be set separately for the top and bottom of the screen. In the preset menu, *Top background* and *Bottom background* replace the single background colour, so you can fill just one of them or give each its own colour. Presets that used one background colour keep it on both.
-- Slovak translation, thanks to @misko903.
