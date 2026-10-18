@@ -1,3 +1,48 @@
+# v0.2.12 · 2026-10-18
+
+## 月读 v0.2.12
+
+KOReader 插件包：`book.koplugin-v0.2.12.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.12.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.12.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.11`：
+
+#### 新功能
+
+- :sparkles: (qidian): 已购 VIP 章节正文本地解密 (5d5274e2)
+
+#### 修复
+
+- :bug: (remote): 远程输入同时认主题输入面板和原生输入框 (5bc134a7)
+- :bug: (reviews): 段评扫描结果经 JSON 回传后序号变字符串键导致空指针 (5f289b9e)
+- :bug: (wechat): 公众号刷新遇 -2041 时也走凭据续期再重试 (2d43ca95)
+- :bug: (lockscreen): 文字海报关键词不再被按字节削成半个字 (90b9e501)
+- :bug: (remote): 恢复备份不再删换被 mmap 的字体，避免 KOReader 崩溃 (7d0ec5b3)
+
+#### 文档
+
+- :memo: (ui): 更新 README 中数据源与功能描述 (760528b9)
+
+#### 变更
+
+- :green_heart: (test): 热力图用例周日没有留空格子时不再误报 (ac8d8644)
+- :children_crossing: (reader): 超大 EPUB 默认关内嵌字体样式，首次打开前提示可能卡死 (724216cc)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.11...v0.2.12
+
 # v0.2.11 · 2026-10-17
 
 ## 月读 v0.2.11
@@ -258,39 +303,3 @@ KOReader 插件包：`book.koplugin-v0.2.8.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.7...v0.2.8
-
-# v0.2.7 · 2026-10-15
-
-## 月读 v0.2.7
-
-KOReader 插件包：`book.koplugin-v0.2.7.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.7.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.7.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.6`：
-
-#### 变更
-
-- fix(wechat): 进度上传使用阅读会话并补全想法分页 (cde009e4)
-- fix(jdread): 修正登录跳转地址并提示京东安全验证 (1b86caa7)
-- fix(home): 添加组件列表支持分页 (3fa396e1)
-- feat(reviews): 导入书和京东读书关联正版段评 (1bfc5fef)
-- perf(http): assets 下载支持多镜像自动切换，优先上次成功的源 (274fbb04)
-- perf(lockscreen): 缓存 logo 解码结果，颗粒纹理直接读写像素 (7069bef5)
-- perf(fonts): 按字体路径解析，只读取所选字体信息，不再扫描整个字体目录 (c6512bbd)
-- docs(readme): 更新查词窗口、生僻字注音、文字海报与单向历说明及截图 (42c8dd11)
-- fix(lockscreen): 选择海报字体时不再提前重新生成 (5065bfab)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.6...v0.2.7
