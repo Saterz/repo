@@ -1,3 +1,56 @@
+# v0.2.21 · 2026-10-19
+
+## 月读 v0.2.21
+
+KOReader 插件包：`book.koplugin-v0.2.21.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.21.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.21.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.20`：
+
+#### 新功能
+
+- :sparkles: (ai): AI 设置新增服务商，按服务商发对应的关闭思考参数 (f5e6b758)
+
+#### 修复
+
+- :bug: (xray): 截断后缺段不再报错，并用 reasoning 参数关闭思考加速 (9150b9ce)
+- :bug: (xray): 提高综合拉取的 token 预算，截断重试上限放宽到 32K (dad084a6)
+- :bug: (xray): AI 输出被截断时保留已完整的人物、地点，不再整体失败 (f20db2a7)
+- Revert ":bug: (panel): 旧版 KOReader 重建文件管理器菜单前补回顶栏按钮，修复下拉顶栏崩溃" (87851493)
+- Revert ":bug: (panel): 阅读器菜单重建前同样补回顶栏按钮，修复旧版 KOReader 阅读页崩溃" (02352a2a)
+- :bug: (panel): 阅读器菜单重建前同样补回顶栏按钮，修复旧版 KOReader 阅读页崩溃 (e92df477)
+- :bug: (panel): 旧版 KOReader 重建文件管理器菜单前补回顶栏按钮，修复下拉顶栏崩溃 (1bec8ae6)
+- :bug: (home): 保存后首页不再把略超高的钉页拆到下一页，添加组件按自定义高度判断能否放下 (c84f6743)
+
+#### 重构
+
+- :recycle: (ui): 单选弹窗统一改用主题 List，去掉手写的 ✓ 前缀 (2dc6934f)
+- :recycle: (ai): 服务商选择改用主题单选列表 (f8e9ae64)
+- :recycle: (setting): 整理设置分组与命名，新增「安全」组 (01cf1551)
+
+#### 变更
+
+- :children_crossing: (ai): 失败提示带状态码和上游原话，停留 8 秒 (c35bd386)
+- :loud_sound: (ai): 请求失败一律记录状态码和响应体 (8df2274f)
+- :speech_balloon: (legado): 账号登录里的「阅读」改称「开源阅读」 (d7c53e3b)
+- :fire: (ai): 删除截断 JSON 补救 (8c890f65)
+- :fire: (ai): 删除「AI token 上限」设置，默认上限提到 8000 (09c0a6ad)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.20...v0.2.21
+
 # v0.2.20 · 2026-10-19
 
 ## 月读 v0.2.20
@@ -153,53 +206,3 @@ KOReader 插件包：`book.koplugin-v0.2.17.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.16...v0.2.17
-
-# v0.2.16 · 2026-10-18
-
-## 月读 v0.2.16
-
-KOReader 插件包：`book.koplugin-v0.2.16.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.16.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.16.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.15`：
-
-#### 新功能
-
-- :sparkles: (fanqie): 漫画章节解密后打成 CBZ，按漫画文档打开 (7999dc59)
-- :sparkles: (fanqie): 免登录搜索、书架同步、段评、漫画与进度定时上传 (7f954c10)
-- :sparkles: (reader): 段评改为段尾对话气泡，不再画线 (046cd433)
-- :sparkles: (library): 新增 Kindle / Kobo 封面风格与图书馆显示设置 (577348d8)
-
-#### 修复
-
-- :bug: (wechat): 旧 eink 前缀设备 ID 登录时换成数字 ID，避免手机渠道续期被风控 -2041 (43ff983f)
-
-#### 界面
-
-- :lipstick: (library): Kobo 底栏未下载改用下载图标，进度条右侧显示百分比 (07d8e546)
-- :lipstick: (cover): 封面被高度压矮时向格子宽度拉伸，减小列间空隙 (7fc6975a)
-
-#### 重构
-
-- :recycle: (source): CBZ 打包抽成公共 source/cbz，章节载荷支持 file 直接登记 (5cd8af1c)
-- :recycle: (fanqie): 定位器移到 book/annotations，清理 qrlogin 冗余 (d1b3bd12)
-- :recycle: (setting): 重排设置项：界面显示拆成外观 / 屏幕与亮度 / 启动与按键，书架显示并入桌面 (d27f2346)
-
-#### 变更
-
-- :fire: (fanqie): 去掉阅读中定时上传进度，沿用关书 / 换章上传 (9e091113)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.15...v0.2.16

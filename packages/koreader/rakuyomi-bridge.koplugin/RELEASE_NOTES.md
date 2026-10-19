@@ -1,3 +1,12 @@
+# v1.4.0 · 2026-10-19
+
+# [1.4.0](https://github.com/tachibana-shin/rakuyomi_bridge/compare/v1.3.0...v1.4.0) (2026-10-19)
+
+
+### Features
+
+* release new version ([b720150](https://github.com/tachibana-shin/rakuyomi_bridge/commit/b720150c2c2b615fa00560372a93113fb470419e))
+
 # v1.3.0 · 2026-09-25
 
 # [1.3.0](https://github.com/tachibana-shin/rakuyomi_bridge/compare/v1.2.2...v1.3.0) (2026-09-25)
@@ -37,12 +46,3 @@
 
 * release ([160e2ba](https://github.com/tachibana-shin/rakuyomi_bridge/commit/160e2baac7a405a93cd176ceaa43427f4fae1d33))
 * release [#5](https://github.com/tachibana-shin/rakuyomi_bridge/issues/5) ([8d21af1](https://github.com/tachibana-shin/rakuyomi_bridge/commit/8d21af1b7e33bf7a35b0d3c3fc1c863af8c5e6e1))
-
-# v1.1.0 · 2026-07-19
-
-# [1.1.0](https://github.com/tachibana-shin/rakuyomi_bridge/compare/v1.0.2...v1.1.0) (2026-07-19)
-
-
-### Features
-
-* release ([3a178a4](https://github.com/tachibana-shin/rakuyomi_bridge/commit/3a178a4c0e4f4652cdf7127c5cc09d94c410eff6))
