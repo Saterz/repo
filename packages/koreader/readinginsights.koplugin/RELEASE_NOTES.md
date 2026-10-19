@@ -1,3 +1,12 @@
+# v8.2.9 · 2026-10-19
+
+### Changed
+
+- Added configurable heights for the two heatmap bar charts (Time of day, Weekdays).
+  - Default height matches the chapter bar (46).
+  - New menu entry: Settings > Heatmap & time of day > Bar chart height.
+  - If the popup doesn’t fit the screen (mostly in landscape), both charts shrink together automatically, down to a minimum of 10.
+
 # v8.2.8 · 2026-10-18
 
 ### Fixed
@@ -26,9 +35,3 @@
   - Which achievements you have, and the dates you earned them, stay exactly the same.
 - Faster donut chart.
 - Faster yearly line chart.
-
-# v8.2.4 · 2026-10-17
-
-### Fixed
-
-- Unify section header spacing across Reading calendar, Book progress and heatmap, and align the bottom of Reading insights with the Reading calendar.

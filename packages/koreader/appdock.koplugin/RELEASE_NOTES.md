@@ -1,3 +1,11 @@
+# v8.2.17 · 2026-10-19
+
+# AppDock 8.2.17 — App-Gruppen
+
+Behebt einen Absturz beim Erstellen einer App-Gruppe über **Add another App → Create App Group**. Die Übersetzung `_()` wurde in den Gruppenmenüs durch die erste Rückgabevariable von Lua-`ipairs`/`pairs` überschattet; damit wurde beim Öffnen der Auswahl ein Zahlenwert als Funktion aufgerufen.
+
+Zusätzlich wird beim Wechseln der ausgewählten Apps jetzt nur das gerade offene Dialogfenster geschlossen. Ein neuer Regressionstest durchläuft das Erstellen einer Gruppe, den Mitgliedereditor und die Manageransicht mit vorhandener Gruppe.
+
 # v8.2.16 · 2026-10-18
 
 # AppDock 8.2.16 — Stabilitäts-Hotfix für Store-DApps
@@ -62,19 +70,3 @@ Der About-Bereich verwendet die zentrale aktuelle Version statt einer alten fest
 ## Prüfung
 
 Alle Plugin-Lua-Dateien bestehen die Lua-Syntaxprüfung. 15 ausführbare Regressionstests für TBS, Dialoge, Recovery, Dateiverwaltung, E-Ink-UI, Themes und weitere Komponenten laufen erfolgreich. Einzelne DApp-Tests benötigen KOReader-Subprozess- bzw. Bluetooth-Hardwarefunktionen und sind in einer generischen Sandbox nur eingeschränkt ausführbar.
-
-# v8.2.11 · 2026-10-18
-
-# AppDock 8.2.11
-
-## Dialog-Akzentfarbe auf RGB-Geräten
-
-Primäre Aktionen werden wieder sichtbar in Olivgrün hervorgehoben und erhalten kontrastreiche weiße Beschriftung. Der Dialogrenderer verwendet KOReaders `paintRectRGB32` für RGB-Füllungen; deaktivierte und sekundäre Aktionen bleiben klar unterscheidbar.
-
-## Absturz beim Aktivieren von Wetter behoben
-
-Der Sleepscreen-Widget-Editor überschattete beim Neuaufbau nach dem Einschalten von Open-Meteo eine Übersetzungsfunktion mit einer Schleifenvariable. Die Variable ist umbenannt; ein UI-Regressionstest aktiviert den Wetter-Schalter und prüft, dass die Wetterfelder ohne Absturz erscheinen.
-
-## Prüfung
-
-Dialog- und Wetter-UI-Regressionstests sowie die vollständige Sleepscreen-Testreihe laufen erfolgreich. Die optionalen serverseitigen Deno-Tests sind nur verfügbar, wenn Deno installiert ist.
