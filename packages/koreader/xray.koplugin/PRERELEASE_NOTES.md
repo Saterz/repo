@@ -1,3 +1,9 @@
+# 26.10.18-beta · 2026-10-19
+
+Gesture now opens normal x-ray menu
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.16-beta...26.10.18-beta
+
 # 26.10.16-beta · 2026-10-16
 
 ## What's Changed
@@ -51,14 +57,3 @@
 - Update gemini models
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.8...26.10.10-beta
-
-# 26.10.6-beta · 2026-10-06
-
-## What's Changed
-* Fix Ukrainian unit conversion by @Gargoyle-Gecko in https://github.com/ultimatejimmy/xray.koplugin/pull/146
-* Fix: restore unit underlines from cache on book reopen by @Gargoyle-Gecko in https://github.com/ultimatejimmy/xray.koplugin/pull/147
-
-## New Contributors
-* @Gargoyle-Gecko made their first contribution in https://github.com/ultimatejimmy/xray.koplugin/pull/146
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.2-beta3...26.10.6-beta
