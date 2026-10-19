@@ -1,3 +1,11 @@
+# v1.7.6 · 2026-10-19
+
+### Changed
+
+- Cover shadow now defaults to 50% black (#808080), previously a lighter grey.
+- Cover shadow color is now configurable under Colors > Cover shadow color (hex input or color wheel, "Default" restores #808080).
+- "Reset all colors to default" also resets the shadow color.
+
 # v1.7.5 · 2026-10-18
 
 ### Changed
@@ -21,8 +29,3 @@
 
 ### Changed
 - The Statistics submenu was removed: Configure statistics items and Reading goal settings now sit directly in the Card elements menu, with a separator line between them.
-
-# v1.7.1 · 2026-10-15
-
-### Changed
-- Removed the hamburger (A-Z / Z-A sort) menu from the Configure statistics items dialog, as it does not apply to this list.

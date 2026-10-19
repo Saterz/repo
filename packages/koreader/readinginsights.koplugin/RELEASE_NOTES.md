@@ -1,3 +1,15 @@
+# v8.3.0 · 2026-10-19
+
+### New
+
+- **Reading shelf:** the covers of the books you read in a year, laid out like books on a shelf. Open it from *Tools → Reading insights → Reading shelf* or assign the new "Reading insights: reading shelf" gesture action.
+- **Cover shadow color:** the shadow color can be set under *Settings → Appearance → Colors* (50% black by default).
+
+### Changed
+
+- **Reading calendar:** when several books were read on one day, the first sits at the top left and the others peek out behind it at the bottom right; only the backmost cover casts a shadow.
+- Books without a cover now get the same frame, rounded corners and shadow as real covers (Reading calendar and Reading shelf).
+
 # v8.2.9 · 2026-10-19
 
 ### Changed
@@ -26,12 +38,3 @@
 
 - "Daily avg pages" in the book progress popup now divides the distinct pages actually read by the days read, instead of using the current reading position.
 - The estimated finish date is now calculated in whole days.
-
-# v8.2.5 · 2026-10-18
-
-### Fixed
-
-- Checking for new achievements is now much quicker, especially with a long reading history. Achievements you already have are no longer re-checked.
-  - Which achievements you have, and the dates you earned them, stay exactly the same.
-- Faster donut chart.
-- Faster yearly line chart.
