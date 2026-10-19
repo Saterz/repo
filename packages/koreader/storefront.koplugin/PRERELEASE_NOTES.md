@@ -1,3 +1,13 @@
+# 26.10.19-beta · 2026-10-19
+
+## What's Changed
+* Fix archive root detection for plugins with embedded components by @komadorirobin in https://github.com/ultimatejimmy/storefront.koplugin/pull/5078
+
+## New Contributors
+* @komadorirobin made their first contribution in https://github.com/ultimatejimmy/storefront.koplugin/pull/5078
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.18-beta3...26.10.19-beta
+
 # 26.10.18-beta3 · 2026-10-19
 
 - Fix patch update logic #5076 
@@ -32,9 +42,3 @@ Version number fix
 * @danihrndzld made their first contribution in https://github.com/ultimatejimmy/storefront.koplugin/pull/5074
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.13...26.10.15-beta
-
-# 26.10.11-beta2 · 2026-10-11
-
-- add more memory leak guards around sleeping/waking
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.10-beta3...26.10.11-beta2
