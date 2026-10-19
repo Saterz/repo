@@ -1,3 +1,31 @@
+# v0.2.19 · 2026-10-19
+
+## 月读 v0.2.19
+
+KOReader 插件包：`book.koplugin-v0.2.19.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.19.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.19.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.18`：
+
+#### 修复
+
+- :bug: (fanqie): 修复每次开书都跳回章首，不再把云端 read_progress=0 当章内位置 (698a1e0c)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.18...v0.2.19
+
 # v0.2.18 · 2026-10-18
 
 ## 月读 v0.2.18
@@ -164,49 +192,3 @@ KOReader 插件包：`book.koplugin-v0.2.15.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.14...v0.2.15
-
-# v0.2.14 · 2026-10-18
-
-## 月读 v0.2.14
-
-KOReader 插件包：`book.koplugin-v0.2.14.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.14.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.14.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.13`：
-
-#### 新功能
-
-- :sparkles: (iread): 支持浏览器扩展授权，用网页 Cookie 登录 (a7059c43)
-- :sparkles: (store): 合并 Z站 / OPDS 为书城，支持切换来源搜索与总开关 (a4384828)
-- :sparkles: (source): 微信、七猫、拷贝、晋江、QQ阅读、起点、iRead 支持书城搜索 (b0e362de)
-
-#### 修复
-
-- :bug: (wechat): 续期超时或断网不再判登录失效，只有服务器明确拒绝才算 (50aebf33)
-- :bug: (charset): 设备缺 GBK 的 iconv 模块时用纯 Lua 兜底，修复晋江授权报 gb18030 (9c0af571)
-- :bug: (legado): 空白正文不再当成功章节缓存 (ffe6a736)
-- :bug: (store): 书城开关与 OPDS 地址变更不再跳回首页 (e50cd7ae)
-
-#### 文档
-
-- :memo: (docs): README 补充 WebDAV 上传停手与起点跨章崩溃修复说明 (0196add9)
-
-#### 变更
-
-- :loud_sound: (legado): 章节为空时记录书地址与序号 (717dc270)
-- :children_crossing: (legado): 章节为空的提示带上章节序号 (a08f3b95)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.13...v0.2.14
