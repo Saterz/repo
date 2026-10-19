@@ -1,3 +1,36 @@
+# v26.10.19 · 2026-10-19
+
+> [!WARNING]
+> **BREAKING CHANGE:** `config.lua` is now `homeassistant_config.lua` and `api.lua` is now `homeassistant_api.lua`. Your existing `config.lua` is no longer loaded until you rename it manually, and the plugin needs the new `homeassistant_api.lua` file to start. See below.
+
+**Action required when updating:**
+1. Copy the new plugin files into the `homeassistant.koplugin` folder on your device, including the new `homeassistant_api.lua`.
+2. Delete the old `api.lua` from that folder.
+3. Rename your `config.lua` to `homeassistant_config.lua`. The contents stay the same.
+4. Restart KOReader.
+
+**Your folder should look like this afterwards:**
+
+```text
+📂 homeassistant.koplugin/
+├── 📄 _meta.lua
+├── 📄 main.lua
+├── 📄 homeassistant_api.lua
+├── 📄 homeassistant_config.lua   (your renamed config)
+└── 📄 example_config.lua         (optional)
+```
+
+**Why:** KOReader plugins share Lua's global module cache, and `require` caches each module by name. So if two plugins both use a file called `config.lua` or `api.lua`, whichever is required first "wins", and the other plugin gets the wrong module, which can break it. Unique names like `homeassistant_config` and `homeassistant_api` avoid this.
+
+## What's Changed
+* Tidy api.lua and main.lua: group related code, clean up comments by @moritz-john in https://github.com/moritz-john/homeassistant.koplugin/pull/30
+* Rename config.lua and api.lua to avoid module name clashes by @moritz-john in https://github.com/moritz-john/homeassistant.koplugin/pull/31
+
+- Revert "Delay the re-run after Wi-Fi connects by 0.5s" (the root cause on my Kindle was buggy Amazon firmware, a firmware update + re-jailbreaking fixed the problem)
+
+
+**Full Changelog**: https://github.com/moritz-john/homeassistant.koplugin/compare/v26.10.10...v26.10.19
+
 # v26.10.10 · 2026-10-10
 
 ## What's Changed
@@ -84,10 +117,3 @@ Kobo devices may require a slightly longer delay.
 [^2]: I spent way too much time on this niche feature (over 40 hours) and was never happy with how it turned out
 
 **Full Changelog**: https://github.com/moritz-john/homeassistant.koplugin/compare/v26.02.03...v26.02.26
-
-# v26.02.03 · 2026-02-03
-
-- Fix potential crash if author value is nil (Thanks @noxhirsch for reporting)
-- Re-add battery information to Home Assistant sensor
-
-**Full Changelog**: https://github.com/moritz-john/homeassistant.koplugin/compare/v26.02.02...v26.02.03

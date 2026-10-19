@@ -1,3 +1,12 @@
+# v1.44.1 · 2026-10-19
+
+## [1.44.1](https://github.com/tachibana-shin/rakuyomi/compare/v1.44.0...v1.44.1) (2026-10-19)
+
+
+### Bug Fixes
+
+* **tracking:** push local progress on link when ahead of tracker ([#381](https://github.com/tachibana-shin/rakuyomi/issues/381)) ([99d501d](https://github.com/tachibana-shin/rakuyomi/commit/99d501db7d164bdb9094dd01a6e44bb3246cc0ad))
+
 # v1.44.0 · 2026-10-19
 
 # [1.44.0](https://github.com/tachibana-shin/rakuyomi/compare/v1.43.4...v1.44.0) (2026-10-19)
@@ -41,12 +50,3 @@
 ### Bug Fixes
 
 * close button for available sources ([#377](https://github.com/tachibana-shin/rakuyomi/issues/377)) ([7a3ab6b](https://github.com/tachibana-shin/rakuyomi/commit/7a3ab6b0797ddc2d7da4dce0d9561086fded79f9))
-
-# v1.43.1 · 2026-10-07
-
-## [1.43.1](https://github.com/tachibana-shin/rakuyomi/compare/v1.43.0...v1.43.1) (2026-10-07)
-
-
-### Bug Fixes
-
-* closing custom dialog ([#375](https://github.com/tachibana-shin/rakuyomi/issues/375)) ([e5c3b37](https://github.com/tachibana-shin/rakuyomi/commit/e5c3b37b94c53f93fe4c8575936f6fbfd78c307a))
