@@ -1,3 +1,36 @@
+# v0.2.18 · 2026-10-18
+
+## 月读 v0.2.18
+
+KOReader 插件包：`book.koplugin-v0.2.18.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.18.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.18.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.17`：
+
+#### 新功能
+
+- :sparkles: (storage): 存储空间按目录归类，手机式占比展示与清理 (6110c44e)
+- :sparkles: (sidebar): 统计页补回时长/页数/划线/笔记等维度并加预计读完 (41ec589c)
+
+#### 重构
+
+- :recycle: (sidebar): 统计页改读月读自己的 reading_stats，不再依赖 KOReader 统计插件 (685713e1)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.17...v0.2.18
+
 # v0.2.17 · 2026-10-18
 
 ## 月读 v0.2.17
@@ -177,60 +210,3 @@ KOReader 插件包：`book.koplugin-v0.2.14.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.13...v0.2.14
-
-# v0.2.13 · 2026-10-18
-
-## 月读 v0.2.13
-
-KOReader 插件包：`book.koplugin-v0.2.13.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.13.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.13.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.12`：
-
-#### 新功能
-
-- :sparkles: (ai): 新增全局 AI 回答语言，繁体、英文用本地用语 (fccb7703)
-- :sparkles: (iread): 接入 iRead 源，个人 Token 登录与在线阅读 (de2e6175)
-- :sparkles: (wallpaper): 新增界面壁纸，桌面与弹窗可铺自定义图 (43b8fff5)
-- :sparkles: (source): 新增阅读（Legado）数据源，直连阅读 App 的 Web 服务 (f012c31d)
-
-#### 修复
-
-- :bug: (local): WebDAV 上传超时后本轮停手，失败的书 1 小时内不重传 (5b134307)
-- :bug: (ui): 开壁纸后底栏选中格底色被摘掉，白字落在白底上 (16b7c4db)
-- :bug: (online): 没放对应组件时不再后台拉天气、一言、日报、必应 (7c074ff1)
-- :bug: (qidian): VIP 章节解密放进子进程并关 JIT，修复 Kindle 上跳章崩溃 (320c838c)
-- :bug: (kindle): 修复 Kindle 书库同步报 no such collation sequence: icu (eaaff12d)
-- :bug: (topbar): 旧版 KOReader 的 df 没有 available，剩余存储读不到 (d1696d71)
-
-#### 界面
-
-- :lipstick: (panel): 快捷面板磁贴改灰色胶囊，换 Wi-Fi 图标 (2b1b1612)
-
-#### 性能
-
-- :zap: (nightmode): 自动亮度不再自己拉天气，只读首页缓存 (eee4d92b)
-
-#### 变更
-
-- :rewind: (panel): 撤回 bold 主题快捷面板的灰色胶囊，保留 Wi-Fi 新图标 (782cd40a)
-- :children_crossing: (library): 随机抽书后先弹详情页 (8e8a2bf9)
-- :globe_with_meridians: (l10n): 补回答语言文案，繁体「刮削」改「資料抓取」 (f12b02a9)
-- :label: (wallpaper): 补 BlitBuffer 类型标注，消除 LuaLS 警告 (989e355e)
-- :globe_with_meridians: (webdav): 补上传失败汇总提示的繁体与英文文案 (d60e153b)
-- :children_crossing: (webdav): 上传失败时汇总提示失败本数和原因 (7f6a29d6)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.12...v0.2.13
