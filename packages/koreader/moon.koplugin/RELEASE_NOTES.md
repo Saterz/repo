@@ -1,3 +1,58 @@
+# v0.2.20 · 2026-10-19
+
+## 月读 v0.2.20
+
+KOReader 插件包：`book.koplugin-v0.2.20.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.20.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.20.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.19`：
+
+#### 新功能
+
+- :sparkles: (library): 详情页删除分软删除与彻底删除，书架可筛选软删除 (df51f8e6)
+- :sparkles: (library): 随机一本支持设置范围并避开已读，书库骰子可开关 (fad610e4)
+- :sparkles: (remote): 远程管理改动文件后自动重扫本地书架 (083a89b1)
+- :sparkles: (detail): 软删除：只删本地文档，保留书架条目与封面 (e6786b91)
+- :sparkles: (translate): 双语译文颜色与字号可单独设置 (0d652522)
+
+#### 修复
+
+- :bug: (online): 摸鱼日报图尺寸限制在接口允许的 240-2560，避免 HTTP 400 (1960c3a3)
+- :bug: (ui): 旋转屏幕后桌面、弹窗、侧栏按新尺寸重排，横屏放不下的首页顺延成多页 (2deb9b0c)
+- :bug: (reviews): 修复段评定位结果含 json.null 导致绘制崩溃 (c9b3ace7)
+
+#### 性能
+
+- :zap: (settings): get/save 按拥有者缓存配置文件，绘制热路径不再拼路径 (7abf8f05)
+- :zap: (ui): 已读斜条的白字像素只算一次并缓存，重绘不再逐像素旋转 (fe78bf3a)
+- :zap: (workers): 子进程并发为主进程留 48MB 余量并限制最多 8 路，避免小内存设备 OOM (ce8ec830)
+- :zap: (webdav): 上传改为分块流式发送，不再把整文件读进内存 (065efbee)
+
+#### 重构
+
+- :recycle: (wallpaper): 壁纸改为全局设置，各界面可单独覆盖 (0a82841f)
+
+#### 变更
+
+- :globe_with_meridians: (l10n): 清理已删除的软删除确认文案 (abfb7da5)
+- :children_crossing: (desktop): 切换书源后留在当前页签，不再跳回首页 (53b4b28d)
+- :globe_with_meridians: (l10n): 补充壁纸设置与随机书文案，清理已删除的壁纸文案 (a7df1975)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.19...v0.2.20
+
 # v0.2.19 · 2026-10-19
 
 ## 月读 v0.2.19
@@ -148,47 +203,3 @@ KOReader 插件包：`book.koplugin-v0.2.16.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.15...v0.2.16
-
-# v0.2.15 · 2026-10-18
-
-## 月读 v0.2.15
-
-KOReader 插件包：`book.koplugin-v0.2.15.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.15.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.15.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.14`：
-
-#### 新功能
-
-- :sparkles: (ime): 五笔/仓颉/小鹤新增「显示字根键帽」开关，默认关闭 (03d45e35)
-- :sparkles: (wallpaper): 界面壁纸支持调整透明度 (7fcabb01)
-- :sparkles: (wechat): 阅读时长与登录改走手机 App 协议，支持离线补报 (636ad410)
-- :sparkles: (storage): 设置新增存储空间页，列出设备空间与各类数据占用 (#47) (6ae8f632)
-- :sparkles: (storage): 可用空间不足 500MB 时进入桌面弹窗提醒 (781b1513)
-
-#### 修复
-
-- :bug: (db): 临时表改走内存，本地扫盘指纹逐批落盘 (061166ae)
-
-#### 性能
-
-- :zap: (cache): 体积统计移到子进程，封面最长边降到 600px (#47) (26e376a5)
-
-#### 重构
-
-- :recycle: (wechat): 去掉同步阅读时间开关，开章时顺手补报上一章时长 (c45eebb2)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.14...v0.2.15
