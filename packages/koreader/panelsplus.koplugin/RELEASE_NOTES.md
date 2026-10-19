@@ -1,9 +1,26 @@
 # v1.5.0 · 2026-10-18
 
 <p align="center">
-<img width="95%" height="auto" alt="v_1_5_0-CoverComicc" src="https://github.com/user-attachments/assets/f07bd34c-dafd-4102-8d07-a3b9f7ea9c9b" />
+<img width="95%" height="auto" alt="v_1_5_0-CoverComicc" src="https://github.com/user-attachments/assets/916bfd6d-032e-4889-8ddd-1204954b7084" />
 </p>
-<a href="https://github.com/user-attachments/assets/90663d6f-c401-4194-b637-90d4ea7baebf">Comic in HD here.</a>
+
+<div align="center">
+  <table>
+    <tbody>
+      <tr>
+        <td width="20%" align="center" valign="top">
+<a href="https://github.com/user-attachments/assets/00a8d58c-fd3d-4006-82c2-4ecbdc7f183e">Comic in HD here.</a> 
+        </td>
+        <td width="40%" align="center" valign="top">
+           Art made by: <a href="https://www.instagram.com/tomateranci0?exln=NGRtNXpieHZ3Ymo0">@tomateranci0 (Tumblr)</a> | <a href="https://www.tumblr.com/tomateranci0?source=share">@tomateranci0 (Instagram)</a> | <a href="https://madebyhuman.iamjarl.com"><img src="https://madebyhuman.iamjarl.com/badges/made-white.svg" alt="Made by Human" width="80" height="auto"></a>
+        </td>
+        <td width="40%" align="center" valign="top">
+             Comic layout & dialogs: By me <a href="https://github.com/KristanLaimon">@KristanLaimon</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
 Hello, **Panels+ users**. This update is mainly about taking OCR support to the next level and finally removing the **[Experimental]** tag.
@@ -286,6 +303,7 @@ Thanks to everyone who made their first contribution to Panels+:
 - **@Pixxel123** — Made their first contribution in [Pull Request #7](https://github.com/KristanLaimon/PanelsPlus/pull/7).
 - **@MartinoAichner** — Made their first contribution in [Pull Request #9](https://github.com/KristanLaimon/PanelsPlus/pull/9).
 - **@IMJXXL** — Contributed a **Simplified Chinese translation**.
+- **@TomateRan**  — Artist who made the art cover for this release, also a developer sometimes.
 
 ---
 

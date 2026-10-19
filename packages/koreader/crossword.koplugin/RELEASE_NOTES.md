@@ -1,3 +1,10 @@
+# v0.4.1 · 2026-10-19
+
+## Crossword v0.4.1
+
+### New
+- **Letter size setting**: If letters in the grid look too big, you can now make them smaller. Go to **Settings → Letter size** and pick one of five sizes: Largest, Large, Medium, Small, or Smallest. **Largest** is the default and matches the size in earlier versions. Your choice applies the next time you open a puzzle.
+
 # v0.4.0 · 2026-10-10
 
 ## v0.4.0
@@ -34,7 +41,3 @@
 # v0.2.0 · 2026-05-25
 
 - Add dispatcher action and refactor menu system to support both traditional and quick dialog menus
-
-# v0.1.0 · 2026-05-19
-
-- initial release
