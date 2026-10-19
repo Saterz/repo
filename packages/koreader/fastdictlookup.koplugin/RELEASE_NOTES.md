@@ -1,3 +1,10 @@
+# v1.7.0 · 2026-10-19
+
+* Clicking a link would follow it now
+* If highlight mode is enabled, two clicks are required
+
+**Full Changelog**: https://github.com/Sirozha1337/fastdictlookup.koplugin/compare/v1.6.0...v1.7.0
+
 # v1.6.0 · 2026-10-11
 
 ## What's Changed
@@ -31,14 +38,3 @@ Fix Footnote Lookup issues:
 * Plugin crashes on looking up HTTP/HTTPs links (now they are ignored)
 
 **Full Changelog**: https://github.com/Sirozha1337/fastdictlookup.koplugin/compare/v1.3.0...v1.3.1
-
-# v1.3.0 · 2026-05-08
-
-Features:
-* Text Highlighting Mode: pressing the button now enables highliting mode, pressing it again opens context menu for the selected text
-
-Fixes:
-* Optimize page redraws by only repainting parts of the screen where the cursor is
-* Avoid reading dictionary file twice when it has required metadata
-
-**Full Changelog**: https://github.com/Sirozha1337/fastdictlookup.koplugin/compare/v1.2.0...v1.3.0
