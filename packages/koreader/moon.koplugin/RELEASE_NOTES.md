@@ -1,3 +1,44 @@
+# v0.2.22 · 2026-10-19
+
+## 月读 v0.2.22
+
+KOReader 插件包：`book.koplugin-v0.2.22.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.22.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.22.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.21`：
+
+#### 新功能
+
+- :sparkles: (manage): 精简功能支持全部 feature，删除时连带删依赖它的功能 (738c8008)
+- :sparkles: (remote): 没连 Wi-Fi 时分享截图、开启远程管理会先询问是否开启 (b07b9503)
+- :sparkles: (manage): 新增「精简功能」，可删除用不到的 feature 目录 (214c86c2)
+- :sparkles: (rare): 生僻字注音快捷面板改为二级菜单，可直接切开关和范围 (e49da9d2)
+- :sparkles: (panel): 新增手势动作「退出阅读回到月读」 (d1a76264)
+
+#### 修复
+
+- :bug: (desktop): 阅读菜单文件浏览器图标回月读桌面，改在桌面层启动时接管 (b538df1f)
+
+#### 重构
+
+- :recycle: (manage): 停用功能不再连带停用依赖方 (168ff1eb)
+- :recycle: (manage): 精简功能改为功能开关，停用而不是删除 (52ce92cf)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.21...v0.2.22
+
 # v0.2.21 · 2026-10-19
 
 ## 月读 v0.2.21
@@ -166,43 +207,3 @@ KOReader 插件包：`book.koplugin-v0.2.18.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.17...v0.2.18
-
-# v0.2.17 · 2026-10-18
-
-## 月读 v0.2.17
-
-KOReader 插件包：`book.koplugin-v0.2.17.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.17.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.17.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.16`：
-
-#### 新功能
-
-- :sparkles: (ai): 支持多窗口时限制插件固定数量 (fd63f271)
-- :sparkles: (extensions): 支持根据屏幕宽度动态限制扩展页签最大 pinned 数量 (dd55fb1b)
-- :sparkles: (extensions): 拓展入口可固定到底栏并自选图标，与拓展菜单互斥 (1167bf6f)
-
-#### 修复
-
-- :bug: (wechat): App 协议续期改用 guest_token 防重放签名，修复 -2041 (94583edf)
-- :bug: (text): RSS 正文解码常见 HTML 命名实体（&nbsp; &mdash; 等） (8d15df46)
-- :bug: (subscribe): 修复翻章取消预取时图片下载句柄 cancel 崩溃 (63245c6b)
-
-#### 性能
-
-- :zap: (subscribe): 订阅刷新 4 路并发，被截断的 RSS 摘要改抓原文 (584082b0)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.16...v0.2.17
