@@ -1,3 +1,16 @@
+# v0.7.3 · 2026-10-19
+
+## What's new
+
+- Add complete Grimmory libraries as selectable sync sources alongside shelves and Magic Shelves.
+- Library sources apply consistently to missing-book sync, metadata refresh, and Mirror selected sync source.
+- Keep compatibility with older Grimmory versions that do not expose the libraries endpoint.
+- Document library selection and add provider contract coverage for both new and legacy Grimmory servers.
+
+Grimmory library selection requires a server version that exposes `/api/v1/opds/libraries`, available in Grimmory 3.5.0.
+
+Both ZIP assets are included for new and legacy OTA installations.
+
 # v0.7.2 · 2026-10-13
 
 ## What's new
@@ -41,15 +54,3 @@ Both ZIP assets are included for new and legacy OTA installations.
 # v0.6.12 · 2026-08-28
 
 Fixes the BookOrbit reconciliation confirmation crash caused by a Lua gettext name collision. Also adds a regression guard preventing ignored return values from shadowing the translation function. Existing batched registration and reading-status protection remain unchanged.
-
-# v0.6.11 · 2026-08-28
-
-## BookOrbit reconciliation crash hotfix
-- Limit BookOrbit state transactions to batches of 100 files to avoid large transient allocations on Android.
-- Add guarded UI stages so ordinary reconciliation errors are logged and reported without crashing KOReader.
-- Requeue uncommitted files safely after a failed state batch.
-
-## Verification
-- Regression test confirms 205 links are committed as 100 + 100 + 5.
-- Lua and LuaJIT provider contract tests.
-- Full Lua syntax validation and both OTA ZIP integrity checks.
