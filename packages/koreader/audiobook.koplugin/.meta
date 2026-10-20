@@ -4,14 +4,14 @@
 id=audiobook
 name=Audiobook
 version=0.4.0
-description=A plugin to give TTS-capabilities, includes bluetooth controllers.
+description=A plugin to give TTS-capabilities to devices compatible with KOReader.
 author=stradichenko
 category=media
 platforms=koreader
 dependencies=
 source=https://github.com/stradichenko/audiobook.koplugin
 stars=178
-updated_at=2026-10-20T16:00:58Z
+updated_at=2026-10-20T17:01:00Z
 published_at=2026-10-19T18:59:00Z
 readme_url=packages/koreader/audiobook.koplugin/README.md
 readme_hash=614133e9104cd9f68541aded8dd30307b4b58c76
