@@ -1,3 +1,61 @@
+# v0.2.25 · 2026-10-20
+
+## 月读 v0.2.25
+
+KOReader 插件包：`book.koplugin-v0.2.25.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.25.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.25.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.24`：
+
+#### 新功能
+
+- :sparkles: (xray): 识别档位改为节约 / 标准 / 高质量 (2ccefe92)
+- :sparkles: (xray): 新增「省 token」开关 (876b8ee6)
+- :sparkles: (panel): 桌面快捷面板的亮度、冷暖色调滑块可在设置里单独关闭 (f644acd2)
+- :sparkles: (store): 京东读书接入榜单与分类浏览 (d5bc221c)
+- :sparkles: (store): 番茄接入阅读榜/新书榜与分类浏览 (12b23cd6)
+- :sparkles: (store): iRead 发现入口、Z站排序/语言/格式接入书城浏览 (7334c113)
+- :sparkles: (store): 七猫书城接入频道/分类/排序浏览 (11f0a76c)
+- :sparkles: (store): 起点、QQ阅读、晋江、拷贝漫画接入榜单/分类浏览 (eec37b0f)
+- :sparkles: (store): 书城支持按榜单/分类浏览，微信读书率先接入 (709cb0f8)
+- :sparkles: (fanqie): 段评里的配图显示为缩略图，HEIC 图改用 webp 地址 (419aa756)
+- :sparkles: (fanqie): 章节正文里的插图下载到本地后再显示 (5efc96e1)
+
+#### 修复
+
+- :bug: (subscribe): 纯图摘要的订阅条目直接当正文，不再抓原文页 (182f2ad3)
+- :bug: (online): ensureImage 成功时不再误报 image 错误 (35a80ea8)
+- :bug: (store): 加载态没有 chip 时不再多画一空行，修复整页上移/溢出 (b075a53f)
+- :bug: (store): chip 折叠改为保留前几项加「更多」，选中项不再丢失 (e588a911)
+- :bug: (http): 适配 turbo 2.1.5 流式回调，修复 download incomplete: 0/N (f072ac44)
+- :bug: (store): 修复拷贝漫画榜单周期参数，京东读书补搜索使其出现在书城来源里 (f61fc948)
+- :bug: (http): 修复响应体随头部到达时流式读取丢数据（download incomplete: 0/N） (98849067)
+- :bug: (wechat): TXT 书段首缩进统一，不再出现首段 2 字符其余 4 字符 (95047201)
+
+#### 界面
+
+- :lipstick: (store): 书城 chip 区靠左、最多两行，放不下的分组折成下拉 (664540f5)
+- :lipstick: (jdread): 扫码登录弹窗的长提示按宽度折行居中，不再溢出 (6e7a8a00)
+
+#### 重构
+
+- :recycle: (chapter): 章节段首缩进统一由 CSS 给，textToBody 与外壳剥掉正文自带空白 (65d5650c)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.24...v0.2.25
+
 # v0.2.24 · 2026-10-20
 
 ## 月读 v0.2.24
@@ -168,58 +226,3 @@ KOReader 插件包：`book.koplugin-v0.2.21.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.20...v0.2.21
-
-# v0.2.20 · 2026-10-19
-
-## 月读 v0.2.20
-
-KOReader 插件包：`book.koplugin-v0.2.20.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.20.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.20.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.19`：
-
-#### 新功能
-
-- :sparkles: (library): 详情页删除分软删除与彻底删除，书架可筛选软删除 (df51f8e6)
-- :sparkles: (library): 随机一本支持设置范围并避开已读，书库骰子可开关 (fad610e4)
-- :sparkles: (remote): 远程管理改动文件后自动重扫本地书架 (083a89b1)
-- :sparkles: (detail): 软删除：只删本地文档，保留书架条目与封面 (e6786b91)
-- :sparkles: (translate): 双语译文颜色与字号可单独设置 (0d652522)
-
-#### 修复
-
-- :bug: (online): 摸鱼日报图尺寸限制在接口允许的 240-2560，避免 HTTP 400 (1960c3a3)
-- :bug: (ui): 旋转屏幕后桌面、弹窗、侧栏按新尺寸重排，横屏放不下的首页顺延成多页 (2deb9b0c)
-- :bug: (reviews): 修复段评定位结果含 json.null 导致绘制崩溃 (c9b3ace7)
-
-#### 性能
-
-- :zap: (settings): get/save 按拥有者缓存配置文件，绘制热路径不再拼路径 (7abf8f05)
-- :zap: (ui): 已读斜条的白字像素只算一次并缓存，重绘不再逐像素旋转 (fe78bf3a)
-- :zap: (workers): 子进程并发为主进程留 48MB 余量并限制最多 8 路，避免小内存设备 OOM (ce8ec830)
-- :zap: (webdav): 上传改为分块流式发送，不再把整文件读进内存 (065efbee)
-
-#### 重构
-
-- :recycle: (wallpaper): 壁纸改为全局设置，各界面可单独覆盖 (0a82841f)
-
-#### 变更
-
-- :globe_with_meridians: (l10n): 清理已删除的软删除确认文案 (abfb7da5)
-- :children_crossing: (desktop): 切换书源后留在当前页签，不再跳回首页 (53b4b28d)
-- :globe_with_meridians: (l10n): 补充壁纸设置与随机书文案，清理已删除的壁纸文案 (a7df1975)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.19...v0.2.20
