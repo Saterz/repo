@@ -1,3 +1,57 @@
+# v0.2.26 · 2026-10-20
+
+## 月读 v0.2.26
+
+KOReader 插件包：`book.koplugin-v0.2.26.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.26.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.26.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.25`：
+
+#### 新功能
+
+- :sparkles: (source): 未登录的账号行提示可经远程管理浏览器授权 (0b2b369f)
+- :sparkles: (mirror): GitHub 加速镜像失败落盘拉黑 7 天（更新探测与仓库文件共用） (19c6a10b)
+- :sparkles: (zlib): 竞速失败的镜像落盘拉黑 7 天 (8eef7bb5)
+- :sparkles: (reviews): 段评预缓存改为整本、每句只存前 10 条，离线只显示已缓存句；缓存失败时提示失败章节 (dd4e6b75)
+- :sparkles: (zlib): 种子镜像补全 zlibrary.koplugin 的域名清单 (022e0b42)
+- :sparkles: (reviews): 微信读书与番茄支持离线段评，缓存章节时可勾选同时缓存段评 (456ce987)
+- :sparkles: (passcode): 密码页显示设备头像与名称，数字短暂明文，输错 5 次出现忘记密码入口 (cb308cac)
+
+#### 修复
+
+- :bug: (zlib): 一轮镜像全失败后种子窗口后移，后面的镜像才有机会被用到 (005dae76)
+- :bug: (bluetooth): 连接设备没有名称时顶栏只显示图标，不再崩溃 (0023734d)
+
+#### 性能
+
+- :zap: (zlib): 镜像请求并发竞速（每次 5 个，取链接仍串行） (8c749c5c)
+
+#### 重构
+
+- :recycle: (zlib): 仅首次无可用镜像时并发竞速，之后固定用胜出镜像 (ffc9f2f8)
+
+#### 变更
+
+- :white_check_mark: (tests): 桩掉 pluginshare，CI 无 KOReader 源码也能跑 (4d8038c8)
+- :rewind: 回滚 zlib 种子窗口后移（未经确认的改动） (3d3be9c9)
+- :children_crossing: (tasks): 后台任务未结束时不再自动熄屏 (6b93ccc4)
+- :children_crossing: (wallpaper): 界面壁纸默认关闭且透明度默认 30%，选图后不再铺满所有界面 (#51) (f0a2ca67)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.25...v0.2.26
+
 # v0.2.25 · 2026-10-20
 
 ## 月读 v0.2.25
@@ -173,56 +227,3 @@ KOReader 插件包：`book.koplugin-v0.2.22.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.21...v0.2.22
-
-# v0.2.21 · 2026-10-19
-
-## 月读 v0.2.21
-
-KOReader 插件包：`book.koplugin-v0.2.21.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.21.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.21.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.20`：
-
-#### 新功能
-
-- :sparkles: (ai): AI 设置新增服务商，按服务商发对应的关闭思考参数 (f5e6b758)
-
-#### 修复
-
-- :bug: (xray): 截断后缺段不再报错，并用 reasoning 参数关闭思考加速 (9150b9ce)
-- :bug: (xray): 提高综合拉取的 token 预算，截断重试上限放宽到 32K (dad084a6)
-- :bug: (xray): AI 输出被截断时保留已完整的人物、地点，不再整体失败 (f20db2a7)
-- Revert ":bug: (panel): 旧版 KOReader 重建文件管理器菜单前补回顶栏按钮，修复下拉顶栏崩溃" (87851493)
-- Revert ":bug: (panel): 阅读器菜单重建前同样补回顶栏按钮，修复旧版 KOReader 阅读页崩溃" (02352a2a)
-- :bug: (panel): 阅读器菜单重建前同样补回顶栏按钮，修复旧版 KOReader 阅读页崩溃 (e92df477)
-- :bug: (panel): 旧版 KOReader 重建文件管理器菜单前补回顶栏按钮，修复下拉顶栏崩溃 (1bec8ae6)
-- :bug: (home): 保存后首页不再把略超高的钉页拆到下一页，添加组件按自定义高度判断能否放下 (c84f6743)
-
-#### 重构
-
-- :recycle: (ui): 单选弹窗统一改用主题 List，去掉手写的 ✓ 前缀 (2dc6934f)
-- :recycle: (ai): 服务商选择改用主题单选列表 (f8e9ae64)
-- :recycle: (setting): 整理设置分组与命名，新增「安全」组 (01cf1551)
-
-#### 变更
-
-- :children_crossing: (ai): 失败提示带状态码和上游原话，停留 8 秒 (c35bd386)
-- :loud_sound: (ai): 请求失败一律记录状态码和响应体 (8df2274f)
-- :speech_balloon: (legado): 账号登录里的「阅读」改称「开源阅读」 (d7c53e3b)
-- :fire: (ai): 删除截断 JSON 补救 (8c890f65)
-- :fire: (ai): 删除「AI token 上限」设置，默认上限提到 8000 (09c0a6ad)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.20...v0.2.21

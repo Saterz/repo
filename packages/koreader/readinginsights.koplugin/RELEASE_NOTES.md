@@ -1,3 +1,9 @@
+# v8.5.1 · 2026-10-20
+
+### Fixed
+
+- Swipe gestures in the insights popup: horizontal swipes now change the year only within the year zone  and the week only on the weekly section, and are ignored elsewhere.
+
 # v8.5.0 · 2026-10-20
 
 ### New
@@ -40,12 +46,3 @@
 
 - **Reading calendar:** when several books were read on one day, the first sits at the top left and the others peek out behind it at the bottom right; only the backmost cover casts a shadow.
 - Books without a cover now get the same frame, rounded corners and shadow as real covers (Reading calendar and Reading shelf).
-
-# v8.2.9 · 2026-10-19
-
-### Changed
-
-- Added configurable heights for the two heatmap bar charts (Time of day, Weekdays).
-  - Default height matches the chapter bar (46).
-  - New menu entry: Settings > Heatmap & time of day > Bar chart height.
-  - If the popup doesn’t fit the screen (mostly in landscape), both charts shrink together automatically, down to a minimum of 10.
