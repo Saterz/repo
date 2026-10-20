@@ -1,3 +1,9 @@
+# 26.10.19-beta · 2026-10-20
+
+- Fix bug with highlighted text.
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.18-beta...26.10.19-beta
+
 # 26.10.18-beta · 2026-10-19
 
 Gesture now opens normal x-ray menu
@@ -51,9 +57,3 @@ Gesture now opens normal x-ray menu
 * @tristinbaker made their first contribution in https://github.com/ultimatejimmy/xray.koplugin/pull/151
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.10-beta...26.10.12-beta
-
-# 26.10.10-beta · 2026-10-10
-
-- Update gemini models
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.8...26.10.10-beta
