@@ -1,3 +1,17 @@
+# 26.10.20 · 2026-10-20
+
+## What's Changed
+* Fix archive root detection for plugins with embedded components by @komadorirobin in https://github.com/ultimatejimmy/storefront.koplugin/pull/5078
+* Fix patch update logic https://github.com/ultimatejimmy/storefront.koplugin/issues/5076
+* Fix updates with native libraries https://github.com/ultimatejimmy/storefront.koplugin/issues/5077
+* Catalog logic tweak
+* memory fix
+
+## New Contributors
+* @komadorirobin made their first contribution in https://github.com/ultimatejimmy/storefront.koplugin/pull/5078
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.20
+
 # 26.10.16 · 2026-10-16
 
 ## What's Changed
@@ -45,9 +59,3 @@
 - Minor performance improvement when removing a screensaver from the collection
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.9.25.1...26.10.1
-
-# 26.9.25.1 · 2026-09-25
-
-- Fix bug with blueprint on Installed tab for some devices
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.9.25...26.9.25.1
