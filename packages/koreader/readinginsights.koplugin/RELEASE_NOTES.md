@@ -1,3 +1,16 @@
+# v8.5.0 · 2026-10-20
+
+### New
+- **Current week view** (Settings ▸ Reading insight popup ▸ Week ▸ View): the weekly section can show the current calendar week instead of the rolling last 7 days. Page back and forth with the previous/next week labels or a swipe; tapping the shown week's label jumps back to the current week. Totals, averages, chart and the comparison with the previous week all cover the shown week.
+- Pages per month chart: the monthly chart now cycles: time → pages → days → books.
+
+### Changed
+- Weekly chart: today / the newest day is on the right by default
+- Charts show page counts as plain numbers, without a unit suffix.
+
+### Fixed
+- The book list popup no longer resets the shown week on return.
+
 # v8.4.1 · 2026-10-20
 
 ### Changed
@@ -36,10 +49,3 @@
   - Default height matches the chapter bar (46).
   - New menu entry: Settings > Heatmap & time of day > Bar chart height.
   - If the popup doesn’t fit the screen (mostly in landscape), both charts shrink together automatically, down to a minimum of 10.
-
-# v8.2.8 · 2026-10-18
-
-### Fixed
-
-- Book info popup: the small cover is now exactly as tall as the text beside it (rating, title, author, series, pages / reading time); the description is hidden at this size.
-- Book info popup: the large cover now grows as big as the popup allows while all the text still fits, with no cut-off lines.
