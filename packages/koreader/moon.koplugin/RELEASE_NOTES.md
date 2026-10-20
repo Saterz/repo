@@ -1,3 +1,44 @@
+# v0.2.24 · 2026-10-20
+
+## 月读 v0.2.24
+
+KOReader 插件包：`book.koplugin-v0.2.24.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.24.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.24.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.23`：
+
+#### 新功能
+
+- :sparkles: (subscribe): 远程管理添加网站订阅可填「链接包含」关键词 (1badd75d)
+- :sparkles: (lockscreen): 新增「今日报纸」锁屏壁纸 (63c9bd8a)
+
+#### 修复
+
+- :bug: (webdav): 修复 PUT 上传卡死，流式发送不再重复生成请求头 (4e70f09b)
+
+#### 界面
+
+- :lipstick: (library): 窄屏下工具条自动收成图标，分组标题不再顶掉返回键 (c5337799)
+
+#### 文档
+
+- :memo: 添加宣传物料工作区到 .gitignore (9bace279)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.23...v0.2.24
+
 # v0.2.23 · 2026-10-19
 
 ## 月读 v0.2.23
@@ -182,31 +223,3 @@ KOReader 插件包：`book.koplugin-v0.2.20.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.19...v0.2.20
-
-# v0.2.19 · 2026-10-19
-
-## 月读 v0.2.19
-
-KOReader 插件包：`book.koplugin-v0.2.19.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.19.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.19.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.18`：
-
-#### 修复
-
-- :bug: (fanqie): 修复每次开书都跳回章首，不再把云端 read_progress=0 当章内位置 (698a1e0c)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.18...v0.2.19
