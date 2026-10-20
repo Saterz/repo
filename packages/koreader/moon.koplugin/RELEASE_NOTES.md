@@ -1,3 +1,39 @@
+# v0.2.23 · 2026-10-19
+
+## 月读 v0.2.23
+
+KOReader 插件包：`book.koplugin-v0.2.23.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.23.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.23.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.22`：
+
+#### 新功能
+
+- :sparkles: (qqreader): 支持已购 VIP 加密章节解密与乱序字体还原 (8721754b)
+
+#### 修复
+
+- :bug: (reflow): 记住上次打开的排版版，切换后按页首文字精确落位 (ac854484)
+
+#### 变更
+
+- :adhesive_bandage: (qqreader): 写入新的字形签名缓存后清掉旧版本缓存 (f8f8f1ce)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.22...v0.2.23
+
 # v0.2.22 · 2026-10-19
 
 ## 月读 v0.2.22
@@ -174,36 +210,3 @@ KOReader 插件包：`book.koplugin-v0.2.19.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.18...v0.2.19
-
-# v0.2.18 · 2026-10-18
-
-## 月读 v0.2.18
-
-KOReader 插件包：`book.koplugin-v0.2.18.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.18.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.18.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.17`：
-
-#### 新功能
-
-- :sparkles: (storage): 存储空间按目录归类，手机式占比展示与清理 (6110c44e)
-- :sparkles: (sidebar): 统计页补回时长/页数/划线/笔记等维度并加预计读完 (41ec589c)
-
-#### 重构
-
-- :recycle: (sidebar): 统计页改读月读自己的 reading_stats，不再依赖 KOReader 统计插件 (685713e1)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.17...v0.2.18
