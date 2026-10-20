@@ -1,3 +1,13 @@
+# v2.0.1-beta.1 · 2026-10-20
+
+## What's Changed
+* Run the emulator scenarios in CI by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/140
+* Hardcover details button in the file dialog by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/142
+* Install from branch (developer option) by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/143
+
+
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0...v2.0.1-beta.1
+
 # v2.0.0-beta.24 · 2026-10-13
 
 ## What's Changed
@@ -35,7 +45,3 @@
 
 
 **Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.20...v2.0.0-beta.21
-
-# v2.0.0-beta.20 · 2026-10-11
-
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.19...v2.0.0-beta.20
