@@ -1,3 +1,19 @@
+# v1.9.0 · 2026-10-20
+
+## modern_menu 1.9.0
+
+The status bar can be hidden, and the battery can show as a percentage.
+
+### Changes
+- **Hide status bar** removes the clock, contrast, Wi-Fi, and battery row from the menu. The close mark moves to the title row
+- **Battery as percentage** shows the charge as a number instead of the battery icon, in the menu and in the file browser
+
+### Install
+1. Download **modern_menu.koplugin-v1.9.0.zip**
+2. Extract into your KOReader `plugins/` directory
+3. Restart KOReader and enable **Modern Menu**
+4. Install Kobold, Simple UI, Quick Menu, Neo Quick Settings, or Shortcuts Toolbar as well if you use those
+
 # v1.8.0 · 2026-10-15
 
 ## modern_menu 1.8.0
@@ -74,23 +90,3 @@ Custom Neo actions, a Simple UI tab, and a menu that can be shorter than the scr
 2. Extract into your KOReader `plugins/` directory
 3. Restart KOReader and enable **Modern Menu**
 4. Install [quickmenu.koplugin](https://github.com/jbreizh/quickmenu.koplugin), Neo Quick Settings, or Simple UI as well if you want that tab
-
-# v1.4.0 · 2026-10-13
-
-## modern_menu 1.4.0
-
-Hosts Neo Quick Settings the same way as Quick Menu, and adds a menu font picker.
-
-### Changes
-- Neo Quick Settings is hosted as a tab when that plugin is installed, including its buttons, settings, and brightness and warmth sliders
-- Slider drags repaint through the menu, so swiping a slider no longer crashes on Android
-- Swipe-to-exit and swipe-to-restart confirmations work from the hosted panel
-- Quick Menu’s exit tab leaves the book for the file browser; in the file browser a tap closes the menu and a hold asks before quitting KOReader
-- **Menu font** setting lists the same faces KOReader uses for its menus
-- Neo Quick Settings grid lines up with the menu’s side inset
-
-### Install
-1. Download **modern_menu.koplugin-v1.4.0.zip**
-2. Extract into your KOReader `plugins/` directory
-3. Restart KOReader and enable **Modern Menu**
-4. Install [quickmenu.koplugin](https://github.com/jbreizh/quickmenu.koplugin) or Neo Quick Settings as well if you want that tab

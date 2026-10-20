@@ -1,3 +1,31 @@
+# v0.2.27 · 2026-10-20
+
+## 月读 v0.2.27
+
+KOReader 插件包：`book.koplugin-v0.2.27.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.27.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.27.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.26`：
+
+#### 重构
+
+- :recycle: (ime): 键盘收起键并入输入法，修复停用 ime 后设置页报错 (52fda8fd)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.26...v0.2.27
+
 # v0.2.26 · 2026-10-20
 
 ## 月读 v0.2.26
@@ -186,44 +214,3 @@ KOReader 插件包：`book.koplugin-v0.2.23.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.22...v0.2.23
-
-# v0.2.22 · 2026-10-19
-
-## 月读 v0.2.22
-
-KOReader 插件包：`book.koplugin-v0.2.22.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.22.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.22.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.21`：
-
-#### 新功能
-
-- :sparkles: (manage): 精简功能支持全部 feature，删除时连带删依赖它的功能 (738c8008)
-- :sparkles: (remote): 没连 Wi-Fi 时分享截图、开启远程管理会先询问是否开启 (b07b9503)
-- :sparkles: (manage): 新增「精简功能」，可删除用不到的 feature 目录 (214c86c2)
-- :sparkles: (rare): 生僻字注音快捷面板改为二级菜单，可直接切开关和范围 (e49da9d2)
-- :sparkles: (panel): 新增手势动作「退出阅读回到月读」 (d1a76264)
-
-#### 修复
-
-- :bug: (desktop): 阅读菜单文件浏览器图标回月读桌面，改在桌面层启动时接管 (b538df1f)
-
-#### 重构
-
-- :recycle: (manage): 停用功能不再连带停用依赖方 (168ff1eb)
-- :recycle: (manage): 精简功能改为功能开关，停用而不是删除 (52ce92cf)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.21...v0.2.22
