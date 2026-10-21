@@ -1,3 +1,11 @@
+# 26.10.21-beta2 · 2026-10-21
+
+- Change notification logic on full-book fetch
+- update logging
+
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.19-beta...26.10.21-beta2
+
 # 26.10.19-beta · 2026-10-20
 
 - Fix bug with highlighted text.
@@ -46,14 +54,3 @@ Gesture now opens normal x-ray menu
 - **Fractional Series Numbering**: Fixed series handling for novellas and split volumes numbered like *1.5* or *2.5*. Decimal book numbers are now preserved in **Manage Series**, confirmation prompts, and timeline labels, and custom series rosters properly sync and fetch prior-book context without skipping fractional entries or wiping cached data.
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.12-beta...26.10.15-beta
-
-# 26.10.12-beta · 2026-10-12
-
-## What's Changed
-* Fix series context for fractional series indices (1.5, 2.5, …) by @tristinbaker in https://github.com/ultimatejimmy/xray.koplugin/pull/151
-* Update gemini, claude, and deepseek model lists
-
-## New Contributors
-* @tristinbaker made their first contribution in https://github.com/ultimatejimmy/xray.koplugin/pull/151
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.10-beta...26.10.12-beta
