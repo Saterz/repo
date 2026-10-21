@@ -1,3 +1,17 @@
+# v8.2.18 · 2026-10-21
+
+# AppDock 8.2.18 — Crash beim Scrollen öffentlicher Sleepscreens behoben
+
+## Änderung
+
+Der öffentliche Sleepscreen-Katalog registriert seinen `ScrollableContainer` jetzt korrekt als `cropping_widget` am aktiven KOReader-DApp-Host. Dadurch werden Repaints von Preview-, Renderer- und Bild-Widgets während des Scrollens auf den sichtbaren Katalogbereich begrenzt, statt an den gesamten Host weitergeleitet zu werden.
+
+Beim Verlassen der Sleepscreen-Kategorie wird der veraltete Crop-Marker entfernt. Ein UI-Regressionstest prüft sowohl die Katalog- als auch die Host-Verknüpfung.
+
+## Prüfung
+
+Die Lua-Syntaxprüfung sowie die Sleepscreen-/AppStore-Regressionstests laufen erfolgreich. Serverseitige Deno-Tests wurden in der Sandbox nicht ausgeführt, da Deno dort nicht installiert ist.
+
 # v8.2.17 · 2026-10-19
 
 # AppDock 8.2.17 — App-Gruppen
@@ -44,29 +58,3 @@ Der AppDock-DApp-Manager stellt die lokale Komponente Store-DApps optional berei
 ## Prüfung
 
 Pixel-Regressionen decken weiße und farbige Glyphen, Antialiasing, Leerraum, fehlende Kompositoren, Ressourcenzustände und globale Klassen-Unverändertheit ab. KOReaders echte Mono-/RGB-Blitbuffer sowie Inversion wurden zusätzlich geprüft. Der generische Gesamtlauf enthält weiterhin bereits zuvor bestehende Testprobleme in einem Store-Hook, YouTube/YouTube Music und Gmail. Physische E-Ink-Hardware wurde nicht getestet.
-
-# v8.2.12 · 2026-10-18
-
-# AppDock 8.2.12
-
-## Stabilität und Crash-Schutz
-
-Gespeicherte Einstellungsgruppen werden beim Laden typgeprüft und fehlende Standardwerte ergänzt. Fehlerhafte Homescreen-, DApp- oder Fremdplugin-Aufrufe werden an zentralen Grenzen abgefangen, sodass ein einzelnes fehlerhaftes Modul nicht den KOReader-Eventloop beendet. DApp-Panes erhalten bei Fehlern eine wiederherstellbare Fehleransicht; verspätete Lifecycle-Aufrufe werden abgefangen.
-
-Der periodische DApp-Hintergrundlauf wird gegen Runtime-Ausnahmen geschützt und bleibt danach aktiv. Einzelne unvollständige Fremdplugin-Module werden übersprungen.
-
-## TBS-Konto verständlicher erklärt
-
-Der TBS-Kontoeintrag zeigt klarer, wofür das Konto verwendet wird. Die Offline-Hilfe erläutert in Deutsch und Englisch Kontozweck, synchronisierte bzw. lokale Daten, Datenschutz, Wiederherstellungscode und Gerätewechsel.
-
-## WLAN-Migration robuster
-
-Die WLAN-Migration validiert und begrenzt empfangene Daten und importierte Assets. Überdimensionierte Nachrichten und ungültige Zustände werden kontrolliert abgewiesen, statt den Importpfad zu destabilisieren.
-
-## Weitere UI-Korrekturen
-
-Der About-Bereich verwendet die zentrale aktuelle Version statt einer alten fest codierten Nummer. Die Hilfekapitel wurden nach dem neuen TBS-Abschnitt neu nummeriert.
-
-## Prüfung
-
-Alle Plugin-Lua-Dateien bestehen die Lua-Syntaxprüfung. 15 ausführbare Regressionstests für TBS, Dialoge, Recovery, Dateiverwaltung, E-Ink-UI, Themes und weitere Komponenten laufen erfolgreich. Einzelne DApp-Tests benötigen KOReader-Subprozess- bzw. Bluetooth-Hardwarefunktionen und sind in einer generischen Sandbox nur eingeschränkt ausführbar.

@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=kobold
 name=Kobold
-version=1.1.1
+version=1.2
 description=yet another home screen for koreader
 author=unitreign
 category=theme
@@ -11,13 +11,13 @@ platforms=koreader
 dependencies=
 source=https://github.com/unitreign/kobold
 stars=22
-updated_at=2026-10-21T17:00:59Z
-published_at=2026-10-17T19:26:03Z
+updated_at=2026-10-21T18:01:01Z
+published_at=2026-10-21T17:48:59Z
 readme_url=packages/koreader/kobold.koplugin/README.md
 readme_hash=3880e95d89c138b57a2989b456db321fac305868
 release_notes_url=packages/koreader/kobold.koplugin/RELEASE_NOTES.md
-release_notes_hash=9d18cda36df90f614362927e71237615930b29a84790fb22674ab606c55acd84
-releases=[{"tag_name":"v1.1.1","assets":[{"name":"Kobold.koplugin.zip","url":"https://github.com/unitreign/kobold/releases/download/v1.1.1/Kobold.koplugin.zip","size":105552,"digest":"sha256:5c7aca17e7d4fb5c67172005547fa37f1f490771b81d8033b8905ce6065dc07d"}],"name":"v1.1.1"},{"tag_name":"v1.1","assets":[{"name":"Kobold.koplugin.zip","url":"https://github.com/unitreign/kobold/releases/download/v1.1/Kobold.koplugin.zip","size":105392,"digest":"sha256:a9f78c246bd9c2befb9012abe251331303b4d92c082758dea9b847672cc4a501"}],"name":"v1.1"},{"tag_name":"v1.0","assets":[{"name":"Kobold.koplugin.zip","url":"https://github.com/unitreign/kobold/releases/download/v1.0/Kobold.koplugin.zip","size":93293,"digest":"sha256:096da812ac5a5bf95f896361bedf95603fa0bc2a522393eadd61bac83ccdce7f"}],"name":"v1.0"}]
+release_notes_hash=7715b8d565b4b2a11393eea78774796b9216e97b6aae5122eaf99c5591e22278
+releases=[{"tag_name":"v1.2","assets":[{"name":"Kobold.koplugin.zip","url":"https://github.com/unitreign/kobold/releases/download/v1.2/Kobold.koplugin.zip","size":118208,"digest":"sha256:1388f8d6b9a835633c166d8f09fb5e603836d758a1244913ccb0afd6a0709f33"}],"name":"v1.2"},{"tag_name":"v1.1.1","assets":[{"name":"Kobold.koplugin.zip","url":"https://github.com/unitreign/kobold/releases/download/v1.1.1/Kobold.koplugin.zip","size":105552,"digest":"sha256:5c7aca17e7d4fb5c67172005547fa37f1f490771b81d8033b8905ce6065dc07d"}],"name":"v1.1.1"},{"tag_name":"v1.1","assets":[{"name":"Kobold.koplugin.zip","url":"https://github.com/unitreign/kobold/releases/download/v1.1/Kobold.koplugin.zip","size":105392,"digest":"sha256:a9f78c246bd9c2befb9012abe251331303b4d92c082758dea9b847672cc4a501"}],"name":"v1.1"},{"tag_name":"v1.0","assets":[{"name":"Kobold.koplugin.zip","url":"https://github.com/unitreign/kobold/releases/download/v1.0/Kobold.koplugin.zip","size":93293,"digest":"sha256:096da812ac5a5bf95f896361bedf95603fa0bc2a522393eadd61bac83ccdce7f"}],"name":"v1.0"}]
 source_type=release
 source_asset=Kobold.koplugin.zip
-size=105552
+size=118208

@@ -1,3 +1,39 @@
+# v1.2 · 2026-10-21
+
+## Kobold 1.2
+
+<!--kobold-->
+Instant return after closing a book, new icons, redesigned popups and settings, a Wi-Fi switch, and a cleaner Series tab.
+<!--/kobold-->
+
+### New
+
+- **Instant return** after closing a book, with no flash of KOReader's file browser
+- **Opening and closing panel**, an optional "Opening Book" / "Closing Book" panel instead of KOReader's messages. Off by default, turn it on in Settings 
+- **Wi-Fi switch** in the Wi-Fi popup to turn Wi-Fi on or off, plus a Wi-Fi Settings link to pick a network
+- **Book menu on Home**, hold any of the 4 recent books for the same menu as the "..." in My Books
+- **Setting tooltips**, tap a setting's name to see what it does
+
+### Improved
+
+- **New icons** for the status bar and navigation bar, white on black in night mode
+- **Popups** have square corners and an arrow pointing at the icon that opened them
+- **Settings** is a compact panel that fits more per page, with a page bar on the side
+- **About** is now a panel like Settings
+- **Series tab** shows the author and book count, with a small stack above the cover for series with more than one book
+- **Battery** shows its charge level while charging, with the lightning bolt on top
+- **Home** keeps the same collection and covers instead of changing them every time you close a book
+
+### Install
+
+1. Download `Kobold.koplugin.zip` below
+2. Extract it and copy the `Kobold.koplugin` folder into KOReader's `plugins` folder
+3. Restart KOReader and open Kobold, or set it under **Start with > Kobold Home**
+
+On 1.1 or newer? Use **More > Check for updates** in Kobold.
+
+To uninstall, delete the `Kobold.koplugin` folder and restart KOReader.
+
 # v1.1.1 · 2026-10-17
 
 ## Kobold 1.1.1
