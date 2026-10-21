@@ -1,6 +1,4 @@
-# v6.1.0-beta.1 · 2026-10-21
-
-# v6.0.1-beta.1 · 2026-10-20
+# v6.0.2-beta.1 · 2026-10-21
 
 # v6.0.0-beta.1 · 2026-10-07
 
@@ -26,3 +24,12 @@
 - 首页/书架引入 `progress_known`：未知进度保持 `nil` 并显示“—”，不再用 `nil → 0%`；RecentHero 优先保留本次 reader-close 的较新本地显示进度。
 - exact cache 改为纯被动：只在既有流程已经成功获得原生 `wr_data_co` 时顺手保存，并且仅在退出时 XPointer 完全一致才复用；失败位置仅保存 unresolved snapshot，不启动周期性精确定位。
 - 完整保留 beta.12 的 source force-refresh、KOReader subprocess completion、pending/verify recovery、严格 exact co 校验与 fail-closed 云端写入策略。Schema 保持 136。
+
+# v5.9.0-beta.13 · 2026-10-03
+
+- 云端较新位置改为跳转前预验证：候选 XPointer 先在后台反算为 `chapterUid + wr_data_co`，通过 exact / content-gated `verified_near` 后才执行一次可见跳转；预验证失败保持当前页，不再自动“跳过去再 rollback”。
+- 本地→微信 source 映射保留长匹配优先；长 anchor `not_found/ambiguous` 后增加边界短 anchor 的唯一匹配 recovery。云端→本地文本搜索也在 56 字符 anchor 失败后按 40/28/18 字符前缀有界降级，仍限定目标章节并由最终 `chapter/co` 预验证兜底；补充 `[ProgressSourceRecovery]` 诊断，严格 exact co 容差不放宽。
+- 修复 late-remote 竞态：预验证期间不再屏蔽真实用户翻页；用户已经开始阅读后，即使云端候选随后验证成功，本轮也不会自动抢占当前位置。
+- 阅读过程中在页面稳定后异步缓存最近一次可信 `chapter/co + source_xpointer`；退出时即时 resolver 失败且 XPointer 完全一致时复用该缓存，继续走现有 pending/upload/cloud-verify 流程。
+- 微信服务器 raw percent 明确作为 protocol metadata；beta.13 新的候选跳转只使用 canonical progress，权威同步仍以 `chapterUid + wr_data_co` 为准。
+- 保留 beta.12 的失败 source cache 强制刷新、KOReader 子进程完成确认、单 writer、安全 fence 与云端回读验证；Schema 保持 136。

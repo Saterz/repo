@@ -1,3 +1,10 @@
+# v8.5.7 · 2026-10-21
+
+### Fixed
+
+- Speed up book info popup with added file caching
+- Reading shelf is opening faster a bit
+
 # v8.5.6 · 2026-10-21
 
 ### Fixed
@@ -26,10 +33,3 @@
 ### Added
 - 8-week trend popup: four views (weekly time / pages, total / daily average), picked from the caption and remembered.
 - Streak history popup: four views (daily / weekly × time / pages) picked from a caption; weekly rows show date ranges and a weekly streak summary; 14 rows per page.
-
-# v8.5.2 · 2026-10-21
-
-### Changed
-- Long-press the "Last 7 days" header (or the date in the Current week view) to pick the week view from a list. A plain tap on the "Last 7 days" header no longer does anything.
-- Long-press the monthly and daily chart captions to choose their view from a list, with a ✓ on the active one.
-- The heatmap's weekday and time-of-day charts now have a pages view. The order is time, pages, percent, both when tapping the caption and in the long-press list.

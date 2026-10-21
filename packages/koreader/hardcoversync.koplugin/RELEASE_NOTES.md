@@ -1,3 +1,28 @@
+# v2.2.0 · 2026-10-21
+
+This release gives the plugin's dialogs and messages a consistent new look, and fixes finish dates for books finished offline.
+
+## ✨ New
+- **Updated dialogs:** Dialog now follows the MMD spec (#162). It and Snackbar replace the old ConfirmBox and InfoMessage, plus some toasts (#163).
+- **Progress dialog with a visible Stop button** (#164)
+- New UI components: a themed input dialog (#165), plus a number stepper and a date picker (#167)
+
+## 🐛 Fixes
+- When a finish made offline is synced, its finish date is now sent too (#161)
+
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.1.0...v2.2.0
+
+## What's Changed
+* Bring Dialog to the MMD spec by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/162
+* Replace ConfirmBox, InfoMessage and some toasts with Dialog and Snackbar by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/163
+* Send the finish date when a finish made offline is synced by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/161
+* Add a progress dialog with a visible Stop by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/164
+* Add a themed input dialog by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/165
+* Add a number stepper and a date picker by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/167
+
+
+**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.1.0...v2.2.0
+
 # v2.1.0 · 2026-10-21
 
 Bulk linking is the big change in this release: link every book on your device in one go, and get guesses for books that don't match exactly.
@@ -205,11 +230,3 @@ This release is everything from the four 1.7.0 betas.
 
 
 **Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v1.6.2...1.6.3
-
-# v1.6.2 · 2026-10-05
-
-## What's Changed
-* 1.6.2: Home goals fix, wifi switch-off delay, shared detail query fields, one text helper by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/39
-
-
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v1.6.1...v1.6.2
