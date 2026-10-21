@@ -1,3 +1,9 @@
+# v8.5.6 · 2026-10-21
+
+### Fixed
+
+- Reading calendar and Year shelf open faster
+
 # v8.5.5 · 2026-10-21
 
 ### Internal cleanup
@@ -27,9 +33,3 @@
 - Long-press the "Last 7 days" header (or the date in the Current week view) to pick the week view from a list. A plain tap on the "Last 7 days" header no longer does anything.
 - Long-press the monthly and daily chart captions to choose their view from a list, with a ✓ on the active one.
 - The heatmap's weekday and time-of-day charts now have a pages view. The order is time, pages, percent, both when tapping the caption and in the long-press list.
-
-# v8.5.1 · 2026-10-20
-
-### Fixed
-
-- Swipe gestures in the insights popup: horizontal swipes now change the year only within the year zone  and the week only on the weekly section, and are ignored elsewhere.
