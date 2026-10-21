@@ -1,3 +1,10 @@
+# v8.5.2 · 2026-10-21
+
+### Changed
+- Long-press the "Last 7 days" header (or the date in the Current week view) to pick the week view from a list. A plain tap on the "Last 7 days" header no longer does anything.
+- Long-press the monthly and daily chart captions to choose their view from a list, with a ✓ on the active one.
+- The heatmap's weekday and time-of-day charts now have a pages view. The order is time, pages, percent, both when tapping the caption and in the long-press list.
+
 # v8.5.1 · 2026-10-20
 
 ### Fixed
@@ -34,15 +41,3 @@
 - Reading habits section captions: "Reading by day", "Reading by time of day", "Reading by weekday".
 - Peak hour line is hidden in the "Every 2 hours" view, as the bars already
   show it.
-
-# v8.3.0 · 2026-10-19
-
-### New
-
-- **Reading shelf:** the covers of the books you read in a year, laid out like books on a shelf. Open it from *Tools → Reading insights → Reading shelf* or assign the new "Reading insights: reading shelf" gesture action.
-- **Cover shadow color:** the shadow color can be set under *Settings → Appearance → Colors* (50% black by default).
-
-### Changed
-
-- **Reading calendar:** when several books were read on one day, the first sits at the top left and the others peek out behind it at the bottom right; only the backmost cover casts a shadow.
-- Books without a cover now get the same frame, rounded corners and shadow as real covers (Reading calendar and Reading shelf).
