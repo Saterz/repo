@@ -1,3 +1,10 @@
+# v8.5.5 · 2026-10-21
+
+### Internal cleanup
+- Code that was copy-pasted across several screens (cover thumbnails, common text and layout helpers, month handling) now lives in one place each.
+- The Insights screen's code is split into smaller parts (charts and headers), which makes it easier to maintain.
+- Added a checker script for translation files.
+
 # v8.5.4 · 2026-10-21
 
 ### Changed
@@ -26,16 +33,3 @@
 ### Fixed
 
 - Swipe gestures in the insights popup: horizontal swipes now change the year only within the year zone  and the week only on the weekly section, and are ignored elsewhere.
-
-# v8.5.0 · 2026-10-20
-
-### New
-- **Current week view** (Settings ▸ Reading insight popup ▸ Week ▸ View): the weekly section can show the current calendar week instead of the rolling last 7 days. Page back and forth with the previous/next week labels or a swipe; tapping the shown week's label jumps back to the current week. Totals, averages, chart and the comparison with the previous week all cover the shown week.
-- Pages per month chart: the monthly chart now cycles: time → pages → days → books.
-
-### Changed
-- Weekly chart: today / the newest day is on the right by default
-- Charts show page counts as plain numbers, without a unit suffix.
-
-### Fixed
-- The book list popup no longer resets the shown week on return.
