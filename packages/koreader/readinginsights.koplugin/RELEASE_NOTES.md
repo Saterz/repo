@@ -1,3 +1,9 @@
+# v8.5.8 · 2026-10-21
+
+### Fixed
+
+- Better cover cache handling.
+
 # v8.5.7 · 2026-10-21
 
 ### Fixed
@@ -22,14 +28,3 @@
 
 ### Changed
 - Heatmap bar charts: the "Reading by time of day" and "Reading by weekday" captions now name the active view (time / pages / share), and the view list shows the same full names, e.g. "Reading time by weekday", "Pages read by time of day", "Share of reading time by weekday".
-
-# v8.5.3 · 2026-10-21
-
-### Changed
-- Tapping a chart caption now opens a view picker (✓ marks the active view) instead of cycling views; long press no longer does anything on the heatmap charts.
-- Book calendar: the cell view (progress / reading time / pages) is chosen from a caption under the month title; tapping a day does nothing. Page cells show the bare count (no "+" / "p" suffix).
-- Trend popup: caption and chart now sit above the totals row.
-
-### Added
-- 8-week trend popup: four views (weekly time / pages, total / daily average), picked from the caption and remembered.
-- Streak history popup: four views (daily / weekly × time / pages) picked from a caption; weekly rows show date ranges and a weekly streak summary; 14 rows per page.

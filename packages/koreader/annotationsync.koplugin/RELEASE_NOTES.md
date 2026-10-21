@@ -1,3 +1,55 @@
+# v2.1.0 · 2026-10-21
+
+# AnnotationSync v2.1.0
+
+A new public API that lets other plugins sync their data through
+AnnotationSync, plus smoother, non-blocking reading progress sync.
+
+## ✨ New Features
+
+- **Extractor API (`pushExtractorData`)** — other KOReader plugins can
+  now push their own data (as keyed records) through AnnotationSync and
+  get it safely merged across devices via the new **Keyed Merge**.
+  Extractors can hook the new `AnnotationSyncRequested` event to sync
+  alongside every annotation sync. See
+  [Writing an Extractor](https://github.com/dani84bs/AnnotationSync.koplugin/blob/main/docs/writing-an-extractor.md).
+- **Sync in background** — reading progress is now pushed from a
+  separate process, so page turns no longer stall while syncing. On by
+  default on Linux devices (Kobo, Kindle, PocketBook, desktop Linux);
+  off by default on macOS and Android. Available with WebDAV or Dropbox
+  destinations, and can be toggled in the progress sync settings.
+
+## 🐛 Fixes
+
+- Input used to interrupt a background progress sync is now passed
+  through to the reader instead of being swallowed (#100).
+- Background progress push times out on elapsed time rather than poll
+  count, and the push process no longer holds the reader's listeners
+  (#107, #108).
+- Extractor sync is skipped when offline, and persistent merge conflicts
+  are bounded by retries instead of looping.
+
+## 🏗️ Under the Hood
+
+- New end-to-end regression test for background progress push, and unit
+  tests driving the real subprocess poll.
+- Extra debug logging around provider sync boundaries.
+
+## 📖 Docs
+
+- README documents the **Sync in background** setting.
+- New guide: **Writing an Extractor**.
+- Updated the minimum KOReader version needed for some features.
+
+## 🙏 Thanks
+
+Thanks to @Tsukumi233 and @JeffShih-wiwynn for their contributions to
+this release!
+
+---
+
+**Full Changelog**: https://github.com/dani84bs/AnnotationSync.koplugin/compare/v2.0.0...v2.1.0
+
 # v2.0.0 · 2026-08-18
 
 # AnnotationSync v2.0.0 🎉
@@ -83,13 +135,3 @@ refactor, a hardened end-to-end test suite, and a new translation.
 * @koma52 made their first contribution in https://github.com/dani84bs/AnnotationSync.koplugin/pull/71
 
 **Full Changelog**: https://github.com/dani84bs/AnnotationSync.koplugin/compare/v1.1.1...v1.9.9
-
-# v1.1.1 · 2026-06-02
-
-## What's Changed
-* feat: debounce reading progress sync to prevent page turn stutter by @dani84bs in https://github.com/dani84bs/AnnotationSync.koplugin/pull/59
-* fix(progress): save local progress before pulling remote progress by @dani84bs in https://github.com/dani84bs/AnnotationSync.koplugin/pull/60
-* feat: make "Jump to device progress" actionable via gestures/profiles by @dani84bs in https://github.com/dani84bs/AnnotationSync.koplugin/pull/61
-
-
-**Full Changelog**: https://github.com/dani84bs/AnnotationSync.koplugin/compare/v1.1.0...v1.1.1
