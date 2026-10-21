@@ -5,7 +5,7 @@
 # Kobold
 
 **A home screen for KOReader with the calm, familiar look of your e-reader's original software.**
-
+ 
 [![Release](https://img.shields.io/github/v/release/unitreign/kobold?label=version&color=black)](https://github.com/unitreign/kobold/releases/latest)
 [![License: GPL v3](https://img.shields.io/badge/license-GPL--3.0-black)](LICENSE)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-support-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/unitreign)
@@ -40,6 +40,18 @@ Kobold is a [KOReader](https://github.com/koreader/koreader) plugin that gives y
 - **Quick settings** for brightness, warmth, Wi-Fi and battery from the status bar
 - **Customisable reading stats** on the home screen, with your own text and tap actions
 - **Fast**, with covers and book info cached so screens open quickly
+
+## Planned
+
+### Next
+
+- **Book details** page with the cover, synopsis and file details. The "..." on a book will show Read now, View Details and KOReader Details
+- **Collections** that work like the stock reader: a new collection screen, adding books with filter, sort and search, book counts on the right, and your own book order inside each collection
+
+### Later
+
+- **Activity** tab with your current book, reading time, sessions and how many books you have finished
+- **Custom status bar and nav bar**, add, remove and reorder items, with your own icons
 
 ## Requirements
 
