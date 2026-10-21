@@ -1,0 +1,23 @@
+# Coverprogresspocketbook plugin for KOReader
+# https://github.com/apastuszak/coverprogresspocketbook.koplugin
+# zenpm:auto-scraped
+id=coverprogresspocketbook
+name=Coverprogresspocketbook
+version=1.21
+description=KOReader plugin: book cover with reading progress and a sleep screen message on the PocketBook lock screen, including the sleep cover
+author=apastuszak
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/apastuszak/coverprogresspocketbook.koplugin
+stars=5
+updated_at=2026-10-21T08:00:59Z
+published_at=2026-10-02T01:08:41Z
+readme_url=packages/koreader/coverprogresspocketbook.koplugin/README.md
+readme_hash=f2c247d5e880b85457a3a63ce9e69fbb9acd394b
+release_notes_url=packages/koreader/coverprogresspocketbook.koplugin/RELEASE_NOTES.md
+release_notes_hash=2901c4d6da89a10af5954820cda068c7801ce4374793f046bcab5f883980d13d
+releases=[{"tag_name":"v1.21","assets":[{"name":"coverprogresspocketbook.koplugin.zip","url":"https://github.com/apastuszak/coverprogresspocketbook.koplugin/releases/download/v1.21/coverprogresspocketbook.koplugin.zip","size":24238,"digest":"sha256:691a6f09d9cc9f312d17a20196b0cd42e938aee7a7db21b1d159cccae86aa0d4"}],"name":"Cover Image PocketBook v1.21"}]
+source_type=release
+source_asset=coverprogresspocketbook.koplugin.zip
+size=24238

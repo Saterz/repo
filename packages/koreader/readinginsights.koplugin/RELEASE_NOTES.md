@@ -1,3 +1,14 @@
+# v8.5.3 · 2026-10-21
+
+### Changed
+- Tapping a chart caption now opens a view picker (✓ marks the active view) instead of cycling views; long press no longer does anything on the heatmap charts.
+- Book calendar: the cell view (progress / reading time / pages) is chosen from a caption under the month title; tapping a day does nothing. Page cells show the bare count (no "+" / "p" suffix).
+- Trend popup: caption and chart now sit above the totals row.
+
+### Added
+- 8-week trend popup: four views (weekly time / pages, total / daily average), picked from the caption and remembered.
+- Streak history popup: four views (daily / weekly × time / pages) picked from a caption; weekly rows show date ranges and a weekly streak summary; 14 rows per page.
+
 # v8.5.2 · 2026-10-21
 
 ### Changed
@@ -29,15 +40,3 @@
 ### Changed
 
 - Some Hungarian translation changed.
-
-# v8.4.0 · 2026-10-20
-
-### Added
-- Sleep screen: new "Random" content option. Shows a different view on every sleep. Choose which views are in the draw under Content > Random views. If a view can't be drawn (e.g. no open book), the next one is tried.
-- Reading habits: new "Every 2 hours" time-of-day view (12 bars, one per two hours), now the default. "By part of day" (4 bars) and "Heatmap" remain selectable.
-
-### Changed
-- "Reading heatmap" renamed to "Reading habits".
-- Reading habits section captions: "Reading by day", "Reading by time of day", "Reading by weekday".
-- Peak hour line is hidden in the "Every 2 hours" view, as the bars already
-  show it.
