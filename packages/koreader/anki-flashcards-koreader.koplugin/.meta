@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=anki-flashcards-koreader
 name=Anki Flashcards Koreader
-version=1.2.0
+version=1.3.0
 description=A KOReader plugin that generates AI-powered Anki flashcards from highlighted text on your Kobo e-reader. Highlight a phrase, tap Anki Card, and get a full flashcard—definition, IPA, synonyms, cloze...
 author=lgallard
 category=theme
@@ -11,13 +11,13 @@ platforms=koreader
 dependencies=
 source=https://github.com/lgallard/anki-flashcards-koreader
 stars=14
-updated_at=2026-10-21T16:01:00Z
-published_at=2026-10-21T13:42:02Z
+updated_at=2026-10-21T17:00:59Z
+published_at=2026-10-21T16:37:29Z
 readme_url=packages/koreader/anki-flashcards-koreader.koplugin/README.md
 readme_hash=2a4b976fca6b3b1dc44389fe9cae89b0301688fb
 release_notes_url=packages/koreader/anki-flashcards-koreader.koplugin/RELEASE_NOTES.md
-release_notes_hash=352b05f05f876f1d9d95ced66e84ff401a5c1168d526800c429c804c193d105a
-releases=[{"tag_name":"v1.2.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.2.0/AnkiFlashcards.koplugin.zip","size":54278,"digest":"sha256:87b394adba01f663c3a6e4bb33251de87c5e5e1658b9197f5ae7c7ccfa008d6c"}],"name":"v1.2.0"},{"tag_name":"v1.1.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.1.0/AnkiFlashcards.koplugin.zip","size":52460,"digest":"sha256:5814eb07a17809a0714fcc732cbf4734c4b89b1db228d1df9c01a6520a14a49c"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.0.0/AnkiFlashcards.koplugin.zip","size":51899,"digest":"sha256:a1c53c4dd86df0126e7aaec5c756fc61560d68a1e4b076d47d682cd10ee554d0"}],"name":"v1.0.0"}]
+release_notes_hash=43555e8862072b1efc835996d6e9113c8e5898af3aad79d4d6b39226a6f99ca7
+releases=[{"tag_name":"v1.3.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.3.0/AnkiFlashcards.koplugin.zip","size":58734,"digest":"sha256:2ea6f5acfb8f41c42b95b6374b62758249da350f598b10d436187cd501670911"}],"name":"v1.3.0"},{"tag_name":"v1.2.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.2.0/AnkiFlashcards.koplugin.zip","size":54278,"digest":"sha256:87b394adba01f663c3a6e4bb33251de87c5e5e1658b9197f5ae7c7ccfa008d6c"}],"name":"v1.2.0"},{"tag_name":"v1.1.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.1.0/AnkiFlashcards.koplugin.zip","size":52460,"digest":"sha256:5814eb07a17809a0714fcc732cbf4734c4b89b1db228d1df9c01a6520a14a49c"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"AnkiFlashcards.koplugin.zip","url":"https://github.com/lgallard/anki-flashcards-koreader/releases/download/v1.0.0/AnkiFlashcards.koplugin.zip","size":51899,"digest":"sha256:a1c53c4dd86df0126e7aaec5c756fc61560d68a1e4b076d47d682cd10ee554d0"}],"name":"v1.0.0"}]
 source_type=release
 source_asset=AnkiFlashcards.koplugin.zip
-size=54278
+size=58734
