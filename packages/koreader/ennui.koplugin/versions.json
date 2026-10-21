@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"ennUI","assets":[{"name":"ennui.koplugin.zip","url":"https://github.com/critterforks/ennUI.koplugin/releases/download/ennUI/ennui.koplugin.zip","size":35973,"digest":"sha256:47c943d9d96af2431adbab88925dcd53e88756ce061d78269a057095fec97a7c"}],"name":"ennUI v1.0"}]
+}

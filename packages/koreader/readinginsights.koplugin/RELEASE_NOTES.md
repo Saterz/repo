@@ -1,3 +1,8 @@
+# v8.5.4 · 2026-10-21
+
+### Changed
+- Heatmap bar charts: the "Reading by time of day" and "Reading by weekday" captions now name the active view (time / pages / share), and the view list shows the same full names, e.g. "Reading time by weekday", "Pages read by time of day", "Share of reading time by weekday".
+
 # v8.5.3 · 2026-10-21
 
 ### Changed
@@ -34,9 +39,3 @@
 
 ### Fixed
 - The book list popup no longer resets the shown week on return.
-
-# v8.4.1 · 2026-10-20
-
-### Changed
-
-- Some Hungarian translation changed.

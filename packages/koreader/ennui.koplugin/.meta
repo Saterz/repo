@@ -1,0 +1,23 @@
+# Ennui plugin for KOReader
+# https://github.com/critterforks/ennUI.koplugin
+# zenpm:auto-scraped
+id=ennui
+name=Ennui
+version=ennUI
+description=A beautiful, nearly infinitely customizable homescreen that's as lightweight and resource efficient as possible.
+author=critterforks
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/critterforks/ennUI.koplugin
+stars=5
+updated_at=2026-10-21T09:00:58Z
+published_at=2026-10-04T18:30:47Z
+readme_url=packages/koreader/ennui.koplugin/README.md
+readme_hash=d73842e562af334fe523e015b2a2eb4257c913c0
+release_notes_url=packages/koreader/ennui.koplugin/RELEASE_NOTES.md
+release_notes_hash=b2990701b042ecfa929ec07f4f9e49c0c2b05b4c07e074af5c0823ae274f589b
+releases=[{"tag_name":"ennUI","assets":[{"name":"ennui.koplugin.zip","url":"https://github.com/critterforks/ennUI.koplugin/releases/download/ennUI/ennui.koplugin.zip","size":35973,"digest":"sha256:47c943d9d96af2431adbab88925dcd53e88756ce061d78269a057095fec97a7c"}],"name":"ennUI v1.0"}]
+source_type=release
+source_asset=ennui.koplugin.zip
+size=35973
