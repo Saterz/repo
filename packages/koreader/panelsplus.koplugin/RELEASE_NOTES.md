@@ -128,10 +128,10 @@ The goal was simple: **more features without sacrificing usability.**
       </tr>
       <tr>
         <td align="left" valign="top">
-          <strong>Safe Mode: Prioritizes stability</strong> <br></br> It's the previous version (v1.4.0) improved but kept the phylosophy to keep panels together if neccesary. <br></br>As you can see in the demo, it takes the entire panel as one single panel, it's has sense because almost all the panels are connected either by a character or a dialog bubble.
+          <strong>Safe Mode: Prioritizes stability</strong> <br></br> It's the previous version (v1.4.0) improved but kept the phylosophy to keep panels together if neccesary. <br></br>As you can see in the demo, it takes the entire panel as one single panel, it has sense since almost all the panels are connected by the main character in that page.
         </td>
         <td align="left" valign="top">
-          <strong>Smart Mode: Prioritizes to find every panel possible</strong> <br></br> It's an alternative algorithm (an aggresive overhaul of Safe Mode) to find every panel, even those that are interconnected a little by a character or bubble dialog. <br></br>if the bubble dialog is really in the middle of 2 panels, it fallsback to Safe Mode behavior for that panel, thanks to this is capable to recognize panels that Safe mode prefer not to show you. <br></br> But, due to the aggresive nature of it, sometimes it could find false positives, some blank panels, but looks cool though. Optional to set. By default Panels+ uses Safe Mode. <br></br> As you can see in the demo, it finds all the panels taking into account that is a really hard layout manga page!
+          <strong>Smart Mode: Prioritizes to find every panel possible</strong> <br></br> It's an alternative algorithm (an aggresive overhaul of Safe Mode) to find every panel, even those that are interconnected a little by a character or bubble dialog. <br></br>if the bubble dialog is really in the middle of 2 panels, it fallsback to Safe Mode behavior for that panel, thanks to this is capable to recognize panels that Safe mode prefer not to show you. <br></br> But, due to the aggresive nature of it, sometimes it could find false positives, some blank panels, but looks cool though. Optional to set. By default Panels+ uses Safe Mode. <br></br> As you can see in the demo, it finds all the panels taking into account that is a hard layout manga page.
         </td>
       </tr>
     </tbody>
