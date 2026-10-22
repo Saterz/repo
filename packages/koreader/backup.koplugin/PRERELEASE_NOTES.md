@@ -1,3 +1,9 @@
+# 26.10.21-beta · 2026-10-22
+
+update eink refresh logic on loading toast
+
+**Full Changelog**: https://github.com/ultimatejimmy/backup.koplugin/compare/26.10.16-beta...26.10.21-beta
+
 # 26.10.16-beta · 2026-10-16
 
 ### What's new
@@ -38,10 +44,3 @@ Add cloud backup providers:
 - WebDAV
 
 **Full Changelog**: https://github.com/ultimatejimmy/backup.koplugin/compare/26.9.30-beta...26.10.3-beta
-
-# 26.9.30-beta · 2026-09-30
-
-- Update menu to be more granular on create and restore
-- general improvements in layout/structure
-
-**Full Changelog**: https://github.com/ultimatejimmy/backup.koplugin/compare/26.9.29-beta...26.9.30-beta
