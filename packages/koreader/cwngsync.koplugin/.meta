@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=cwngsync
 name=Cwngsync
-version=source
+version=4.1.48
 description=CWNGSync plugin for KOReader — reading progress and highlight sync with Calibre-Web-NextGen. Published automatically from the CWNG release train.
 author=new-usemame
 category=productivity
@@ -11,6 +11,11 @@ platforms=koreader
 dependencies=
 source=https://github.com/new-usemame/cwngsync.koplugin
 stars=9
-updated_at=2026-10-22T16:00:56Z
-source_type=source
-source_url=https://codeload.github.com/new-usemame/cwngsync.koplugin/zip/refs/heads/main
+updated_at=2026-10-22T17:00:58Z
+published_at=2026-10-18T05:26:52Z
+release_notes_url=packages/koreader/cwngsync.koplugin/RELEASE_NOTES.md
+release_notes_hash=f219d907bbf4987c676be4c199a30e0d460985fdf3376906c46119240577e71a
+releases=[{"tag_name":"v4.1.48","assets":[{"name":"cwngsync.koplugin.zip","url":"https://github.com/new-usemame/cwngsync.koplugin/releases/download/v4.1.48/cwngsync.koplugin.zip","size":115031,"digest":"sha256:c2d30559a58560f58cdb2b641c6dd01f56247985875bf377691376bf5425ea9d"}],"name":"NextGen Progress Sync v4.1.48"},{"tag_name":"v4.1.46","assets":[{"name":"cwngsync.koplugin.zip","url":"https://github.com/new-usemame/cwngsync.koplugin/releases/download/v4.1.46/cwngsync.koplugin.zip","size":100062,"digest":"sha256:96e6bda188d59bb54161fea6350f916515349778aa5e1392f60a486b7d792290"}],"name":"NextGen Progress Sync v4.1.46"},{"tag_name":"v4.1.45","assets":[{"name":"cwngsync.koplugin.zip","url":"https://github.com/new-usemame/cwngsync.koplugin/releases/download/v4.1.45/cwngsync.koplugin.zip","size":97877,"digest":"sha256:2ec72efc0051160ab0ecab6dd6ca61eb56888dfa23e4d3125f34a3408721e79c"}],"name":"NextGen Progress Sync v4.1.45"},{"tag_name":"v4.1.44","assets":[{"name":"cwngsync.koplugin.zip","url":"https://github.com/new-usemame/cwngsync.koplugin/releases/download/v4.1.44/cwngsync.koplugin.zip","size":95342,"digest":"sha256:364d10fa982c2424a819de5987eab24416244ac64362c7e7d603c34edd17c25d"}],"name":"NextGen Progress Sync v4.1.44"}]
+source_type=release
+source_asset=cwngsync.koplugin.zip
+size=115031

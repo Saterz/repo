@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=zhifou
 name=Zhifou
-version=source
+version=0.2.1
 description=个人自用的 KOReader 多源科技资讯插件：RSS/网页 → 每日 EPUB
 author=IswordSun
 category=media
@@ -11,8 +11,13 @@ platforms=koreader
 dependencies=
 source=https://github.com/IswordSun/zhifou.koplugin
 stars=4
-updated_at=2026-10-22T16:00:56Z
+updated_at=2026-10-22T17:00:58Z
+published_at=2026-09-30T10:22:43Z
 readme_url=packages/koreader/zhifou.koplugin/README.md
 readme_hash=54ae5f5c0bcfd0289fcd81231afe9ff281e22d27
-source_type=source
-source_url=https://codeload.github.com/IswordSun/zhifou.koplugin/zip/refs/heads/main
+release_notes_url=packages/koreader/zhifou.koplugin/RELEASE_NOTES.md
+release_notes_hash=a1d2c84effe1d3038736d8dfbebd27c3f05e37726a768288f2ea46906ec09b84
+releases=[{"tag_name":"v0.2.1","assets":[{"name":"zhifou.koplugin-v0.2.1.zip","url":"https://github.com/IswordSun/zhifou.koplugin/releases/download/v0.2.1/zhifou.koplugin-v0.2.1.zip","size":155580,"digest":"sha256:d76e3042c9743f71ec8cb0a6565ad18a015775136ae7e3123d99801944fa5493"}],"name":"zhifou.koplugin v0.2.1"},{"tag_name":"v0.2.0","assets":[{"name":"zhifou.koplugin-v0.2.0.zip","url":"https://github.com/IswordSun/zhifou.koplugin/releases/download/v0.2.0/zhifou.koplugin-v0.2.0.zip","size":142746,"digest":"sha256:cd7a1e61deed3462dad9e6bd21c71da3b90e3fb0e4c9b15f21537d735620841d"}],"name":"zhifou.koplugin v0.2.0"},{"tag_name":"v0.1.20","assets":[{"name":"zhifou.koplugin-v0.1.20.zip","url":"https://github.com/IswordSun/zhifou.koplugin/releases/download/v0.1.20/zhifou.koplugin-v0.1.20.zip","size":133459,"digest":"sha256:1e2e4a4b7c9e36acbc04a336110c4e589f1752826db44c6145ac4f6391cbb702"}],"name":"zhifou.koplugin v0.1.20"},{"tag_name":"v0.1.15","assets":[{"name":"zhifou.koplugin-v0.1.15.zip","url":"https://github.com/IswordSun/zhifou.koplugin/releases/download/v0.1.15/zhifou.koplugin-v0.1.15.zip","size":123632,"digest":"sha256:e15f683073bc4fa44103e32540e640e6aa4067c87ba87ce2eabd4eb400097690"}],"name":"zhifou.koplugin v0.1.15"},{"tag_name":"v0.1.14","assets":[{"name":"zhifou.koplugin-v0.1.14.zip","url":"https://github.com/IswordSun/zhifou.koplugin/releases/download/v0.1.14/zhifou.koplugin-v0.1.14.zip","size":112187,"digest":"sha256:572749ec6709fbcacc58ec03ffd7f12ff7566a1392a9e5048c6bda360f6b0207"}],"name":"zhifou.koplugin v0.1.14"}]
+source_type=release
+source_asset=zhifou.koplugin-v0.2.1.zip
+size=155580

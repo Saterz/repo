@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=kojump
 name=Kojump
-version=source
+version=1.0.0
 description=A KOReader's plugin to handle your position jump history
 author=dani84bs
 category=utility
@@ -11,8 +11,13 @@ platforms=koreader
 dependencies=
 source=https://github.com/dani84bs/kojump.koplugin
 stars=6
-updated_at=2026-10-22T16:00:56Z
+updated_at=2026-10-22T17:00:58Z
+published_at=2026-06-07T18:42:13Z
 readme_url=packages/koreader/kojump.koplugin/README.md
 readme_hash=4c5e45488e4b78f5031c7d56187455ebbc1c1abd
-source_type=source
-source_url=https://codeload.github.com/dani84bs/kojump.koplugin/zip/refs/heads/main
+release_notes_url=packages/koreader/kojump.koplugin/RELEASE_NOTES.md
+release_notes_hash=9e76414aff0984c9433f1b9843a5b6de644595246f9e1a6b119ed291318902a6
+releases=[{"tag_name":"v1.0.0","assets":[{"name":"kojump.koplugin.zip","url":"https://github.com/dani84bs/kojump.koplugin/releases/download/v1.0.0/kojump.koplugin.zip","size":6846,"digest":"sha256:b4a47bb421fd14401fc1180fed0eef579dd7f18c29200ffabaaae9b892807dc3"}],"name":"Release v1.0.0"}]
+source_type=release
+source_asset=kojump.koplugin.zip
+size=6846
