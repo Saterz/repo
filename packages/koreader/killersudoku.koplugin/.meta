@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=killersudoku
 name=Killersudoku
-version=1.0.0
+version=source
 description=A Killer Sudoku plugin for KoReader
 author=TomasDiLeo
 category=games
@@ -11,13 +11,8 @@ platforms=koreader
 dependencies=
 source=https://github.com/TomasDiLeo/killersudoku.koplugin
 stars=5
-updated_at=2026-10-22T15:01:00Z
-published_at=2025-12-09T23:28:45Z
+updated_at=2026-10-22T16:00:56Z
 readme_url=packages/koreader/killersudoku.koplugin/README.md
 readme_hash=d1656d6621c8ff60329991b9b1896b961e0a4dae
-release_notes_url=packages/koreader/killersudoku.koplugin/RELEASE_NOTES.md
-release_notes_hash=d6fe4eca79431a68e224392b70d96e60b5a8e8d6c642a5537baf943cd441f15d
-releases=[{"tag_name":"v1.0.0","assets":[{"name":"killersudoku.koplugin.zip","url":"https://github.com/TomasDiLeo/killersudoku.koplugin/releases/download/v1.0.0/killersudoku.koplugin.zip","size":4078713,"digest":"sha256:54c25cde061769a7f421ab1497adda3b504e6459c8afb025194430fcbdf2080d"}],"name":"Killer Sudoku v1.0.0"}]
-source_type=release
-source_asset=killersudoku.koplugin.zip
-size=4078713
+source_type=source
+source_url=https://codeload.github.com/TomasDiLeo/killersudoku.koplugin/zip/refs/heads/main

@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=weread-annotation-lite
 name=Weread Annotation Lite
-version=source
+version=0.2.3
 description=为本地 EPUB/TXT 等可重排文档显示微信读书划线和想法，支持预取、离线缓存和在线查看。
 author=MsReverie
 category=utility
@@ -11,8 +11,13 @@ platforms=koreader
 dependencies=
 source=https://github.com/MsReverie/Weread_Annotation_Lite.koplugin
 stars=10
-updated_at=2026-10-22T15:01:00Z
+updated_at=2026-10-22T16:00:56Z
+published_at=2026-10-12T02:22:34Z
 readme_url=packages/koreader/weread-annotation-lite.koplugin/README.md
 readme_hash=b11b9a5533fa6386584b5ff85c5e1b16ca3d1244
-source_type=source
-source_url=https://codeload.github.com/MsReverie/Weread_Annotation_Lite.koplugin/zip/refs/heads/main
+release_notes_url=packages/koreader/weread-annotation-lite.koplugin/RELEASE_NOTES.md
+release_notes_hash=fc69dfc26e6dbbc26c84bfa2138f91c00025619760a1e633a15a0065abff2e01
+releases=[{"tag_name":"v0.2.3","assets":[{"name":"Weread_Annotation_Lite.koplugin.v0.2.3.zip","url":"https://github.com/MsReverie/Weread_Annotation_Lite.koplugin/releases/download/v0.2.3/Weread_Annotation_Lite.koplugin.v0.2.3.zip","size":78352,"digest":"sha256:b2ccf8d4991f6410d070abbe67a20c618e3152b4101dd55a71aa2a9a7cce9c4a"}],"name":"Weread_Annotation_Lite.koplugin v0.2.3"},{"tag_name":"v0.2.2","assets":[{"name":"Weread_Annotation_Lite.koplugin.v0.2.2.zip","url":"https://github.com/MsReverie/Weread_Annotation_Lite.koplugin/releases/download/v0.2.2/Weread_Annotation_Lite.koplugin.v0.2.2.zip","size":76745,"digest":"sha256:3096e76c5c9fa59d721d0034434c5bc852dcf77b9dd7a8ecdebbfeb934ad00fc"}],"name":"Weread_Annotation_Lite.koplugin v0.2.2"},{"tag_name":"v0.2.1","assets":[{"name":"Weread_Annotation_Lite.koplugin.v0.2.1.zip","url":"https://github.com/MsReverie/Weread_Annotation_Lite.koplugin/releases/download/v0.2.1/Weread_Annotation_Lite.koplugin.v0.2.1.zip","size":78392,"digest":"sha256:3813f1db9fc27c543ea58742cadd9bbd46e088235e533e89e490688cfe2d2d4c"}],"name":"Weread_Annotation_Lite.koplugin v0.2.1"},{"tag_name":"v0.2.0","assets":[{"name":"Weread_Annotation_Lite.koplugin.v0.2.0.zip","url":"https://github.com/MsReverie/Weread_Annotation_Lite.koplugin/releases/download/v0.2.0/Weread_Annotation_Lite.koplugin.v0.2.0.zip","size":77607,"digest":"sha256:13706bcf1b3af6133a777761a53385757cd6e6565362112d75b042eae14bf2f5"}],"name":"Weread_Annotation_Lite.koplugin v0.2.0"},{"tag_name":"v0.1.0","assets":[{"name":"Weread_Annotation_Lite.koplugin.v0.1.0.zip","url":"https://github.com/MsReverie/Weread_Annotation_Lite.koplugin/releases/download/v0.1.0/Weread_Annotation_Lite.koplugin.v0.1.0.zip","size":65773,"digest":"sha256:fd51e808c32eec1503a0e740d772fbce9082e0da7d1ed0e0b48eeae44d97bbef"}],"name":"Weread_Annotation_Lite.koplugin v0.1.0"}]
+source_type=release
+source_asset=Weread_Annotation_Lite.koplugin.v0.2.3.zip
+size=78352

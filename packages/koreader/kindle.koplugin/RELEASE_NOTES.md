@@ -1,0 +1,65 @@
+# v0.0.11 · 2026-10-06
+
+### Fixed
+
+* Fixed a crash when opening Kindle Library with long author metadata.
+* Fixed duplicate Kindle Library entries caused by stale ZenOS directory caches after upgrading.
+
+### Changed
+
+* Kindle Library now uses the active file browser and its display mode instead of a separate library list.
+
+Thanks to @jake01756 for the report in #20.
+
+# v0.0.10 · 2026-10-01
+
+### Fixed
+
+* Fixed a remaining LuaJIT `bad callback` crash that could occur while scanning the Kindle library from `cc.db`.
+
+Thanks to @siddhartpai for the report and debugging help in #18.
+
+# v0.0.9 · 2026-09-16
+
+## v0.0.9
+
+### Fixed
+
+* Fixed an intermittent fatal KOReader crash while scanning the Kindle library from `cc.db`.
+* The crash appeared as `PANIC: unprotected error in call to Lua API (bad callback)` and could occur only on some launches depending on LuaJIT state.
+* Fixed the underlying SQLite/FFI callback path by preventing `sqlite3_step()` from being JIT-compiled before SQLite invokes the plugin's ICU collation callback.
+* The failure was reproduced deterministically on-device and the fix was verified against the same forced repro.
+
+Thanks to @DerHerzog7 for the detailed report in #18.
+
+# v0.0.8 · 2026-09-11
+
+**Full Changelog**: https://github.com/kaikozlov/kindle.koplugin/compare/v0.0.5...v0.0.8
+
+This release mostly focuses on reading position sync and support for newer Kindle firmware.
+
+Reading position sync is now much more faithful to the native Kindle state. Automatic KOReader -> Kindle sync now runs when a book closes, supports exact kfx/pdoc positions, targets the correct downloaded book entry for catalog updates, and no longer stomps on Kindle's separate read/unread state. The catalog integration was also reworked to use Kindle's real locale/collation behavior while remaining self-contained and working in no framework mode.
+
+Newer Java 21-based Kindle firmware is now supported by the integrated extraction path, and the native extractor fallback has a more reliable runtime environment. The Kindle library menu is also available while reading, unsafe maintenance actions are gated while a book is open, and there's now a dispatcher action for opening the Kindle library.
+
+still very much a work in progress.
+
+python remains slow
+
+please make github issues for any problems you run into
+
+# v0.0.5 · 2026-08-25
+
+**Full Changelog**: https://github.com/kaikozlov/kindle.koplugin/compare/v0.0.4...v0.0.5
+
+major rewrite of the library and reading position sync
+
+the plugin now integrates with koreader using normal file paths instead of the old virtual filesystem hacks. reading position sync is now exact where supported, book access is fully just-in-time, covers work properly in the kindle library, and there are a bunch of fixes for older kindle firmware, cold starts, drm fallback, cache handling, and sidecars.
+
+also updated the bundled kfx converter and did a pretty significant cleanup of the old implementation.
+
+still very much a work in progress, but this should be substantially more reliable than v0.0.4.
+
+python remains slow
+
+please make github issues for any problems you run into

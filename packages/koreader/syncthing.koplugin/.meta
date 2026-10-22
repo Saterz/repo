@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=syncthing
 name=Syncthing
-version=source
+version=1.0.0
 description=KOReader plugin that runs Syncthing on Kindle and Kobo e-readers
 author=bps
 category=utility
@@ -11,8 +11,13 @@ platforms=koreader
 dependencies=
 source=https://github.com/bps/syncthing.koplugin
 stars=9
-updated_at=2026-10-22T15:01:00Z
+updated_at=2026-10-22T16:00:56Z
+published_at=2026-03-10T21:32:38Z
 readme_url=packages/koreader/syncthing.koplugin/README.md
 readme_hash=4d09ba2a144663fba6260331c8f09abb3613b1b4
-source_type=source
-source_url=https://codeload.github.com/bps/syncthing.koplugin/zip/refs/heads/main
+release_notes_url=packages/koreader/syncthing.koplugin/RELEASE_NOTES.md
+release_notes_hash=003e0c0fed50ec626dc5bdeb2cd356fd62c8be174154dde197b0dc429f16d2fd
+releases=[{"tag_name":"v1.0.0","assets":[{"name":"syncthing.koplugin.zip","url":"https://github.com/bps/syncthing.koplugin/releases/download/v1.0.0/syncthing.koplugin.zip","size":148374,"digest":"sha256:35e746a3a11e4660bf91e2ac469e08cc3ca44788fc9979d2a08d98744af4dde6"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=syncthing.koplugin.zip
+size=148374

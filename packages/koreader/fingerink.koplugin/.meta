@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=fingerink
 name=Fingerink
-version=0.2.1
+version=source
 description=KOreader plugin to draw on old kindles with fingers
 author=SMUsamaShah
 category=utility
@@ -11,13 +11,8 @@ platforms=koreader
 dependencies=
 source=https://github.com/SMUsamaShah/fingerink.koplugin
 stars=18
-updated_at=2026-10-22T15:01:00Z
-published_at=2026-08-31T22:35:20Z
+updated_at=2026-10-22T16:00:56Z
 readme_url=packages/koreader/fingerink.koplugin/README.md
 readme_hash=d4aec7cceeae26bc9b328cbb83834d47fa260a15
-release_notes_url=packages/koreader/fingerink.koplugin/RELEASE_NOTES.md
-release_notes_hash=72e0b8c96701cf9ab625e89354f34a659caa8729d3ab1775aa8c272942e5d246
-releases=[{"tag_name":"v0.2.1","assets":[{"name":"fingerink.koplugin.zip","url":"https://github.com/SMUsamaShah/fingerink.koplugin/releases/download/v0.2.1/fingerink.koplugin.zip","size":16315,"digest":"sha256:4f7ca2a441fa3e9cc76186ff0561aad5337c4c5a842406c2a549cc8d6f3c8543"}],"name":"Finger Ink 0.2.1"},{"tag_name":"0.2","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SMUsamaShah/fingerink.koplugin/zipball/0.2"}],"name":"Panel size, icons and position"}]
-source_type=release
-source_asset=fingerink.koplugin.zip
-size=16315
+source_type=source
+source_url=https://codeload.github.com/SMUsamaShah/fingerink.koplugin/zip/refs/heads/main

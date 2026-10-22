@@ -1,3 +1,31 @@
+# v0.2.31 · 2026-10-22
+
+## 月读 v0.2.31
+
+KOReader 插件包：`book.koplugin-v0.2.31.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.31.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.31.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.30`：
+
+#### 修复
+
+- :bug: (xray): 模型漏掉 aliases 时不再抛错，修复「分析全书」弹出月读出错页 (97b7b105)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.30...v0.2.31
+
 # v0.2.30 · 2026-10-22
 
 ## 月读 v0.2.30
@@ -209,57 +237,3 @@ KOReader 插件包：`book.koplugin-v0.2.27.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.26...v0.2.27
-
-# v0.2.26 · 2026-10-20
-
-## 月读 v0.2.26
-
-KOReader 插件包：`book.koplugin-v0.2.26.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.26.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.26.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.25`：
-
-#### 新功能
-
-- :sparkles: (source): 未登录的账号行提示可经远程管理浏览器授权 (0b2b369f)
-- :sparkles: (mirror): GitHub 加速镜像失败落盘拉黑 7 天（更新探测与仓库文件共用） (19c6a10b)
-- :sparkles: (zlib): 竞速失败的镜像落盘拉黑 7 天 (8eef7bb5)
-- :sparkles: (reviews): 段评预缓存改为整本、每句只存前 10 条，离线只显示已缓存句；缓存失败时提示失败章节 (dd4e6b75)
-- :sparkles: (zlib): 种子镜像补全 zlibrary.koplugin 的域名清单 (022e0b42)
-- :sparkles: (reviews): 微信读书与番茄支持离线段评，缓存章节时可勾选同时缓存段评 (456ce987)
-- :sparkles: (passcode): 密码页显示设备头像与名称，数字短暂明文，输错 5 次出现忘记密码入口 (cb308cac)
-
-#### 修复
-
-- :bug: (zlib): 一轮镜像全失败后种子窗口后移，后面的镜像才有机会被用到 (005dae76)
-- :bug: (bluetooth): 连接设备没有名称时顶栏只显示图标，不再崩溃 (0023734d)
-
-#### 性能
-
-- :zap: (zlib): 镜像请求并发竞速（每次 5 个，取链接仍串行） (8c749c5c)
-
-#### 重构
-
-- :recycle: (zlib): 仅首次无可用镜像时并发竞速，之后固定用胜出镜像 (ffc9f2f8)
-
-#### 变更
-
-- :white_check_mark: (tests): 桩掉 pluginshare，CI 无 KOReader 源码也能跑 (4d8038c8)
-- :rewind: 回滚 zlib 种子窗口后移（未经确认的改动） (3d3be9c9)
-- :children_crossing: (tasks): 后台任务未结束时不再自动熄屏 (6b93ccc4)
-- :children_crossing: (wallpaper): 界面壁纸默认关闭且透明度默认 30%，选图后不再铺满所有界面 (#51) (f0a2ca67)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.25...v0.2.26

@@ -1,3 +1,13 @@
+# 26.10.22-beta · 2026-10-22
+
+### What's New
+
+* **Nested Remote Folder Support**: You can now organize your cloud backups into subfolders (such as `mine/koreader kindle/backup`). Instead of treating the slashes as part of a single folder name, the plugin will now automatically create and navigate the entire folder structure for you.
+* **Broad Cloud Compatibility**: Full nested directory support works across all cloud integrations, including Google Drive, Microsoft OneDrive, Dropbox, WebDAV, FTP, and SFTP.
+* **Smart Path Cleaning**: The remote folder setting now automatically cleans up leading, trailing, and duplicate slashes, and seamlessly handles both forward slashes (`/`) and Windows backslashes (`\`).
+
+**Full Changelog**: https://github.com/ultimatejimmy/backup.koplugin/compare/26.10.21-beta...26.10.22-beta
+
 # 26.10.21-beta · 2026-10-22
 
 update eink refresh logic on loading toast
@@ -32,15 +42,3 @@ update eink refresh logic on loading toast
 - update settings UX
 
 **Full Changelog**: https://github.com/ultimatejimmy/backup.koplugin/compare/26.10.3-beta...26.10.6-beta
-
-# 26.10.3-beta · 2026-10-03
-
-Add cloud backup providers:
-- Google Drive
-- Microsoft OneDrive
-- Dropbox
-- FTP
-- SFTP
-- WebDAV
-
-**Full Changelog**: https://github.com/ultimatejimmy/backup.koplugin/compare/26.9.30-beta...26.10.3-beta

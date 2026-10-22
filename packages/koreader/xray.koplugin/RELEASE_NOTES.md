@@ -1,3 +1,57 @@
+# 26.10.22 · 2026-10-22
+
+This update brings offline prefetching so your X-Ray data is ready ahead of time, character history timelines that show how people and places evolve without spoiling what comes next, support for novellas and fractional book numbers in series, improved image extraction, expanded unit conversions for Cyrillic languages, and updated default AI models.
+
+### Background Prefetch & Character Evolution
+
+* **Offline prefetch horizon**: If you often read offline or in airplane mode, X-Ray can now quietly analyze upcoming chapters in the background while you read. You can choose how many chapters ahead to prefetch (from 1 to 5 chapters, or turned off entirely) in the settings. If you jump around the book, X-Ray automatically adjusts and prioritizes where you are.
+* **Character progression and history**: You can now look back at how characters, factions, and places develop across chapters. Opening an entity card gives you access to a past evolution view showing their story arc up to your current point in the book.
+* **Better handling of long sections**: Books with very long chapters or broad "Part" divisions are now broken down into smaller segments behind the scenes so prefetching stays quick and light on memory.
+
+### Spoiler Protection
+
+* **Strict text boundaries**: Chapter analysis now stops cleanly at chapter transitions, preventing text from future chapters from ever leaking into summaries.
+* **Safer notes and highlights**: Your bookmarks and notes are only shared with the analyzer if they appear before or on your current page.
+* **Clean mention previews**: Mention previews will no longer accidentally show snippets from pages ahead of where you are reading.
+* **Safe backward navigation**: Going back to earlier chapters and updating X-Ray will no longer pull details from future pages into earlier summaries.
+
+### Series & Novella Support
+
+* **Fractional book numbering**: Series that include novellas or bridge stories (like Book 1.5 or 2.5) are now recognized and numbered accurately in timelines and series lists ([#151](https://github.com/ultimatejimmy/xray.koplugin/pull/151)) by [@tristinbaker](https://github.com/tristinbaker).
+* **Better device discovery**: X-Ray now finds prior books in a series directly on your device even if you haven't opened every volume in KOReader yet.
+* **Reliable series saving**: Prior book summaries are saved as they finish rather than all at once, so a network drop won't lose earlier progress.
+
+### Book Images & Galleries
+
+* **Faster image loading**: Image dimensions are now read directly in memory, making image browsing noticeably snappier.
+* **Broader device compatibility**: Book illustration extraction now uses built-in archive tools with command-line fallbacks, ensuring image extraction and gallery viewing work reliably across Kindles, Kobos, Android, and Linux devices.
+
+### Unit Conversions & Language Improvements
+
+* **Written numbers in Cyrillic books**: Unit scanning now handles written numbers and ranges in Ukrainian, Russian, Serbian, and other Cyrillic languages ([#148](https://github.com/ultimatejimmy/xray.koplugin/pull/148)) by [@Gargoyle-Gecko](https://github.com/Gargoyle-Gecko).
+* **Fewer false matches**: Added smarter word boundary checks to avoid accidentally turning unrelated words into units.
+* **Preserved caches**: Updates to unit rules now only re-scan books in languages that were actually modified, saving battery and time.
+
+### AI Models
+
+* **Updated Gemini models**: Upgraded the default primary model to *Gemini 3.8 Flash* and secondary model to *Gemini 3.5 Flash Lite*.
+* **Updated DeepSeek models**: Switched to active API aliases (*deepseek-flash* and *deepseek-v4-pro*).
+* **Automatic migration**: Older or retired model names in your settings are automatically migrated to their modern equivalents.
+
+### Navigation & Performance
+
+* **Direct gesture opening**: If you map a swipe or tap gesture to open X-Ray, it now opens directly inside KOReader's main reader menu instead of a disconnected popup dialog.
+* **Low-memory safeguards**: On older e-ink devices with limited RAM, background chapter scans automatically pause when memory is low to keep page turns smooth.
+* **Highlight fixes**: Fixed an issue where highlights stored with alternate position markers could occasionally be missed.
+
+### Contributors
+
+Thanks to our contributors for their help with this release:
+* [@tristinbaker](https://github.com/tristinbaker) in [#151](https://github.com/ultimatejimmy/xray.koplugin/pull/151)
+* [@Gargoyle-Gecko](https://github.com/Gargoyle-Gecko) in [#148](https://github.com/ultimatejimmy/xray.koplugin/pull/148)
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.20...26.10.22
+
 # 26.10.8 · 2026-10-08
 
 This release focuses on memory optimizations and stability to keep X-Ray running smoothly, especially on older or lower-RAM e-ink devices like earlier Kindles and Kobos, along with new language support and several bug fixes.
@@ -66,10 +120,3 @@ Thanks to our new contributors for helping improve the plugin:
 - Fix welcome screen bug.
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.11.1...26.9.11.2
-
-# 26.9.11.1 · 2026-09-12
-
-- Fix bug with mentions when access from the menu
-- Fix bug with sorting options
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.11...26.9.11.1
