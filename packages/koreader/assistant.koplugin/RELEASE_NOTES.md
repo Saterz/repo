@@ -1,3 +1,35 @@
+# v1.21 · 2026-10-22
+
+## v1.21
+
+This release adds Book Identify, recommended for TXT books that carry no
+metadata by default.
+
+### Book Identify
+
+- New Identify (AI) button in the file manager long-press row, plus an
+  Identify This Book reader action: title and author are inferred from the
+  opening text, optionally verified with web search, and written to custom
+  metadata so Book Information shows them.
+- Books without metadata no longer get fabricated placeholders: answers
+  follow the response language, and queries ground on percent progress with
+  auto-attached surrounding text.
+
+### Result viewer
+
+- The streaming dialog shows Provider/Model as the title subtitle.
+
+### Fixes
+
+- Recap stays quiet for barely-started books: below 3% progress auto recap
+  skips its prompt and the file manager entry suggests starting to read
+  first.
+- File manager AI buttons follow the active provider and web-search tool.
+- Opening-text extraction no longer collapses to one character on short
+  books.
+- For unreadable formats, Identify sends the reader to the book instead of
+  failing.
+
 # v1.20 · 2026-10-13
 
 ## AI Assistant v1.20 - Bug fix release
@@ -159,31 +191,3 @@ Do more from the screen: tune your AI providers, test them, and update the plugi
 
 #### Translations
 All languages refreshed with the new on-screen settings.
-
-# v1.16 · 2026-09-01
-
-> ⚠️ **OTA Users: Please update twice — the first OTA loses translations, the second restores them.** Details below.
-
-#### Highlights
-Smarter context control, per-model tuning, and more resilient API handling.
-
-#### What's New
-
-**Context Management — New "Current Chapter Only" Option**
-Context management in the Ask dialog now includes `Current Chapter Only`. When `Include Text Read So Far` is checked, you can limit context to the current chapter only (auto-detected via the book's Table of Contents). Great for focusing answers on the chapter you're reading. Hidden automatically if the book has no TOC. Thanks to @Vilhelm-Ian (#205).
-
-**Per-Model Parameter Presets**
-Configure separate `additional_parameters` (e.g. `temperature`, `max_tokens`, `reasoning`) for each model under the same provider via `model_parameters` in `configuration.lua`. Switching models via Settings → Browse Models applies the matching preset automatically; models without a preset keep the shared defaults. See `configuration.sample.lua` for examples. Thanks to @SUBHAM-ROY (#200).
-
-**Automatic Retry on API 429 (Rate Limit)**
-When the provider returns **HTTP 429 Too Many Requests** (rate limit / quota exceeded), the plugin now retries automatically — up to 8 times — respecting `Retry-After` headers, with exponential backoff and jitter. Works for both streaming and non-streaming requests. During streaming, a cancellable countdown `API Busy (429) — Attempts N/M` is shown.
-
-#### Improvements & Fixes
-- **Web Search compatibility** — Search tool renamed to `assistant_web_search` to avoid 400 errors on gateways (e.g. OneAPI) that filter the generic `web_search` name.
-- **Dictionary accuracy** — Dictionary and Term X-Ray prompts now include book title/author and handle word forms better.
-- **More robust streaming** — Ignore SSE `id:` fields to fix stray `id:0 id:1...` text with Qwen and other OpenAI-compatible models.
-- **Settings dialog** — Browse Models failures no longer close the settings window.
-- **Ask dialog polish** — Improved checkbox layout, separator, input height; reasoning blocks now wrap correctly.
-
-#### Translations & Details
-All 42+ languages updated. The plugin now reuses KOReader's native translation module directly instead of bundling a stale copy of `gettext` — only the adapter entry is customized — with translations shipped as compiled `.mo` files for faster loading. This format change is why OTA requires two passes; fresh installs via zip are not affected.
