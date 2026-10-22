@@ -1,3 +1,11 @@
+# v8.6.3 · 2026-10-22
+
+### Changed
+- The yearly reading goal is now edited with a spin picker (+/− buttons, hold to step by 5), matching the daily/weekly goal popup but with a single number (1–999).
+
+### Fixed
+- Tapping the number in the reading goal and daily/weekly goal pickers opens the keyboard entry field above the popup instead of behind it.
+
 # v8.6.2 · 2026-10-22
 
 ### Fixed
@@ -34,10 +42,3 @@
 ### Fixed
 
 - Better cover cache handling.
-
-# v8.5.7 · 2026-10-21
-
-### Fixed
-
-- Speed up book info popup with added file caching
-- Reading shelf is opening faster a bit
