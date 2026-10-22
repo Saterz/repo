@@ -1,3 +1,66 @@
+# v0.2.30 · 2026-10-22
+
+## 月读 v0.2.30
+
+KOReader 插件包：`book.koplugin-v0.2.30.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.30.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.30.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.29`：
+
+#### 新功能
+
+- :sparkles: (panel): 下滑快捷面板增加电源菜单 (044f38b2)
+- :sparkles: (bars): 阅读页上下栏新增「剩余运存」组件 (f7896445)
+- :sparkles: (wechat): 微信读书全面迁移到 App 协议，正文改走 chapterdownload (20d954ef)
+- :sparkles: (bluetooth): 支持 Kindle 原生与 Kobo 系统蓝牙，后端拆成 khp / kindle / kobo (07ab5ae1)
+- :sparkles: (home): 新增阅读小卡，本月挑战与今年读完目标可在统计页自己设置 (cbc78f25)
+- :sparkles: (insight): 统计页扩成六页（今日/本月/本年/榜单/趋势/进度），页面与数据卡片可在设置里多选显示 (9550805d)
+- :sparkles: (home): 一言、书摘正文透明不铺底色，阅读统计卡片底色透明度可调 (288e48e2)
+- :sparkles: (ime): 快捷面板新增简繁转换，整本书转成简体或繁体 (7ed17d82)
+
+#### 修复
+
+- :bug: (wake): 唤醒卡死防护与休眠/唤醒诊断日志 (122cbed3)
+- :bug: (subscribe): 图片链接直接收图，添加菜单加上推荐源 (db87fa57)
+- :bug: (fonts): WOFF 转换改分块解压，修复小内存设备字体解压失败 (9c8687f7)
+- :bug: (subscribe): 修复公众号「加载更早的文章」翻不动 (2f6437be)
+
+#### 界面
+
+- :lipstick: (panel): 快捷面板编辑对齐首页组件风格 (c10ce3ac)
+
+#### 性能
+
+- :zap: (local): WebDAV 本地书扫描改为先入库、后台上传 (a2d99fcb)
+
+#### 文档
+
+- :memo: (docs): README 补充电源菜单与剩余运存组件 (3a5eaf4d)
+
+#### 变更
+
+- :green_heart: (ci): 修复 CI 离线测试三处失败 (802986cd)
+- :globe_with_meridians: (subscribe): 补上添加菜单「推荐」的英繁文案 (68e986cb)
+- :loud_sound: (reader): 关书与退回桌面各步耗时超 100ms 记日志，定位退出卡顿 (bca74119)
+- :label: (insight): 修掉统计页新增代码的 LuaLS 类型警告 (c465e098)
+- :children_crossing: (tasks): 只有缓存任务拦自动休眠，休眠与待机路径补日志 (f472ea75)
+- :loud_sound: (source): 各书源解密失败时写日志，晋江 VIP 额外记录失败阶段与原始 contentvars (bf47e96c)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.29...v0.2.30
+
 # v0.2.29 · 2026-10-21
 
 ## 月读 v0.2.29
@@ -200,61 +263,3 @@ KOReader 插件包：`book.koplugin-v0.2.26.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.25...v0.2.26
-
-# v0.2.25 · 2026-10-20
-
-## 月读 v0.2.25
-
-KOReader 插件包：`book.koplugin-v0.2.25.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.25.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.25.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.24`：
-
-#### 新功能
-
-- :sparkles: (xray): 识别档位改为节约 / 标准 / 高质量 (2ccefe92)
-- :sparkles: (xray): 新增「省 token」开关 (876b8ee6)
-- :sparkles: (panel): 桌面快捷面板的亮度、冷暖色调滑块可在设置里单独关闭 (f644acd2)
-- :sparkles: (store): 京东读书接入榜单与分类浏览 (d5bc221c)
-- :sparkles: (store): 番茄接入阅读榜/新书榜与分类浏览 (12b23cd6)
-- :sparkles: (store): iRead 发现入口、Z站排序/语言/格式接入书城浏览 (7334c113)
-- :sparkles: (store): 七猫书城接入频道/分类/排序浏览 (11f0a76c)
-- :sparkles: (store): 起点、QQ阅读、晋江、拷贝漫画接入榜单/分类浏览 (eec37b0f)
-- :sparkles: (store): 书城支持按榜单/分类浏览，微信读书率先接入 (709cb0f8)
-- :sparkles: (fanqie): 段评里的配图显示为缩略图，HEIC 图改用 webp 地址 (419aa756)
-- :sparkles: (fanqie): 章节正文里的插图下载到本地后再显示 (5efc96e1)
-
-#### 修复
-
-- :bug: (subscribe): 纯图摘要的订阅条目直接当正文，不再抓原文页 (182f2ad3)
-- :bug: (online): ensureImage 成功时不再误报 image 错误 (35a80ea8)
-- :bug: (store): 加载态没有 chip 时不再多画一空行，修复整页上移/溢出 (b075a53f)
-- :bug: (store): chip 折叠改为保留前几项加「更多」，选中项不再丢失 (e588a911)
-- :bug: (http): 适配 turbo 2.1.5 流式回调，修复 download incomplete: 0/N (f072ac44)
-- :bug: (store): 修复拷贝漫画榜单周期参数，京东读书补搜索使其出现在书城来源里 (f61fc948)
-- :bug: (http): 修复响应体随头部到达时流式读取丢数据（download incomplete: 0/N） (98849067)
-- :bug: (wechat): TXT 书段首缩进统一，不再出现首段 2 字符其余 4 字符 (95047201)
-
-#### 界面
-
-- :lipstick: (store): 书城 chip 区靠左、最多两行，放不下的分组折成下拉 (664540f5)
-- :lipstick: (jdread): 扫码登录弹窗的长提示按宽度折行居中，不再溢出 (6e7a8a00)
-
-#### 重构
-
-- :recycle: (chapter): 章节段首缩进统一由 CSS 给，textToBody 与外壳剥掉正文自带空白 (65d5650c)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.24...v0.2.25

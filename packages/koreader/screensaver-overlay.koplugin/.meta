@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=screensaver-overlay
 name=Screensaver Overlay
-version=1.8
+version=source
 description=KOReader plugin - Transparent PNG overlay on sleep screen
 author=aureliofng
 category=utility
@@ -11,12 +11,8 @@ platforms=koreader
 dependencies=
 source=https://github.com/aureliofng/screensaver-overlay.koplugin
 stars=6
-updated_at=2026-10-22T14:00:59Z
-published_at=2026-06-24T05:02:38Z
+updated_at=2026-10-22T15:01:00Z
 readme_url=packages/koreader/screensaver-overlay.koplugin/README.md
 readme_hash=9342a18bb002620eb25a399536b521a6ce5ababb
-release_notes_url=packages/koreader/screensaver-overlay.koplugin/RELEASE_NOTES.md
-release_notes_hash=3dcbbe255ae938d78d25c253afc04f445d9d394092db5adb960c9cb4f513fa7c
-releases=[{"tag_name":"v1.8","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/aureliofng/screensaver-overlay.koplugin/zipball/v1.8"}],"name":"v1.8 - Primera versión estable"}]
 source_type=source
 source_url=https://codeload.github.com/aureliofng/screensaver-overlay.koplugin/zip/refs/heads/main
