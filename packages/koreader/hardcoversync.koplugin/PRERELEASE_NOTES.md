@@ -1,3 +1,33 @@
+# v2.2.1-beta.1 · 2026-10-22
+
+## ✨ New
+- Add the Paused reading status (#169)
+- Correction dialog when a book is auto-linked (#175)
+- Make the journal entry a themed form (#172)
+- Settings gear in the reader panel (#168)
+- Book search opens as a search bar in the top bar (#176)
+
+## 🎨 Improved
+- Show the books behind a book-count goal (#166)
+- Move automatic tracking into the set-page dialog (#171)
+
+## 🐛 Fixes
+- Fix scrolling stalling mid-page (#177)
+
+## 🛠 For developers
+- Run the emulator at three screen sizes with layout checks (#178)
+- Hold emulator fixtures to the shape of the real API (#173)
+- Add Theme.* ratchet harness (#174)
+- Verify journal, review and activity API against Hardcover (#170)
+
+## Other
+- Number picker: type the value, dotted buttons at the ends, hold to repeat (#179)
+- Notes and quotes save offline and send later (#180)
+- Group release notes by category automatically (#181)
+- Write your review from the book details, offline too (#183)
+
+**Full changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.2.0...v2.2.1-beta.1
+
 # v2.0.1-beta.1 · 2026-10-20
 
 ## What's Changed
@@ -37,11 +67,3 @@
 
 
 **Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.20...v2.0.0-beta.22
-
-# v2.0.0-beta.21 · 2026-10-11
-
-## What's Changed
-* Edition button on the book details screen by @CaptainCamin in https://github.com/CaptainCamin/HardcoverSync.koplugin/pull/124
-
-
-**Full Changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.0.0-beta.20...v2.0.0-beta.21
