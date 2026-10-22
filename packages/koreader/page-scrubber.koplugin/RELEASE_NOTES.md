@@ -1,3 +1,44 @@
+# v8.2.0 · 2026-10-21
+
+## What's new
+
+### New: Study Mode
+- When enabled, a **Study** button appears in the split menu (it can also be opened with a gesture). It lets you study your annotations with the same spaced-repetition method used by apps like Anki: every annotation is a card, and you rate it **Again**, **Good** or **Easy** depending on how hard it was. The easier a card is, the longer it takes to come back in your next session.
+- When you finish a session, **Review mode** unlocks: you can browse all your annotations, but without the rating buttons, so your progress is never modified.
+- On every card you can **tap the page** to jump straight to that page in the book and read the context. You can also **undo** a card if you rated it wrong.
+- **How it works:** it's off by default. You can enable it for all books or only for a specific folder, like School, University or Work.
+- The study data of each book lives inside that book's `.sdr` folder.
+- You can delete the Study progress of each book from **Settings > Study Mode > Reset Study Progress**.
+- All the text in the Study / Review card follows **Settings > Appearance > Text size**.
+
+### New: Custom icons
+- Now in **Settings > Appearance > Custom icons**: add your own icons!
+- Tap **+** on any SVG, browse your KOReader files to the folder where your icon is, and **long-press** the SVG you want to use.
+- You can go back to the original SVG individually, or reset all of them at once.
+- Prefer to do it manually? Drop your SVGs in `koreader/settings/page_scrubber/icons/` using exactly the same file names as the plugin's icons (they are case-sensitive), then reopen the scrubber. Your icons are kept when the plugin is updated.
+
+### Settings improvements
+- The **Favorite fonts**, **System font** and **Add scrubber action** menus were updated to match the new settings design.
+- Settings (and Study mode) can now be used with physical buttons on **non-touch devices**. *Feedback is welcome to check it works as intended.*
+
+### Quick Menu
+- Small redesign so everything looks bigger and fits better.
+- **New Status Row:** time, Wi-Fi and battery (and a Study mode notification if Study mode is enabled). Enable it in Settings > Quick Menu > Status Row 
+- Fixed the frontlight toggle.
+
+### Updated the page scrubber Updater: 
+-Now it displays a nice window showing the full patch notes and other changes.
+
+- Updated spanish and Portuguese. 
+- **Help translate:** If you'd like to help update the translation into your language, contributions are welcome!
+
+## Installation
+1. Download the zip named `page_scrubber.koplugin-<version>.zip` from the **Assets** section below (not "Source code").
+2. Unzip it and copy the `page_scrubber.koplugin` folder into `koreader/plugins/`.
+3. Restart KOReader.
+
+To update, replace the folder. To uninstall, delete it (and `koreader/patches/2--page-scrubber-font.lua` if you used the system font).
+
 # v8.1.0 · 2026-10-18
 
 ## Settings & Split Menu Redesign
@@ -34,7 +75,7 @@ To update, replace the folder. To uninstall, delete it (and `koreader/patches/2-
 
 # v8.0.0 · 2026-10-14
 
-## Panel View Update
+## New: Panel View Update
 
 - **Detail panel in split view:** Tap an annotation or bookmark row in the split menu to preview its page. Tap the same page again to open the detail panel, which shows the full content of that item (the quote, note, chapter, and page) instead of only the page preview. You can now swipe through annotations inside the detail panel. A "Show in book" link jumps to that page in the book. You can expand the panel to use more of the screen.
 
@@ -109,19 +150,6 @@ The Library button now it redirects you to the path you have asigned as 'Start W
 
 - **Multi Grid and Simple Grid:** CBZ and PDF pages now respect their true size more accurately and no longer shrink or stretch awkwardly to fit the grid.
 - The same fix was applied to the 3-page Grid in **Landscape** mode.
-
-## Installation
-1. Download the zip named `page_scrubber.koplugin-<version>.zip` from the **Assets** section below (not "Source code").
-2. Unzip it and copy the `page_scrubber.koplugin` folder into `koreader/plugins/`.
-3. Restart KOReader.
-
-To update, replace the folder. To uninstall, delete it (and `koreader/patches/2--page-scrubber-font.lua` if you used the system font).
-
-# v7.7.2 · 2026-10-04
-
-## Bug Fixes in dictionary 
-- Fixed the Highlight button doing nothing in the dictionary pop-up.
-- Fixed plugin buttons in the dictionary pop-up (text mode) not receiving the selected text.
 
 ## Installation
 1. Download the zip named `page_scrubber.koplugin-<version>.zip` from the **Assets** section below (not "Source code").

@@ -1,3 +1,43 @@
+# v0.2.29 · 2026-10-21
+
+## 月读 v0.2.29
+
+KOReader 插件包：`book.koplugin-v0.2.29.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.29.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.29.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.28`：
+
+#### 新功能
+
+- :sparkles: (font): 已下载的在线字体可以删除 (2c24a8d6)
+
+#### 修复
+
+- :bug: (wechat): 带 BOM 的章节正文不再被误判成试读片段 (7312e1f2)
+
+#### 文档
+
+- :memo: (docs): README 补充长佩、潇湘等新数据源，同步设置分组与刮削、书库页签说明 (5cd17cc9)
+
+#### 变更
+
+- :children_crossing: (wechat): 章节取不到正文时进入临时提示页，不再挡在阅读器外 (ef98a2a8)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.28...v0.2.29
+
 # v0.2.28 · 2026-10-21
 
 ## 月读 v0.2.28
@@ -218,44 +258,3 @@ KOReader 插件包：`book.koplugin-v0.2.25.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.24...v0.2.25
-
-# v0.2.24 · 2026-10-20
-
-## 月读 v0.2.24
-
-KOReader 插件包：`book.koplugin-v0.2.24.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.24.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.24.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.23`：
-
-#### 新功能
-
-- :sparkles: (subscribe): 远程管理添加网站订阅可填「链接包含」关键词 (1badd75d)
-- :sparkles: (lockscreen): 新增「今日报纸」锁屏壁纸 (63c9bd8a)
-
-#### 修复
-
-- :bug: (webdav): 修复 PUT 上传卡死，流式发送不再重复生成请求头 (4e70f09b)
-
-#### 界面
-
-- :lipstick: (library): 窄屏下工具条自动收成图标，分组标题不再顶掉返回键 (c5337799)
-
-#### 文档
-
-- :memo: 添加宣传物料工作区到 .gitignore (9bace279)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.23...v0.2.24
