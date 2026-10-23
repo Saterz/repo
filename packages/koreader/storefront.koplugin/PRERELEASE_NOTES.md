@@ -1,3 +1,10 @@
+# 26.10.23-beta · 2026-10-23
+
+- Fix bug with suspend #5079 
+- Add screensaver collections feature
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.20...26.10.23-beta
+
 # 26.10.19-beta · 2026-10-19
 
 ## What's Changed
@@ -31,14 +38,3 @@ Version number fix
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.16.1-beta
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.17-beta
-
-# 26.10.15-beta · 2026-10-16
-
-## What's Changed
-* Keep bundled-catalog fallback stale in background update by @danihrndzld in https://github.com/ultimatejimmy/storefront.koplugin/pull/5074
-* Persist catalog ETags saved in the background subprocess by @danihrndzld in https://github.com/ultimatejimmy/storefront.koplugin/pull/5075
-
-## New Contributors
-* @danihrndzld made their first contribution in https://github.com/ultimatejimmy/storefront.koplugin/pull/5074
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.13...26.10.15-beta

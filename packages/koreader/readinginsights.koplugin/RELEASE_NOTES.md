@@ -1,3 +1,9 @@
+# v8.7.5 · 2026-10-23
+
+### Changed
+
+- ISO date format: yearly chart shows month numbers (1–12) instead of month names; "Last 7 days" chart shows dates (10-23) instead of Today/Yesterday/weekday. Other formats unchanged.
+
 # v8.7.4 · 2026-10-23
 
 ### Fixed
@@ -20,12 +26,3 @@
 
 ### Changed
 - "Fewer, thin" divider style now draws horizontal dividers at most Size.line.medium thick (previously Size.line.thin), as the thinnest lines don't look good on e-ink.
-
-# v8.7.0 · 2026-10-23
-
-### Added
-- Settings > Appearance > Divider lines, with four styles:
-  - Normal (default): classic look, a line under every header.
-  - Fewer: only the lines between sections.
-  - Fewer, thin: like Fewer, with 1px horizontal lines.
-  - Off: no lines at all, vertical ones included.
