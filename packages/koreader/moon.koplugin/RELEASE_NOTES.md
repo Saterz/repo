@@ -1,3 +1,32 @@
+# v0.2.32 · 2026-10-22
+
+## 月读 v0.2.32
+
+KOReader 插件包：`book.koplugin-v0.2.32.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.32.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.32.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.31`：
+
+#### 修复
+
+- :bug: (legado): 正文夹带 <img> 时保留图片、丢弃 svg 占位，不再显示标签原文 (ad2a0950)
+- :bug: (wechat): 脚注链接带原文件名时改写成本章锚点，修复「无效或外部链接」 (49cb618a)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.31...v0.2.32
+
 # v0.2.31 · 2026-10-22
 
 ## 月读 v0.2.31
@@ -209,31 +238,3 @@ KOReader 插件包：`book.koplugin-v0.2.28.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.27...v0.2.28
-
-# v0.2.27 · 2026-10-20
-
-## 月读 v0.2.27
-
-KOReader 插件包：`book.koplugin-v0.2.27.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.27.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.27.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.26`：
-
-#### 重构
-
-- :recycle: (ime): 键盘收起键并入输入法，修复停用 ime 后设置页报错 (52fda8fd)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.26...v0.2.27

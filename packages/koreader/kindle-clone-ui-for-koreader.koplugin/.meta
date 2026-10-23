@@ -1,0 +1,18 @@
+# Kindle Clone Ui For Koreader plugin for KOReader
+# https://github.com/1231246/Kindle-Clone-UI-for-KOReader
+# zenpm:auto-scraped
+id=kindle-clone-ui-for-koreader
+name=Kindle Clone Ui For Koreader
+version=source
+description=Makes KOReader look and work like a Kindle. Different plugin than KindleUI, KindleCloneUI tries to be exactly like Kindle with minor changes.
+author=1231246
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/1231246/Kindle-Clone-UI-for-KOReader
+stars=5
+updated_at=2026-10-23T00:00:59Z
+readme_url=packages/koreader/kindle-clone-ui-for-koreader.koplugin/README.md
+readme_hash=af89d81ce8c5184068a2b84edcf7b502f1c6f854
+source_type=source
+source_url=https://codeload.github.com/1231246/Kindle-Clone-UI-for-KOReader/zip/refs/heads/main
