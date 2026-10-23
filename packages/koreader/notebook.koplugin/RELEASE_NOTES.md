@@ -1,3 +1,19 @@
+# v1.10.0 · 2026-10-23
+
+## [1.10.0](https://github.com/pierspad/notebook.koplugin/compare/v1.9.1...v1.10.0) (2026-10-23)
+
+### ✨ New Features
+
+* add gallery grid density toggle (3x2 vs 4x3) and center cards vertically ([e59ef95](https://github.com/pierspad/notebook.koplugin/commit/e59ef959c0d07685302581139b7e541b1e7ac803))
+
+# v1.9.1 · 2026-10-23
+
+## [1.9.1](https://github.com/pierspad/notebook.koplugin/compare/v1.9.0...v1.9.1) (2026-10-23)
+
+### 🐛 Bug Fixes
+
+* keep KOReader input chain safe after closing a notebook ([856f2ec](https://github.com/pierspad/notebook.koplugin/commit/856f2ec243f13dd923a09caa04e3ca7f60114cfa))
+
 # v1.9.0 · 2026-10-10
 
 ## [1.9.0](https://github.com/pierspad/notebook.koplugin/compare/v1.8.0...v1.9.0) (2026-10-10)
@@ -33,23 +49,3 @@
 Validated with the full test bench, package checks and native rendering checks in all shipped languages.
 
 The intermittent Scribe issue where library titles reappear around handwriting has not been reproduced and is not claimed as fixed in this release.
-
-# v1.7.1 · 2026-10-05
-
-## [1.7.1](https://github.com/pierspad/notebook.koplugin/compare/v1.7.0...v1.7.1) (2026-10-05)
-
-### Bug Fixes
-
-* preserve marker opacity and finish mouse drawing gestures ([5b05e67](https://github.com/pierspad/notebook.koplugin/commit/5b05e67c71eec636afa45eead2483a5797c9e57e))
-
-# v1.7.0 · 2026-10-05
-
-## [1.7.0](https://github.com/pierspad/notebook.koplugin/compare/v1.6.3...v1.7.0) (2026-10-05)
-
-### Features
-
-* add autosaved notebook workflows, embedded images and paper controls ([8e3a274](https://github.com/pierspad/notebook.koplugin/commit/8e3a2742384d1881f55fee8ab3fdf8d07cc0b16e))
-
-### Bug Fixes
-
-* polish notebook menus, previews and translations ([3258b82](https://github.com/pierspad/notebook.koplugin/commit/3258b828322da01cc85818898934c55d2da16e79))

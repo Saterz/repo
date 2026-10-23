@@ -1,3 +1,22 @@
+# v1.11.0-dev.1 · 2026-10-23
+
+## [1.11.0-dev.1](https://github.com/pierspad/notebook.koplugin/compare/v1.10.0...v1.11.0-dev.1) (2026-10-23)
+
+### ✨ New Features
+
+* add clickable gallery folder breadcrumbs and direct home navigation ([97c0507](https://github.com/pierspad/notebook.koplugin/commit/97c05075596ad6740d186ced55b38af293787b25))
+
+### 🐛 Bug Fixes
+
+* autosave committed eraser and lasso edits ([930def9](https://github.com/pierspad/notebook.koplugin/commit/930def91261d2b23117175513973f1adea9a3567))
+* contain updater and text dialog callback failures ([5c745e6](https://github.com/pierspad/notebook.koplugin/commit/5c745e6319b0f5ccee78b648a1d287ab14057e33))
+* show gallery grid layouts and progressive thumbnails ([9cfb032](https://github.com/pierspad/notebook.koplugin/commit/9cfb032ca1b955c9ee0a2371a799fc5f2a97346a))
+
+### 🔧 Improvements
+
+* cache empty notebook thumbnail results ([1ed6827](https://github.com/pierspad/notebook.koplugin/commit/1ed6827eea7f6445f4847813cee28fab46d0009b))
+* prepare shared PDFs with incremental export jobs ([619b4b7](https://github.com/pierspad/notebook.koplugin/commit/619b4b70a46d48ae65397eed2f56f61b73105dc3))
+
 # v1.9.0-dev.1 · 2026-10-10
 
 ## [1.9.0-dev.1](https://github.com/pierspad/notebook.koplugin/compare/v1.8.0...v1.9.0-dev.1) (2026-10-10)
@@ -33,11 +52,3 @@
 ### Performance Improvements
 
 * optimize lasso, cached page rendering and XOPP checksums ([c5300cb](https://github.com/pierspad/notebook.koplugin/commit/c5300cbb64092517727026f1288a592042c34325))
-
-# v1.5.0-dev.2 · 2026-09-29
-
-## [1.5.0-dev.2](https://github.com/pierspad/notebook.koplugin/compare/v1.5.0-dev.1...v1.5.0-dev.2) (2026-09-29)
-
-### Bug Fixes
-
-* show plugin version only in gallery header ([38fcfd5](https://github.com/pierspad/notebook.koplugin/commit/38fcfd52213e1f5b60dd2bbe9d107c3b37ef49c8))
