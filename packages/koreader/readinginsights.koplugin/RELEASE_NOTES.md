@@ -1,3 +1,9 @@
+# v8.7.6 · 2026-10-23
+
+### Fixed
+
+- ISO date format for month now '01' instead of '1'
+
 # v8.7.5 · 2026-10-23
 
 ### Changed
@@ -21,8 +27,3 @@
 ### Changed
 - Column separators now use the same spacing as the left screen-edge margin on the Reading insights page, the Book progress popup and the Streaks popup. The right-hand column sits closer to its separator than before.
 - The inner separators (days | weeks, time | pages) use the same spacing as the outer ones.
-
-# v8.7.1 · 2026-10-23
-
-### Changed
-- "Fewer, thin" divider style now draws horizontal dividers at most Size.line.medium thick (previously Size.line.thin), as the thinnest lines don't look good on e-ink.

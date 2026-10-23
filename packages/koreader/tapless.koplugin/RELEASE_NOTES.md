@@ -1,3 +1,8 @@
+# v0.7.0 · 2026-10-23
+
+- native C acceleration on Androids
+- improved swipe input and reduced flashing on InkBook Calypso Plus
+
 # v0.6.0 · 2026-10-15
 
 - native C acceleration for dictionary lookup and swipe recognition
@@ -27,5 +32,3 @@
 - support for additional languages (Spanish, German, French,  Portuguese, Italian, Dutch, Danish, Czech, Turkish)
 - dictionary manager
 - improved performance
-
-# v0.1.0 · 2026-09-01
