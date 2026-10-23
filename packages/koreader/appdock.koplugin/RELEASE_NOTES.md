@@ -1,3 +1,25 @@
+# v8.2.24 · 2026-10-23
+
+# AppDock 8.2.24 — Shorts Feed UX
+
+Die Shorts-DApp startet für neue Nutzer automatisch mit einem ersten YouTube Short aus einem sicheren Shorts-Tab. Danach werden lokale Interaktionen berücksichtigt: abgespielte Shorts, übersprungene Einträge und Likes beeinflussen die spätere Reihenfolge und die nächsten Themen-/Creator-Quellen.
+
+Die Oberfläche bleibt während Suche und Konvertierung im Vollbild-Shorts-Layout. Ein roter Ladebalken erscheint zentriert in der Bildschirmmitte; bei der Feed-Suche läuft er indeterminiert, bei der Videokonvertierung zeigt er den tatsächlichen Fortschritt.
+
+Vertikales Wischen bleibt die primäre Navigation: nach oben zum nächsten Short, nach unten zum vorherigen. Tippen pausiert oder startet den aktuellen Short. Die Interaktionsdaten bleiben begrenzt und lokal in den AppDock-Einstellungen.
+
+# v8.2.23 · 2026-10-23
+
+# AppDock 8.2.23 — YouTube Shorts Feed
+
+Die YouTube-Shorts-DApp nutzt jetzt ausschließlich Einträge aus echten YouTube-Shorts-Tabs. Sie akzeptiert nur kanonische URLs im Format `/shorts/<Video-ID>`; eine Suchanfrage nach `#shorts` oder eine bloße Laufzeitgrenze reicht nicht mehr aus.
+
+Die Oberfläche ist als vertikaler Feed ausgelegt. Tippen startet oder pausiert den aktuellen Short. Ein Swipe nach oben öffnet den nächsten Eintrag, ein Swipe nach unten den vorherigen. Die Aktionen für Like, Next und Themen bleiben direkt im Feed sichtbar.
+
+Likes bleiben lokal auf dem Gerät gespeichert. Sie erfassen die Creator-ID und Hashtags des Shorts und ergänzen dadurch spätere Feed-Quellen. Eigene Hashtags werden als eigene Shorts-Tabs abgefragt. Während ein Short läuft, wird der nächste Eintrag als expliziter Hintergrundjob geladen; er ersetzt weder die sichtbare Wiedergabe noch startet er eine zweite Konvertierung.
+
+Beim Schließen der DApp werden Suche, Vorabruf und Player sauber beendet. Neu- und Bestandsinstallationen erhalten die Shorts-Kachel einmalig neben YouTube. Die YouTube- und Shorts-Regressionstests laufen nun auch in GitHub Actions.
+
 # v8.2.21 · 2026-10-23
 
 # AppDock 8.2.21 — Stabiler Recovery-Release
@@ -53,25 +75,3 @@ Die Bedienungsanleitung steht in [`APPDOCK_NOTICES.md`](APPDOCK_NOTICES.md).
 ## Prüfung
 
 Die Notice-Datei wurde als gültiges JSON validiert und `git diff --check` läuft ohne Befund. Eine Lua-Syntax-/Regressionstest-Ausführung war in der Sandbox nicht möglich, da dort keine Lua-/LuaJIT-Laufzeit installiert ist.
-
-# v8.2.18 · 2026-10-21
-
-# AppDock 8.2.18 — Crash beim Scrollen öffentlicher Sleepscreens behoben
-
-## Änderung
-
-Der öffentliche Sleepscreen-Katalog registriert seinen `ScrollableContainer` jetzt korrekt als `cropping_widget` am aktiven KOReader-DApp-Host. Dadurch werden Repaints von Preview-, Renderer- und Bild-Widgets während des Scrollens auf den sichtbaren Katalogbereich begrenzt, statt an den gesamten Host weitergeleitet zu werden.
-
-Beim Verlassen der Sleepscreen-Kategorie wird der veraltete Crop-Marker entfernt. Ein UI-Regressionstest prüft sowohl die Katalog- als auch die Host-Verknüpfung.
-
-## Prüfung
-
-Die Lua-Syntaxprüfung sowie die Sleepscreen-/AppStore-Regressionstests laufen erfolgreich. Serverseitige Deno-Tests wurden in der Sandbox nicht ausgeführt, da Deno dort nicht installiert ist.
-
-# v8.2.17 · 2026-10-19
-
-# AppDock 8.2.17 — App-Gruppen
-
-Behebt einen Absturz beim Erstellen einer App-Gruppe über **Add another App → Create App Group**. Die Übersetzung `_()` wurde in den Gruppenmenüs durch die erste Rückgabevariable von Lua-`ipairs`/`pairs` überschattet; damit wurde beim Öffnen der Auswahl ein Zahlenwert als Funktion aufgerufen.
-
-Zusätzlich wird beim Wechseln der ausgewählten Apps jetzt nur das gerade offene Dialogfenster geschlossen. Ein neuer Regressionstest durchläuft das Erstellen einer Gruppe, den Mitgliedereditor und die Manageransicht mit vorhandener Gruppe.

@@ -1,3 +1,40 @@
+# v0.2.35 · 2026-10-23
+
+## 月读 v0.2.35
+
+KOReader 插件包：`book.koplugin-v0.2.35.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.35.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.35.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.34`：
+
+#### 修复
+
+- :bug: (wechat): 搜索封面用大图，章首标题页还原原书背景 (293400d1)
+- :bug: (insight): 云端阅读会话进入阅读记录，漫画详情不再空白 (cf3d5f54)
+
+#### 重构
+
+- :recycle: (stats): summaryByBooks 去掉多余的判空与类型转换 (58d9f3d9)
+
+#### 变更
+
+- :white_check_mark: (kavita): 补漫画 cbz 进度上报的回归测试 (df28d72b)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.34...v0.2.35
+
 # v0.2.34 · 2026-10-23
 
 ## 月读 v0.2.34
@@ -136,66 +173,3 @@ KOReader 插件包：`book.koplugin-v0.2.31.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.30...v0.2.31
-
-# v0.2.30 · 2026-10-22
-
-## 月读 v0.2.30
-
-KOReader 插件包：`book.koplugin-v0.2.30.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.30.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.30.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.29`：
-
-#### 新功能
-
-- :sparkles: (panel): 下滑快捷面板增加电源菜单 (044f38b2)
-- :sparkles: (bars): 阅读页上下栏新增「剩余运存」组件 (f7896445)
-- :sparkles: (wechat): 微信读书全面迁移到 App 协议，正文改走 chapterdownload (20d954ef)
-- :sparkles: (bluetooth): 支持 Kindle 原生与 Kobo 系统蓝牙，后端拆成 khp / kindle / kobo (07ab5ae1)
-- :sparkles: (home): 新增阅读小卡，本月挑战与今年读完目标可在统计页自己设置 (cbc78f25)
-- :sparkles: (insight): 统计页扩成六页（今日/本月/本年/榜单/趋势/进度），页面与数据卡片可在设置里多选显示 (9550805d)
-- :sparkles: (home): 一言、书摘正文透明不铺底色，阅读统计卡片底色透明度可调 (288e48e2)
-- :sparkles: (ime): 快捷面板新增简繁转换，整本书转成简体或繁体 (7ed17d82)
-
-#### 修复
-
-- :bug: (wake): 唤醒卡死防护与休眠/唤醒诊断日志 (122cbed3)
-- :bug: (subscribe): 图片链接直接收图，添加菜单加上推荐源 (db87fa57)
-- :bug: (fonts): WOFF 转换改分块解压，修复小内存设备字体解压失败 (9c8687f7)
-- :bug: (subscribe): 修复公众号「加载更早的文章」翻不动 (2f6437be)
-
-#### 界面
-
-- :lipstick: (panel): 快捷面板编辑对齐首页组件风格 (c10ce3ac)
-
-#### 性能
-
-- :zap: (local): WebDAV 本地书扫描改为先入库、后台上传 (a2d99fcb)
-
-#### 文档
-
-- :memo: (docs): README 补充电源菜单与剩余运存组件 (3a5eaf4d)
-
-#### 变更
-
-- :green_heart: (ci): 修复 CI 离线测试三处失败 (802986cd)
-- :globe_with_meridians: (subscribe): 补上添加菜单「推荐」的英繁文案 (68e986cb)
-- :loud_sound: (reader): 关书与退回桌面各步耗时超 100ms 记日志，定位退出卡顿 (bca74119)
-- :label: (insight): 修掉统计页新增代码的 LuaLS 类型警告 (c465e098)
-- :children_crossing: (tasks): 只有缓存任务拦自动休眠，休眠与待机路径补日志 (f472ea75)
-- :loud_sound: (source): 各书源解密失败时写日志，晋江 VIP 额外记录失败阶段与原始 contentvars (bf47e96c)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.29...v0.2.30
