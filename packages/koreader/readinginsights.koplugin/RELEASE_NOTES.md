@@ -1,3 +1,15 @@
+# v8.7.4 · 2026-10-23
+
+### Fixed
+
+- Some places still didn't used proper ISO date format.
+
+# v8.7.3 · 2026-10-23
+
+### Changed
+
+- ISO date format matches KOReader's ISO dates better when there is a day after the date
+
 # v8.7.2 · 2026-10-23
 
 ### Changed
@@ -17,21 +29,3 @@
   - Fewer: only the lines between sections.
   - Fewer, thin: like Fewer, with 1px horizontal lines.
   - Off: no lines at all, vertical ones included.
-
-# v8.6.3 · 2026-10-22
-
-### Changed
-- The yearly reading goal is now edited with a spin picker (+/− buttons, hold to step by 5), matching the daily/weekly goal popup but with a single number (1–999).
-
-### Fixed
-- Tapping the number in the reading goal and daily/weekly goal pickers opens the keyboard entry field above the popup instead of behind it.
-
-# v8.6.2 · 2026-10-22
-
-### Fixed
-- Daily/weekly goal no longer shows e.g. `00:30 / 00:30` without a check mark when the goal is missed by a few seconds. Durations shown without seconds are now rounded down to the whole minute (29m 40s reads `00:29`), so the displayed value and the check mark always match.
-  - Applies consistently to all minute-resolution durations (charts, trend view, heatmap, records, calendars, book statistics) and follows KOReader's "Duration format" setting.
-- Reading under one minute still shows `<00:01` (`<1'` / `<1m` in the other formats); exactly zero stays a plain zero.
-
-### Unchanged
-- Durations that include seconds (e.g. the book lists) are displayed as before.
