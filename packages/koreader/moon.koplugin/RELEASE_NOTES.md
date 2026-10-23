@@ -1,3 +1,42 @@
+# v0.2.34 · 2026-10-23
+
+## 月读 v0.2.34
+
+KOReader 插件包：`book.koplugin-v0.2.34.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.34.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.34.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.33`：
+
+#### 新功能
+
+- :sparkles: (qidian): 接入段评 (5ea71abc)
+- :sparkles: (jjwxc): 支持账号密码登录 (c5815c72)
+- :sparkles: (jjwxc): 接入段评 (dbdf30b4)
+- :sparkles: (cookie): 远程授权成功后支持重新授权，长佩人机验证标记登录失效 (901c4a88)
+
+#### 修复
+
+- :bug: (wechat): 划线合并去掉同 range 孪生记录与未确认的本地重复划线 (90c3c69b)
+
+#### 文档
+
+- :memo: (readme): 数据源表重写为能力矩阵，补晋江、起点段评 (02eb0eaf)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.33...v0.2.34
+
 # v0.2.33 · 2026-10-23
 
 ## 月读 v0.2.33
@@ -160,43 +199,3 @@ KOReader 插件包：`book.koplugin-v0.2.30.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.29...v0.2.30
-
-# v0.2.29 · 2026-10-21
-
-## 月读 v0.2.29
-
-KOReader 插件包：`book.koplugin-v0.2.29.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.29.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.29.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.28`：
-
-#### 新功能
-
-- :sparkles: (font): 已下载的在线字体可以删除 (2c24a8d6)
-
-#### 修复
-
-- :bug: (wechat): 带 BOM 的章节正文不再被误判成试读片段 (7312e1f2)
-
-#### 文档
-
-- :memo: (docs): README 补充长佩、潇湘等新数据源，同步设置分组与刮削、书库页签说明 (5cd17cc9)
-
-#### 变更
-
-- :children_crossing: (wechat): 章节取不到正文时进入临时提示页，不再挡在阅读器外 (ef98a2a8)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.28...v0.2.29

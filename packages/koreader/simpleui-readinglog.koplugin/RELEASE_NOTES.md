@@ -1,3 +1,7 @@
+# v1.7.1 · 2026-10-23
+
+SimpleUI wallpaper support: below Solid Background Opacity the dashboard page is left clear so the wallpaper shows between the cards (titles get framed plates), plus a Tab Bar Position setting.
+
 # v1.7.0 · 2026-10-22
 
 Swipe Between 2-3 Cards on the Today page (swipe or tap dots to switch, in-place, no rebuild), Dashboard tab cache for instant tab switches, Start On Tab, and a new Black accent.
@@ -13,7 +17,3 @@ New: Appearance → Bottom Space setting fine-tunes the room under the full-scre
 # v1.5.5 · 2026-10-19
 
 Full-screen dashboard now reserves room for SimpleUI's page dots / arrows.
-
-# v1.5.4 · 2026-10-19
-
-Reading Log for SimpleUI v1.5.4 — license headers, Title Case labels, screenshots in README.
