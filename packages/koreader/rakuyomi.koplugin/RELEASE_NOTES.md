@@ -1,3 +1,12 @@
+# v1.44.2 · 2026-10-23
+
+## [1.44.2](https://github.com/tachibana-shin/rakuyomi/compare/v1.44.1...v1.44.2) (2026-10-23)
+
+
+### Bug Fixes
+
+* **epub:** generate valid XHTML chapter content ([#393](https://github.com/tachibana-shin/rakuyomi/issues/393)) ([a214f47](https://github.com/tachibana-shin/rakuyomi/commit/a214f47c24e7a696caef082d1d57120cc3157814))
+
 # v1.44.1 · 2026-10-19
 
 ## [1.44.1](https://github.com/tachibana-shin/rakuyomi/compare/v1.44.0...v1.44.1) (2026-10-19)
@@ -41,12 +50,3 @@
 ### Bug Fixes
 
 * **cookie-bot:** migrate Telegram cookie bot from Deno Deploy to Cloudflare Workers ([#380](https://github.com/tachibana-shin/rakuyomi/issues/380)) ([9f50e82](https://github.com/tachibana-shin/rakuyomi/commit/9f50e825d901831a57338ca4db2d89d08d40d9b5))
-
-# v1.43.2 · 2026-10-07
-
-## [1.43.2](https://github.com/tachibana-shin/rakuyomi/compare/v1.43.1...v1.43.2) (2026-10-07)
-
-
-### Bug Fixes
-
-* close button for available sources ([#377](https://github.com/tachibana-shin/rakuyomi/issues/377)) ([7a3ab6b](https://github.com/tachibana-shin/rakuyomi/commit/7a3ab6b0797ddc2d7da4dce0d9561086fded79f9))
