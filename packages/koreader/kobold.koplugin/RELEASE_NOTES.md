@@ -1,3 +1,35 @@
+# v1.3 · 2026-10-23
+
+## Kobold 1.3
+
+<!--kobold-->
+A new book menu and book details page, filter, sort and search when adding books to a collection, an icon style option, and fixes for the Series scrollbar and cover outlines.
+<!--/kobold-->
+
+### New
+
+- **Book menu**, tap the "..." on a book in My Books for Read now, View Details and KOReader Details. Hold any of the 4 recent books on Home for the same menu
+- **Book details page** with the cover, series, author and progress, a Read now button, and Synopsis and Details tabs
+- **Add books to a collection** now has filter, sort and search, tap the search pill to go back to the full list
+- **Book menu setting**, use Kobold's menu or go straight to KOReader's book menu
+- **Icons setting**, use Kobold's icons or KOReader's default icons for the status bar and nav bar
+
+### Fixed
+
+- **Series scrollbar** no longer jumps to the middle when only one series is left on a page
+- **Cover outlines** now sit right on the cover with no gap
+- **Italic text** in menus and settings uses a proper italic font instead of a wide one
+
+### Install
+
+1. Download `Kobold.koplugin.zip` below
+2. Extract it and copy the `Kobold.koplugin` folder into KOReader's `plugins` folder
+3. Restart KOReader and open Kobold, or set it under **Start with > Kobold Home**
+
+On 1.1 or newer? Use **More > Check for updates** in Kobold.
+
+To uninstall, delete the `Kobold.koplugin` folder and restart KOReader.
+
 # v1.2 · 2026-10-21
 
 ## Kobold 1.2
