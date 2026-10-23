@@ -1,3 +1,9 @@
+# v1.7.7 · 2026-10-23
+
+### Fixed
+
+- Speed up sleep screen by querying only a recent statistics window
+
 # v1.7.6 · 2026-10-19
 
 ### Changed
@@ -24,8 +30,3 @@
 - Added a new **Appearance** menu grouping Layout, Cover, Background, Colors, Fonts and Margins
 - Moved **Updates** and **About** below Advanced Settings, with a separator above About
 - Advanced Settings now only contains Orientation, Image export and Clear cached data
-
-# v1.7.2 · 2026-10-15
-
-### Changed
-- The Statistics submenu was removed: Configure statistics items and Reading goal settings now sit directly in the Card elements menu, with a separator line between them.
