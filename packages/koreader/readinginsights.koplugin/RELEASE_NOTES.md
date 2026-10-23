@@ -1,3 +1,23 @@
+# v8.7.2 · 2026-10-23
+
+### Changed
+- Column separators now use the same spacing as the left screen-edge margin on the Reading insights page, the Book progress popup and the Streaks popup. The right-hand column sits closer to its separator than before.
+- The inner separators (days | weeks, time | pages) use the same spacing as the outer ones.
+
+# v8.7.1 · 2026-10-23
+
+### Changed
+- "Fewer, thin" divider style now draws horizontal dividers at most Size.line.medium thick (previously Size.line.thin), as the thinnest lines don't look good on e-ink.
+
+# v8.7.0 · 2026-10-23
+
+### Added
+- Settings > Appearance > Divider lines, with four styles:
+  - Normal (default): classic look, a line under every header.
+  - Fewer: only the lines between sections.
+  - Fewer, thin: like Fewer, with 1px horizontal lines.
+  - Off: no lines at all, vertical ones included.
+
 # v8.6.3 · 2026-10-22
 
 ### Changed
@@ -15,30 +35,3 @@
 
 ### Unchanged
 - Durations that include seconds (e.g. the book lists) are displayed as before.
-
-# v8.6.1 · 2026-10-22
-
-### Fixed
-- Reading time under one minute is now shown as `<00:01` instead of an empty `00:00`. The marker follows KOReader's "Duration format" setting (`<00:01` classic, `<1'` modern, `<1m` letters).
-- Applies everywhere durations are displayed without seconds: weekly, monthly and trend charts, goals, calendars and book statistics.
-- Exactly zero reading time still shows as a plain zero.
-
-# v8.6.0 · 2026-10-22
-
-### Changed
-
-- Tapping a day’s column in the weekly chart (“Last 7 days” / “Current week”, bar and line styles) now opens the list of books read on that day, the same list the streak calendar shows. Long-pressing today’s column opens the day timeline.
-- “Current week” view: the columns are now labelled with the date (no year, in the configured date format, e.g. 10. 20.) instead of the weekday.
-- Today (“Today” label / today’s date), the current month and the current week in the 8-week trend are now shown in bold.
-- Reorganize plugin files into readinginsights/{data,cache}, cap cover cache at 25 MB, move settings cleanup to lib/cleanup.lua
-
-### Fixed
-- Heatmap: all seven weekday labels are shown on the left when the rows are tall enough (e.g. 6 months); otherwise only Mon/Wed/Fri as before.
-- Fixed missing space in the short date of the 8-week trend (09.30. → 09. 30.).
-- Drop redundant caption long-presses
-
-# v8.5.8 · 2026-10-21
-
-### Fixed
-
-- Better cover cache handling.
