@@ -101,8 +101,30 @@ Sketch, ink and colour each on a layer of its own, as in a desktop or tablet dra
 | | |
 |---|---|
 | **Lasso** | Loop writing, shapes, pictures and text, then move, resize, turn, flip, recolour, change opacity or size, duplicate or delete them, or cut, copy and paste to any page of any notebook or drawing. With Pan, a touch picks a shape or picture. |
-| **Convert to text** | Lassoed printed handwriting becomes a text box, read on the device (English letters and digits). One undo brings the writing back. |
+| **Convert to text** | Lassoed handwriting is read on the device (English letters and digits), shown to check and fix, then becomes a text box with Convert, or stays as it is with Cancel. One undo brings the writing back. It can also use an online service, below. |
 | **Undo and redo** | From the toolbar, or with two fingers (see Gestures). |
+
+### Convert to text online (experimental)
+
+For handwriting the reader cannot read well, Convert to text can use an online
+service of your own instead. Tap the Text tool twice to open its sheet and switch on **Convert
+to text online**, then set its **Address**, **Key** and **Model**. The service has
+to take pictures through the OpenAI-style Chat Completions API, for example
+`https://your-provider.example/v1` with the model `paddleocr-vl`. The address can
+also be the full `/chat/completions` one. The key is never shown, but it is kept
+unencrypted in KOReader's settings, not in notebooks or exports. Switching it off
+hides the fields, keeps what you typed, and goes back to reading on the reader.
+
+With Wi-Fi on, lasso the writing and choose **Convert to text**. Only the selected
+writing is sent, as a black-on-white picture with erased parts left out; the page,
+pictures and other writing are not. What comes back is shown to check and fix
+before **Convert**. If the service fails, the writing stays as it was.
+
+Only HTTPS addresses with a valid certificate work; plain HTTP and redirects are
+refused. One request runs at a time, for up to 90 seconds, with pictures up to
+4 megapixels. Stop drops the answer, though the service may still finish the request.
+Tested on a Kobo Libra Colour with KOReader 2026.07.1 and PaddleOCR-VL; how well it
+reads depends on the service, the model and the handwriting.
 
 ### Notebooks and PDFs
 
@@ -185,7 +207,7 @@ With the [Bookshelf](https://github.com/AndyHazz/bookshelf.koplugin) plugin inst
 |---|---|
 | **Dark mode** | Light, Dark or following KOReader's night mode, for Ink Away's toolbars, menus and library. Your page and colours are never changed. |
 | **Palm rejection** | Rest your hand on the screen while the pen writes (on by default on Kindle Scribe and reMarkable). The pen can still tap the toolbar and menus. |
-| **Stylus buttons** | The eraser end erases, and holding the side button makes the pen a highlighter, on pens that have them. You can set them to anything else. |
+| **Stylus buttons** | The eraser end erases, and holding the side button makes the pen a highlighter, on pens that have them. Both work while reading too, without opening the annotation mode. You can set them to anything else. |
 | **Colour screens** | A theme colour, Ink Away green by default, and colour ink that shows as you draw. In KOReader's night mode ink keeps its colour: blue stays blue, and dark ink turns light to read on the dark page. |
 | **E-ink** | Light refreshes while you draw, an optional clean-up refresh every few strokes, a full refresh whenever you like from Settings or a gesture, portrait or landscape, and bars that fold away for more room. |
 

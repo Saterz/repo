@@ -1,3 +1,123 @@
+# v4.3.0 · 2026-10-24
+
+Ink Away 4.3.0 is the stable release of everything since 4.2.0: the 4.2.1 and 4.2.2 prereleases, plus the pen's eraser end and side button while reading, Convert to text online, and fixes for the Kobo Elipsa, Elipsa 2E and Sage.
+
+Highlights:
+- Send notebooks and drawings to your phone or computer over Wi-Fi, and add PDFs and pictures from it, with a QR code and nothing to install.
+- Highlight with the pen's side button and erase with its eraser end while reading, without opening the annotation mode.
+- Convert to text online (experimental): read handwriting with your own AI service, and check and fix the text before it replaces the writing. Thanks to acidkill.
+- Zoom and Pan buttons at the left or hidden, arrow buttons for long sheets like Settings, and every menu in Ink Away's style with icons.
+- Faster drawing and erasing on the Kobo Elipsa (thanks to maks), Elipsa 2E and Sage, and Kobo pen buttons that work with palm rejection off.
+
+To update from inside Ink Away: Settings, Updates, Install. Or download `ink-away.koplugin-v4.3.0.zip` below and put the `ink-away.koplugin` folder in KOReader's plugins folder.
+
+## Added
+- Highlight while reading with the pen's side button (part of #39): hold it
+  and run the pen over a line of text, and it becomes the reader's own
+  highlight, made by the same smart highlighter, without opening the
+  annotation mode. It uses the part of the pen set to Highlighter in Gestures
+  and pen buttons; without it the pen turns pages and selects text as before.
+  It can be turned off in the reader's menu, Tools, Ink Away.
+- The pen's eraser end erases while reading, without opening the annotation
+  mode: highlights and Ink Away's ink it runs over go. It can be switched off
+  in the book's Ink Away menu (#59).
+- The zoom and Pan buttons can sit at the left, out from under a resting
+  right palm, or be hidden: Settings, Zoom and Pan buttons (#63).
+- Convert to text online (experimental): Convert to text can use your own
+  online service instead of reading on the reader. Switch it on in the Text
+  tool's sheet and set the address, key and model; it is off by default.
+  Thanks to acidkill (#61, #62).
+- Convert to text shows what was read to check and fix before it replaces the
+  writing; erased writing and hidden layers are no longer read.
+- The eraser shows its size and shape (#43): the Eraser sheet shows it at its
+  real size on screen, and Show the eraser while erasing (off by default, as
+  e-ink leaves a trail of rings, #47) puts a ring under the pen.
+- Phone or computer (Wi-Fi): get your notebooks and drawings onto a phone or
+  computer, or add PDFs and pictures from one, with nothing to install. Open
+  it from the library's menu, Export, or Add image; the reader shows a QR code
+  and an address, and any phone or computer on the same Wi-Fi opens a page in
+  its browser. The page lists your folders, documents and pictures, and gives
+  each document as a PDF, a PNG (drawings) or its Ink Away file. PDFs and PNGs
+  are made when you ask for them, a page at a time so the reader stays
+  responsive, with progress and Cancel on both sides. The reader serves the
+  page itself: nothing goes over the internet or through anyone's server. The
+  address holds a secret that changes each time, and sharing stops when you
+  close it, when the reader sleeps, when Wi-Fi goes, or after 15 minutes of
+  nothing happening. The page takes Ink Away's theme colour (green on a reader
+  without a colour screen).
+- Adding files from the page, with "Allow adding files" on (on when opened
+  from Add image, off otherwise, and switchable either way). Everything sent
+  arrives in Library › Imported, each kind in its own folder: PDFs become
+  notebooks you can write on in Imported › PDFs (the PDF itself is kept once),
+  pictures go to Imported › Pictures, and Ink Away files to Imported ›
+  Notebooks and drawings. The reader asks whether to open notebooks that
+  arrive, saying where they are (notebooks arriving together share one
+  question, and "Don't ask again" leaves a note). Pictures can be made smaller
+  on the phone first (Original, Large, Medium or Small, showing how much
+  smaller). Every file is checked by what it is, against size limits and the
+  space left, and only kept once whole; an Ink Away file is read as data only
+  and loses any reference to files elsewhere on the reader.
+- Pictures in the library: JPEGs and PNGs in a library folder (Imported ›
+  Pictures, for one) show as picture cards. Tap one to see it full screen;
+  hold it to rename, move or delete it (deleted pictures wait in the trash).
+- Add image has clearer choices: From this reader, Sent from your phone (the
+  pictures in Imported › Pictures, as a grid), Get from your phone or computer
+  (the QR code, ready to receive), Search online and Background.
+
+## Changed
+- Every menu and dialog is in Ink Away's style: messages, questions, typing a
+  name, the lists of templates and notebooks, the arrowhead size and an
+  export's progress. Picking a picture, a PDF or a folder is a grid with
+  thumbnails, and short notes like "Nothing to undo" show at the top of the
+  screen, out of the pen's way.
+- Holding a card in the library or a tab in the overview opens a sheet with
+  icons, and the main buttons of Add image, Settings, File, the page menu,
+  Layers, the pen menu and Export have icons.
+- The library bar has one + New button (drawing, notebook or folder) instead
+  of three, so a folder's full name fits beside it.
+- A sheet too tall for the screen, such as Settings, has arrow buttons above
+  and below its scrollbar: a tap scrolls most of a screenful, where a drag on
+  e-ink often moved a toggle or slider instead.
+- The library's ⋯ menu is a sheet like the others, each option with a line
+  saying what it does: Phone or computer (Wi-Fi), Write on a PDF from this
+  reader, the order, and Trash.
+- The cover style new notebooks get on Bookshelf is now set from a notebook's
+  long press sheet ("Use for new notebooks", which was "Use for all") rather
+  than in Settings.
+
+## Fixed
+- Kobo pen buttons did nothing with palm rejection off, the default on a Kobo
+  (#13): the eraser end and the side button drew like the tip. They now do
+  what Gestures and pen buttons says, with palm rejection on or off, and the
+  side button's choices no longer mention a second side button Kobo pens
+  don't have.
+- Kobo Elipsa (the 2021 model): drawing keeps up with the pen and a finger. It
+  trailed well behind, as each screen update held up the reader until the
+  screen had taken it; now a helper makes the updates, with the screen's own
+  handwriting mode on, as in Kobo's notebooks. Thanks to maks (#45, #48).
+- The page turn buttons turn the pages of grids and sheets as well as the
+  page: the library, folder icons, sent pictures, the guide, search, the trash
+  and lists (#53). They did nothing there.
+- Book notes after the Book notes folder (or a notes notebook) was renamed or
+  moved in the library (#54): each book opens its own notes where they are now,
+  instead of starting new ones in a new Book notes folder, and new books' notes
+  go into the renamed folder. Notes left behind this way before are found again
+  the next time their book opens them. Nothing in the notes themselves changes.
+- Kobo Elipsa, Elipsa 2E and Sage: the eraser keeps up over a notebook's lines,
+  a book or a picture (#47, #50). Each point asked the screen for its slower grey
+  update, which held the eraser up; it now erases with the fast one, and the
+  lines or picture under it show again as it lifts.
+- Kobo Elipsa (the 2021 model): the highlighter and other see-through pens keep
+  up with the pen too (#50). The helper that makes the screen updates now also
+  makes the grey ones a stroke needs, so they no longer hold up the reader. A
+  helper busy with a slow update is waited for instead of being given up, and
+  after a failure the next stroke tries it again, so drawing no longer stays slow
+  until Ink Away is reopened.
+- A new drawing, notebook, copy or folder made while in Imported went into
+  Imported; it goes in the library now, as Imported only holds what was sent.
+- After picking a picture from Sent from your phone, the top of that grid
+  stayed over the toolbar.
+
 # v4.2.0 · 2026-10-16
 
 Ink Away 4.2.0 is the stable release of everything since 4.0.1: the 4.1.0 and 4.1.1 prereleases, now tested on a Kobo Libra Colour and a Kindle Scribe, plus coloured library folders, typing on a physical keyboard and fixes for the book toolbar and the Scribe's pen.
@@ -439,30 +559,3 @@ The biggest update so far: Ink Away is now a proper notebook app, with a library
 ## For developers
 - The canvas, once one 11,500-line file, is now 27 feature files with shared helpers, so a feature can be changed or added in one small file. A good time to fork it.
 - A test suite of around 2,300 automated checks (including pixel-exact tests on KOReader's real drawing code), performance benchmarks and an e-ink refresh audit. Tests are not part of the download.
-
-# v3.2.0 · 2026-10-02
-
-Everything since 3.1.0 in one stable release.
-
-## New
-- **Landscape mode.** Remembered between sessions, and exports come out landscape.
-- **Paste and copy in text boxes.** Long-press for a Paste bubble; Copy / Cut / Paste in the format menu. Uses KOReader's clipboard.
-- **Background remover** for images, plus refreshed text controls.
-
-## Pen
-- Small handwriting no longer turns into straight lines.
-- Kindle Scribe: strokes no longer join up when your hand rests on the screen.
-- Quick writing no longer connects neighbouring letters.
-
-## PDF
-- Exporting long PDFs no longer crashes. Pages are saved one at a time, with a progress bar you can stop.
-- Faster page turns, with fewer flashes.
-
-## Colour screens
-- Much faster drawing: ink shows instantly in black and settles to colour when you pause. Coloured pens no longer slow down at larger sizes.
-
-## Fixes and speed
-- The eraser no longer removes notebook lines.
-- Menus open around 40% faster, strokes draw with far less work, and landscape is as fast as portrait.
-- Typing no longer zooms the page when you tap away, and a new text box no longer starts with a stray letter.
-- Toolbar taps no longer lag after closing a menu.

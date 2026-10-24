@@ -121,8 +121,15 @@ dev.sh                   # Build, lint, test, format, and emulator launcher
 # Extract translatable strings into gettext catalog
 ./dev.sh pot
 
-# Deploy directly to a USB-connected Kobo
+# Deploy to a USB-connected Kobo, then eject it
 ./dev.sh deploy
+
+# Deploy over SSH (root, port 2222 by default)
+./dev.sh deploy --ip 192.0.2.10
+
+# Preview an SSH deploy and optionally restart KOReader after a real deploy
+./dev.sh deploy --ip 192.0.2.10 --dry-run
+./dev.sh deploy --ip 192.0.2.10 --identity ~/.ssh/kobo_koreader --restart
 
 # Package clean release zip archive
 ./tools/package_release.sh
@@ -132,6 +139,15 @@ dev.sh                   # Build, lint, test, format, and emulator launcher
 git tag v1.1.0
 git push origin v1.1.0
 ```
+
+SSH deployment uploads the plugin through a staging directory and replaces only
+a recognized Sudoku+ installation. Use `--ssh-port` for a non-default SSH port
+and `--http-port` if KOReader's HTTP inspector does not use port `8080`.
+`--restart` requires the HTTP inspector to be enabled; without it, restart
+KOReader manually from its exit menu. The equivalent environment overrides are
+`SUDOKUPLUS_SSH_PORT`, `SUDOKUPLUS_SSH_KEY`, `SUDOKUPLUS_SSH`,
+`SUDOKUPLUS_REMOTE_KOREADER_DIR`, `SUDOKUPLUS_HTTP_PORT`, and
+`SUDOKUPLUS_HTTP_CLIENT`.
 
 Stable `vX.Y.Z` tags run every CI and package gate before publishing. If a tag
 was placed on the wrong commit, force-moving and pushing it reruns the gates and
