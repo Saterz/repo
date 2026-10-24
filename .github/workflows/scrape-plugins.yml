@@ -102,8 +102,17 @@ jobs:
           echo "sha=$COMMIT_SHA" >> "$GITHUB_OUTPUT"
 
       - name: Dispatch GitHub Pages deployment
+        id: deploy
         if: ${{ github.event_name == 'push' || steps.scrape.outputs.added_count != '0' || steps.scrape.outputs.updated_count != '0' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SOURCE_REF: ${{ steps.commit.outputs.sha }}
         run: gh workflow run pages-deploy.yml --ref main --field source_ref="${SOURCE_REF:-$(git rev-parse HEAD)}"
+
+      - name: Notify Discord
+        if: ${{ always() && steps.deploy.outcome != 'success' }}
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          WORKFLOW_STATUS: ${{ job.status }}
+        run: sh .github/scripts/notify-discord.sh
