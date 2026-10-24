@@ -1,3 +1,9 @@
+# v8.4.0 · 2026-10-24
+
+**Full Changelog**: https://github.com/arduinodude456/appdock.koplugin/compare/v8.3.9...v8.4.0
+
+# v8.3.9 · 2026-10-24
+
 # v8.3.8 · 2026-10-24
 
 # Brand new drop-down quicksettings menu
@@ -9,9 +15,3 @@
 fixed a crash when video was prepared
 
 # v8.3.6 · 2026-10-23
-
-# v8.3.5 · 2026-10-23
-
-Adds an optional multiline mode to the AppDock keyboard for native DApps: Return inserts a line break and a separate Done action submits the full text. Existing single-line and secure inputs keep their original behavior. InkBlog uses this mode for its Markdown editor (InkBlog 1.2.1 is published in the DApps catalog).
-
-# v8.3.4 · 2026-10-23
