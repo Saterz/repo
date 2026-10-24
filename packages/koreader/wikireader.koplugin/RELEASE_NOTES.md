@@ -1,3 +1,8 @@
+# v2.1.0 · 2026-10-24
+
+- Wikipedia main page now available for these languages: English, Spanish, German, Japanese, French, Russian, Italian, Polish, Chinese, Portuguese
+- Bug fixes
+
 # v2.0.0 · 2026-10-16
 
 - Article images are now supported

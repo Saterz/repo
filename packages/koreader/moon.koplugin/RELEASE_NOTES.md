@@ -1,3 +1,46 @@
+# v0.2.37 · 2026-10-24
+
+## 月读 v0.2.37
+
+KOReader 插件包：`book.koplugin-v0.2.37.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.37.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.37.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.36`：
+
+#### 新功能
+
+- :sparkles: (reader): 设置里加「显示换章提示」开关，默认开启 (92b5bbdd)
+- :sparkles: feat(setting): 设置页顶部加搜索 (78004e74)
+- :sparkles: feat(wallpaper): 底栏简洁样式开关，壁纸下选中格不再填深色块 (58742189)
+- :sparkles: (panel): 快捷面板按钮支持长按，先接 Wi-Fi、蓝牙、前光、截屏 (c7271f47)
+
+#### 修复
+
+- :bug: (wechat): 注文只在章末显示，带序号与回原文链接，注释章落盘 (62ebfa55)
+
+#### 性能
+
+- :zap: perf(reader): 翻页不再额外整屏刷新，减少上下栏闪动 (ac899d06)
+
+#### 重构
+
+- :recycle: refactor(wallpaper): 底栏开关只让未选中格文字不变灰，选中格保持着色 (b30caeb8)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.36...v0.2.37
+
 # v0.2.36 · 2026-10-24
 
 ## 月读 v0.2.36
@@ -204,32 +247,3 @@ KOReader 插件包：`book.koplugin-v0.2.33.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.32...v0.2.33
-
-# v0.2.32 · 2026-10-22
-
-## 月读 v0.2.32
-
-KOReader 插件包：`book.koplugin-v0.2.32.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.32.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.32.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.31`：
-
-#### 修复
-
-- :bug: (legado): 正文夹带 <img> 时保留图片、丢弃 svg 占位，不再显示标签原文 (ad2a0950)
-- :bug: (wechat): 脚注链接带原文件名时改写成本章锚点，修复「无效或外部链接」 (49cb618a)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.31...v0.2.32
