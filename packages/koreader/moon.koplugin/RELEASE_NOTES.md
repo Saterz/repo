@@ -1,3 +1,51 @@
+# v0.2.38 · 2026-10-24
+
+## 月读 v0.2.38
+
+KOReader 插件包：`book.koplugin-v0.2.38.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.38.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.38.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.37`：
+
+#### 新功能
+
+- :sparkles: (source): 书架同步按远端进度自动标记已读 (7c9d1853)
+- :sparkles: (panel): 快捷面板的 Wi-Fi 和蓝牙按钮显示当前连接的名字 (bb2a2a0c)
+- :sparkles: (xray): 支持删除、按章识别与自动预取，标记默认关闭 (c28c8dfa)
+- :sparkles: (desktop): 首次安装后桌面第一次打开时询问是否查看文档 (3360cb60)
+- :sparkles: feat(subscribe): 缓存全部未读与文章内二三级目录 (68833c86)
+
+#### 修复
+
+- :bug: (bluetooth): 修复 Kindle 快捷面板关不掉蓝牙 (736e3ee4)
+- :bug: (subscribe): 修复订阅正文中文名图片下不来，AVIF 图给出占位说明 (e5127d6d)
+
+#### 性能
+
+- :zap: (store): 书城榜单与搜索的匿名请求走 http 缓存 5 分钟 (02bb8d59)
+
+#### 变更
+
+- :children_crossing: (setting): 翻页动画、侧栏、X-Ray 等阅读功能提升到设置根页 (42b6529d)
+- :children_crossing: (xray): 订阅文章不再提供 X-Ray (ec9dbaa5)
+- :children_crossing: (reader): 边距调整默认直接重排不弹提示，设置里加开关可恢复 (21aad813)
+- :children_crossing: (store): 书城下载时本地书库未配置，直接弹目录选择并接着下载 (6849396c)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.37...v0.2.38
+
 # v0.2.37 · 2026-10-24
 
 ## 月读 v0.2.37
@@ -204,46 +252,3 @@ KOReader 插件包：`book.koplugin-v0.2.34.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.33...v0.2.34
-
-# v0.2.33 · 2026-10-23
-
-## 月读 v0.2.33
-
-KOReader 插件包：`book.koplugin-v0.2.33.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.33.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.33.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.32`：
-
-#### 新功能
-
-- :sparkles: (subscribe): 订阅列表支持按分组筛选 (c60780bd)
-- :sparkles: (reader): 按章阅读的全书页码估算，缺字数的章用平均值，读过的章回填字数 (720af3d9)
-- :sparkles: (desktop): 读书退出回桌面时还原页签与书架浏览位置 (8a14c8e5)
-
-#### 修复
-
-- :bug: (storage): 存储空间页改用与顶栏相同的 df，旧版 KOReader 可用空间不再为空 (6dad9da7)
-- :bug: (bars): 阅读栏剩余运存改用 util.calcFreeMem，与桌面顶栏同源 (9d97b912)
-
-#### 性能
-
-- :zap: (cache): http 缓存限制 500 行，评论缓存写入时清过期 (b010acbc)
-
-#### 变更
-
-- :lock: (net): 订阅图片与公众号文章改流式下载并限制体积，公开抓取再校验解析后的 IP (cd978354)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.32...v0.2.33
