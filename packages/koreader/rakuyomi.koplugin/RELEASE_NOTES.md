@@ -1,3 +1,12 @@
+# v1.44.3 · 2026-10-24
+
+## [1.44.3](https://github.com/tachibana-shin/rakuyomi/compare/v1.44.2...v1.44.3) (2026-10-24)
+
+
+### Bug Fixes
+
+* mprove UnixServer:stop() with exit wait logic ([d539181](https://github.com/tachibana-shin/rakuyomi/commit/d53918143f9fd3139d98fb14ee034c38f8ebf817)), closes [#394](https://github.com/tachibana-shin/rakuyomi/issues/394)
+
 # v1.44.2 · 2026-10-23
 
 ## [1.44.2](https://github.com/tachibana-shin/rakuyomi/compare/v1.44.1...v1.44.2) (2026-10-23)
@@ -41,12 +50,3 @@
 ### Performance Improvements
 
 * **cookie-bot:** stop registering bot commands on every cold isolate ([30d8002](https://github.com/tachibana-shin/rakuyomi/commit/30d80029c0566587edc415dd23a57561d948a720))
-
-# v1.43.3 · 2026-10-10
-
-## [1.43.3](https://github.com/tachibana-shin/rakuyomi/compare/v1.43.2...v1.43.3) (2026-10-10)
-
-
-### Bug Fixes
-
-* **cookie-bot:** migrate Telegram cookie bot from Deno Deploy to Cloudflare Workers ([#380](https://github.com/tachibana-shin/rakuyomi/issues/380)) ([9f50e82](https://github.com/tachibana-shin/rakuyomi/commit/9f50e825d901831a57338ca4db2d89d08d40d9b5))
