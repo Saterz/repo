@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v0.7.0","assets":[{"name":"ClassicUI_0.7.0_install.zip","url":"https://github.com/ManXiangTAS/classicui.koplugin/releases/download/v0.7.0/ClassicUI_0.7.0_install.zip","size":570386,"digest":"sha256:d3fc2862f202c0b612d719bf7151bef0957e8641c9f7e653ab7b8518f1d0e897"},{"name":"ClassicUI_0.7.0_source.zip","url":"https://github.com/ManXiangTAS/classicui.koplugin/releases/download/v0.7.0/ClassicUI_0.7.0_source.zip","size":1649300,"digest":"sha256:f69e5714f78a5ad5971820b6fc5ab33ba37f582a76dbca77cb2fa9741628d9b8"}],"name":"墨页 · ClassicUI 0.7.0"}]
+}

@@ -1,0 +1,29 @@
+# Classicui plugin for KOReader
+# https://github.com/ManXiangTAS/classicui.koplugin
+# zenpm:auto-scraped
+id=classicui
+name=Classicui
+version=0.7.0
+description=ClassicUI：面向 KOReader 的电子墨水屏前端，Kobo 书库、Kindle 风格阅读与独立设置。开发预览版 0.3.6。
+author=ManXiangTAS
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/ManXiangTAS/classicui.koplugin
+stars=5
+updated_at=2026-10-24T03:00:58Z
+published_at=2026-10-23T16:28:40Z
+readme_url=packages/koreader/classicui.koplugin/README.md
+readme_hash=9864a309e09e1b91b51be99c7537804a0706947e
+release_notes_url=packages/koreader/classicui.koplugin/RELEASE_NOTES.md
+release_notes_hash=a3e345af8b214355b41221d808e9351bd816e7b9d93514b70a3128eec565a6ea
+releases=[{"tag_name":"v0.7.0","assets":[{"name":"ClassicUI_0.7.0_install.zip","url":"https://github.com/ManXiangTAS/classicui.koplugin/releases/download/v0.7.0/ClassicUI_0.7.0_install.zip","size":570386,"digest":"sha256:d3fc2862f202c0b612d719bf7151bef0957e8641c9f7e653ab7b8518f1d0e897"},{"name":"ClassicUI_0.7.0_source.zip","url":"https://github.com/ManXiangTAS/classicui.koplugin/releases/download/v0.7.0/ClassicUI_0.7.0_source.zip","size":1649300,"digest":"sha256:f69e5714f78a5ad5971820b6fc5ab33ba37f582a76dbca77cb2fa9741628d9b8"}],"name":"墨页 · ClassicUI 0.7.0"}]
+source_type=release
+assets.0.arch=any
+assets.0.asset=ClassicUI_0.7.0_install.zip
+assets.0.url=https://github.com/ManXiangTAS/classicui.koplugin/releases/download/v0.7.0/ClassicUI_0.7.0_install.zip
+assets.0.size=570386
+assets.1.arch=any
+assets.1.asset=ClassicUI_0.7.0_source.zip
+assets.1.url=https://github.com/ManXiangTAS/classicui.koplugin/releases/download/v0.7.0/ClassicUI_0.7.0_source.zip
+assets.1.size=1649300
