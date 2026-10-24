@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v0.1.0","assets":[{"name":"koplay.koplugin.zip","url":"https://github.com/orkunseyman/koplay/releases/download/v0.1.0/koplay.koplugin.zip","size":18439,"digest":"sha256:4e47c0634dfc717143a2cc90581cf05d056999e360578fb9a098cb241e1bea24"}],"name":"KoPlay v0.1.0"}]
+}

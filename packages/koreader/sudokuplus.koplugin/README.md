@@ -153,6 +153,36 @@ Stable `vX.Y.Z` tags run every CI and package gate before publishing. If a tag
 was placed on the wrong commit, force-moving and pushing it reruns the gates and
 updates the existing release and assets.
 
+### Solver, difficulty, and note-state contracts
+
+The `sudokuplus.core.sudoku` facade's `solve_any`, `solve_all`, and
+`solutions_count` return `(result, error, status)`. Status is `complete` when
+the search is exhausted, `limit_reached` when the requested solution limit is
+met (including a successful `solve_any`), or `capped` when the search budget is
+exhausted. A capped call returns `nil` and an error, never a partial count or
+list as a successful result. Invalid inputs retain the `(nil, error)` contract.
+The lower-level solver retains partial results and its `search_capped` flag for
+budget-aware callers such as the generator.
+
+`solver.new(board, options)` creates an exact board solver and rejects candidate
+overrides. Use `solver.new_candidate_state(board, { candidates = notes, ... })`
+for candidate-restricted propagation and hint deductions; exact solve/count
+methods reject those states. Exact searches always derive candidates from the
+board, including after deductions or candidate edits on an exact solver.
+
+Difficulty density and workload scores count each logical pattern application
+once. Individual candidate effects remain in the solve path with a shared
+`deduction_id`. Medium through Master require at least two non-single
+applications. This stricter gate can change the puzzle selected for an older
+generation seed; stored puzzle replay continues to use the exact saved board.
+
+Game saves retain automatically suppressed notes independently of the placement
+that first hid them. Notes return when their last blocker is removed, unless
+manually cleared. Save version 3 adds an optional `auto_removed` mask grid and
+sparse suppression changes in move history. Older version 2/3 saves without
+these fields reconstruct pending suppression from their applied history; undo
+and redo remain available.
+
 ---
 
 ## 📜 License & Credits

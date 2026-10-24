@@ -1,0 +1,23 @@
+# Koplay plugin for KOReader
+# https://github.com/orkunseyman/koplay
+# zenpm:auto-scraped
+id=koplay
+name=Koplay
+version=0.1.0
+description=Spotify on your e-reader: a KOReader plugin to see what's playing, control playback while reading, and browse your library.
+author=orkunseyman
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/orkunseyman/koplay
+stars=5
+updated_at=2026-10-24T16:00:55Z
+published_at=2026-10-23T18:31:46Z
+readme_url=packages/koreader/koplay.koplugin/README.md
+readme_hash=b02051a7c0fde29bd916262a9f84f0d53e58b3c2
+release_notes_url=packages/koreader/koplay.koplugin/RELEASE_NOTES.md
+release_notes_hash=e9b9c64843eff5778ac6db383dd369fdb901b1f3189e3e06a02e84249ab84bb4
+releases=[{"tag_name":"v0.1.0","assets":[{"name":"koplay.koplugin.zip","url":"https://github.com/orkunseyman/koplay/releases/download/v0.1.0/koplay.koplugin.zip","size":18439,"digest":"sha256:4e47c0634dfc717143a2cc90581cf05d056999e360578fb9a098cb241e1bea24"}],"name":"KoPlay v0.1.0"}]
+source_type=release
+source_asset=koplay.koplugin.zip
+size=18439
