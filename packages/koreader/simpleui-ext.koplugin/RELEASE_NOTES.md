@@ -1,3 +1,7 @@
+# v1.16.0 · 2026-10-24
+
+- adapt to simpleui 3.0
+
 # v1.15.0 · 2026-08-26
 
  - adapt to simpleui 2.6
@@ -18,7 +22,3 @@
 
 - fix: show the centre book description for every Cover Deck source types
 - fix: Support the new Recent Book module in the SimpleUI plugin (pr by @GOSENGWONG )
-
-# v1.13.2 · 2026-08-02
-
-- feat: Hero currently reading card add startup prewarm

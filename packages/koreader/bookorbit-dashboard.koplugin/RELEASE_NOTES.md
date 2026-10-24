@@ -1,3 +1,7 @@
+# v1.2.4 · 2026-10-24
+
+**Full Changelog**: https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin/compare/v1.2.3...v1.2.4
+
 # v1.2.3 · 2026-10-23
 
 Updater got fixed with this update! Please install manually.
@@ -17,7 +21,3 @@ Updater is broken! Please install manually.
 # v1.2.0 · 2026-10-21
 
 **Full Changelog**: https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin/compare/v1.1.0...v1.2.0
-
-# v1.1.0 · 2026-10-21
-
-**Full Changelog**: https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin/commits/v1.1.0

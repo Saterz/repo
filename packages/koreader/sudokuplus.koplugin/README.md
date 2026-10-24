@@ -65,7 +65,7 @@ A full-featured, logical Sudoku puzzle game and interactive tutor crafted specif
 - **Enter Digits**: Tap numbers 1–9 on the bottom number bar, or cycle through digits with hardware page-turn / arrow buttons.
 - **Pencil Notes**: Toggle the **Notes** button (pencil icon) to enter candidate notes, or long-press a cell to quickly write a note. Placing a definitive digit automatically prunes notes from intersecting rows, columns, and 3×3 boxes.
 - **Check Board**: Tap **Check** to verify your board against the solution. Incorrect entries are struck through in ink and keep a shaded background until corrected.
-- **Hints**: Tap **Hint** whenever you are stuck to receive progressive guidance on the next logical technique.
+- **Hints**: Tap **Hint** whenever you are stuck to receive progressive guidance on the next logical technique. Pattern cells get adaptive outlines (white on the selected cell), while digit matches keep their dotted backgrounds. Both can appear together; outlines leave room for pencil notes in portrait and landscape.
 - **Custom Practice**: Tap **New game** &rarr; **Custom…** to select and practice specific solving strategies.
 - **Browse & Replay**: Visit **Statistics** &rarr; select any game from the log to view its solution, seed, and required techniques, browse past games with `◀`/`▶` (or swipe), or tap **Play again** to replay the exact puzzle.
 
