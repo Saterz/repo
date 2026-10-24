@@ -1,0 +1,23 @@
+# Bookorbit Dashboard plugin for KOReader
+# https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin
+# zenpm:auto-scraped
+id=bookorbit-dashboard
+name=Bookorbit Dashboard
+version=1.2.3
+description=The Bookorbit Dashboard but stripped of everything related to Bookorbit
+author=ThePixelPro366
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin
+stars=5
+updated_at=2026-10-24T00:00:57Z
+published_at=2026-10-23T20:51:57Z
+readme_url=packages/koreader/bookorbit-dashboard.koplugin/README.md
+readme_hash=4f5a25edd1a707359798a169b4ba2e10a4523314
+release_notes_url=packages/koreader/bookorbit-dashboard.koplugin/RELEASE_NOTES.md
+release_notes_hash=873a94c336a18e3cdb61eeab6da928933931ad2f6db3876b02a45007bf4a8707
+releases=[{"tag_name":"v1.2.3","assets":[{"name":"bookorbitdashboard.koplugin.zip","url":"https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin/releases/download/v1.2.3/bookorbitdashboard.koplugin.zip","size":167090,"digest":"sha256:eb4b627e1cbeba66716af3affcb2fa173c1214a17f4d793fe84caf78b5956b50"}],"name":"Bookorbit Dashboard v1.2.3"},{"tag_name":"v1.2.2","assets":[{"name":"bookorbitdashboard.koplugin.zip","url":"https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin/releases/download/v1.2.2/bookorbitdashboard.koplugin.zip","size":166941,"digest":"sha256:51b95b0add5e3a2e7836c248c7008663973f63fb5f93ac3f6851c2f40bdefdc6"}],"name":"Bookorbit Dashboard v1.2.2"},{"tag_name":"v1.2.1","assets":[{"name":"bookorbitdashboard.koplugin.zip","url":"https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin/releases/download/v1.2.1/bookorbitdashboard.koplugin.zip","size":166492,"digest":"sha256:7a7e429b0355da0b83005434024b817dce06ee4727baeaf7f905514dc046fe33"}],"name":"Bookorbit Dashboard v1.2.1"},{"tag_name":"v1.2.0","assets":[{"name":"bookorbitdashboard.koplugin.zip","url":"https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin/releases/download/v1.2.0/bookorbitdashboard.koplugin.zip","size":166008,"digest":"sha256:2797246be5df930016755f34ad1636edfe91be7a6f184e4745d0c5126b088c25"}],"name":"Bookorbit Dashboard v1.2.0"},{"tag_name":"v1.1.0","assets":[{"name":"bookorbitdashboard.koplugin.zip","url":"https://github.com/ThePixelPro366/bookorbit-dashboard.koplugin/releases/download/v1.1.0/bookorbitdashboard.koplugin.zip","size":163459,"digest":"sha256:15c59d1215791b2a12eb5cc3651311e41d5d216d1a457c6b96ae5717c456a115"}],"name":"Bookorbit Dashboard v1.1.0"}]
+source_type=release
+source_asset=bookorbitdashboard.koplugin.zip
+size=167090
