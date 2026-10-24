@@ -1,0 +1,23 @@
+# Koreader Ios Remote plugin for KOReader
+# https://github.com/maxoliinyk/koreader-ios-remote
+# zenpm:auto-scraped
+id=koreader-ios-remote
+name=Koreader Ios Remote
+version=0.6.1
+description=Remote-control KOReader from your iPhone or Apple Watch. Turn pages forward/backward and send sleep commands wirelessly
+author=maxoliinyk
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/maxoliinyk/koreader-ios-remote
+stars=7
+updated_at=2026-10-24T21:00:55Z
+published_at=2026-10-24T20:38:58Z
+readme_url=packages/koreader/koreader-ios-remote.koplugin/README.md
+readme_hash=27d47c5752e0ce0d244210bd430c666ae9d1626f
+release_notes_url=packages/koreader/koreader-ios-remote.koplugin/RELEASE_NOTES.md
+release_notes_hash=7b42291a6bb0d01e8e596e5d8d4212f100a84fdd09822441094c1a64cec9d5d6
+releases=[{"tag_name":"v0.6.1","assets":[{"name":"remote_turner-0.6.1.koplugin.zip","url":"https://github.com/maxoliinyk/koreader-ios-remote/releases/download/v0.6.1/remote_turner-0.6.1.koplugin.zip","size":17420,"digest":"sha256:ccab1a67fc30557c2e877ac34bf922048595e562ec9153fd8e263ca76078892e"}],"name":"KORemote v0.6.1"},{"tag_name":"v0.5","assets":[{"name":"remote_turner-0.5.koplugin.zip","url":"https://github.com/maxoliinyk/koreader-ios-remote/releases/download/v0.5/remote_turner-0.5.koplugin.zip","size":17418,"digest":"sha256:4c987f36bb837815b908005e5ca79bb9d211c9ae905d830e595e517a9f8a82e9"}],"name":"KORemote v0.5"}]
+source_type=release
+source_asset=remote_turner-0.6.1.koplugin.zip
+size=17420

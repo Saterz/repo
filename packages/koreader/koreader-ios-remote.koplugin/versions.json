@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v0.6.1","assets":[{"name":"remote_turner-0.6.1.koplugin.zip","url":"https://github.com/maxoliinyk/koreader-ios-remote/releases/download/v0.6.1/remote_turner-0.6.1.koplugin.zip","size":17420,"digest":"sha256:ccab1a67fc30557c2e877ac34bf922048595e562ec9153fd8e263ca76078892e"}],"name":"KORemote v0.6.1"},{"tag_name":"v0.5","assets":[{"name":"remote_turner-0.5.koplugin.zip","url":"https://github.com/maxoliinyk/koreader-ios-remote/releases/download/v0.5/remote_turner-0.5.koplugin.zip","size":17418,"digest":"sha256:4c987f36bb837815b908005e5ca79bb9d211c9ae905d830e595e517a9f8a82e9"}],"name":"KORemote v0.5"}]
+}

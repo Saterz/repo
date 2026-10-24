@@ -61,6 +61,13 @@ A full-featured, logical Sudoku puzzle game and interactive tutor crafted specif
 
 ## 🎮 How to Play
 
+Open **Sudoku+** from KOReader's Tools menu, or assign **Open Sudoku+** from the
+**General** action category to a gesture or another KOReader shortcut. With
+SimpleUI installed, Sudoku+ is also discoverable in its plugin shortcut picker;
+its System Actions picker offers **Open Sudoku+** as well. Both shortcuts open
+the Sudoku+ menu so you can choose Continue, New game, Statistics, Help, or
+Auto-fill notes. If a game is already open, the shortcut opens its pause menu.
+
 - **Select Cell**: Tap any empty or filled cell on the 9×9 grid.
 - **Enter Digits**: Tap numbers 1–9 on the bottom number bar, or cycle through digits with hardware page-turn / arrow buttons.
 - **Pencil Notes**: Toggle the **Notes** button (pencil icon) to enter candidate notes, or long-press a cell to quickly write a note. Placing a definitive digit automatically prunes notes from intersecting rows, columns, and 3×3 boxes.
@@ -136,8 +143,8 @@ dev.sh                   # Build, lint, test, format, and emulator launcher
 # Outputs dist/sudokuplus.koplugin.zip and its .sha256 sidecar
 
 # Publish after dating CHANGELOG.md and committing the release version
-git tag v1.1.0
-git push origin v1.1.0
+git tag v1.2.0
+git push origin v1.2.0
 ```
 
 SSH deployment uploads the plugin through a staging directory and replaces only

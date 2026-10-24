@@ -1,3 +1,25 @@
+# v1.2.0 · 2026-10-24
+
+### Added
+
+- **Sudoku+ menu shortcuts**: assign **Open Sudoku+** to a KOReader gesture or action, or select Sudoku+ in SimpleUI's plugin shortcut picker. Opens the menu without automatically starting or resuming a puzzle; an open game uses its existing pause menu.
+- **Solve puzzle** action in the in-game menu, added after v1.1.0, to reveal the puzzle's stored solution after confirmation. The completed board remains visible and read-only; the game is recorded as given up, preserving the player's pre-reveal progress and move count.
+- **SSH deployment** to a Kobo over Wi-Fi through `dev.sh deploy --ip`, with staged installation, configurable connection settings, and an optional graceful KOReader restart.
+
+### Changed
+
+- **Clearer hint highlights**: pattern cells now have bold adaptive outlines, distinct from dotted digit-match backgrounds. Both highlights can appear together, selected hints use white outlines, and borders adapt to preserve pencil-note clearance in portrait and landscape.
+- **More accurate difficulty scoring**: each logical deduction is counted once, even when it eliminates several candidates. Puzzle generation now uses these deduction counts when checking difficulty requirements.
+
+### Fixed
+
+- Automatically removed pencil notes return after their last blocking digit disappears, including after digit replacement, undo/redo, and saving/reloading. Restored cells refresh immediately on e-ink screens. Manually removed notes stay removed.
+- Save and statistics recovery dialogs require an explicit choice; tapping outside or pressing Back can no longer accidentally discard or reset data.
+- Starting a replacement game when the previous save is missing or corrupt preserves its history as abandoned and keeps statistics reloadable.
+- Exact solving and solution-counting APIs distinguish search-budget exhaustion from completed results, and keep note-restricted hint deductions separate from exact board searches.
+- Fixed GitHub CI tooling failures by quoting the deployment test command path and declaring its required `rsync` dependency.
+- Failed SSH deployments clean up their local temporary archives and preserve the original failure status and diagnostic.
+
 # v1.1.0 · 2026-08-22
 
 ### Added
