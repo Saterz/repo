@@ -1,3 +1,7 @@
+# v1.8.0 · 2026-10-24
+
+Tiny Critter: SimpleUI 3.0's Tiny Critter now peeks into each Dashboard page with a remark about that page's numbers. Tap it for another remark. Turn it off in Reading Log Settings → Critter Remarks. Without SimpleUI 3.0's Tiny Critter, the pages look as before.
+
 # v1.7.2 · 2026-10-23
 
 Tab Bar Position refinement: moving the tab bar no longer shrinks the dashboard heading — only the cards make room. Layout-geometry diagnostics for the SimpleUI diagnostics patch. Compatible with SimpleUI 3.0.0.
@@ -13,7 +17,3 @@ Swipe Between 2-3 Cards on the Today page (swipe or tap dots to switch, in-place
 # v1.6.3 · 2026-10-20
 
 "Kit v1.1.0: native SimpleUI adapter (no Bookshelf needed), new cards (Trends, Library, Quote Of The Day, Mini Dashboard and more), Quote Of The Day from your SimpleUI quote files, and a Live Clock setting."
-
-# v1.5.6 · 2026-10-20
-
-New: Appearance → Bottom Space setting fine-tunes the room under the full-screen dashboard for SimpleUI's page dots.

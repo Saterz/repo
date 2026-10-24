@@ -7,6 +7,7 @@ A clean, distraction-free UI plugin for KOReader that transforms your reading ex
 - [Installation](#installation)
 - [Features](#features)
   - [Home Screen](#home-screen)
+  - [Custom Critters & Decorations](#custom-critters--decorations)
   - [Custom Screens](#custom-screens)
   - [Navigation Bar](#navigation-bar)
   - [Top Status Bar](#top-status-bar)
@@ -80,15 +81,28 @@ The centrepiece of SimpleUI. A home screen that gives you everything at a glance
 - **Collections** — your KOReader collections displayed as tappable cover cards, with an **Auto** cover style that switches between a single cover and a 4-cover grid depending on collection size
 - **Featured Collection** — like Collections, but focused on one collection at a time, shown as a row of covers; add multiple instances to feature more than one
 - **Reading Goals** — visual progress tracker for your annual and daily reading goals, including physical books read
-- **Reading Stats** — compact stat cards showing today's reading time, pages, streaks, and all-time totals, with full statistics windows and streak tracking behind them (see **Reading Stats & Streaks** below)
+- **Reading Stats** — a grid of stat cards you compose yourself, with full statistics windows and streak tracking behind them (see **Reading Stats & Streaks** below). You can add several instances, each with its own selection of stats
+- **Reading Heatmap** — a card showing when you read: a calendar of the last weeks (one cell per day), a time-of-day grid (weekday × hour) or reading per hour of the day. Tap it to open the full-screen heatmap, which shows both grids and pages back through earlier blocks. Off by default
+- **Tabbed Grid** — a book grid with a tab bar in place of the section label. Each tab binds the grid to a source: reading history, new books, the To Be Read list, any collection, or the authors, series and tags of your library (group tabs list groups of books and open them in the library). Choose round, square or plain tabs, and a page indicator as numbers, a bar or none; swipe to turn the page. Add several instances
 - **Quick Actions Row** — up to 3 customisable rows of shortcut buttons (Library, History, Wi-Fi toggle, Brightness, Stats, and more)
 - **Action List** — the same shortcuts as Quick Actions, shown as a vertical app-launcher-style list instead of a row
 - **Spacer** — a blank block to add breathing room between modules
 - **Quote of the Day** — optional literary header, randomly picked from a curated list of 100+ quotes; can also show your own highlights. Supply your own pool by placing a `.lua` file in `<KOReader settings dir>/simpleui/sui_quotes/` (created automatically on first run, never touched by updates) returning a table of `{ q = "...", a = "Author", b = "Book (optional)" }` entries, then set **Source → Custom** on the module. Edit the built-in pool instead via `modules/quotes.lua` in the plugin folder.
+- **Tiny Critter** — a pixel-art critter with a speech bubble that comments on your reading: a greeting for the time of day, your streak, books finished this year, goals and milestones. Tap it to hear something else. The speech bubble has a fixed size, so the critter and the decorations never move; you choose which side of the bubble the critter stands on, arrange up to two decorations on each side, in the order they stand on the screen (left out when they do not fit) and align the whole group to the left, centre or right of the row on wide screens. Tell it your name (**Your name**) and some phrases will use it. Off by default; add it from Arrange Modules, then choose the critter, its side, the decorations, the topics and where the phrases come from. Seven critters are bundled — the default Suey (a cat), Chonk (a cat with heart-shaped sunglasses and a tiara), Tulu (a tiny winged tentacle-faced sea monster), Frankie (a stitched-together patchwork monster) Vlad (a pale, pointy-eared little vampire in a red-lined cape) Sholmes (a deerstalker-wearing detective in a long brown coat) and Argos (a loyal floppy-eared dog with a red collar) — each with twelve moods (`neutral`, `happy`, `party`, `sleepy`, `cheer`, `love`, `sad`, `surprised`, `curious`, `grumpy`, `shy`, `playful`). Make your own critters, decorations and phrases: see [Custom Critters & Decorations](#custom-critters--decorations).
+- **Module width & position (bento grid)** — each module can take 1/3, 1/2, 2/3 or the full width of the row, and consecutive modules whose widths add up to a row sit side by side. Long-press a module and choose *Width and Position* to see a live preview of its row, move it, or remove it; with auto-fit on, the neighbouring module adjusts so the row stays closed. Pages built in the editor use the same layout
 - **Module ordering & per-module scaling** — rearrange Home Screen modules in any order, resize each independently, or lock all scales together for uniform adjustments
 - **Wallpaper** — a background image for the Home Screen, with auto-rotate, stretch, and Night Mode inversion options
+- **Accent Color** — colour screens only: pick a colour (**Style ▸ Accent Color**) for the active state of controls — slider fills, progress bars and rings, the heatmap, the active tab, selected segments and dark badges. Black and white until a colour is chosen, and unchanged on monochrome screens. The picker works with the D-pad (preset palette plus hue, saturation and brightness steppers)
 - **Presets** — save and load full Home Screen configurations (layout, scales, wallpaper) to switch between different looks
 - **Start with Home Screen** — set the Home Screen as the first screen KOReader opens every time you pick up your device
+
+### Custom Critters & Decorations
+
+Everything below belongs to the **Tiny Critter** Home Screen module and lives in `<KOReader settings dir>/simpleui/sui_critters/`.
+
+- **Your own critters** — put them in `<KOReader settings dir>/simpleui/sui_critters/` (created when you open the *Critter* picker, never touched by updates). A critter is a folder named after it holding `neutral.png` (required) and optionally one image per mood above, all with the same canvas size, or a single loose `.png` file used for every mood; `.svg` works too. A PNG whose longest side is 64 px or less is treated as pixel art and enlarged without smoothing. A critter with the same name as a bundled one replaces it.
+- **Your own decorations** — `.png` (or `.svg`) files in `sui_critters/decor/`. Loose files stand on the floor of the row; put them in `decor/wall/` to hang them at mid-height or in `decor/ceiling/` to hang them from the top. Pixel-art decorations are enlarged by the same factor as the critter.
+- **Your own phrases** — put a `phrases.lua` in the same folder, returning a list of `{ text = "...", sub = "...", mood = "happy", period = "morning", min_streak = 3, min_books = 1 }`. Only `text` is required; `sub` is the smaller second line (up to two lines in the bubble), `mood` is one of `neutral`, `happy`, `party`, `sleepy`, and `period` is one of `morning`, `afternoon`, `evening`, `night`. `text` and `sub` may use `{streak}`, `{books}`, `{pages}`, `{minutes}`, `{goal}`, `{weekday}` and `{name}` (the name you gave the critter); a phrase is skipped while one of its placeholders has no value. Set **Phrases** on the module to *Included and mine* or *Mine only*.
 
 ### Custom Screens
 
@@ -149,10 +163,13 @@ Custom cover art for folders in the Library mosaic view:
 
 ### Reading Stats & Streaks
 
-Beyond the compact Reading Stats module, SimpleUI adds dedicated statistics windows:
+The **Reading Stats** module is a grid of cards. Pick the stats you want, grouped into *Time* (today, week, month, year, daily average, all time), *Pages*, *Books* (finished, in progress, not started, abandoned) and *Habits* (streak, peak reading hour, most-read weekday, sessions, longest and average session, pages per hour). Choose the display style — **Cards**, **Detailed Cards** (adds week, year, hour-of-day, weekday and streak charts) or **List** — and set how many columns each card spans (Small, Medium, Large or Full row). Tapping the module opens the statistics windows below.
+
+SimpleUI also adds dedicated statistics windows:
 
 - **Reading Insights** — a year-by-year overview with a monthly chart and current/best day and week streaks
 - **Streak Manager** — a calendar view of your reading activity, with a **freeze** mechanic: bank freezes automatically as you read, then spend one to cover a single missed day right after an active one, so a one-off gap doesn't reset your streak
+- **Reading Heatmap** — the full-screen calendar and time-of-day grids, also opened by tapping the Reading Heatmap module
 - **Finished Books** — a list of every book you finished this year, with the date range you spent reading each one
 
 ### Quick Actions
@@ -175,7 +192,7 @@ All features are accessible from the **SUI Settings Window** — a full-screen, 
 Export your entire SimpleUI configuration to a single portable `.sui` file and restore it on any device:
 
 - **One-tap export** from *About → Backup & Restore*, or bind the **Backup** Quick Action to a bar or gesture
-- Choose what to include: appearance/style, home screen layout, bars, library settings, quick actions, goals & streaks, wallpaper, custom quotes, and custom icons (files included)
+- Choose what to include: appearance/style, home screen layout, bars, library settings, quick actions, goals & streaks, wallpaper, custom quotes, custom critters, and custom icons (files included)
 - Restore selectively — untick any category during import; preset libraries **merge** into yours (identical presets de-duplicate, conflicting ones are renamed `name (1)` instead of overwritten)
 - Files live in `settings/simpleui/backups/` — copy them somewhere safe (e.g. over USB) before re-flashing firmware
 
