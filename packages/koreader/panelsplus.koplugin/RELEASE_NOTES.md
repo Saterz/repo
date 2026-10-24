@@ -1,7 +1,7 @@
-# v1.5.0 · 2026-10-18
+# v1.5.1 · 2026-10-24
 
 <p align="center">
-<img width="95%" height="auto" alt="v_1_5_0-CoverComicc" src="https://github.com/user-attachments/assets/916bfd6d-032e-4889-8ddd-1204954b7084" />
+<img width="95%" height="auto" alt="image" src="https://github.com/user-attachments/assets/e71d0930-f028-4949-b15e-99134e12a244" />
 </p>
 
 <div align="center">
@@ -333,6 +333,20 @@ Starting from now, Panels+ comes in **two different builds/flavors**, allowing y
 Both versions are available in the **Assets / Downloads** section below.
 
 **If you enjoy Panels+, consider giving the repository a ⭐ on GitHub. It helps more people discover this project.**
+
+---
+
+v1.5.1: This release patch fixes an error with OCR Model Selection, that, for some reason it wasn't recognizing your hand-installed teserract OCR models.
+
+# v1.5.0 · 2026-10-18
+
+<p align="center">
+<img width="1566" height="237" alt="image" src="https://github.com/user-attachments/assets/0ea9d2b0-c6f6-41fc-9c17-6424c0753139" />
+</p>
+
+If you don't use any OCR related feature, you can download this release without any problems, otherwise...
+
+Prefer the newer version, with bug fixes here: https://github.com/KristanLaimon/PanelsPlus/releases/tag/v1.5.1
 
 # v1.4.0 · 2026-09-12
 
@@ -852,129 +866,3 @@ Copy `panels_plus.koplugin` over your existing folder and restart KOReader. Your
 - KristanLaimon
 
 Thanks for using PanelsPlus+, any bug you found, pls create an Issue and I'll fix it ASAP 👍🏻.
-
-# v1.0.0-RC5 · 2026-07-26
-
-<img width="1923" height="817" alt="Panels+ Release Candidate 5 banner" src="https://github.com/user-attachments/assets/14ad347d-845b-42fb-a4e5-72efb34c428b" />
-
-# Panels+ | Performance Update + Useful utilities
-
-Built from tag: `v1.0.0-RC5`
-
-This time, the release focuses on speed and pages/panels the panel detector used to miss. Opening panel view no longer stalls for seconds in very-low-end devices (yes, I'm looking at you `Kindle`), swiping between panels is smoother, and panels are now found on dark-background pages and in rows of small panels where detection previously gave up.
-
-## Highlights
-
-### Panel detection on dark pages
-KOReader's default detector recognizes panels by searching for *white* gaps. On pages with dark backgrounds or inverted colors, detection previously failed completely. 
-* **Dynamic Background Detection:** Panels+ now measures the page’s specific background color instead of assuming white.
-* **Inverted Page Support:** Dark-mode and white-on-black pages are now detected with the same accuracy as standard pages.
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/1e3db109-f35e-4908-ad6a-a1c343a0fc25" alt="Normal page" width="18%" /> &nbsp;&nbsp;
-  <img src="https://github.com/user-attachments/assets/65e92ff1-ecbd-4c90-973a-0b0518bcd4f2" alt="Panel 1" width="18%" />
-  <img src="https://github.com/user-attachments/assets/821c677e-df36-4542-a50c-1ba541585384" alt="Panel 2" width="18%" />
-  <img src="https://github.com/user-attachments/assets/3a3a1afd-cb8f-42f1-85f6-f377368f3948" alt="Panel 3" width="18%" />
-  <img src="https://github.com/user-attachments/assets/921d8416-f7a9-49f4-a322-aa6ed35ed794" alt="Panel 4" width="18%" />
-  <br><sub>Left: Normal page (no plugin) &nbsp;&nbsp;&nbsp;&#124;&nbsp;&nbsp;&nbsp; Right: Zoomed panels (Panels 1–4)</sub>
-</div>
-
-
-
-### Much faster panel detection
-Opening the panel view previously required rasterizing the full page at high resolution multiple times, causing severe slowdowns on e-readers.
-* **Single Reduced-Size Render:** Initial detection now runs against a lightweight, low-resolution ink map.
-* **Reused Rasterizations:** The fallback detection path reuses a single rasterization across all probe points rather than re-rendering per probe.
-* **Result:** Significantly faster startup when entering panel view, especially on lower-end hardware like Kindles.
-
-### Smoother panel switching
-Navigating between panels is now fluid and responsive.
-* **Eliminated UI Stalls:** Removed the forced full Garbage Collection (GC) trigger that ran on every panel switch.
-* **Background Pre-rendering:** The next panel renders in the background while you read the current one, making swipes feel instant.
-* **Smart Memory Management:** Pre-rendering automatically turns off when system RAM is low to prevent crashes.
-
-### Choose your detector
-A new **Panel Detection** menu allows you to switch detection algorithms on the fly to handle tricky comic layouts.
-* **Detector Modes:**
-  * **Auto:** Attempts Gutter mode first and gracefully falls back to Outline mode.
-  * **Gutter Mode:** Uses a fast, gap-based detector optimized for clean panel margins.
-  * **Outline Mode:** Uses KOReader’s native, literal contour detector for irregular layouts.
-* **Quick Toggle:** Cycle modes directly inside the panel viewer using the top-bar button.
-* **Additional Controls:** Toggles added for pre-rendering behavior and detection performance logs. More info in [Modes.md](../MODES.md).
-
-<p align="center" style="margin: 2rem 0;">
-  <img src="https://github.com/user-attachments/assets/3d17c44e-262b-4047-9dd2-eabb7a025fa3" alt="Normal page (no plugin activated yet)" width="50%">
-  <br>
-  <sub>New button "Auto mode" that cycles through <strong>Auto</strong>, <strong>Gutter</strong> & <strong>Outline</strong> when pressing</sub>
-</p>
-
-### A third crop mode: "With margin"
-Provides more flexibility over how panels fit on your screen, grouped into a dedicated control row in the viewer UI.
-* **"With Margin" Mode:** Adds a small, comfortable zoom-out buffer around the panel without revealing surrounding page content.
-* **Splash Page Guard:** Full-page and splash panels automatically bypass the margin zoom-out to avoid wasting screen real estate.
-* **Long-Press Configuration:** 
-  * Long-press the **Loose Crop** button to adjust the bleed area.
-  * Long-press the **With Margin** button to tune the zoom-out padding. Both are now hinted as "(Long press config)" in their label.
-* **Reorganized UI:** Crop and detector-mode buttons are now grouped together in their own row since both control how the current page is detected/cropped.
-
-<div align="center">
-  <video src="https://github.com/user-attachments/assets/aa34d5db-8e47-4b68-bd5b-fc90d3da6493" controls width="50%"></video>
-  <br>
-  <div style="display: inline-block; text-align: left; font-size: 0.9em; margin-top: 0.5rem;">
-    * Margin and loose cropping are configurable by long-pressing those buttons when they are actually selected
-  </div>
-</div>
-
-## Fixes
-
-- Rows of small panels separated by narrow gutters are now split into individual panels instead of being returned as one. The minimum detectable gutter went from roughly 15px to roughly 7px on a 1600px-wide page.
-- Panels separated by non-square or tilted gutters (up to 6 degrees) are now split using slanted line projections instead of being returned as a single grouped panel.
-- Panel detection no longer re-rasterizes the full page for every probe point.
-- Fixed bad page rendering handling where detector failures permanently disabled the batched fast-path session-wide, preventing high memory usage and KOReader crashes over long sessions.
-- Removed the forced garbage collection that ran on every panel switch.
-- Prefetch jobs scheduled for pages you have already turned past are now cancelled instead of all running anyway, and no scheduled work survives closing the document.
-- The panel cache holds 12 pages instead of 2, so stepping back a page no longer re-detects it from scratch.
-- Fixed the low-memory check for pre-rendering, which compared bytes against a kilobyte threshold and so never actually triggered.
-- Colour pages are now converted once before scanning rather than being read pixel by pixel through the slow path.
-
-## Documentation
-
-This release adds a `docs/` folder describing how the plugin works, with diagrams:
-
-- [Architecture](../ARCHITECTURE.md) — module map and what happens between a long hold and a panel on screen.
-- [Panel detection](../DETECTION.md) — how panels are found, why there are two detectors, and every tuning knob.
-- [Detector modes](../MODES.md) — reader-facing guide to Auto, Gutter, and Outline modes and how to diagnose misread pages.
-- [Performance](../PERFORMANCE.md) — what each step costs, the memory budget, and how to measure it on your own device.
-
-## Included Commits
-
-- `3c01185` perf(detector): probe a whole page against one rasterization
-- `c3b1fe6` feat(detector): detect panels from a low-resolution ink map
-- `ddcc5a8` perf(viewer): stop forcing a full GC and warm the next panel
-- `681e382` fix(cache): cancel stale prefetch work and keep more pages
-- `0a50b89` feat(menu): expose detector choice, prerender and timing logs
-- `5788415` docs: document the panel pipeline, detection and performance
-- `c5e26fe` fix(viewer): compare prerender headroom in bytes, not kilobytes
-- `3046f4d` perf(detector): sample the ink map from a greyscale buffer
-- `02eb292` docs: avoid a mermaid reserved word in the module diagram
-- `3c57e00` fix(detector): split panel rows separated by narrow gutters
-- `30c7550` fix(detector): split panels whose gutters are not square
-- `f25541b` feat(viewer): cycle Auto, Fast and Exact mode from the panel view
-- `bb8fe6a` docs: cover tilted gutters and the viewer mode button
-- `3880511` refactor(viewer-ui): Better names in new ui option
-- `62db13f` fix: Fixed bad page rendering handling making crash koreader over time
-- `42b5eb1` docs: Updated docs
-- `ebd4683` chore(git): ignore vendored koreader reference tree
-- `f6ccd6b` feat: Add adjustable "With margin" crop mode
-- `9b5c617` feat: Make loose crop's bleed amount configurable via long-press
-- `ea303d9` ui: Hint that Loose crop and With margin are long-press configurable
-- `ced709c` ui: Move crop button to the second button row
-- `0fd0edf` ui: Give detector and crop buttons their own third row
-
-## Upgrading
-
-Copy `panels_plus.koplugin` over your existing folder and restart KOReader. Your settings are kept; the detector and cache values tuned in this release are applied automatically.
-
-## Author
-
-- KristanLaimon
