@@ -1,3 +1,35 @@
+# v1.11.1-dev.1 · 2026-10-24
+
+## [1.11.1-dev.1](https://github.com/pierspad/notebook.koplugin/compare/v1.11.0...v1.11.1-dev.1) (2026-10-24)
+
+### 🐛 Bug Fixes
+
+* use sans-serif release notes ([7910f13](https://github.com/pierspad/notebook.koplugin/commit/7910f133424060edc026843710c883d8f620de72))
+
+# v1.11.0-dev.3 · 2026-10-24
+
+## [1.11.0-dev.3](https://github.com/pierspad/notebook.koplugin/compare/v1.11.0-dev.2...v1.11.0-dev.3) (2026-10-24)
+
+### 🐛 Bug Fixes
+
+* reconcile gray ink with regional REAGL ([8574f9e](https://github.com/pierspad/notebook.koplugin/commit/8574f9e8f5480aeadf1d138abef25821b36bb406))
+
+# v1.11.0-dev.2 · 2026-10-24
+
+## [1.11.0-dev.2](https://github.com/pierspad/notebook.koplugin/compare/v1.11.0-dev.1...v1.11.0-dev.2) (2026-10-24)
+
+### 🐛 Bug Fixes
+
+* recover from PDF preview failures ([d3d824f](https://github.com/pierspad/notebook.koplugin/commit/d3d824f163985173189d95fef0ff403acd7ff83b))
+
+### 🔧 Improvements
+
+* cache brush modules in input loops ([7b8dabd](https://github.com/pierspad/notebook.koplugin/commit/7b8dabd422e9fdf11a89c296995c2ec134f7a70b))
+* crop page snapshots to drawable content ([32048e6](https://github.com/pierspad/notebook.koplugin/commit/32048e692146409b60d5b92f99e5df1211a43a6f))
+* keep ink tile copies tightly packed ([0b4d3a6](https://github.com/pierspad/notebook.koplugin/commit/0b4d3a6a48ff20658e99e05dd1cb738e59e34b26))
+* load only the thumbnail page strokes ([5ae99d2](https://github.com/pierspad/notebook.koplugin/commit/5ae99d2b149d5f83a2becf7b356783857eee2df6))
+* snapshot only active ink tiles ([1e67165](https://github.com/pierspad/notebook.koplugin/commit/1e671651f4e362de0595dc416abc821735cddd56))
+
 # v1.11.0-dev.1 · 2026-10-23
 
 ## [1.11.0-dev.1](https://github.com/pierspad/notebook.koplugin/compare/v1.10.0...v1.11.0-dev.1) (2026-10-23)
@@ -24,31 +56,3 @@
 ### Features
 
 * add clickable gallery folder breadcrumbs and direct home navigation ([97c0507](https://github.com/pierspad/notebook.koplugin/commit/97c05075596ad6740d186ced55b38af293787b25))
-
-# v1.8.0-dev.1 · 2026-10-09
-
-## [1.8.0-dev.1](https://github.com/pierspad/notebook.koplugin/compare/v1.7.2...v1.8.0-dev.1) (2026-10-09)
-
-### Features
-
-* allow explicit opt-in to prerelease plugin updates ([47757a3](https://github.com/pierspad/notebook.koplugin/commit/47757a396283963562af134899af7dd3c732d0ab))
-
-### Bug Fixes
-
-* reject mislabeled Scribe 2 palm slots without losing stylus fallback ([fdbad4f](https://github.com/pierspad/notebook.koplugin/commit/fdbad4f5397715ea13065f5b47ee1048d50d56c6)), closes [#4](https://github.com/pierspad/notebook.koplugin/issues/4)
-
-# v1.7.0-dev.1 · 2026-10-04
-
-## [1.7.0-dev.1](https://github.com/pierspad/notebook.koplugin/compare/v1.6.3...v1.7.0-dev.1) (2026-10-04)
-
-### Features
-
-* add autosaved notebook workflows, embedded images and paper controls ([8e3a274](https://github.com/pierspad/notebook.koplugin/commit/8e3a2742384d1881f55fee8ab3fdf8d07cc0b16e))
-
-# v1.5.0-dev.3 · 2026-09-30
-
-## [1.5.0-dev.3](https://github.com/pierspad/notebook.koplugin/compare/v1.5.0-dev.2...v1.5.0-dev.3) (2026-09-30)
-
-### Performance Improvements
-
-* optimize lasso, cached page rendering and XOPP checksums ([c5300cb](https://github.com/pierspad/notebook.koplugin/commit/c5300cbb64092517727026f1288a592042c34325))
