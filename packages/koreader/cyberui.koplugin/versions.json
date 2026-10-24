@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"CyberUI.koplugin-v1.0.0.zip","url":"https://github.com/EmirErtorer/CyberUI.koplugin/releases/download/v1.0.0/CyberUI.koplugin-v1.0.0.zip","size":1397442,"digest":"sha256:4bf39261a70e762811075d549eebc4bd6ac3d7656c8b7c38a4302b5e404865be"}],"name":"CyberUI 1.0.0"}]
+}
