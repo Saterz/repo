@@ -1,3 +1,25 @@
+# v1.7.0 · 2026-10-25
+
+## Meguru v1.7.0
+
+Two new optional integrations.
+
+### [Bookshelf](https://github.com/AndyHazz/bookshelf.koplugin) (OPDS catalog browser)
+
+- **▶ Meguru this series** row in Bookshelf's OPDS catalog window opens a series directly in Meguru.
+- **`.meguru` files also open from folder shelves** with bookshelf.koplugin 5.5.0+.
+
+### [Panels+](https://github.com/KristanLaimon/PanelsPlus)
+
+- **Panels+ added as an option for the long-press.** *Panel view* puts `panels+` first, followed by `off` and all three Meguru views: `panel cut`, `pan & zoom`, and `free view`.
+- **Panels+ OCR text selection now works in Meguru**, in the Panels+ view only.
+
+### Thanks
+
+- [AcidWeb](https://github.com/AcidWeb) for [bookshelf.koplugin PR #496](https://github.com/AndyHazz/bookshelf.koplugin/pull/496), which made the Bookshelf integration possible
+
+**Full Changelog**: https://github.com/Craftwork2720/meguru/compare/v1.6.0...v1.7.0
+
 # v1.6.0 · 2026-10-16
 
 ## New features
@@ -54,28 +76,3 @@
 - **ComicInfo.xml switch** — Settings → *Read metadata from ComicInfo.xml*. On by default; off = local `.cbz` titled by file name
 
 **Full Changelog**: https://github.com/Craftwork2720/meguru/compare/v1.4.0...v1.5.2
-
-# v1.4.0 · 2026-10-03
-
-## New features
-
-- **Two-page view**: shows two pages at once as a spread (off / landscape only / always, set per book). Wide pages are shown alone and the pairing restarts after them, so spreads never get cut in half
-- **Pair offset**: lets you shift which pages get paired, for books where the pairing is off by one page. Can also be bound to a gesture
-- **Flexible gutter**: brings back as much of the trimmed inner margin as fits between the two pages, without exceeding what the original page had
-- **Bottom menu reorganized** into 4 tabs: Reading, Page, Rotation, Tone — plus an Info button showing current page, progress, and book metadata (with full description in its own popup)
-
-## Improvements
-
-- Shorter pages in a pair are now scaled up to fill the space, so mismatched page heights no longer leave blank space
-- Panel cropping is now flush on all sides, and keeps a background frame on dark pages
-- Slanted-border panels are now cropped along their actual border instead of the first detected line
-- Menu rows renamed to match what they do: *Crop*, *Reading direction*, *Pair offset*, *Panel view*, *View mode* (now under *Fit*), and *Tone* has its own tab again
-- Left/right arrows now navigate panel views in the book's own reading direction
-
-## Bug fixes
-
-- Fixed an issue where opening a book would request a page before the first one, causing a failed fetch (HTTP 400)
-- Page numbers touching the edge of the artwork are now cropped correctly again
-- Fixed a visual glitch where switching crop from off to auto briefly showed the old margin color
-
-**Full Changelog**: https://github.com/Craftwork2720/meguru/compare/v1.3.0...v1.4.0
