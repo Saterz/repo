@@ -1,3 +1,10 @@
+# v6.0.1 · 2026-10-25
+
+- Fix: cover shadows on colour screens (#550).
+- Fix: top panel flicker under other plugins' windows (#549).
+- Smaller status line refresh.
+- Fix: keyboard access to the module editor.
+
 # v6.0.0 · 2026-10-25
 
 - Micro-modules have a layout editor: long-press a module, or the space between modules, to move it, resize it, send it to another page or add more. Swipe a module to move it, pinch or spread to resize it. Full screen is a 6-column grid with up to four pages (swipe or tap the dots); the top panel is two rows. Portrait and landscape keep their own layouts.
@@ -54,8 +61,3 @@
 - Fix: the section labels on Spines shelves show your Folder overlay colour instead of a grey (#525).
 - Fix: Calibre metadata is found on a Kobo whose home folder was never set (#517).
 - Fix: About now warns about another copy of bookshelf in a custom plugin folder.
-
-# v5.5.2 · 2026-10-16
-
-- Random book can open the book straight away: long-press the module > Module settings… > On tap > Open book directly.
-- Fix: on PocketBook colour readers such as the Era Color, panel shading and the plates under cover captions are see-through instead of solid (#520).

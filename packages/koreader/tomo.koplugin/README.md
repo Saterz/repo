@@ -3,6 +3,10 @@
 
 # Tomo
 
+[![Latest release](https://img.shields.io/github/v/release/Tokeloshe/tomo?sort=semver&label=release&color=blue)](https://github.com/Tokeloshe/tomo/releases/latest)
+[![Downloads of the latest release](https://img.shields.io/github/downloads/Tokeloshe/tomo/latest/total?label=downloads%20(latest)&color=success)](https://github.com/Tokeloshe/tomo/releases/latest)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-Tokeloshe-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/Tokeloshe)
+
 A social reading companion for Kobo and Kindle e-readers.
 
 Tomo (友, friend) is a plugin for KOReader that adds quiet social presence to your reading life. It is not a social network. It has no feed, no algorithm, no engagement metrics. It is simply a place where readers can be together.
@@ -171,7 +175,7 @@ Export my data
 Leave Tomo
 
 ABOUT
-Tomo v2.7.3
+Tomo v2.7.4
 友 (tomo) means "friend" in Japanese.
 (c) 2026 James Edward Honiball
 ```
@@ -233,8 +237,9 @@ When it finishes, safely eject the drive and restart KOReader. The same command 
 ### If Tomo does not appear
 
 - **Check the second page of the Tools menu.** KOReader paginates its menus, and Tomo may be on page two.
+- **Check Plugin management.** On KOReader 2026.07 and later, open Tools → More tools → Plugin management → User plugins and make sure Tomo is enabled. A plugin switched off there is hidden from the Tools menu.
 - **Check the folder nesting.** The file `main.lua` must be at `plugins/tomo.koplugin/main.lua`. If it ended up at `plugins/tomo.koplugin/tomo.koplugin/main.lua`, move the inner folder up one level.
-- **Check the folder name.** It must be exactly `tomo.koplugin`, not `tomo.koplugin-v2.7.3` or `tomo`.
+- **Check the folder name.** It must be exactly `tomo.koplugin`, not `tomo.koplugin-v2.7.4` or `tomo`.
 - **Restart properly.** Exit KOReader fully and reopen it.
 
 ## Supported devices

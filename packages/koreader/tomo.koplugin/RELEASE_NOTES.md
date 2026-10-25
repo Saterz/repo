@@ -1,3 +1,36 @@
+# v2.7.4 · 2026-10-25
+
+<!-- © 2026 James Edward Honiball. All Rights Reserved. -->
+<!-- Tomo™ (友) — Social Reading Companion for Kobo -->
+
+Tomo v2.7.4
+
+A quieter release. There is nothing new to learn; Tomo simply stays steadier.
+
+**Steadier after sleep.** When your reader wakes, Tomo renews its session on its own before it talks to the server, so your rooms and profile load the first time instead of waiting for a relaunch. If Wi-Fi is slow to come back, Tomo tries again a little later by itself.
+
+**A full storage no longer interrupts a sync.** When the device runs out of space, Tomo notes it quietly and carries on. Nothing is interrupted mid-sync.
+
+**Letters are checked before they are sealed.** If a letter could not be saved, for example when storage is full, Tomo tells you and keeps your drawing on the page.
+
+**Fewer surprises.** Many small fixes so that an unexpected reply from the server, a missing detail in a message, or a damaged cache file can no longer close a screen. A damaged cache rebuilds itself on the next launch.
+
+**Updates install more carefully.** Every file in an update is checked before it replaces the old version, and if anything goes wrong the previous version is put back.
+
+Also in this release: Tomo is tested against KOReader 2026.07, and crash reports now contain only Tomo's own error, never lines from other plugins.
+
+---
+
+**To install for the first time:** download `tomo.koplugin-v2.7.4.zip` below, unzip it, and copy the `tomo.koplugin` folder into KOReader's `plugins` folder. Full step-by-step instructions are in the README.
+
+**Already have Tomo?** It updates itself over Wi-Fi the next time you open it.
+
+Requires KOReader 2024.07 or later.
+
+---
+
+Tomo is free and made by one person. If it has given you something, you can buy me a coffee at https://buymeacoffee.com/Tokeloshe
+
 # v2.7.3 · 2026-07-03
 
 <!-- © 2026 James Edward Honiball. All Rights Reserved. -->
@@ -37,7 +70,3 @@ Crash report dedup and upload fix, Kindle device ID fallback, crash log parser, 
 # v2.6.5 · 2026-03-31
 
 Fixed OTA updater failing silently. Update now retries on failure and always re-prompts until successful. OTA failures now report to crash telemetry.
-
-# v2.6.4 · 2026-03-31
-
-Username and user data now persist across OTA updates. All settings cached from Supabase to external storage.
