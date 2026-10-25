@@ -1,3 +1,11 @@
+# v8.5.3 · 2026-10-25
+
+# AppDock 8.5.3
+
+AppDock enthält jetzt eine optionale Doom-DApp für Kobo. Die DApp nutzt den vorhandenen doomgeneric-VNC-Port und stellt Touch-Steuerung, Seitentasten, Waffenwahl, Karte sowie Quicksave und Quickload direkt in AppDock bereit.
+
+Die nativen Doom-Binaries und Freedoom-WADs werden nicht Bestandteil des AppDock-Kernupdates. Sie können separat über DockUpdate 1.4.11 nach `.adds/doom` installiert werden. Bestehende Installationen werden dabei nicht überschrieben.
+
 # v8.5.2 · 2026-10-25
 
 # AppDock 8.5.2 — NetSurf-Browser
@@ -23,5 +31,3 @@ Raster ohne Überschrift: "Apps · 9" und der Edit-Button sind im Normalbetrieb 
 Außerdem: Der Rand der ausgewählten Kachel im Bearbeitungsmodus nutzte eine Farbe, die es gar nicht gab. Das habe ich behoben.
 
 # v8.4.6 · 2026-10-24
-
-# v8.4.5 · 2026-10-24
