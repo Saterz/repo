@@ -1,3 +1,48 @@
+# v0.2.39 · 2026-10-25
+
+## 月读 v0.2.39
+
+KOReader 插件包：`book.koplugin-v0.2.39.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.39.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.39.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.38`：
+
+#### 新功能
+
+- :sparkles: (wallpaper): 界面壁纸支持选文件夹，启动 / 唤醒随机换图 (eec139ca)
+- :sparkles: (legado): 开源阅读支持 reader3 与轻阅读后端，可登录 (4583be57)
+- :sparkles: (monitor): 设置页新增运行状态，按内存 / CPU 列出进程 (c8107dcf)
+
+#### 修复
+
+- :bug: (jjwxc): 修复设置页「晋江账号」点不动，登录入口回调引用了尚未声明的局部函数 (fa4fe256)
+- :bug: Kindle 原生蓝牙按真实字段 bd_name / bd_address 读取，修复只显示 MAC (a93797ad)
+- :bug: (utils): 模块加载器同名时目录模块压过残留的旧 .lua (e0b04d2d)
+- :bug: (remote): 文件页快捷入口只高亮包含当前目录的最深一项 (1957a3db)
+
+#### 性能
+
+- :zap: online 任务最终失败后指数冷却，避免弱网下反复入队 (083d79d1)
+
+#### 文档
+
+- :memo: (readme): 补充翻页器 pageturner 联动插件的说明与安装 (54da1409)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.38...v0.2.39
+
 # v0.2.38 · 2026-10-24
 
 ## 月读 v0.2.38
@@ -213,42 +258,3 @@ KOReader 插件包：`book.koplugin-v0.2.35.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.34...v0.2.35
-
-# v0.2.34 · 2026-10-23
-
-## 月读 v0.2.34
-
-KOReader 插件包：`book.koplugin-v0.2.34.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.34.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.34.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.33`：
-
-#### 新功能
-
-- :sparkles: (qidian): 接入段评 (5ea71abc)
-- :sparkles: (jjwxc): 支持账号密码登录 (c5815c72)
-- :sparkles: (jjwxc): 接入段评 (dbdf30b4)
-- :sparkles: (cookie): 远程授权成功后支持重新授权，长佩人机验证标记登录失效 (901c4a88)
-
-#### 修复
-
-- :bug: (wechat): 划线合并去掉同 range 孪生记录与未确认的本地重复划线 (90c3c69b)
-
-#### 文档
-
-- :memo: (readme): 数据源表重写为能力矩阵，补晋江、起点段评 (02eb0eaf)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.33...v0.2.34
