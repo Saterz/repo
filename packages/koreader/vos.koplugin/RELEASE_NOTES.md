@@ -1,3 +1,14 @@
+# v1.3.5 · 2026-10-25
+
+What's changed:
+- Expanded custom tabs functionality to add plugin actions as tabs
+- Removed rounded covers applying to Simple UI to avoid crashes
+
+Fixes:
+- Fixed crashing with Simple UI v3.0
+
+**Full Changelog**: https://github.com/SeriousHornet/vos.koplugin/compare/v1.3.4...v1.3.5
+
 # v1.3.4 · 2026-08-25
 
 What's changed:
@@ -33,15 +44,3 @@ Changelog:
 - Fixed updater not catching the download
 
 **Full Changelog**: https://github.com/SeriousHornet/vos.koplugin/compare/v1.3.0...v1.3.1
-
-# v1.3.0 · 2026-08-18
-
-Changelog:
-
-- cleaned up settings entries
-- rearranged Extras menu entries; renamed QS and Title bar
-- added label font size and position picker to series badge
-- added OTA feature
-
-
-**Full Changelog**: https://github.com/SeriousHornet/vos.koplugin/compare/v1.2.0...v1.3.0
