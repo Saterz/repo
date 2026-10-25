@@ -1,3 +1,43 @@
+# v0.2.44 · 2026-10-25
+
+## 月读 v0.2.44
+
+KOReader 插件包：`book.koplugin-v0.2.44.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.44.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.44.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.43`：
+
+#### 新功能
+
+- :sparkles: (fontmap): 自动检测书内缺失字体并支持映射 (19ac382e)
+- :sparkles: (passcode): 新增手势密码，与 PIN 互斥切换 (8eb14b85)
+- :sparkles: (reflow): TXT 重新排版支持 GBK / UTF-16 转码，不再只认 UTF-8 (db6dd182)
+
+#### 修复
+
+- :bug: (fontmap): 增加默认关闭的字体映射开关 (9517bb03)
+- :bug: (fonts): 异步修复缺失空格的微信字体 (bd70ed14)
+- :bug: (ui): 状态列按文字宽度扩展，避免总内存被截断 (eabe181d)
+
+#### 变更
+
+- :white_check_mark: (fontmap): 补齐默认关闭开关的设置页回归 (477b2184)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.43...v0.2.44
+
 # v0.2.43 · 2026-10-25
 
 ## 月读 v0.2.43
@@ -158,48 +198,3 @@ KOReader 插件包：`book.koplugin-v0.2.40.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.39...v0.2.40
-
-# v0.2.39 · 2026-10-25
-
-## 月读 v0.2.39
-
-KOReader 插件包：`book.koplugin-v0.2.39.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.39.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.39.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.38`：
-
-#### 新功能
-
-- :sparkles: (wallpaper): 界面壁纸支持选文件夹，启动 / 唤醒随机换图 (eec139ca)
-- :sparkles: (legado): 开源阅读支持 reader3 与轻阅读后端，可登录 (4583be57)
-- :sparkles: (monitor): 设置页新增运行状态，按内存 / CPU 列出进程 (c8107dcf)
-
-#### 修复
-
-- :bug: (jjwxc): 修复设置页「晋江账号」点不动，登录入口回调引用了尚未声明的局部函数 (fa4fe256)
-- :bug: Kindle 原生蓝牙按真实字段 bd_name / bd_address 读取，修复只显示 MAC (a93797ad)
-- :bug: (utils): 模块加载器同名时目录模块压过残留的旧 .lua (e0b04d2d)
-- :bug: (remote): 文件页快捷入口只高亮包含当前目录的最深一项 (1957a3db)
-
-#### 性能
-
-- :zap: online 任务最终失败后指数冷却，避免弱网下反复入队 (083d79d1)
-
-#### 文档
-
-- :memo: (readme): 补充翻页器 pageturner 联动插件的说明与安装 (54da1409)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.38...v0.2.39

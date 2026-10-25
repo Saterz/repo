@@ -1,3 +1,10 @@
+# v1.4 · 2026-10-25
+
+What's Changed:
+- Added compatibility to SimpleUI v.3.0
+
+**Full Changelog**: https://github.com/SeriousHornet/vos.koplugin/compare/v1.3.5...v1.4
+
 # v1.3.5 · 2026-10-25
 
 What's changed:
@@ -36,11 +43,3 @@ Changelog:
 - Fixed folder counts to include both files and folders inside
 
 **Full Changelog**: https://github.com/SeriousHornet/vos.koplugin/compare/v1.3.1...v1.3.2
-
-# v1.3.1 · 2026-08-19
-
-Changelog:
-- Fixed not working on Android devices
-- Fixed updater not catching the download
-
-**Full Changelog**: https://github.com/SeriousHornet/vos.koplugin/compare/v1.3.0...v1.3.1
