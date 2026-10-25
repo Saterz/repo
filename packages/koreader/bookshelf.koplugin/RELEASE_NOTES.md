@@ -1,3 +1,8 @@
+# v6.0.2 · 2026-10-25
+
+- Fix: Refresh metadata (#552)
+- New functions for module authors
+
 # v6.0.1 · 2026-10-25
 
 - Fix: cover shadows on colour screens (#550).
@@ -53,11 +58,3 @@
 - Fix: KOReader gestures (brightness swipes, corner taps) and LiveLight's edge slides work over the shelf, book details and the ornament zoom while a closed book is still finishing.
 - Fix: Shelf size in the full-screen view catches up after you finish a book.
 - Fix: the About logo shows properly in night mode.
-
-# v5.5.3 · 2026-10-17
-
-- Shelf of shelves: the stack count badge now shows on its shelves' tiles, under Folders only or All stacks (#527), and Random book on "current shelf only" picks from the shelves inside it (#528).
-- Spines: face-out covers keep the theme's border, so a custom Border colour no longer outlines them apart from the book.
-- Fix: the section labels on Spines shelves show your Folder overlay colour instead of a grey (#525).
-- Fix: Calibre metadata is found on a Kobo whose home folder was never set (#517).
-- Fix: About now warns about another copy of bookshelf in a custom plugin folder.

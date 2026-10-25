@@ -1,3 +1,7 @@
+# v8.5.4 · 2026-10-25
+
+Play DOOM on your eReader
+
 # v8.5.3 · 2026-10-25
 
 # AppDock 8.5.3
@@ -29,5 +33,3 @@ App-Drawer-Symbol: Es ist jetzt das 3×3-Punktraster statt des 2×2-Gitters mit 
 Seitenanzeige: Statt "‹ 1 / 2 ›" gibt es Punkte, die aktive Seite als Kapsel. Ein Tipp auf die Reihe springt zur nächsten Seite, ein Wisch geht weiterhin.
 Raster ohne Überschrift: "Apps · 9" und der Edit-Button sind im Normalbetrieb weg. Der Bearbeitungsmodus startet wie bei Android per langem Druck auf eine freie Stelle oder auf eine App. Hinweis und "Done" erscheinen nur beim Bearbeiten.
 Außerdem: Der Rand der ausgewählten Kachel im Bearbeitungsmodus nutzte eine Farbe, die es gar nicht gab. Das habe ich behoben.
-
-# v8.4.6 · 2026-10-24
