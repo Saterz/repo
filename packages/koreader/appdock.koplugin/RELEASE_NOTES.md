@@ -1,3 +1,13 @@
+# v8.5.2 · 2026-10-25
+
+# AppDock 8.5.2 — NetSurf-Browser
+
+AppDocks Browser startet jetzt standardmäßig NetSurf anstelle der integrierten Browser-Startseite. Der bisherige AppDock-Browser bleibt als Fallback verfügbar, falls NetSurf nicht installiert ist.
+
+DockUpdate bezieht das neue Browser-Modul `appdock_netsurf.lua` ab Version 8.5.2. Bei einem bestätigten AppDock-Update wird das NetSurf-Paket nach `/mnt/onboard/.adds/netsurf` entpackt; vorhandene Installationen werden nicht überschrieben.
+
+Nach der Aktualisierung AppDock bzw. KOReader neu starten. NetSurf benötigt das mitgelieferte Reader-Binary und ausreichend freien Speicher im `.adds`-Verzeichnis.
+
 # v8.5.1 · 2026-10-25
 
 # v8.5.0 · 2026-10-25
@@ -15,5 +25,3 @@ Außerdem: Der Rand der ausgewählten Kachel im Bearbeitungsmodus nutzte eine Fa
 # v8.4.6 · 2026-10-24
 
 # v8.4.5 · 2026-10-24
-
-# v8.4.4 · 2026-10-24
