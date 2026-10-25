@@ -1,3 +1,5 @@
+# v8.5.1 · 2026-10-25
+
 # v8.5.0 · 2026-10-25
 
  jetzt anders aussieht:
@@ -15,5 +17,3 @@ Außerdem: Der Rand der ausgewählten Kachel im Bearbeitungsmodus nutzte eine Fa
 # v8.4.5 · 2026-10-24
 
 # v8.4.4 · 2026-10-24
-
-# v8.4.3 · 2026-10-24
