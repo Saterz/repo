@@ -1,3 +1,7 @@
+# v4.1.55 · 2026-10-26
+
+Built from the published Calibre-Web NextGen v4.1.55 source tag.
+
 # v4.1.48 · 2026-10-18
 
 Built from the published Calibre-Web NextGen v4.1.48 source tag.
