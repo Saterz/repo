@@ -1,3 +1,13 @@
+# v1.4.1 · 2026-10-26
+
+What's Changed:
+
+- Added rounded covers to books in Simple UI's homescreen
+- Added Automatic series grouping into virtual folders
+
+
+**Full Changelog**: https://github.com/SeriousHornet/vos.koplugin/compare/v1.4...v1.4.1
+
 # v1.4 · 2026-10-25
 
 What's Changed:
@@ -32,14 +42,3 @@ Changelog:
 - fixed crash on some devices
 
 **Full Changelog**: https://github.com/SeriousHornet/vos.koplugin/compare/v1.3.2...v1.3.3
-
-# v1.3.2 · 2026-08-19
-
-Changelog:
-
-- Added double tap to open patch to Extras
-- Added exclude folder patch to Extras
-- Switched to background-agnostic corner rounding from svg based
-- Fixed folder counts to include both files and folders inside
-
-**Full Changelog**: https://github.com/SeriousHornet/vos.koplugin/compare/v1.3.1...v1.3.2

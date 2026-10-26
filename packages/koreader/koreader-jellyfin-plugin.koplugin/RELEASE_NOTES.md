@@ -1,3 +1,18 @@
+# v1.3.0 · 2026-10-26
+
+Features:
+- Added optional top menu tab for easy plugin access (thanks @Tewelus!).
+- Ability to sort by date added to Jellyfin (requested by @edent).
+- Added option to browse books as structured in folders under the 'Sort & filter' settings (requested by @dirkson).
+- Hid 'Logout' button if not logged in.
+- Moved 'Configure server' setting under 'Login' menu.
+
+Fixes:
+- Fixed reading progress sync for relative book paths (thanks @Tewelus!).
+- Fixed crashes in some cases when sorting (thanks @edent and @Meas for reporting).
+
+**Full Changelog**: https://github.com/DeclanChidlow/KOReader-Jellyfin-Plugin/compare/v1.2.0...v1.3.0
+
 # v1.2.0 · 2026-09-13
 
 - Overhaul the interface.
