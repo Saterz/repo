@@ -20,7 +20,7 @@ and packaged by [ZenLabs](https://github.com/xZenLabs) for
 | **Icons8 Colour** | Original multicolour Flat Color artwork, with supplementary UI symbols | `zen-icons8-colour.zip` |
 | **Icons8 Mono** | Native Windows 10 outlines, with matching outline adaptations | `zen-icons8-mono.zip` |
 
-Each style has **244 editable SVGs** using its exact runtime lookup filenames.
+Icons8 Colour has **327 editable SVGs** and Icons8 Mono has **320**, each using its exact runtime lookup filenames.
 Both packs theme all **23 built-in choices under Navbar → Tabs → Add → Tab**.
 KOReader and Zen icons retain their exact lookup names. Shared artwork under
 different lookup names is stored as editable source SVGs. No Lua manifests are needed.
@@ -55,6 +55,10 @@ font glyphs continue to use their fonts.
 See [icon-sources.csv](icon-sources.csv) for every source filename, pinned upstream
 link, and adaptation.
 
+Reader controls include `pin.svg`, `footnote.svg`, `return.svg`, and the
+compatible `return_old.svg` lookup, alongside the highlight style, color,
+delete, filter, and sort icons.
+
 ## Install
 
 1. Download `zen-icons8-colour.zip` or `zen-icons8-mono.zip` from
@@ -86,6 +90,7 @@ Categories without replacement artwork can be absent:
 ├── menus/                    # Zen menu entry points
 ├── reader/                   # Page browser: TOC, vocabulary, view modes
 ├── device/
+├── settings/                 # Zen settings menu rows
 └── koreader/                 # Stock KOReader icons, including plus/info
 ```
 

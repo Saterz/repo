@@ -1,3 +1,36 @@
+# v1.1.0-beta.3 · 2026-10-26
+
+**Tomedown 1.1.0-beta.3, the third beta of the per book edition.**
+
+The second beta gave the two copies beside each file a fixed job. This one repairs the cards that ran the first beta, where those copies were still being rotated, and makes sure a cloud copy written elsewhere cannot take the parked notes with it. The everyday promise does not change: preserve on, off, on behaves like a file you keep editing and saving.
+
+A beta, and it behaves like one: it replaces 1.0.0 in the plugin folder (going back means installing the 1.0.0 zip again). What it needs is a week of real reading, and a note from you the moment something feels off.
+
+## Highlights
+
+- **The notes the first beta hid come back.** The first beta rotated every copy into `.bak.1`, so a card that ran it can hold the notes behind a newer copy without a zone, where the second beta did not look. The first export now swaps the two slots once, undoes a rename the filesystem refuses, and puts back a copy left in `.bak.swap` by an interrupted swap. Nothing is overwritten on the way.
+- **Preserve on, off, on works like a text file.** Turn preserve off and the zoned file, notes included, is parked as `<name>.md.bak` while the plain export takes its place. Turn it on and that copy becomes the base of the next export: your notes are back. Every note you added is there, one you deleted stays deleted. Ten times in a row, if you like.
+- **A copy written elsewhere no longer takes the parked notes.** If the cloud copy was replaced by another writer (a second Tomedown, a sync app resolving a conflict) and this device still has notes parked in `.bak`, the two zones are joined instead of one replacing the other. The cloud text keeps its place and its order, and the paragraphs that exist only in `.bak` follow it. What the rewrite replaces is kept as the safety copy first.
+- **The queued upload repairs the copies first.** When the connection comes back before an export runs, the flush was writing `.bak.1` straight away. Now it fixes the first beta's slots and folds the parked notes in before it writes.
+
+## Changed
+
+- A note reworded in the cloud is recognized by its first line and is not copied twice.
+- If the join between the two zones cannot be made, the export is held back and nothing is written, the way a copy that cannot be written already works.
+- The README and the roadmap describe the recovery, including its one price: a note deleted in Obsidian while this device still had it parked comes back, visible and easy to delete again.
+
+## What to try first
+
+On a book with notes, turn preserve off, look at `<book>.md.bak`, turn it on and export: the notes are back. Do it twice more. If you ran 1.1.0-beta.1, this first export is also the one that puts the two copies back in the right slots.
+
+## Installing
+
+Download `tomedown.koplugin-v1.1.0-beta.3.zip` from the **Assets** section at the bottom of this page (not the *Source code* archive), unzip it into `koreader/plugins/` and restart KOReader.
+
+The beta is also opt-in inside KOReader: *Settings → Updates → Developer*, with *Beta Releases* ticked, will offer it. Without that tick nothing changes, the background check stays on stable releases and nobody gets nudged towards it.
+
+README, full tutorial, quickstart sheets and Obsidian guide sheets: https://github.com/imanubdesigner/tomedown.koplugin
+
 # v1.1.0-beta.2 · 2026-10-26
 
 **Tomedown 1.1.0-beta.2, the second beta of the per book edition.**
@@ -137,34 +170,5 @@ Fifth beta of the **Vault** release: a cleaner layout for every exported file.
 3. Export once — everything rewrites — and check in Obsidian: the rule after the properties, the stats line above the index table, the centered cover.
 
 All 757 test assertions green.
-
-*Remotely Save users: set **Abort Sync If Modification Above Percentage** to **100 (disable the protection)** — Tomedown re-exports notes in bulk, which trips the default 50% guard.*
-
-# v0.8.0-beta.4 · 2026-10-02
-
-> **This is a more stable beta of the Vault release — if you want to try the book covers, this is a good moment to test them.**
-
-Fourth beta of the **Vault** release: keywords now export as always-valid Obsidian tags.
-
-## Fixes
-
-- **Keywords are sanitized by a whitelist now, not a blacklist** — Obsidian's real tag validator is stricter than its documented forbidden list, so `Horror tales; American` survived the previous fix (`;` is not in the docs' list) and its chip stayed struck through in the properties, as did anything carrying `'`, `=`, `[`, `]` or `#`. `sanitizeTag` keeps only letters, numbers, `-`, `_`, `/` and every non-ASCII character (accents, emoji): whitespace becomes `-`, everything else outside the whitelist is dropped. Books whose keywords change re-export automatically at the next export (hash migration) — nothing to clean up in the vault.
-
-## 0.8.0 recap (betas 1–4)
-
-- Book covers in the exports (frontmatter + `<img>` + index column), Obsidian 1.8.1+
-- Covers upload into their own `covers/` folder, created on the server on the first upload
-- Callouts on export, new index (v2)
-- Special Highlight: its own menu entry plus a dynamic row in the compact highlight menu
-- Status popup: wide (90% of the screen), small font, labels in bold
-- Keywords always valid Obsidian tags (whitelist)
-
-## Beta focus
-
-1. On the Kindle: Settings → **Beta Releases** ON → *Check for updates* → update to beta.4 and restart.
-2. On desktop: reinstall the plugin from the asset below, then restart KOReader.
-3. Export, sync, and check in Obsidian that tags like `Horror-tales-American` are no longer struck through (`Horror tales; American` was the trigger).
-
-All 750 test assertions green.
 
 *Remotely Save users: set **Abort Sync If Modification Above Percentage** to **100 (disable the protection)** — Tomedown re-exports notes in bulk, which trips the default 50% guard.*
