@@ -12,7 +12,7 @@ A beta, and it behaves like one: it replaces 1.0.0 in the plugin folder (going b
 - **A heading for each book.** *Book notes: %1* names that book's zone, and only that book's. Any title you like ("The Witch theory", "Julian Carax Dixit", ...); leave it empty and the zone exports with nothing above it.
 - **The index stopped tagging along.** *Preserve: index* and *Index notes: %1* sit in *Settings → Markdown files*, and exporting one book can no longer rewrite your notes in `00 - Index.md`. Off keeps the file as `00 - Index.md.bak`; on brings it back.
 - **Turning it off asks first.** A box says what is about to happen, because with preserve off the render overwrites the file (no merge, no copy). Confirm and the file you had is kept as `.bak`, so turning preserve on again puts your notes back into the file, as long as the plain file is the one Tomedown wrote last: something you typed meanwhile is never replaced by an older snapshot.
-- **Block IDs on every highlight.** A stable `^hl-…` at the end of each quote, so a link from another note lands on that highlight and survives the next export. Off by default, from *Block IDs for highlights*, with the id taken from the highlight's own creation time.
+- **Block IDs on every highlight.** A stable `^hl-…` at the end of each quote, so a link from another note lands on that highlight and survives the next export. Off by default, from *Block IDs for highlights*, with the id taken from the highlight's own creation time. *(Idea proposed by [Tewel](https://codeberg.org/imanubdesigner/tomedown.koplugin/issues/2) on Codeberg)*
 
 ## Added
 
