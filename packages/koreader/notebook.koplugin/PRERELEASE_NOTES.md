@@ -1,3 +1,19 @@
+# v1.11.1-dev.2 · 2026-10-26
+
+## [1.11.1-dev.2](https://github.com/pierspad/notebook.koplugin/compare/v1.11.1-dev.1...v1.11.1-dev.2) (2026-10-26)
+
+### 🐛 Bug Fixes
+
+* clean up failed PDF buffer allocations ([d76aa78](https://github.com/pierspad/notebook.koplugin/commit/d76aa78ed47857b46315c5ea4f59cea5d37ccad3))
+* default missing text sizes on load ([953d370](https://github.com/pierspad/notebook.koplugin/commit/953d370631381179c03db5ec1b619703befdd0ec))
+
+### 🔧 Improvements
+
+* avoid sorting simple shape scanlines ([b98ca49](https://github.com/pierspad/notebook.koplugin/commit/b98ca49f2538a893df746795c5baec4096030a3b))
+* prune whole-stroke eraser queries ([bfd6ada](https://github.com/pierspad/notebook.koplugin/commit/bfd6ada18110afeea863f37a19b632a2a1b83b63))
+* stream Xournal++ marker contours ([ec7d58b](https://github.com/pierspad/notebook.koplugin/commit/ec7d58bb4c63c58c370351dc751014fd2751fc70))
+* use native CRC for Xournal++ exports ([1a34768](https://github.com/pierspad/notebook.koplugin/commit/1a347688d61efccd89683c9bcd7b2affb0727f77))
+
 # v1.11.1-dev.1 · 2026-10-24
 
 ## [1.11.1-dev.1](https://github.com/pierspad/notebook.koplugin/compare/v1.11.0...v1.11.1-dev.1) (2026-10-24)
@@ -48,11 +64,3 @@
 
 * cache empty notebook thumbnail results ([1ed6827](https://github.com/pierspad/notebook.koplugin/commit/1ed6827eea7f6445f4847813cee28fab46d0009b))
 * prepare shared PDFs with incremental export jobs ([619b4b7](https://github.com/pierspad/notebook.koplugin/commit/619b4b70a46d48ae65397eed2f56f61b73105dc3))
-
-# v1.9.0-dev.1 · 2026-10-10
-
-## [1.9.0-dev.1](https://github.com/pierspad/notebook.koplugin/compare/v1.8.0...v1.9.0-dev.1) (2026-10-10)
-
-### Features
-
-* add clickable gallery folder breadcrumbs and direct home navigation ([97c0507](https://github.com/pierspad/notebook.koplugin/commit/97c05075596ad6740d186ced55b38af293787b25))
