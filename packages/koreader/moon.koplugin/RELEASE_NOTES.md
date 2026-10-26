@@ -1,3 +1,84 @@
+# v0.2.50 · 2026-10-26
+
+## 月读 v0.2.50
+
+KOReader 插件包：`book.koplugin-v0.2.50.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.50.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.50.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.49`：
+
+#### 修复
+
+- :bug: (reviews): 段评全屏配图按比例显示，不再拉满变形 (7c1cd621)
+- :bug: fix(jdread): 修复书城缓存菜单后的请求取消 (cc77220c)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.49...v0.2.50
+
+# v0.2.49 · 2026-10-26
+
+## 月读 v0.2.49
+
+KOReader 插件包：`book.koplugin-v0.2.49.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.49.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.49.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.48`：
+
+#### 新功能
+
+- :sparkles: (fanqie): 书架按平台分组浏览，分组名落分类 (fc02aebf)
+- :sparkles: (qidian): 书架按平台分组浏览，分组名落分类 (b53d3943)
+- :sparkles: (home): 最近阅读与书架可独立开关书名和作者 (61093af4)
+
+#### 修复
+
+- :bug: (wechat): 目录去掉同名同层自锚点，一章不再出两行 (089129f5)
+- :bug: (subscribe): 恢复 RSS 自动刷新，周期与图书馆一致 (04ce15f1)
+- :bug: (test): 离线测试不再被真实内存与主题模块顶掉替身 (932c543f)
+- :bug: (desktop): 桌面页空状态与订阅标题不再铺白色底 (64f304d8)
+- :bug: (hero): 英雄卡简介与多行书名不再铺白色底 (763c7890)
+- :bug: (log): 业务里的 logger.err 全部改为 logger.error (b2ea13f0)
+
+#### 界面
+
+- :lipstick: (ui): 主题色改为八套预设色板，整套只用一色 (58a91dea)
+- :lipstick: (ui): 彩色模式统一补饱和，彩屏颜色不再发淡 (b13f756a)
+
+#### 重构
+
+- :recycle: (setting): 弹窗关闭手势挪到启动与按键分页与弹窗 (fdbaed05)
+
+#### 变更
+
+- :children_crossing: (open): 大文件按可用内存提醒，KFX 转换前确认 (de3619eb)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.48...v0.2.49
+
 # v0.2.48 · 2026-10-26
 
 ## 月读 v0.2.48
@@ -140,76 +221,3 @@ KOReader 插件包：`book.koplugin-v0.2.46.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.45...v0.2.46
-
-# v0.2.45 · 2026-10-25
-
-## 月读 v0.2.45
-
-KOReader 插件包：`book.koplugin-v0.2.45.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.45.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.45.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.44`：
-
-#### 新功能
-
-- :sparkles: (panel): 新增默认隐藏的阅读书签按钮 (6bf2d399)
-
-#### 修复
-
-- :bug: (bars): 修复顶部状态栏遮挡书签标记 (fa129613)
-- :bug: (reviews): 长段评支持点开全文分页查看 (7135ef77)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.44...v0.2.45
-
-# v0.2.44 · 2026-10-25
-
-## 月读 v0.2.44
-
-KOReader 插件包：`book.koplugin-v0.2.44.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.44.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.44.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.43`：
-
-#### 新功能
-
-- :sparkles: (fontmap): 自动检测书内缺失字体并支持映射 (19ac382e)
-- :sparkles: (passcode): 新增手势密码，与 PIN 互斥切换 (8eb14b85)
-- :sparkles: (reflow): TXT 重新排版支持 GBK / UTF-16 转码，不再只认 UTF-8 (db6dd182)
-
-#### 修复
-
-- :bug: (fontmap): 增加默认关闭的字体映射开关 (9517bb03)
-- :bug: (fonts): 异步修复缺失空格的微信字体 (bd70ed14)
-- :bug: (ui): 状态列按文字宽度扩展，避免总内存被截断 (eabe181d)
-
-#### 变更
-
-- :white_check_mark: (fontmap): 补齐默认关闭开关的设置页回归 (477b2184)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.43...v0.2.44
