@@ -1,3 +1,23 @@
+# v8.3.0 · 2026-10-26
+
+## 8.3 New features: Breadcrumb pins on the progress bar. 
+
+- **Breadcrumb pins on the progress bar.** New option *Breadcrumb pins in slider* under Settings → Layout → Progress bar (pin icon). When you jump from one page to another, the origin page is saved as a pin on the bar.
+  - Up to 3 dots are shown: the **origin** in dark gray, always visible (tap it to return there), and the **2 most recent** history pins in black.
+  - Works on the scrubber bar, the grids, and the TOC view.
+  - Mutually exclusive with the bookmark dots: when the option is on, the bar shows only breadcrumbs.
+
+### Details:
+- Pins are stored per book, in the document's metadata.
+- In EPUB, each pin also stores its position in the text (xpointer). If you change font, margins, or DPI, the pin still points to the same place.
+
+## Installation
+1. Download the zip named `page_scrubber.koplugin-<version>.zip` from the **Assets** section below (not "Source code").
+2. Unzip it and copy the `page_scrubber.koplugin` folder into `koreader/plugins/`.
+3. Restart KOReader.
+
+To update, replace the folder. To uninstall, delete it (and `koreader/patches/2--page-scrubber-font.lua` if you used the system font).
+
 # v8.2.0 · 2026-10-21
 
 ## What's new
@@ -126,30 +146,6 @@ To update, replace the folder. To uninstall, delete it (and `koreader/patches/2-
   * **Preload queue optimization:** Each new tap now cancels older preload tasks that were still in the queue. Additionally, the engine now prioritizes loading pages in the direction you are navigating.
   * **Concurrency control (Semaphore):** Implemented a semaphore system. If the current page hasn't finished rendering, page turns are blocked, preventing background processes from piling up and freezing the device.
 
-
-## Installation
-1. Download the zip named `page_scrubber.koplugin-<version>.zip` from the **Assets** section below (not "Source code").
-2. Unzip it and copy the `page_scrubber.koplugin` folder into `koreader/plugins/`.
-3. Restart KOReader.
-
-To update, replace the folder. To uninstall, delete it (and `koreader/patches/2--page-scrubber-font.lua` if you used the system font).
-
-# v7.7.3 · 2026-10-06
-
-# What's new!
-
-##  Multi Grid: Now you can select 9 pages!
-- New option under **Layout → Multi Grid: Show 9 pages**. Shows 9 pages (3x3) instead of 6, with the current page in the center. Works in both portrait and landscape.
-- Small visual tweak to the index: added a dithering effect for a nicer look (based on `hatching.lua` from ZenOS).
-- Added visual feedback when pressing the `<`, `>` and `X` buttons in Simple UI mode.
-
-##  <-- Library button
-The Library button now it redirects you to the path you have asigned as 'Start With' instead of simply going to the file browser. That means: Simple UI Homescreen, Bookshelf, or history... 
-
-## Fixes:
-
-- **Multi Grid and Simple Grid:** CBZ and PDF pages now respect their true size more accurately and no longer shrink or stretch awkwardly to fit the grid.
-- The same fix was applied to the 3-page Grid in **Landscape** mode.
 
 ## Installation
 1. Download the zip named `page_scrubber.koplugin-<version>.zip` from the **Assets** section below (not "Source code").
