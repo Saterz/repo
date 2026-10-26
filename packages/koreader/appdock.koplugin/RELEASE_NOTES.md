@@ -1,3 +1,11 @@
+# v8.5.11 · 2026-10-26
+
+# AppDock 8.5.11 — Game-Updates über bereits installierte Pakete
+
+Der AppStore kann Game-Pakete jetzt aktualisieren, wenn die vorherige Version bereits unter `.adds` installiert ist. Beim Update werden die vom ZIP gelieferten Binärdateien und Standard-Level ersetzt, während weitere Daten im Game-Home erhalten bleiben.
+
+Damit scheitern Updates nicht mehr an vorhandenen Dateien aus der zuvor installierten ZIP-Version.
+
 # v8.5.10 · 2026-10-26
 
 # AppDock 8.5.10 — Game-Installer-ZIP-Prüfung
@@ -29,13 +37,3 @@ Nach dem Entpacken setzt AppDock den erwarteten Launcher unter `<game>/bin/<game
 Der Game-Installer setzt nach dem Entpacken das erwartete Programm unter `<game>/bin/<game>` explizit auf ausführbar (`0755`). Damit starten Spiele auch dann, wenn das ZIP-Archiv – etwa durch Erstellung auf einem FAT-/Windows-Dateisystem – keine Unix-Ausführungsrechte enthält.
 
 Der Installer prüft außerdem, ob die erwartete Binärdatei im Archiv vorhanden ist, und meldet einen verständlichen Fehler, wenn sie fehlt oder nicht ausführbar gemacht werden kann. Die ZIP-Dateien von Midless und Geometry Rush sind intakt; ihr bisher fehlendes Ausführungsbit war die Ursache dafür, dass die Spiele nach dem Installieren nicht starteten.
-
-# v8.5.6 · 2026-10-26
-
-# AppDock 8.5.6 — Games im AppStore
-
-Der AppStore besitzt jetzt eine eigene **Games**-Sektion. Spiele werden aus dem separaten `games.txt`-Katalog geladen und zeigen neben ihrer Lua-DApp auch das zugehörige ZIP-Paket.
-
-Nach sichtbarer Installationsbestätigung prüft AppDock das ZIP-Archiv, weist absolute und unsichere Pfade zurück und entpackt den Paketinhalt in das KOReader-Geräteverzeichnis `.adds`. Damit können Spiele wie Midless ihre nativen Dateien und Assets gemeinsam mit der Lua-Oberfläche installieren.
-
-Der DApps-Katalog enthält dafür `midless.lua`, `games.txt` und `midless.zip`. Die bestehenden App-, Widget-, Design- und Sleepscreen-Kategorien bleiben erhalten.

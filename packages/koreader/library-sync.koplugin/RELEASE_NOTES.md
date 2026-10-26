@@ -1,3 +1,40 @@
+# v0.7.5 · 2026-10-26
+
+# Library Sync 0.7.5
+
+Reliable BookOrbit downloads when an advertised OPDS EPUB returns HTTP 409.
+
+## What's new
+
+- Retry BookOrbit OPDS downloads through the authenticated file API when the
+  advertised EPUB endpoint returns HTTP 409 Conflict.
+- Reuse the authenticated BookOrbit token during a sync and retry once after an
+  expired token.
+- Show downloaded and failed counts, plus the latest error, while syncing.
+- Report incomplete missing-book and metadata syncs instead of presenting failed
+  downloads as unchanged books.
+- Skip Mirror cleanup whenever one or more missing-book downloads fail.
+- Validate BookOrbit file IDs before constructing fallback URLs and cover the
+  fallback contract in the provider tests.
+
+The fallback requires normal BookOrbit account credentials with permission to
+download books. OPDS remains the primary download path and other server behavior
+is unchanged.
+
+## Install or update
+
+Existing installations can use **Library Sync > Check for updates**. New manual
+installations should download **library-sync.koplugin.zip**. Legacy installations
+inside `grimmory-sync.koplugin` remain supported by the matching OTA asset.
+
+## Verification
+
+Provider contract tests pass under Lua 5.1 and LuaJIT. All Lua sources pass
+syntax compilation. Both runtime packages and their SHA-256 sidecars are built
+with the repository packaging script. The fallback API route was also verified
+against a live BookOrbit server using an EPUB whose OPDS route returned HTTP 409;
+the fallback returned a valid EPUB archive.
+
 # v0.7.4 · 2026-10-20
 
 # Library Sync 0.7.4
@@ -76,17 +113,5 @@ Both ZIP assets are included for new and legacy OTA installations.
 - Improve `Content-Disposition` parsing and add regression coverage for EPUB, CBZ, refresh paths, and invalid extensions.
 
 Thanks to @kai-arsenault for the original fix in #8.
-
-Both ZIP assets are included for new and legacy OTA installations.
-
-# v0.7.0 · 2026-08-30
-
-## What's new
-
-- Add first-class CBZ manga/comic support for Grimmory and BookOrbit OPDS libraries.
-- Preserve CBZ extensions across folder routing and every file-naming profile.
-- Support CBZ files in missing-book sync, metadata refresh, Mirror cleanup and restore, and BookOrbit local registration.
-- Prevent EPUB and CBZ files from being mistaken for one another during matching or replacement.
-- Update the README and installation guide for EPUB/CBZ libraries.
 
 Both ZIP assets are included for new and legacy OTA installations.
