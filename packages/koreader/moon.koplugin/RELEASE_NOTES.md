@@ -1,3 +1,82 @@
+# v0.2.48 · 2026-10-26
+
+## 月读 v0.2.48
+
+KOReader 插件包：`book.koplugin-v0.2.48.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.48.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.48.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.47`：
+
+#### 新功能
+
+- :sparkles: (update): 长按检查更新可强制重装最新包 (ccdbc876)
+
+#### 修复
+
+- :bug: (note): 空串 note/drawer 不再把高亮判成笔记 (b34e50ff)
+- :bug: (lockscreen): 票根粗体带色不再因 Color==nil 崩溃 (bc200b1f)
+
+#### 变更
+
+- :white_check_mark: (lockscreen): 补强 Color 判空回归覆盖统计柱标签 (8bf79ed2)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.47...v0.2.48
+
+# v0.2.47 · 2026-10-26
+
+## 月读 v0.2.47
+
+KOReader 插件包：`book.koplugin-v0.2.47.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.47.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.47.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.46`：
+
+#### 新功能
+
+- :sparkles: (bars): 阅读页顶栏底栏组件支持居中对齐 (fa533f46)
+
+#### 修复
+
+- :bug: (jjwxc): App 章节整包解密失败时重试一次 (178a3b09)
+- :bug: (images): 兼容 SVG 主题变量与透明填充 (5d554556)
+- :bug: (tasks): keepalive 撑着时不清 pause_auto_suspend (6e674c61)
+- :bug: (ui): 彩色主题文字改用透传代理画布 (0cccabdc)
+
+#### 性能
+
+- :zap: (reader): 保存为默认同步全书排版快照 (c97d6dc5)
+- :zap: (kindle): 锁屏合成与 HTTP 写缓存移出热路径 (92d44a6b)
+- :zap: (library): 书架对账少写、筛选少扫、段评 uid 去重 (e1b527a6)
+- :zap: (kindle): 降低低端机休眠与绘制路径卡顿 (554a1f1a)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.46...v0.2.47
+
 # v0.2.46 · 2026-10-26
 
 ## 月读 v0.2.46
@@ -134,61 +213,3 @@ KOReader 插件包：`book.koplugin-v0.2.44.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.43...v0.2.44
-
-# v0.2.43 · 2026-10-25
-
-## 月读 v0.2.43
-
-KOReader 插件包：`book.koplugin-v0.2.43.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.43.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.43.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.42`：
-
-#### 修复
-
-- :bug: (jjwxc): VIP 章节段评带上当前协议的登录态，修复 1004 登入验证失败 (43b2181d)
-- :bug: (bluetooth): Kobo 已配对设备不再误报「无法控制系统蓝牙」，并记录命令日志 (e3965aa6)
-- :bug: (bars): 底栏章节序号只显示图标，目录长度取自未定义变量 (4230cf00)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.42...v0.2.43
-
-# v0.2.42 · 2026-10-25
-
-## 月读 v0.2.42
-
-KOReader 插件包：`book.koplugin-v0.2.42.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.42.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.42.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.41`：
-
-#### 修复
-
-- :bug: (insight): 当日阅读段落只显示最早 3 段，改为显示最近 3 段 (8bfb4442)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.41...v0.2.42

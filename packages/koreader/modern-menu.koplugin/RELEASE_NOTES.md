@@ -1,3 +1,21 @@
+# v1.11.0 · 2026-10-26
+
+## modern_menu 1.11.0
+
+The menu refreshes a smaller part of the screen, so an e-ink update finishes sooner.
+
+### Changes
+- Opening the menu, switching tabs, moving through a submenu, and dragging a Quick Menu slider refresh the menu sheet. The page below a short menu stays as it is
+- When the sheet grows or shrinks, the refresh covers the old and new height, so the page that was covered or uncovered is drawn
+- A check, radio, or changed label refreshes those rows as one block
+- A long list paints the rows on screen first. The rows just above and below are built after that paint, and the rows on screen stay where they are
+
+### Install
+1. Download **modern_menu.koplugin-v1.11.0.zip**
+2. Extract into your KOReader `plugins/` directory
+3. Restart KOReader and enable **Modern Menu**
+4. Install Kobold, Simple UI, Quick Menu, Neo Quick Settings, or Shortcuts Toolbar as well if you use those
+
 # v1.10.0 · 2026-10-25
 
 ## modern_menu 1.10.0
@@ -68,23 +86,6 @@ Shortcuts Toolbar custom actions run from this menu, and the file-browser status
 
 ### Install
 1. Download **modern_menu.koplugin-v1.7.0.zip**
-2. Extract into your KOReader `plugins/` directory
-3. Restart KOReader and enable **Modern Menu**
-4. Install Simple UI, Quick Menu, Neo Quick Settings, or Shortcuts Toolbar as well if you use those
-
-# v1.6.0 · 2026-10-14
-
-## modern_menu 1.6.0
-
-Shortcuts Toolbar in the reader menu, and a tap outside a short menu closes it.
-
-### Changes
-- Shortcuts Toolbar’s reader row (back button and shortcut icons) sits at the bottom of the menu when that plugin is enabled
-- A tap on the page below the menu closes it when height is fit to content or a percentage. Full-screen height stays open until you close it
-- Works with Simple UI, Quick Menu, Neo Quick Settings, and Shortcuts Toolbar. Does not work with Zen OS
-
-### Install
-1. Download **modern_menu.koplugin-v1.6.0.zip**
 2. Extract into your KOReader `plugins/` directory
 3. Restart KOReader and enable **Modern Menu**
 4. Install Simple UI, Quick Menu, Neo Quick Settings, or Shortcuts Toolbar as well if you use those

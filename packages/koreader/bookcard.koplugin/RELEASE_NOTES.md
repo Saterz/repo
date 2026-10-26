@@ -1,3 +1,12 @@
+# v1.7.8 · 2026-10-26
+
+### Added
+- Cover border setting (Appearance > Cover): the frame around the cover can now be switched on or off.
+- "Dark border in night mode" setting: when the card is dark, the cover frame is drawn near-black instead of white, so it stays subtle. Works in night mode and with "Always dark" background. Enabled by default.
+
+### Changed
+- Cover frame is now a 1 px line, matching Reading insights (previously at least 2 px).
+
 # v1.7.7 · 2026-10-23
 
 ### Fixed
@@ -23,10 +32,3 @@
 ### Changed
 
 - Bigger default text sizes, for title, author, series, quote, streak, reader type and battery.
-
-# v1.7.3 · 2026-10-15
-
-### Changed
-- Added a new **Appearance** menu grouping Layout, Cover, Background, Colors, Fonts and Margins
-- Moved **Updates** and **About** below Advanced Settings, with a separator above About
-- Advanced Settings now only contains Orientation, Image export and Clear cached data

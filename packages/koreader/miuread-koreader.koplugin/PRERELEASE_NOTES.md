@@ -1,6 +1,12 @@
-# v6.1.0-beta.7 · 2026-10-26
+# v6.1.0-beta.8 · 2026-10-26
 
-# v6.1.0-beta.6 · 2026-10-26
+- Revert beta.6 low-level ReaderUI upload vetoes; retain the established end-of-reading upload lifecycle and the removed one-shot upload on book open.
+- Anchor-aware latest-wins decision: prefer independently verified common chapter/co over server write timestamps; no 30-second ambiguous conflict UI.
+- When the server is newer, keep an UNSENT local transaction until cloud position is verified on the device; never erase it after merely fetching cloud progress.
+- Preserve Web-only verification of uploaded chapter/co, pending progress on failure, and account/sequence isolation.
+- Revert global menu greying/truncation changes; use opt-in readable readonly rows and a full-text reason dialog for progress details.
+- Keep reading-time and legacy migration data protections; add regression coverage for cloud adoption and retained pending rows.
+- Retain automatic tag releases and changelog normalization. No database schema bump.
 
 # v6.1.0-beta.5 · 2026-10-26
 
@@ -22,3 +28,10 @@
 # v6.1.0-beta.1 · 2026-10-21
 
 - 修复自动发布
+
+# v6.0.0-beta.1 · 2026-10-07
+
+- 以 5.9.1-beta.4 的已收口代码作为 6.0 Beta 基线；不新增实验性认证桥接，不改变 Schema 136、同步主链路或主页结构。
+- 延续安装包减重结果：压缩 stillness 背景，发布包继续排除仅用于编译的 `native/` 源码，运行时 codec 与 Kindle/Kobo/Android 支持保持不变。
+- 延续双登录收口：主登录与书架管理授权继续独立；同账号重新扫码保留既有书架管理授权，并支持单独取消该授权。
+- 延续书城轻量整理与日志降噪；同时修正两条历史回归测试的版本硬编码，使 6.0 系列继续验证功能契约而不是旧版本号。
