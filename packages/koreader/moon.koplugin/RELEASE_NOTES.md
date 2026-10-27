@@ -1,3 +1,57 @@
+# v0.3.1 · 2026-10-27
+
+## 月读 v0.3.1
+
+KOReader 插件包：`book.koplugin-v0.3.1.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.3.1.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.3.1.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.3.0`：
+
+#### 新功能
+
+- :sparkles: (http): 大文件下载支持断点续传 (dc3be5b5)
+- :sparkles: (remote): 打开远程管理显示二维码与地址 (bc9880b3)
+- :sparkles: (bluetooth): 睡眠前记录蓝牙状态，唤醒后自动恢复 (5ee99306)
+- :sparkles: (rotation): 记住全局屏幕方向，下次进桌面与开书沿用 (e3c82ece)
+- :sparkles: (reader): 支持中西文字体分开选择 (608be953)
+- :sparkles: (wechat): 书架改走 synckey 增量同步，全量加 bookCount 对账 (033b6a37)
+
+#### 修复
+
+- :bug: (reader): 库外打开只 touch 不上架，EndOfBook 交回原生 (77b5005d)
+- :bug: (ui): 斜向截图手势按 northeast 等真实方向放行 (59435824)
+- :bug: (test): 补齐旋转合入后缺失的测试桩 (ba59e82a)
+- :bug: (wake): 看门狗不再强制关锁屏，只记日志 (972dce5f)
+- :bug: (bars): 书名等弹性组件居中靠右按内容宽偏移，不再贴槽左缘 (0912b10a)
+
+#### 性能
+
+- :zap: (local): 扫盘与补齐拆开，日常同步回到分钟级并可续跑 (1369894c)
+
+#### 重构
+
+- :recycle: (store): 书城缓存收敛到数据获取层，源退回纯拉取 (a6369e2b)
+
+#### 变更
+
+- :globe_with_meridians: (l10n): 补齐本地书补封面文案并删掉废弃键 (354915b7)
+- :fire: (source): 删除起点/QQ阅读/潇湘/长佩书架分页的 50 页上限 (53daf2d1)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.3.0...v0.3.1
+
 # v0.3.0 · 2026-10-27
 
 ## 月读 v0.3.0
@@ -157,45 +211,3 @@ KOReader 插件包：`book.koplugin-v0.2.48.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.47...v0.2.48
-
-# v0.2.47 · 2026-10-26
-
-## 月读 v0.2.47
-
-KOReader 插件包：`book.koplugin-v0.2.47.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.47.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.47.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.46`：
-
-#### 新功能
-
-- :sparkles: (bars): 阅读页顶栏底栏组件支持居中对齐 (fa533f46)
-
-#### 修复
-
-- :bug: (jjwxc): App 章节整包解密失败时重试一次 (178a3b09)
-- :bug: (images): 兼容 SVG 主题变量与透明填充 (5d554556)
-- :bug: (tasks): keepalive 撑着时不清 pause_auto_suspend (6e674c61)
-- :bug: (ui): 彩色主题文字改用透传代理画布 (0cccabdc)
-
-#### 性能
-
-- :zap: (reader): 保存为默认同步全书排版快照 (c97d6dc5)
-- :zap: (kindle): 锁屏合成与 HTTP 写缓存移出热路径 (92d44a6b)
-- :zap: (library): 书架对账少写、筛选少扫、段评 uid 去重 (e1b527a6)
-- :zap: (kindle): 降低低端机休眠与绘制路径卡顿 (554a1f1a)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.46...v0.2.47
