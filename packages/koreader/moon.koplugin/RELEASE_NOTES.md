@@ -1,15 +1,15 @@
-# v0.2.51 · 2026-10-27
+# v0.3.0 · 2026-10-27
 
-## 月读 v0.2.51
+## 月读 v0.3.0
 
-KOReader 插件包：`book.koplugin-v0.2.51.zip`
+KOReader 插件包：`book.koplugin-v0.3.0.zip`
 
 输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
 
 安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
 
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.51.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.51.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.3.0.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.3.0.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
 
 词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
 `.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
@@ -25,6 +25,9 @@ KOReader 插件包：`book.koplugin-v0.2.51.zip`
 
 #### 修复
 
+- :bug: (ui): 文字不再自带白底矩形，并加扫描防回归 (01b5eb22)
+- :bug: (ui): 对角滑动截图手势不再被弹窗与桌面吞掉 (334e2c20)
+- :bug: (reviews): 段评首条按首页剩余高度截断，不再整条跳页 (62eaac34)
 - :bug: (cover): 封面一律拉满框，宽框不再按比例缩进留白 (c9a910b2)
 - :bug: (reader): 修复正式版 KOReader 阅读页点抽屉不回月读 (84cd1a94)
 - :bug: (reader): 保存为默认带上高亮格式，换书不再丢 (d109d2a9)
@@ -35,7 +38,7 @@ KOReader 插件包：`book.koplugin-v0.2.51.zip`
 
 ### 完整对比
 
-https://github.com/AnkioTomas/moon/compare/v0.2.50...v0.2.51
+https://github.com/AnkioTomas/moon/compare/v0.2.50...v0.3.0
 
 # v0.2.50 · 2026-10-26
 
