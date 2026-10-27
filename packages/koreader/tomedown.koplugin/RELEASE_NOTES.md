@@ -32,6 +32,12 @@ Three betas are behind this one, all of them tested on the device, offline inclu
 - New screenshots everywhere, including the menu inside an open book, and the guide sheets follow the new names.
 - The stored setting keys (`preserve`, `preserve_books`, `preserve_index`, `notes_title`, `notes_titles`, `exports`) keep their names: an update finds every choice where you left it.
 
+The new menus, one after the other:
+
+![The new menus in Tomedown 1.1.0](https://raw.githubusercontent.com/imanubdesigner/tomedown.koplugin/main/assets/menu/tomedown-1.1.0-menus.gif)
+
+Every screenshot is in the README: https://github.com/imanubdesigner/tomedown.koplugin
+
 ## Fixed
 
 - **A backup can no longer be thrown away by one worth less.** All copies went to a single name, so the next one overwrote the last, and the one destroyed could be the one holding your notes. There are two slots now, `.bak` and `.bak.1`, the older one rotates back, and a file that is exactly what Tomedown wrote last is not copied at all.
