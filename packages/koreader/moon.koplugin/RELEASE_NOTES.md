@@ -1,3 +1,42 @@
+# v0.2.51 · 2026-10-27
+
+## 月读 v0.2.51
+
+KOReader 插件包：`book.koplugin-v0.2.51.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.51.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.2.51.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.2.50`：
+
+#### 新功能
+
+- :sparkles: (desktop): 首次欢迎弹窗加「加入交流群」按钮 (61d83b78)
+- :sparkles: (panel): 快捷面板加后台任务按钮 (bf441146)
+
+#### 修复
+
+- :bug: (cover): 封面一律拉满框，宽框不再按比例缩进留白 (c9a910b2)
+- :bug: (reader): 修复正式版 KOReader 阅读页点抽屉不回月读 (84cd1a94)
+- :bug: (reader): 保存为默认带上高亮格式，换书不再丢 (d109d2a9)
+
+#### 性能
+
+- :zap: (reflow): 提取全文只落盘，避免主进程 OOM (35a5a4b1)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.2.50...v0.2.51
+
 # v0.2.50 · 2026-10-26
 
 ## 月读 v0.2.50
@@ -157,67 +196,3 @@ KOReader 插件包：`book.koplugin-v0.2.47.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.46...v0.2.47
-
-# v0.2.46 · 2026-10-26
-
-## 月读 v0.2.46
-
-KOReader 插件包：`book.koplugin-v0.2.46.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.46.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.46.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.45`：
-
-#### 新功能
-
-- :sparkles: (online): 请求携带月读版本与设备 UA (fb09b3a3)
-- :sparkles: (reviews): 段评图片支持点击放大 (d6eadde7)
-- :sparkles: (animation): 支持慢标准快三档翻页速度 (855c07dc)
-- :sparkles: (desktop): 增加统计页显示开关 (c97d9eb7)
-- :sparkles: (reader): 支持返回键关书回月读 (0be12365)
-- :sparkles: (ui): 统一顶层窗口分页与关闭操作 (94132ef1)
-
-#### 修复
-
-- :bug: (remote): 修正网页翻译并保留用户原文 (5f86b35e)
-- :bug: (ui): 修复容量查询失败并清零诊断 (76d7d06e)
-- :bug: (subscribe): 重开文章时保留有效双语缓存 (9dcb9b1d)
-- :bug: (subscribe): 修复已缓存文章无法离线打开 (40fb4b31)
-- :bug: (metadata): 保留本地书籍资料并补齐番茄详情 (012de710)
-- :bug: (progress): 修复多源阅读位置同步 (2efc910e)
-- :bug: (extensions): 补齐动态回调插件入口 (4fe9f02c)
-- :bug: fix(panel): 兼容 Kindle 空 Wi-Fi 网络名 (0ff81f59)
-- :bug: (reviews): 在线刷新段评并移除失效标记 (c2c880c7)
-- :bug: (remote): 手动开启远程管理时先连接 Wi-Fi (0da700af)
-- :bug: (lockscreen): 补齐主题着色并保持灰度兼容 (26b4765e)
-
-#### 界面
-
-- :lipstick: (settings): 彩色显示移入外观并按需显示主题色 (6881ac7e)
-- :lipstick: (ui): 支持单主题色并保留主题选中样式 (c47591ac)
-
-#### 性能
-
-- :zap: (subscribe): 限制并发加速文章缓存 (b1e23f93)
-
-#### 其他
-
-- :wrench: chore(types): 修正 LuaLS 类型契约并清零诊断 (58d68678)
-
-#### 变更
-
-- :white_check_mark: (tests): 修复无 KOReader 环境的发布测试 (52c495ff)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.45...v0.2.46
