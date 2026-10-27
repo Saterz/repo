@@ -1,3 +1,14 @@
+# v0.5.2 · 2026-10-27
+
+Fixes "account history", "account marked for later" and "view your AO3 profile" when logged in
+Apologies for not noticing these issues in the last release
+
+## What's Changed
+* Fix username parse by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/57
+
+
+**Full Changelog**: https://github.com/IntrovertedMage/AO3Downloader.koplugin/compare/v0.5.1...v0.5.2
+
 # v0.5.1 · 2026-10-16
 
 Just a quick fix for a login issue
@@ -60,11 +71,3 @@ The menu option to open the plugins menu should then be found under the search t
 
 
 **Full Changelog**: https://github.com/IntrovertedMage/AO3Downloader.koplugin/compare/v0.3.1...v0.3.2
-
-# v0.3.1 · 2025-11-23
-
-## What's Changed
-* Update filename generation in UpdateFanfic to extract from fanfic path, also fixes update bug by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/12
-
-
-**Full Changelog**: https://github.com/IntrovertedMage/AO3Downloader.koplugin/compare/v0.3.0...v0.3.1

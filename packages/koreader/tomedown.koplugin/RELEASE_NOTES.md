@@ -1,3 +1,58 @@
+# v1.1.0 · 2026-10-27
+
+**Tomedown 1.1.0, the per book edition.**
+
+Three betas are behind this one, all of them tested on the device, offline included. 1.1 starts from a single question, whose notes are kept, and answers it one book at a time. Along the way the menu was regrouped and every row was given the name it does, so the release is also the one where *Preserve* becomes *Keep my notes*.
+
+## Highlights
+
+- **A switch for each book.** *Keep my notes in this book*, under *Current book*, decides for that book alone, with the global switch off. Turning it off asks first, saying what is about to happen; confirm and the file you had is kept as `.bak`, then the plain export takes its place. Turn it on again and those notes come back into the file. A book that stores its own choice keeps it through later flips of the global switch.
+- **A heading for each book.** *Notes heading: %1*, also under *Current book*, names that book's zone and only that one, with any title you like, or no title at all if you leave it empty.
+- **The index stopped tagging along.** *Keep my notes: index* and *Index notes heading: %1* live in *Settings → My notes*, so exporting one book can no longer rewrite your notes in `00 - Index.md`.
+- **Two copies, one job each, plain names.** `.bak` is *Notes set aside*: the zoned file as it was when you turned Keep my notes off, and it comes back when you turn it on. `.bak.1` is the *Safety copy*: text of yours that a rewrite was about to replace and that would not come back by itself. A copy kept by an older version shows as *Older copy*. *Backup copies…* in *Current book* lists them one at a time with the day each was saved, and deletes one only after a box that says what it holds.
+- **Block IDs on every highlight.** *Add link IDs to highlights* appends a stable `^hl-…` to each quote, taken from the highlight's own creation time, so a link from another note lands on that highlight and survives the next export. Off by default.
+- **One menu, five groups, names that read what they do.** The main menu is nine rows with a book open and seven in the file browser, the same list in both, but for *Export this book* and *Current book*. Settings is *Files*, *Cloud*, *My notes*, *Highlights for Obsidian* and *Updates*, with *Beta versions* inside.
+
+## Added
+
+- *Keep my notes in this book*, per book, with its own *Notes heading: %1* row right below.
+- *Keep my notes: index* and *Index notes heading: %1*, so the index has a choice of its own.
+- *Backup copies…* under *Current book*, with the copies named for what they hold.
+- *How special highlights look: Callout* or *Bold*: the marker for a single Special Highlight is now yours to pick. The row is grayed out while *Treat every highlight as special* is on, because then every quote is a callout.
+- *Add link IDs to highlights*, for the ids that keep a link alive.
+- *Beta versions* as a submenu of *Updates*, with *Receive beta versions*, *Check for beta updates* while it is ticked, *Go back to the stable version* and the installed version as a plain label.
+
+## Changed
+
+- *Preserve manual edits* is now *Keep my notes: all books*, *Personal notes* is *Notes heading: %1*, and *Book notes* is the per book heading. The word Preserve leaves the code, the strings, the README, the tutorial, the Obsidian guide, the roadmap and the guide sheets.
+- *Merge edits made in the cloud* is now *Bring in edits made in Obsidian* and lives in *My notes*, where the notes are.
+- *Export current book* is *Export this book*, *Export only what changed* is *Export new and changed books*, *Export every book's highlights* is *Export all books*, *Upload everything to the cloud* is *Upload all files again*, and *Status* is *Last export*.
+- The rows that need an open book (*Export this book* and *Current book*) only exist while a book is open, so the file manager sees the same menu minus those two.
+- The picked local folder is written to the settings file on the spot. Before, it only reached the disk at the next suspend or autosave, so KOReader closing in between sent the next export to the folder you had just left.
+- New screenshots everywhere, including the menu inside an open book, and the guide sheets follow the new names.
+- The stored setting keys (`preserve`, `preserve_books`, `preserve_index`, `notes_title`, `notes_titles`, `exports`) keep their names: an update finds every choice where you left it.
+
+## Fixed
+
+- **A backup can no longer be thrown away by one worth less.** All copies went to a single name, so the next one overwrote the last, and the one destroyed could be the one holding your notes. There are two slots now, `.bak` and `.bak.1`, the older one rotates back, and a file that is exactly what Tomedown wrote last is not copied at all.
+- **A copy that fails stops the write.** If either slot cannot be written (a full card, a read-only folder), the export leaves the file exactly as it is and says so, and the next export tries again.
+- **The notes the first beta hid come back.** A card that ran 1.1.0-beta.1 could hold the notes behind a newer copy without a zone, where the next beta did not look. The first export now swaps the two slots once, undoes a rename the filesystem refuses, and puts back a copy left in `.bak.swap` by an interrupted swap.
+- **A cloud copy written elsewhere no longer takes the notes set aside.** If the cloud copy was replaced by another writer and this device still has notes in `.bak`, the two zones are joined: the cloud text keeps its place and its order, and the paragraphs that exist only in `.bak` follow it. What the rewrite replaces is kept as the safety copy first. If the join cannot be made, the export is held back and nothing is written.
+- **A rename refused by the filesystem** (some mounts on the Kindle card) no longer fails the copy: the content is written in place, with a warning in the log.
+- A note reworded in the cloud is recognized by its first line and is not copied twice.
+- Two checks in the update menu read what they do: *Check for beta updates* inside *Beta versions*, and *Go back to the stable version* instead of *Reset to latest stable release*.
+
+## Installing
+
+**If you already use a KOReader plugin store**, [Storefront](https://github.com/ultimatejimmy/storefront.koplugin) or [AppStore](https://github.com/omer-faruq/appstore.koplugin), search `tomedown` under *Tools* and install it. They are community plugins, not part of KOReader itself; if you have neither, use the zip below.
+
+**Manual**: download `tomedown.koplugin-v1.1.0.zip` from the **Assets** section at the bottom of this page (not the *Source code* archive), unzip it into `koreader/plugins/` and restart KOReader.
+
+**Coming from 1.0.0**: *Check for updates* in the plugin menu now finds this release by itself, no zip needed. **Coming from a 1.1.0 beta**: the stable release is offered the same way, or use *Settings → Updates → Beta versions → Go back to the stable version*.
+
+README, full tutorial, quickstart sheets and Obsidian guide sheets:
+https://github.com/imanubdesigner/tomedown.koplugin
+
 # v1.0.0 · 2026-10-21
 
 **Tomedown 1.0.0, the first stable release of the two-way edition.**
@@ -187,90 +242,3 @@ All 758 test assertions green.
 -	Drop-in: no format change, no re-export needed. The menu entry moves
   to the top of the tab it was already in; everything else stays where
   it was.
-
-# v0.6.0 · 2026-10-01
-
-## v0.6.0
-
-### **New file format**
-
--	The framed HIGHLIGHTS heading is now a bold level-one heading:
-
-    ```markdown
-    # **HIGHLIGHTS: 150**
-    ```
-
-    (`# **EVIDENZIATI: 150**` with an Italian KOReader)
-
--	Chapters and the `Page bookmarks` section are level-one headings now
-  (they were `####`): top-level entries in Obsidian's outline, as
-  `# Chapter I` and `# Segnalibri di pagina` in Italian.
-
--	Sections are separated by horizontal rules before every heading,
-  with blank lines around them, and a file never ends with a stray
-  rule:
-
-    ```markdown
-    ---
-
-    # Chapter I
-    ```
-
-### **Tags and index**
-
--	Books are tagged `ebook` instead of `kindle`, in the books and in
-  the index alike.
-
--	The wiki links in the index escape the pipe
-  (`[[Blackwater\|Blackwater]]`), so the table renders the link
-  instead of breaking the column.
-
-### **Changelog viewer**
-
--	Release notes and update notices render in a sans-serif face now,
-  instead of the default serif; the *Font size*, *Monospace* and
-  *Justify* options in the viewer menu keep working as before.
-
--	List points open with a plain hyphen instead of a bullet, which
-  some device fonts draw like an apostrophe.
-
-### **Documentation**
-
--	The README walks through every plugin menu with screenshots, shows
-  the result in Obsidian and links a short demo video of the index
-  in action.
-
-### **Under the hood**
-
--	591 test assertions (lua5.4 + `luac5.1 -p`); Italian translation
-  unchanged.
-
-### **Zip contents**
-
-`main.lua`, `_meta.lua`, `tomedown_i18n.lua`, `tomedown_render.lua`,
-`tomedown_update.lua`, `languages/it.po`, `LICENSE`,
-`assets/logo.svg` - no tests, no README.
-
-### **Upgrading**
-
--	Exported files are always rebuilt from scratch by KOReader, so the new
-  format needs **one full re-export**: menu > *Import all books from
-  history* rewrites every file in the new format and uploads it (or
-  queues it offline).
-
--	*Export only what changed* and auto-export on close skip books whose
-  annotations have not changed - they leave older files alone, by
-  design: run the full export once after updating.
-
--	*Reload everything to the cloud* does not reformat anything: it
-  uploads local files exactly as they are.
-
--	Queries filtering on the old tag (`#kindle` in Dataview or similar)
-  need to move to `#ebook`.
-
--	A full export overwrites every file: hand-made edits inside the
-  `.md` files are not merged back.
-
----
-
-*Sorry for the formatting tweaks: I want this changelog to read as cleanly as possible on every screen. Thanks for bearing with me.*
