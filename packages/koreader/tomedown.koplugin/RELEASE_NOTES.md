@@ -7,6 +7,8 @@ Tomedown 1.1.1.
 
 Install it from *Check for updates*, or the zip below.
 
+Questions or feedback on the menu? [Join the discussion](https://github.com/imanubdesigner/tomedown.koplugin/discussions).
+
 # v1.1.0 · 2026-10-27
 
 **Tomedown 1.1.0, the per book edition.**

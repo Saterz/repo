@@ -4,7 +4,6 @@ What's New in Simple UI v3.0.1
 
 - Add category grouping to the "Add Module" picker on the home screen;
 - Add stacking and free-width layout options to the screen grid;
-- Boost Reading Stats performance by serving Insights, Streaks, and Heatmaps from a per-day ledger;
 - Add automatic recovery from corrupt bookinfo cache databases in the Library;
 - Support case-insensitive searching and sorting in the Library for non-Latin scripts;
 - Fix automatic updates for Reading Stats cards past the first page;

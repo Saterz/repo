@@ -16,6 +16,10 @@
   <a href="LICENSE"><img src="https://img.shields.io/github/license/imanubdesigner/tomedown.koplugin?style=for-the-badge&color=171717&labelColor=171717" alt="License"></a>
 </p>
 
+<p align="center">
+  Questions, ideas, feedback: <a href="https://github.com/imanubdesigner/tomedown.koplugin/discussions">GitHub Discussions</a>
+</p>
+
 ## Contents
 
 - [Quickstart](#quickstart)
