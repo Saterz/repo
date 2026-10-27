@@ -1,3 +1,17 @@
+# 3.0.1 · 2026-10-27
+
+What's New in Simple UI v3.0.1
+
+- Add category grouping to the "Add Module" picker on the home screen;
+- Add stacking and free-width layout options to the screen grid;
+- Boost Reading Stats performance by serving Insights, Streaks, and Heatmaps from a per-day ledger;
+- Add automatic recovery from corrupt bookinfo cache databases in the Library;
+- Support case-insensitive searching and sorting in the Library for non-Latin scripts;
+- Fix automatic updates for Reading Stats cards past the first page;
+- Preserve original cover colors in Coverdeck's "Flow" layout while Night Mode is active;
+- Fix UI rendering bugs on the topbar, transparent wallpaper bars, and menu closures;
+- Reorganize detailed documentation into /docs and refresh the README.
+
 # 3.0.0 · 2026-10-24
 
 What's New in Simple UI v3.0
@@ -48,17 +62,4 @@ What's New in Simple UI v2.7.0
 - Hardware Controls: Enabled the physical Home button to open the Simple UI Home Screen on all devices with a Home key;
 - Reading Goals: Introduced new visual display rings for reading goals;
 - Backup & Restore: Added a native backup and restore system;
-- General bug fixes and quality-of-life optimizations.
-
-# 2.6.0 · 2026-08-26
-
-What's New in Simple UI 2.6.0:
-
-- Reading Heatmap: Added a new Reading Heatmap module.
-- Customization: Introduced a browsable asset picker for easier selection and installation of icons and wallpapers.
-- Clock: Added independent size controls for the clock face, date, and battery text.
-- Cover Deck: Added a per-instance progress badge to the Cover Deck module.
-- To Be Read: Added an option to automatically remove books from your TBR list once they are marked as finished.
-- Quick Actions: Optimized and unified the behavior of Quick Actions across the interface. Fixed an issue where Custom Screen Quick Actions were missing from menus, and fixed a bug when tapping the bookmark browser.
-- Bug Fixes: Fixed frame and background box misalignment with section labels across homescreen modules. Truncated the compact stats row to prevent layout stretching. Fixed cover scaling issues in the default layout, and ensured hidden collections remain visible in the Arrange screen.
 - General bug fixes and quality-of-life optimizations.

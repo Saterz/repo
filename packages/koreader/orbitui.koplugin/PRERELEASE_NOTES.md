@@ -1,3 +1,25 @@
+# v0.1.0-beta.14 · 2026-10-27
+
+## Svenska
+
+- Arkivskåpsknappen i läsmenyn använder nu OrbitUI:s snabba återgång till rätt Bookshelf-hylla/profil. Säker vanlig stängning används när en förberedd hylla saknas. Går att stänga av under Navigation och gränssnitt → Öppna böcker och återgå.
+- Tydligare profil- och chipinställningar: källa/mapp inne i respektive chip, gemensamma biblioteksmappar under Avancerat och separata numrerade ordningsvyer som uppdateras direkt. Svenska och engelska ingår.
+- SimpleUI uppdaterad med bättre Unicode-sökning/sortering, en startguidefix och spanska/kinesiska översättningar. Äldre KOReader-versioner behåller en kompatibel Unicode-reservväg.
+- Fel vid läsning av metadatacachen fångas utan upstreams automatiska radering av databasen. Detta är inte automatisk reparation av en korrupt databas.
+- Home/Bento, omslagsfixen för Android, bibliotek/profiler, ornament och externa integrationer behålls. Inga böcker flyttas och inga inställningar eller läsdata återställs.
+
+Uppdatera via OrbitUI:s förhandsversionskanal och starta om KOReader. Bootstrap/API 1 är oförändrat och äldre stödda installerare kan uppdatera direkt. Säkerhetskopiera inställningar separat; kodåterställning återställer inte senare inställningsändringar. Detta är en förhandsversion: fysiska Boox/Bigme-tester av de nya funktionerna återstår.
+
+## English
+
+- The reading menu's cabinet/file-browser button now uses OrbitUI's fast return to the original shelf or matching Bookshelf profile, with safe normal-close fallback and a bilingual opt-out.
+- Clearer profile/chip settings: source and folder inside each chip, library-wide roots under Advanced, and separate live numbered library/chip ordering screens.
+- Reviewed SimpleUI update: Unicode-aware search/sorts, onboarding preset-list fix, Spanish/Chinese translations, and compatibility fallback for older supported KOReader versions. Bookshelf stays at 6.0.3.
+- Recognized metadata-cache read faults are contained without automatically deleting the database/WAL or resetting shared connections. This does not automatically repair corrupt databases.
+- Existing Home/Bento layouts, Android cover fix, profiles, ornaments, links, reading data and external sync owners are preserved.
+
+Use OrbitUI's preview update channel and restart KOReader. Bootstrap/API 1 and the installed path inventory remain unchanged; no resources or older notes were removed to fit. Previous releases/assets are immutable. Physical device acceptance remains outstanding; automated tests are not device or measured-performance claims.
+
 # v0.1.0-beta.13 · 2026-10-27
 
 # OrbitUI 0.1.0-beta.13
@@ -300,87 +322,3 @@ Code rollback retains reading data and does not undo later settings edits.
 Releases older than Beta 9 do not recognize the generic Bookshelf action and
 may prune that button; reselect an older saved-profile action if needed.
 Existing public tags and assets remain unchanged.
-
-# v0.1.0-beta.9 · 2026-10-25
-
-# OrbitUI 0.1.0-beta.9
-
-Bookshelf is a direct, configurable navigation destination.
-
-OrbitUI includes and adapts **SimpleUI by doctorhetfield-cmd** and **Bookshelf
-by AndyHazz**, with their contributors' work. This is an independent combined
-plugin, not an official release by either upstream project.
-
-## Changes since Beta 8
-
-- Adds a first-class **Bookshelf** action that works without a `prose` or
-  `comics` profile, even when no library sections have been configured. It opens
-  native Bookshelf without forcing a profile or resetting its last view.
-- New/default bars and the fresh setup guide include a removable Bookshelf
-  button. **Existing saved bars are not rewritten.** Explicit removal persists.
-  The separate file browser is labelled **File browser**, retaining custom labels.
-- **OrbitUI settings > Bookshelf navigation** toggles the button and chooses its
-  destination: native Bookshelf or an enabled, saved profile. Long-press the
-  Bookshelf button to reach the same settings.
-- Each library section/profile offers **Add to navigation bar** and **Use for
-  Bookshelf button**. Create Prose, Manga or any other profiles, each with its
-  own folders and chips. Several profiles can have separate buttons; a full bar
-  asks which existing button to replace. No raw action IDs or custom QAs needed.
-- Missing/disabled legacy targets such as `open_bookshelf_prose` explain the
-  problem and offer configuration instead of silently doing nothing. A new
-  section named Prose does not magically acquire the legacy internal ID `prose`.
-- Existing profile/chip IDs, aliases, labels, icons, navigation choices, reading
-  data, links, artwork, fonts and external integrations are retained. Explicit
-  profile selection uses the normal reader/parking lifecycle and deferred
-  coordinator; specific profile tabs take priority over the generic indicator.
-
-No upstream import, component source/pin change, bootstrap/API change or data reset.
-
-## Install or update
-
-Enable preview releases in **Tools > OrbitUI > Uppdatera OrbitUI**, check for
-updates and restart KOReader. Beta 8 and Beta 5 can update directly; no bridge
-or settings reset is needed.
-
-**For an existing installation:** open **OrbitUI settings > Bookshelf navigation**
-(**Bookshelf i navigationsraden**). Enable **Show Bookshelf in navigation bar**,
-then choose **Destination** (**Öppnar**). To configure Prose/Manga etc., open
-**Profiles and chips** (**Profiler och chip**), choose folders and add shelves.
-Each profile can be added directly as a separate navigation button.
-
-If an old custom button still points to `open_bookshelf_prose`, replace that
-slot with **Bookshelf** or the NAME of your saved profile. Existing bars are
-preserved deliberately, not automatically repaired or replaced.
-
-For a first installation, download **orbitui.koplugin.zip**, not a source-code
-archive. Disable standalone SimpleUI/Bookshelf, keep KOReader's **Cover browser**
-enabled and restart. See the
-[installation guide](https://github.com/komadorirobin/orbitui.koplugin/blob/v0.1.0-beta.9/README.md#installation).
-
-## Verification and limitations
-
-Twelve focused navigation cases load complete SimpleUI config/QA modules, the
-real library model/profiles, bridge and host adapters. They cover empty and
-home-based inventories, missing legacy targets, saved-bar/label/icon preservation,
-persistent removal, profile chips/targets, explicit full-bar replacement,
-disabled profiles, indicators, simulated parked-reader enforcement and stale
-selection cancellation. Native delivery/rendering/lifecycle services are stubbed.
-
-Release gates include both complete Lua/LuaJIT suites, translations, packaged-byte
-navigation/Home regressions, sealed inventory/source comparison, outgoing
-history/artwork/secret audits, exact draft/public assets, main/tag CI and native
-OTA upgrade/restart/rollback from public Beta 8 and Beta 5.
-
-The user confirms Beta 8 Home works on the affected Go Color 7. This new
-navigation/profile flow still needs physical Boox and Bigme testing, including
-reader return, rotation and dock indicators. It does not establish resolution
-of the earlier unrelated native Android mutex abort.
-
-Bookshelf Git: `fc1103a3de9fd19eea89a53c5f1f1b0e8175682a`.
-SimpleUI Git: `40b301f0f5e4466021d00b4e47ac8c09bb65ac8c`.
-
-This remains a prerelease. Code rollback retains reading data and does not undo
-later settings edits; keep a separate backup.
-Older releases do not recognize the new generic Bookshelf action ID. After a
-code rollback they may prune that button; choose an older saved-profile action
-again if needed. Keep a backup of navigation choices before testing rollback.

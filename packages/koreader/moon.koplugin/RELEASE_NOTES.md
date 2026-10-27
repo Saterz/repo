@@ -1,3 +1,43 @@
+# v0.3.3 · 2026-10-27
+
+## 月读 v0.3.3
+
+KOReader 插件包：`book.koplugin-v0.3.3.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.3.3.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.3.3.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.3.2`：
+
+#### 修复
+
+- :bug: (passcode): 修复解锁页测例与残留 l10n，让 v0.3.3 CI 过关 (1e65f30b)
+- :bug: (ocr): 清单解析失败只报 bad manifest，不再透出解析器报错 (2b708b01)
+- :bug: (fanqie): HTTP 错误只报短句，整条 URL 诊断串不再弹给用户 (881ff893)
+- :bug: (moon): 非 JSON 回包只报短句，整页 HTML 不再弹给用户 (36ffbe98)
+- :bug: (store): StoreCache 显式传 source_id，避免 nil 拼键炸掉 (3a2045a9)
+
+#### 界面
+
+- :lipstick: (passcode): 解锁页铺锁屏纯图壁纸，卡片居中不挡 logo (982e1114)
+
+#### 变更
+
+- :children_crossing: (auth): 无法自动登录时明确通知用户 (80767b70)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.3.2...v0.3.3
+
 # v0.3.2 · 2026-10-27
 
 ## 月读 v0.3.2
@@ -150,55 +190,3 @@ KOReader 插件包：`book.koplugin-v0.2.50.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.49...v0.2.50
-
-# v0.2.49 · 2026-10-26
-
-## 月读 v0.2.49
-
-KOReader 插件包：`book.koplugin-v0.2.49.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.49.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.49.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.48`：
-
-#### 新功能
-
-- :sparkles: (fanqie): 书架按平台分组浏览，分组名落分类 (fc02aebf)
-- :sparkles: (qidian): 书架按平台分组浏览，分组名落分类 (b53d3943)
-- :sparkles: (home): 最近阅读与书架可独立开关书名和作者 (61093af4)
-
-#### 修复
-
-- :bug: (wechat): 目录去掉同名同层自锚点，一章不再出两行 (089129f5)
-- :bug: (subscribe): 恢复 RSS 自动刷新，周期与图书馆一致 (04ce15f1)
-- :bug: (test): 离线测试不再被真实内存与主题模块顶掉替身 (932c543f)
-- :bug: (desktop): 桌面页空状态与订阅标题不再铺白色底 (64f304d8)
-- :bug: (hero): 英雄卡简介与多行书名不再铺白色底 (763c7890)
-- :bug: (log): 业务里的 logger.err 全部改为 logger.error (b2ea13f0)
-
-#### 界面
-
-- :lipstick: (ui): 主题色改为八套预设色板，整套只用一色 (58a91dea)
-- :lipstick: (ui): 彩色模式统一补饱和，彩屏颜色不再发淡 (b13f756a)
-
-#### 重构
-
-- :recycle: (setting): 弹窗关闭手势挪到启动与按键分页与弹窗 (fdbaed05)
-
-#### 变更
-
-- :children_crossing: (open): 大文件按可用内存提醒，KFX 转换前确认 (de3619eb)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.48...v0.2.49
