@@ -1,3 +1,11 @@
+# 26.10.26-beta · 2026-10-27
+
+- Fix #5080 
+- Fix #5081 
+- Update font #5082 
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.23-beta...26.10.26-beta
+
 # 26.10.23-beta · 2026-10-23
 
 - Fix bug with suspend #5079 
@@ -27,14 +35,3 @@
 Version number fix
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.17-beta2
-
-# 26.10.17-beta · 2026-10-16
-
-- Catalog logic tweak
-- memory fix
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.16-beta2
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.16.1-beta
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.16...26.10.17-beta
