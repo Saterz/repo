@@ -1,3 +1,31 @@
+# v0.3.2 · 2026-10-27
+
+## 月读 v0.3.2
+
+KOReader 插件包：`book.koplugin-v0.3.2.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.3.2.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.3.2.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.3.1`：
+
+#### 修复
+
+- :bug: (store): Z站浏览补上 id，避免 StoreCache 拼键炸掉 (711d52b9)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.3.1...v0.3.2
+
 # v0.3.1 · 2026-10-27
 
 ## 月读 v0.3.1
@@ -174,40 +202,3 @@ KOReader 插件包：`book.koplugin-v0.2.49.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.48...v0.2.49
-
-# v0.2.48 · 2026-10-26
-
-## 月读 v0.2.48
-
-KOReader 插件包：`book.koplugin-v0.2.48.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.48.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.48.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.47`：
-
-#### 新功能
-
-- :sparkles: (update): 长按检查更新可强制重装最新包 (ccdbc876)
-
-#### 修复
-
-- :bug: (note): 空串 note/drawer 不再把高亮判成笔记 (b34e50ff)
-- :bug: (lockscreen): 票根粗体带色不再因 Color==nil 崩溃 (bc200b1f)
-
-#### 变更
-
-- :white_check_mark: (lockscreen): 补强 Color 判空回归覆盖统计柱标签 (8bf79ed2)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.47...v0.2.48
