@@ -1,0 +1,27 @@
+# Inksurf plugin for KOReader
+# https://github.com/pihokkerr/InkSurf
+# zenpm:auto-scraped
+id=inksurf
+name=Inksurf
+version=1.1.0
+description=
+author=pihokkerr
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/pihokkerr/InkSurf
+stars=5
+updated_at=2026-10-27T16:01:01Z
+published_at=2026-10-26T08:19:22Z
+prerelease_version=1.1.0-rc1
+prerelease_published_at=2026-10-25T18:36:40Z
+readme_url=packages/koreader/inksurf.koplugin/README.md
+readme_hash=9708b347f08d5a67ac90ed2d2b47578534beb33d
+release_notes_url=packages/koreader/inksurf.koplugin/RELEASE_NOTES.md
+release_notes_hash=0d1dda21e5c3e6977a53673d0cff06d176e00d00cf9e4ae5974403d25ffd5053
+prerelease_notes_url=packages/koreader/inksurf.koplugin/PRERELEASE_NOTES.md
+prerelease_notes_hash=ec51afc7ee73f747250a209da64db1a566968ff363b3008ff8336518d625a91c
+releases=[{"tag_name":"v1.1.0","assets":[{"name":"inksurf.koplugin.zip","url":"https://github.com/pihokkerr/InkSurf/releases/download/v1.1.0/inksurf.koplugin.zip","size":10715956,"digest":"sha256:4d1ce41d5ca22ad6a47b86d535231eb32472ebb834b15e2e8d1cd7e905e26d15"}]},{"tag_name":"v1.1.0-rc1","assets":[{"name":"inksurf.koplugin.zip","url":"https://github.com/pihokkerr/InkSurf/releases/download/v1.1.0-rc1/inksurf.koplugin.zip","size":10714399,"digest":"sha256:9de021b043ac4190312179711d343c1da270102a312517a4ace6dee15b943993"}],"prerelease":true},{"tag_name":"1.0.2","assets":[{"name":"inksurf.koplugin.zip","url":"https://github.com/pihokkerr/InkSurf/releases/download/1.0.2/inksurf.koplugin.zip","size":10714467,"digest":"sha256:c3de35f44fd0b5f1b3661d4f322e0d0370909dc2822711e35af50ed55366c416"}]},{"tag_name":"v1.0.1","assets":[{"name":"inksurf.koplugin.zip","url":"https://github.com/pihokkerr/InkSurf/releases/download/v1.0.1/inksurf.koplugin.zip","size":10714464,"digest":"sha256:b743dab1a5f7fa08143ca7c4691d134dc2cc2fa0153fc38de600a108219c647f"}],"name":"InkSurf v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"inksurf.koplugin.zip","url":"https://github.com/pihokkerr/InkSurf/releases/download/v1.0.0/inksurf.koplugin.zip","size":10698744,"digest":"sha256:6218e5221bc9608475b6fc4b57d99ce7b87ffa7c571b4fe1cab6aeb5d1b0d4b6"}],"name":"InkSurf v1.0.0"}]
+source_type=release
+source_asset=inksurf.koplugin.zip
+size=10715956
