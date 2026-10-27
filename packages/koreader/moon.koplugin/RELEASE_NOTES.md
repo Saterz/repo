@@ -1,3 +1,36 @@
+# v0.3.4 · 2026-10-27
+
+## 月读 v0.3.4
+
+KOReader 插件包：`book.koplugin-v0.3.4.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.3.4.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.3.4.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.3.3`：
+
+#### 新功能
+
+- :sparkles: (sidebar): 侧栏新增书签页，与书摘按类型分开 (34366bc1)
+
+#### 修复
+
+- :bug: (reader): 过期目录先当基线装会话，离线不再只剩当前章 (bd9b6383)
+- :bug: (reader): 切章捕获前先 SaveSettings，反转翻页等偏好不再丢 (b09c70b3)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.3.3...v0.3.4
+
 # v0.3.3 · 2026-10-27
 
 ## 月读 v0.3.3
@@ -161,32 +194,3 @@ KOReader 插件包：`book.koplugin-v0.3.0.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.2.50...v0.3.0
-
-# v0.2.50 · 2026-10-26
-
-## 月读 v0.2.50
-
-KOReader 插件包：`book.koplugin-v0.2.50.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.2.50.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.2.50.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.2.49`：
-
-#### 修复
-
-- :bug: (reviews): 段评全屏配图按比例显示，不再拉满变形 (7c1cd621)
-- :bug: fix(jdread): 修复书城缓存菜单后的请求取消 (cc77220c)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.2.49...v0.2.50
