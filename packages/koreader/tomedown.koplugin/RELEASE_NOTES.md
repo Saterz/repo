@@ -1,3 +1,12 @@
+# v1.1.1 · 2026-10-27
+
+Tomedown 1.1.1.
+
+- The changelog inside KOReader no longer shows the address of an image or a link when the viewer cannot render Markdown. It keeps the image caption and the link text.
+- The rename dialog is called *Notes heading*, like the row that opens it.
+
+Install it from *Check for updates*, or the zip below.
+
 # v1.1.0 · 2026-10-27
 
 **Tomedown 1.1.0, the per book edition.**
@@ -186,65 +195,3 @@ All 758 test assertions green.
 
 -	Drop-in, no re-export needed. After updating, the next close exports
   once and *Last export* reflects that run.
-
-# v0.7.0 · 2026-10-01
-
-## v0.7.0
-
-### **Menu placement**
-
--	Tomedown now sits at the top of the reader's *Navigation* tab and the
-  file manager's *Settings* tab — the first entry on the first page, the
-  way the Bookshelf plugin does it — instead of falling to the bottom of
-  the tab with KOReader's automatic `NEW: ` prefix.
-
--	The entry was already in both menus: it only moved. No extra tab, no
-  duplicated row. (A dedicated top-level tab is deliberately deferred to
-  a future release.)
-
-### **Status panel**
-
--	A new *Status* row, right under *Reload everything to the cloud*, opens
-  one screen with the state that otherwise only lives in the transient
-  toast history: network, server and folder, queued uploads with what
-  the next flush is waiting for, and the last export/upload with their
-  timestamp and outcome.
-
--	Export and upload outcomes are recorded for every path, silent
-  suspend exports included, so the panel reflects what actually ran.
-
-### **Uploads in crash.log**
-
--	Each upload now logs its target and file count when it starts and the
-  ok/errors tally when it finishes; the pending queue logs how many
-  files it flushes. Batch totals were already there — which uploads
-  actually ran and how they ended only ever reached the toasts.
-
-### **Notification labels**
-
--	Automatic exports say where they came from: `Closing · 3 files
-  exported locally` (`Chiusura · 3 file esportati localmente` in
-  Italian). Manual exports keep the plain toast — you just tapped the
-  menu entry.
-
--	The error window, which stays on screen after a background close,
-  always names its trigger (`Closing` or `Manual`).
-
-### **Under the hood**
-
--	The widget class was renamed `MdBook` → `Tomedown`.
-
--	625 test assertions (lua5.4 + `luac5.1 -p`); Italian translation
-  updated for every new string.
-
-### **Zip contents**
-
-`main.lua`, `_meta.lua`, `tomedown_i18n.lua`, `tomedown_render.lua`,
-`tomedown_update.lua`, `languages/it.po`, `LICENSE`,
-`assets/logo.svg` - no tests, no README.
-
-### **Upgrading**
-
--	Drop-in: no format change, no re-export needed. The menu entry moves
-  to the top of the tab it was already in; everything else stays where
-  it was.
