@@ -1,6 +1,7 @@
 <div align="center">
 
 <img src="Kobold.koplugin/icons/kobold.svg" width="96" alt="Kobold Logo" />
+<img src="images/kobold-white.svg" width="96" alt="Kobold Logo" />
 
 # Kobold
 

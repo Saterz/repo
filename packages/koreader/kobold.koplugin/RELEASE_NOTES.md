@@ -1,3 +1,38 @@
+# v1.4 · 2026-10-28
+
+## Kobold 1.4
+
+<!--kobold-->
+A new search page, collections that work like the stock reader, Add to collection in the book menu, and finer brightness steps.
+<!--/kobold-->
+
+### New
+
+- **Search page**, search your books by title, author or series, with recent searches, sort options and pages
+- **New collection** from the "..." on the Collections tab, name it and pick its books straight away
+- **Manage collection**, add and remove books in one place, with filter, sort and search. Nothing changes until you save
+- **Collection menu**, hold a collection to manage, rename or delete it
+- **Filter, sort and cover view inside a collection**, remembered for each collection
+- **Add to collection** in the book menu, tick the collections a book belongs to
+- **Toolbar settings**, choose Kobold's search or KOReader's search, and set how much each brightness tap changes the light
+
+### Improved
+
+- **Brightness and natural light** now step by 1% per tap instead of 10%
+- **Collections list** shows the book count beside each collection
+- **About page** now links to the source code and Ko-fi
+- **Menus** open beside the "..." you tapped, with an arrow pointing at it
+
+### Install
+
+1. Download `Kobold.koplugin.zip` below
+2. Extract it and copy the `Kobold.koplugin` folder into KOReader's `plugins` folder
+3. Restart KOReader and open Kobold, or set it under **Start with > Kobold Home**
+
+On 1.1 or newer? Use **More > Check for updates** in Kobold.
+
+To uninstall, delete the `Kobold.koplugin` folder and restart KOReader.
+
 # v1.3 · 2026-10-23
 
 ## Kobold 1.3
@@ -125,31 +160,5 @@ New Files tab, grid view for Series, KOReader gestures in Kobold, a clock popup,
 3. Restart KOReader and open Kobold, or set it under **Start with > Kobold Home**
 
 Already on 1.0? Just copy the new folder over the old one.
-
-To uninstall, delete the `Kobold.koplugin` folder and restart KOReader.
-
-# v1.0 · 2026-10-14
-
-## Kobold 1.0
-
-First release of Kobold, a home screen for KOReader with the calm, familiar look of your e-reader's original software.
-
-### What's in it
-
-- **Home** with the books you're reading, your library and a collection at a glance, plus reading stats
-- **My Books** with Books, Authors, Series and Collections tabs, in list or grid view
-- **Filter and sort** by status, date added or title
-- **Collections** you can create, rename, delete and fill with books right from Kobold
-- **Status bar** with quick brightness, warmth, Wi-Fi and battery popups, plus file search
-- **Reading stats** on Home that you can customise, with your own text and tap actions
-- **Settings** page for books per page, battery style, stats and more
-- **Returns to Kobold** after you close a book
-- **Fast loading**, with covers and book info cached
-
-### Install
-
-1. Download `Kobold.koplugin.zip` below
-2. Extract it and copy the `Kobold.koplugin` folder into KOReader's `plugins` folder
-3. Restart KOReader and open Kobold, or set it under **Start with > Kobold Home**
 
 To uninstall, delete the `Kobold.koplugin` folder and restart KOReader.
