@@ -1,3 +1,33 @@
+# v0.1.0-beta.16 · 2026-10-28
+
+## Svenska
+
+- Läsöversikt begär nu bara statistik, bokräkning och senaste-böcker-data för kort som behöver dem.
+- Nya frivilliga **Adaptiv minneshantering** och **Snabbhetsläge** under **OrbitUI-inställningar → System och underhåll → Snabbhet, minne och diagnostik**. Befintligt beteende är standard. Snabbhetsläget stänger av svepanimationer och spekulativ förladdning; kalla sidladdningar kan därför ta längre tid.
+- Lokal prestandamätning och kopierbar rapport utan boknamn, sökvägar, konton eller uppladdning. Mätningarna gäller synkrona anrop, inte skärmens totala svarstid.
+- Ny snabbguide för Hem (SimpleUI), Bookshelf-profiler, chip, navigationsknapp och snabb återgång från en bok. Alla nya kontroller och hjälptexter finns på svenska och engelska.
+- Mindre releasepaket: bara utvecklarnas fil-/radreferenser utelämnas ur översättningsfilerna. Alla språk, texter, bilder, typsnitt och licensuppgifter behålls.
+- Säkrare lagringsstädning: efter verifierad start kan högst en gammal, oanvänd kodkopia tas bort. Fabrikskopia, aktiv version, återställningsversion och okända/ändrade filer behålls. Inställningar, läsdata, omslagscache och tilläggsbilder rörs inte.
+
+Android safe mode, omslagskvalitet och snabb återgång till rätt profil/chip/hyllposition behålls. Inga nya upstream-importer; samma granskade Bookshelf 6.0.4 och SimpleUI 3.0.1-uppföljning som Beta 15 ingår.
+
+**Uppdatera via förhandskanalen och starta om KOReader.** För manuell installation: välj `orbitui.koplugin.zip`, inte GitHubs källkodsarkiv. Ta en separat säkerhetskopia av KOReaders data. Detta är en förhandsversion; fysisk Boox/Bigme-kontroll av snabbhet, minne, skärm och lagringsbeteende återstår. Ingen uppmätt enhetsvinst utlovas.
+
+## English
+
+- Reading dashboard data demands follow visible cards and the selected goal owner; hidden cards no longer request unnecessary statistics, book counts or recent-book candidates.
+- Optional **Adaptive memory** and **Responsive** profiles: **OrbitUI settings → System & maintenance → Speed, memory & diagnostics**. Existing behaviour remains the default. Responsive skips Bookshelf wipe animations and speculative next-page/chip preload; cold page loads may take longer.
+- Opt-in, bounded local call timings and a viewable/copyable performance report. No book names, paths, accounts, raw errors or upload. Synchronous call timings are not end-to-end display latency; Lua heap is not total RAM.
+- Bilingual Home/Bookshelf quick guide for library profiles, chip sources, navigation and reader return.
+- Smaller package without removing languages, messages, images, fonts or licenses: only developer source-location comments are omitted from packaged translation catalogs.
+- After healthy startup, at most one verified strictly older unused code snapshot can be collected. Factory/current/rollback, pending/newer code and unknown/modified files stay protected. No books, settings, reading data, cover caches or add-on artwork are cleanup targets.
+
+Keeps Android safe mode, cover quality, fast profile/chip/page return and external sync ownership. No new upstream import; retains Bookshelf `d07905ba` (6.0.4) and SimpleUI `22d5a3d2` (3.0.1 follow-up).
+
+**Update on the preview channel and restart KOReader.** Use `orbitui.koplugin.zip` for manual installation, not GitHub's source archive. Bootstrap/API 1 and all 2,000 installed paths are unchanged. Earlier public releases remain immutable. Code rollback retains later settings and reading progress; keep an independent data backup.
+
+Automated Lua/LuaJIT, translation/package/source/history and native older-installer upgrade/rollback checks are separate from physical-reader acceptance. Boox/Bigme performance, native image pressure, UI/display and storage acceptance remain outstanding; no measured device speed/RAM improvement is claimed.
+
 # v0.1.0-beta.15 · 2026-10-28
 
 ## Svenska
@@ -192,76 +222,3 @@ measured speed improvement or complete Android-crash fix is claimed.
 
 No upstream merge: Bookshelf `c37580a1ca5040d2423e45b9bdd429776117f3c1` (6.0.3),
 SimpleUI `b1580f90b2e17cf03a66c744c323a1df66d77100`.
-
-# v0.1.0-beta.11 · 2026-10-26
-
-# OrbitUI 0.1.0-beta.11
-
-One accurate OrbitUI updater, clearer GitHub errors, and the reviewed October 26
-Bookshelf/SimpleUI updates. This remains an experimental prerelease.
-
-OrbitUI includes and adapts **SimpleUI by doctorhetfield-cmd** and **Bookshelf
-by AndyHazz**, with their contributors' work. This is an independent combined
-plugin, not an official release by either upstream project.
-
-## Updates and recovery
-
-- Bookshelf's embedded update page now uses OrbitUI's real running version,
-  preview-release preference, daily online checks and recovery controls. It no
-  longer presents Bookshelf's version as the OrbitUI version or offers obsolete
-  standalone branch/channel, wake notification and changelog controls.
-- Root and embedded update menus share the same controls. Existing OrbitUI
-  preview/daily preferences are retained; unrelated Bookshelf settings are not
-  rewritten. Standalone component behavior outside OrbitUI is unchanged.
-- GitHub 403/429 rate-limit responses show a readable reason and bounded retry
-  wait. Checks in the same running session respect GitHub's retry/reset hints.
-  Generic 403s are not incorrectly labelled as confirmed rate limits. No raw
-  response body, signed URL or Lua source path is shown for these HTTP failures.
-- TLS, host allowlisting, archive/hash/inventory checks, deferred activation and
-  rollback remain in force. This cannot guarantee that GitHub or a network will
-  accept a request; a blocked device must wait or resolve the network restriction.
-
-## Reviewed upstream changes since Beta 10
-
-- Bookshelf 6.0.3 corrects image-screensaver wake repaint and fullscreen status
-  strip taps. Modules among books have an independent, non-destructive switch
-  and load even when the other module surfaces are disabled.
-- SimpleUI adds a categorized module picker, optional free widths/stacking,
-  library wallpaper opacity, later-page statistics refresh and corrected Flow
-  night-mode cover colours. OrbitUI's existing layouts and independent margins
-  remain unchanged until explicitly edited.
-- Fast Book Closing exposes SimpleUI's already-present Home soft-parking as a
-  saved option, off by default. It keeps Home in RAM while reading; it does not
-  replace Bookshelf's existing fast-return/deferred-close mechanism. Extra RAM
-  use and reader/suspend/rotation behavior still need physical-device testing.
-
-Saved profiles/chips/navigation, bindings/series boxes, ornaments/fonts, reading
-data and optional BookOrbit/MAL/patch integrations are retained. No automatic
-rescan, cache reset, settings migration or bootstrap/API change is included.
-
-## Install
-
-Open **Tools > OrbitUI > Uppdatera OrbitUI**, enable preview releases, check for
-updates and restart KOReader. Existing Beta 9/Beta 10 installations need no
-bridge. If the old updater is blocked by GitHub, wait before retrying; its old
-error dialog cannot be repaired until the new runtime is installed. Manual
-installation must use **orbitui.koplugin.zip**, not a source-code archive. Keep
-hidden version directories and settings; follow the external-update verification
-and additional restart prompt. Never delete the plugin to work around a 403.
-
-## Verification and limits
-
-Release gates cover both complete Lua/LuaJIT suites, translations, sealed-byte
-Home/navigation/update regressions, clean source/inventory/history/artwork/secret
-audits, exact draft/public assets, main/tag CI and actual older native installers'
-upgrade/restart/rollback and external-runtime adoption. These use temporary
-installations and native-service fixtures, not physical readers.
-
-The photo alone does not establish why that device received 403. Real Boox/Bigme
-update dialogs, network restrictions, reader/suspend/rotation, wallpaper/night,
-module switches and optional Fast Book Closing still need device acceptance.
-No measured speedup or native Android crash fix is claimed. Older public tags
-and assets are immutable; code rollback retains current reading data/settings.
-
-Bookshelf Git: `c37580a1ca5040d2423e45b9bdd429776117f3c1`.
-SimpleUI Git: `b1580f90b2e17cf03a66c744c323a1df66d77100`.
