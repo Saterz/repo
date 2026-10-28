@@ -1,3 +1,11 @@
+# v6.0.4 · 2026-10-27
+
+- Fix: Module card colours on PocketBook colour screens (#565)
+- Fix: Border colours stay in colour on colour Kobo and Kindle screens
+- Fix: Black screen after waking with Sleep screen anti-ghosting on
+- Fix: Fewer full-screen flashes closing Shelf style and Filters
+- New: Search in the collection editor (#488)
+
 # v6.0.3 · 2026-10-26
 
 - Fix: Paint shelf after sleep resume on some devices (#551)
@@ -42,13 +50,3 @@
 - Fix: with the Appearance plugin, Bookshelf's own text colours (spine titles, badges) are kept (#543).
 - Fix: Kobo store books stay in Recent and the top panel after a restart (#546).
 - Fix: a tall ornament standing over the shelf menu no longer stays behind after a page turn or takes the top panel's taps.
-
-# v5.5.5 · 2026-10-20
-
-- Covers can show your star rating in the corner: Settings > Cover display > Favorite icon or star rating > Stars (rating). With Hardcover enrichment > Use Hardcover rating if no user rating, books you haven't rated show their Hardcover rating instead, and the Rating sort and Ratings shelf use it too (#538).
-- New gesture action: Bookshelf: refresh the library, for picking up new or edited books straight away (#541).
-- Fix: page counts follow KOReader's Use stable page numbers when it's turned off (#539).
-- Fix: the top panel's cover fills the panel's height again when the panel is tall (one row of covers, or swiped down).
-- Fix: Clear cover cache also redoes every spine's colour from its cover (#537).
-- Fix: Home (folders) and folder shelves sorted by Added or opened, Last opened, progress, status or rating re-sort straight after you close a book (#519).
-- Fix: Back on the base shelf no longer climbs above your library with KOReader's Back in file browser set to parent folder, and neither does the Folder up gesture action (#542).
