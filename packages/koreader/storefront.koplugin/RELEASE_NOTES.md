@@ -1,3 +1,16 @@
+# 26.10.28 · 2026-10-28
+
+Mostly back-end performance improvements and bug fixes:
+- Fix bug with suspend https://github.com/ultimatejimmy/storefront.koplugin/issues/5079
+- Fix https://github.com/ultimatejimmy/storefront.koplugin/issues/5080
+- Fix https://github.com/ultimatejimmy/storefront.koplugin/issues/5081
+- Update font https://github.com/ultimatejimmy/storefront.koplugin/issues/5082
+
+New feature: 
+- Add screensaver collections feature
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.20...26.10.28
+
 # 26.10.20 · 2026-10-20
 
 ## What's Changed
@@ -44,18 +57,3 @@
 - fix bug in rating system
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.10.1...26.10.2
-
-# 26.10.1 · 2026-10-01
-
-## What's new
-- Add Readerbackdrop as an additional source for screensavers, open the filter dialog to change the sources
-- Move refresh button to the top level of settings
-
-## Bug fixes
-- Fix refresh timestamp
-- Update some translations #5066 
-- Updated catalog refresh logic to be more consistent and follow the notification frequency settings
-- Made sure screensaver catalog is updated at the same time
-- Minor performance improvement when removing a screensaver from the collection
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.9.25.1...26.10.1
