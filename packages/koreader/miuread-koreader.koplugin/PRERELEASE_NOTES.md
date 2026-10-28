@@ -1,3 +1,5 @@
+# v6.1.0-beta.17 · 2026-10-28
+
 # v6.1.0-beta.16 · 2026-10-28
 
 - 修复 CHANGELOG 中重复插入的 6.1.0-beta.14 章节：只删除内容完全一致的副本，保留所有不同版本的历史更新记录。
@@ -27,11 +29,3 @@
 - 统一发布测试配置并保留 Beta 手动与 Tag 两种入口
 - 正式版改为测试通过后创建不可变 Tag，不再强制移动已有 Tag
 - 保留现有阅读同步、阅读时间和下载业务逻辑，Schema 136 不变
-
-# v6.1.0-beta.9 · 2026-10-26
-
-- Keep PR #156 verified-sequence callback fix and twelve transaction regression scenarios.
-- Remove the cached exact-alignment shortcut on new book opens; fetch fresh Web progress asynchronously.
-- Parse isolated reading-time Web progress consistently, validate chapter UID/index before committing the anchor, and retain safe unsent time on context/authentication failure.
-- Distinguish accepted-but-unconfirmed progress from actual write failure, including subsequent cloud changes; never replay old writes blindly.
-- Preserve end-of-reading-only network uploads and Schema 136; leave downloads, annotations and account transport unchanged.
