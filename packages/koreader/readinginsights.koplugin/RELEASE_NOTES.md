@@ -1,3 +1,9 @@
+# v8.7.9 · 2026-10-28
+
+### Changed
+- All-time "pages read" is now counted per book/page/day, the same way as Last 7 days, the monthly and yearly totals and the streak periods. A page read on several days counts once per day, so the all-time total always matches the sum of the per-day totals.
+- After updating, run "Reload data" once to refresh the cached all-time figure.
+
 # v8.7.8 · 2026-10-24
 
 ### Changed
@@ -32,9 +38,3 @@
 ### Changed
 
 - ISO date format: yearly chart shows month numbers (1–12) instead of month names; "Last 7 days" chart shows dates (10-23) instead of Today/Yesterday/weekday. Other formats unchanged.
-
-# v8.7.4 · 2026-10-23
-
-### Fixed
-
-- Some places still didn't used proper ISO date format.
