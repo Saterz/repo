@@ -49,7 +49,7 @@
 | 搜索、筛选、分类、系列、已下载 | AI 解释、问书、章节摘要、读书报告 | 书架、进度、笔记、统计按源双向同步 | 输入法增强（拼音、小鹤双拼、五笔、仓颉、注音，简繁转换） |
 | 元数据刮削与封面缓存 | X-Ray、统一查词窗口（词典 / 翻译 / AI / 百科）、整书双语对照、段评、生僻字注音 | 进度冲突处理与离线补推 | 局域网文件、输入、配置与更新管理 |
 | Z-Library 与 OPDS 书城、订阅（RSS / 网页 / 公众号） | 重新排版（另存，原书不动）、AZW3 | 热力图、阅读时段、读完预测、年度记录 | 快捷面板与 14 种翻页动画 |
-| 后台任务列表、单书缓存清理 | 按章书的全书笔记列表、章节缓存范围 | 导入 KOReader 自带统计 | 自动夜间、自动亮度、时区与 NTP 校时 |
+| 后台任务列表、单书缓存清理、漫画缓存清理（已读 / 按系列 / 全部） | 按章书的全书笔记列表、章节缓存范围 | 导入 KOReader 自带统计 | 自动夜间、自动亮度、时区与 NTP 校时 |
 | 游戏：小黑屋、阿页的阁楼、游戏合集（可选插件） | 蓝牙翻页器与想法选择器（可选插件 pageturner） | | |
 
 ## 目录
@@ -116,7 +116,7 @@
 ### 3. 阅读进度、笔记和统计形成闭环
 
 - 自动记录阅读页数、时长和会话统计，不依赖 KOReader 自带统计插件；也可在维护页一次性导入 KOReader 自带统计插件的历史记录（按书匹配书库，已有的记录不会重复导入）。
-- 支持按数据源同步书架、进度、划线/笔记和阅读统计；微信读书可选择把本地离线阅读时长合并上报，Kavita 拉取的云端统计同样受「多设备统计合并」开关控制（按天 / 按小时取本地与云端的较大值，补上离线阅读）。云端条目的日期与时段按设备本机时区换算，不依赖服务端时区设置。
+- 支持按数据源同步书架、进度、划线/笔记和阅读统计；微信读书可选择把本地离线阅读时长合并上报。Kavita 的阅读统计以云端 reading-history 为准，云端条目的日期与时段按设备本机时区换算，不依赖服务端时区设置。
 - 本地与云端进度相差至少 1% 时显示冲突对话框，由用户选择跳到云端位置或保留本地位置；选择本地进度后会立即上推，使两端重新一致。阅读快捷面板也可手动推送 / 拉取进度。
 - 关闭文档、休眠和网络恢复时会结清或重试待同步数据。
 - 手动标为已读、但没有章节信息的按章书（如微信读书），进度按最后一章读完上报；实在推不上的记录直接丢弃，不反复重试，单本失败也不影响其它书的进度同步。
@@ -330,7 +330,7 @@ AI 功能使用兼容 `/chat/completions` 的接口，需要配置接口地址�
 | iRead | 自建 API | 按章 | 双向 | 章 | — | — | ✓ | — |
 | 长佩文学 | 网页 | 按章 | 双向 | 章 | — | — | ✓ | — |
 | 潇湘书院 | 网页 | 按章 | 双向 | 章 | — | — | ✓ | — |
-| Kavita（拓展） | 自建 API | 整本 | 只拉 | 页 | 只推 | 只拉 | — | — |
+| Kavita（拓展） | 自建 API | 整本 | 只拉 | 页 | 双向 | 只拉 | — | — |
 | BookOrbit（拓展） | kosync | 整本 | 只拉 | 页 | 只推 | — | — | — |
 
 例外：
@@ -347,7 +347,7 @@ AI 功能使用兼容 `/chat/completions` 的接口，需要配置接口地址�
 - 长佩书架不同步分组里的书。长佩和潇湘不登录也能读免费章。
 - iRead 从月读加架要先搜到这本书。
 - QQ阅读的书不在书架上时不推进度，也不会为了推进度把书加回去。
-- Kavita 没有删书接口。时长靠阅读期进度心跳记在服务端（默认 30 秒，可关），月读只拉统计。划线只推新建和改备注。装了 kamare 且在线时，漫画交它看。
+- Kavita 没有删书接口。时长靠阅读期进度心跳记在服务端（默认 30 秒，可关），月读只拉统计。划线双向：本地新建和改备注会推上去，远端的改动与删除也会拉回本地。装了 [kamare](https://github.com/backtracker/kamare.koplugin) 且在线时，漫画交它看；增强版还能在「设置 → 数据源 → Kavita → 漫画缓存」里清理已读、按系列清理和全部清理（含未关联服务器的缓存）。
 - BookOrbit 没有删书接口。划线只上传，网页上的改动和删除不会回到本地。
 
 订阅不是书源，不进选择器，也不记进度和统计。Z-Library 与 OPDS 是书城，下载后进本地书籍，见[书城](#书城)。
@@ -403,7 +403,7 @@ Release 里另有两个独立插件包，需要同时安装月读才能使用：
 
 | 插件包 | 书源 |
 |---|---|
-| `moonsource-kavita.koplugin-<版本>.zip` | [Kavita](https://www.kavitareader.com/) 服务器 |
+| `moonsource-kavita.koplugin-<版本>.zip` | [Kavita](https://www.kavitareader.com/) 服务器（漫画阅读与缓存由 [kamare](https://github.com/backtracker/kamare.koplugin) 提供，需增强版才有缓存接口） |
 | `moonsource-bookorbit.koplugin-<版本>.zip` | BookOrbit 服务器 |
 
 解压后把 `moonsource-xxx.koplugin/` 目录和 `book.koplugin/` 一样放进 `plugins/`，重启 KOReader 后在月读的数据源里选择。
@@ -573,9 +573,9 @@ return {
 - **id 规则：** 扩展 id 必须是 `ext.<name>`（字母数字 `_-`），写进书库与配置，发布后不能改，重名时先加载的生效；组件 id 必须以 `<扩展 id>.` 开头，简写表可只写短名，月读自动补前缀。
 - **出错处理：** 描述文件不合约定、组件 id 不合规或重名只记日志并跳过；组件运行时抛错被 pcall 隔离，记日志后画空白占位，不影响首页和内置源。
 - **保存的布局：** 扩展卸载或禁用后组件不再显示，但首页布局里的位置保留，重装后回到原处。
-- **功能挂点：** `provides.features = { setting, panel, topbar, events, hooks }` 往月读的设置页（`entries(desktop)`）、快捷面板（`actions()`）、桌面顶栏（`items()`）、数据事件（`book_identity_changed` / `book_removed`）和阅读页就绪（`hooks.onReaderReady(plugin)`）加功能，形状与内置 `features/<name>/` 的约定文件相同；值可以是表，也可以是插件内模块名（用到时才 require）。开关、顶栏项、设置页 id 自动加 `<扩展 id>.` 前缀，回调出错只记日志，配置用 `utils.settings.getSource(<扩展 id>)`。其它 KOReader 事件、菜单和手势由扩展插件自己的 `main.lua` 处理。
+- **功能挂点：** `provides.features = { setting, panel, topbar, events, hooks, lookup }` 往月读的设置页（`entries(desktop)`）、快捷面板（`actions()`）、桌面顶栏（`items()`）、数据事件（`book_identity_changed` / `book_removed`）、阅读页就绪（`hooks.onReaderReady(plugin)`）和查词面板（`lookup.tabs` / `lookup.actions`）加功能，形状与内置 `features/<name>/` 的约定文件相同（lookup 形状见 `features/rare/lookup.lua` 的 `externalTabs` / `externalActions`）；值可以是表，也可以是插件内模块名（用到时才 require）。开关、顶栏项、设置页、查词 Tab / 操作按钮 id 自动加 `<扩展 id>.` 前缀，回调出错只记日志，配置用 `utils.settings.getSource(<扩展 id>)`。查词 `actions` 由扩展自己决定是否登记，核心与示例默认不追加操作按钮。其它 KOReader 事件、菜单和手势由扩展插件自己的 `main.lua` 处理。
 
-示例：书源 [`examples/moonsource-demo.koplugin`](examples/moonsource-demo.koplugin/moon_source.lua)（书源 + 首页组件），非书源 [`examples/moonwidget-demo.koplugin`](examples/moonwidget-demo.koplugin/moon_source.lua)（首页组件 + 设置 / 快捷面板 / 顶栏开关）。分步指南见文档站[扩展插件](https://moon.ankio.net/develop/extend/plugin)、[接一个数据源](https://moon.ankio.net/develop/extend/source)与[锁屏与首页组件](https://moon.ankio.net/develop/extend/components)。
+示例：书源 [`examples/moonsource-demo.koplugin`](examples/moonsource-demo.koplugin/moon_source.lua)（书源 + 首页组件），非书源 [`examples/moonwidget-demo.koplugin`](examples/moonwidget-demo.koplugin/moon_source.lua)（首页组件 + 设置 / 快捷面板 / 顶栏 / 查词 Tab）。分步指南见文档站[扩展插件](https://moon.ankio.net/develop/extend/plugin)、[接一个数据源](https://moon.ankio.net/develop/extend/source)与[锁屏与首页组件](https://moon.ankio.net/develop/extend/components)。
 
 ## 版本与发布
 

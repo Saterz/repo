@@ -1,3 +1,8 @@
+# v0.21.2 · 2026-10-28
+
+## 🐛 Bug Fixes
+- fix(http): solve Royal Road's Anubis bot check
+
 # v0.21.1 · 2026-10-12
 
 ## 🐛 Bug Fixes
@@ -29,18 +34,3 @@
 
 ## 🧰 Maintenance
 - docs: track CLAUDE.md pointing at AGENTS.md
-
-# v0.19.0 · 2026-09-01
-
-## 🚀 Features
-- feat: add a manual "clear new-chapters badge" action per story
-- feat: remove the "Refresh cover" action
-
-## 🐛 Bug Fixes
-- fix(ui): label the badge-clear button "Clear new status"
-- fix: clear the new-chapters ribbon at the start of every update check
-- fix(parser): pick up chapters that belong to no volume
-
-## 🧰 Maintenance
-- docs(site): restyle landing page and fix walkthrough layout bugs
-- docs: refresh README screenshots and note reading progress
