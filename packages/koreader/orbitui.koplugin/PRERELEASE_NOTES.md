@@ -1,3 +1,24 @@
+# v0.1.0-beta.15 · 2026-10-28
+
+## Svenska
+
+- **Färg i Läsöversikt:** välj Av, Accenter eller Tonade kort under **OrbitUI-inställningar > Hem (SimpleUI) > Läsöversikt > Kortfärger**, eller i modulens egna inställningar. Tonade kort ger pastellbakgrunder och färgade ramar/indikatorer. Valet gäller den aktuella läsöversikten, inte hela gränssnittet.
+- **Omslagsfärgat Fortsätt läsa-kort:** ett färgat omslag kan ge kortet en passande mörk nyans. Mörkt/ljust kort, rubriker, layout, bokkällor, öppna/långtryck och oberoende bläddring behålls. Svartvita skärmar och avstängd färgrendering behåller gråskalan; nattläget får egna nyanser.
+- **Senaste granskade upstream:** Bookshelf 6.0.4 med färgfixar, mindre onödiga helskärmsblinkningar och sökbar samlingshantering. SimpleUI får rättningar av minnesläckor/sidpilar, uppskjuten fillistning, färre onödiga omslagsuppdateringar, bakgrundsdithering, valfri sidblinkning och Hazel.
+- Våra profil-/snabbstängningsfixar, Android safe mode/omslagsfixen, Home/Bento, serieboxar/ornament och BookOrbit/MAL-kopplingar är kvar.
+
+**Befintliga installationer behåller Av tills du väljer färg.** Uppdatera via OrbitUI med förhandsversioner tillåtna och starta om KOReader. Ingen återställning eller ny indexering krävs för färgerna.
+
+## English
+
+- **Reading dashboard card colours:** Off, Accents or Tinted cards, scoped to each Home/Custom Screen. Existing installations remain Off until explicitly changed. Find it in **OrbitUI settings > Home (SimpleUI) > Reading dashboard > Card colours**, or the module's own settings.
+- Optional cover-derived continue-reading colour, native monochrome fallback and day/night palettes. Existing dark/light hero, layout, headings, sources, independent row paging and book actions are retained. This is an independent OrbitUI implementation inspired by BookOrbit's colour-board options; no BookOrbit code, palette or artwork is imported.
+- Includes reviewed **Bookshelf 6.0.4** through `d07905ba932e09044827aadf480c188a5d324b96` and **SimpleUI 3.0.1 follow-up** through `22d5a3d2dd7be4651e718eb49027d82f68b3ace7`. Fast profile return, settings improvements, safe Android covers, Home/Bento and external sync owners remain intact.
+
+Install **orbitui.koplugin.zip**, not GitHub's source archive. Existing supported betas can update on the preview channel; restart KOReader. Bootstrap/API 1, installer limits and the complete 2,000-file installed path set are unchanged. No settings, progress, links, caches or artwork are reset. Code rollback preserves later data/settings changes; older builds ignore the new scoped colour choice.
+
+This is a **prerelease**. Automated Lua/LuaJIT, contrast/native-UI-boundary, package and native archive/OTA checks are not physical display acceptance. Actual Boox/Bigme colour strength, night-mode rendering, ghosting, responsiveness and touch/rotation/sleep checks remain outstanding. SVG schematics use synthetic covers and approximate text; they are not device screenshots or performance measurements.
+
 # v0.1.0-beta.14 · 2026-10-27
 
 ## Svenska
@@ -244,81 +265,3 @@ and assets are immutable; code rollback retains current reading data/settings.
 
 Bookshelf Git: `c37580a1ca5040d2423e45b9bdd429776117f3c1`.
 SimpleUI Git: `b1580f90b2e17cf03a66c744c323a1df66d77100`.
-
-# v0.1.0-beta.10 · 2026-10-25
-
-# OrbitUI 0.1.0-beta.10
-
-Reviewed Bookshelf 6.0.2 fixes, with OrbitUI's working Home and navigation retained.
-
-OrbitUI includes and adapts **SimpleUI by doctorhetfield-cmd** and **Bookshelf
-by AndyHazz**, with their contributors' work. This is an independent combined
-plugin, not an official release by either upstream project.
-
-## Changes since Beta 9
-
-- **Metadata and cover refresh:** Bookshelf 6.0 could delete a metadata row but
-  keep answering from an old in-memory batch, preventing re-extraction. Single
-  and bulk Refresh metadata, stale-cover cleanup and cover reversion now forget
-  that row; the hero discards its old book memo when extraction completes.
-  This fixes a specific refresh failure, not every possible missing cover.
-- **Colour-cover repaint:** clipped status updates no longer paint cover shadows
-  outside their refresh area and over the covers. Unknown drawing methods fall
-  back to full painting instead of silently drawing unclipped.
-- **E-ink status updates:** measure the status strip even before its new widgets
-  have painted; avoid unnecessarily refreshing the whole right column/screen.
-  Clock/device-state ticks update the tree without panel refreshes underneath
-  another window. Closing it repaints current content; live previews still work.
-- **Micro-modules:** public `ctx.open_book` / `ctx.show_book` helpers retain the
-  usual shelf/ReaderUI opening path. Fullscreen taps report their actual surface.
-  Keyboard/d-pad focus can reach the fullscreen pencil and editor toolbar/footer.
-  These are Bookshelf's modules, not changes to Home/Bento's editor.
-
-Bookshelf advances by eight reviewed Git commits to 6.0.2. SimpleUI is already
-current and does not change. Existing profile/chip IDs, saved navigation bars,
-Home/Bento geometry, bindings, series-box aspect/labels/ratings, ornaments,
-fonts, reading data and optional BookOrbit/MAL/Patch Manager integrations remain.
-No new runtime module, settings/data migration, automatic scan, cache reset or
-bootstrap/API change is included.
-
-## Install or update
-
-Enable preview releases in **Tools > OrbitUI > Uppdatera OrbitUI**, check for
-updates and restart KOReader. Beta 9 and Beta 5 can update directly; no bridge
-or settings reset is needed. Keep a separate settings backup.
-
-For a first installation, download **orbitui.koplugin.zip**, not a source-code
-archive. Disable standalone SimpleUI/Bookshelf, keep KOReader's **Cover browser**
-enabled and restart. See the
-[installation guide](https://github.com/komadorirobin/orbitui.koplugin/blob/v0.1.0-beta.10/README.md#installation).
-
-For a missing/stale cover, try the book's **Refresh metadata** after updating.
-For a full local index, use the library section's **Library & search > Scan all
-library metadata** control. The scan uses KOReader's configured home directory,
-not only that profile's folders; check that scope first. Choose refresh if
-existing rows need updating, avoid pruning unless intended, and let it finish.
-This is local metadata work, not Hardcover synchronization or a reading-data reset.
-
-## Verification and limitations
-
-Release gates include both complete Lua/LuaJIT suites, all original component
-tests and translations, packaged Home/navigation/module-opening regressions,
-clean inventory/source and outgoing history/artwork/secret audits, exact
-draft/public downloads, main/tag CI and real public Beta 9/Beta 5 native OTA
-upgrade/restart/rollback and external-runtime adoption.
-
-Native services/rendering are stubbed in the four new whole-module integration
-cases. Native OTA tests use isolated temporary installations, not a reader.
-The user confirms Home and Beta 9 navigation work on Boox; the reported missing
-covers still need retesting after this update. Colour repaint, covered clock
-ticks, module keys/rotation and broader Bigme/external-plugin acceptance remain
-open. No measured speedup or resolution of the earlier native Android mutex
-abort is claimed. This remains a prerelease.
-
-Bookshelf Git: `5f726c253c5cb4d5a2a2137af52731562e1cb9b7`.
-SimpleUI Git: `40b301f0f5e4466021d00b4e47ac8c09bb65ac8c`.
-
-Code rollback retains reading data and does not undo later settings edits.
-Releases older than Beta 9 do not recognize the generic Bookshelf action and
-may prune that button; reselect an older saved-profile action if needed.
-Existing public tags and assets remain unchanged.
