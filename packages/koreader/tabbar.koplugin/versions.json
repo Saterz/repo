@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v2.0","assets":[{"name":"tabbar.koplugin.zip","url":"https://github.com/DHaizon/tabbar.koplugin/releases/download/v2.0/tabbar.koplugin.zip","size":12682,"digest":"sha256:ea1af0588c6dad94791ae94034757b83993d7a88fb43a8f0223856bcad21b725"}],"name":"TabBar v2.0"}]
+}
