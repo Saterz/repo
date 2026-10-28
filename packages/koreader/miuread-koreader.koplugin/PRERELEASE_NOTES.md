@@ -1,3 +1,14 @@
+# v6.1.0-beta.16 · 2026-10-28
+
+- 修复 CHANGELOG 中重复插入的 6.1.0-beta.14 章节：只删除内容完全一致的副本，保留所有不同版本的历史更新记录。
+- 发布准备阶段自动识别和去重完全一致的历史版本章节；同版本的说明存在实质差异时安全终止，并提供冲突行号。
+- 保留“输入版本号与更新说明即可发布”的自动生成方式，不需要单独手工编辑 CHANGELOG。
+- 增加重复章节、重复总标题、冲突说明、自动发布重试与幂等性回归测试。
+- 完整保留 beta.15 的公开评论获取修复，以及 beta.14 的弹窗与菜单 UX 功能；不改下载、同步、个人批注和云端数据处理逻辑。
+- 本版本源码通过本地测试；GitHub Actions 真实发布和 Kindle 实机仍需分别验收。
+
+# v6.1.0-beta.14 · 2026-10-28
+
 # v6.1.0-beta.13 · 2026-10-28
 
 - 统一正文 EPUB 下载，整书、单章、范围及预下载不再新建带评论 EPUB；旧文件保留识别与打开能力。
@@ -24,23 +35,3 @@
 - Parse isolated reading-time Web progress consistently, validate chapter UID/index before committing the anchor, and retain safe unsent time on context/authentication failure.
 - Distinguish accepted-but-unconfirmed progress from actual write failure, including subsequent cloud changes; never replay old writes blindly.
 - Preserve end-of-reading-only network uploads and Schema 136; leave downloads, annotations and account transport unchanged.
-
-# v6.1.0-beta.8 · 2026-10-26
-
-- Revert beta.6 low-level ReaderUI upload vetoes; retain the established end-of-reading upload lifecycle and the removed one-shot upload on book open.
-- Anchor-aware latest-wins decision: prefer independently verified common chapter/co over server write timestamps; no 30-second ambiguous conflict UI.
-- When the server is newer, keep an UNSENT local transaction until cloud position is verified on the device; never erase it after merely fetching cloud progress.
-- Preserve Web-only verification of uploaded chapter/co, pending progress on failure, and account/sequence isolation.
-- Revert global menu greying/truncation changes; use opt-in readable readonly rows and a full-text reason dialog for progress details.
-- Keep reading-time and legacy migration data protections; add regression coverage for cloud adoption and retained pending rows.
-- Retain automatic tag releases and changelog normalization. No database schema bump.
-
-# v6.1.0-beta.5 · 2026-10-26
-
-- 以 beta.2 为基线，选择性移植进度恢复锚点、E-Ink ZIP、HTTP 暂停与 KOReader 退出修复。
-- Web 上传只由 Web 回读确认；普通云端进度仍使用 Web/Agent 综合读取，保留原坐标字段优先级及原持久化写入。
-- 阅读时间兼容写入采用 Web 进度；缺失章节索引时只允许同章节 UID 的目录信息补齐。缺少可信上下文时保持既有失败补报路径。
-- 下载等待队列在延迟启动前重查队列身份和运行条件；历史无账号标记的等待任务需要手动确认后才能自动运行。
-- 同一笔进度上传的重复校验共享回调；扩充功能等价和异常恢复测试。
-- 本版未更改 SQLite Schema、下载协议、登录协议、原有 Tag 自动发布触发条件。
-- 尚未通过真实微信读书服务端与 Kindle 实机验证；历史 `co=368 → co=0` 的服务器侧原因仍待确认。
