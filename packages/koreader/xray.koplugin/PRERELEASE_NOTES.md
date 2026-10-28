@@ -1,3 +1,22 @@
+# 26.10.28-beta · 2026-10-28
+
+### New Features
+
+* **Anthology and Short Story Collection Support**: If you read short story collections, anthologies, or omnibus editions, X-Ray now recognizes them and organizes everything story by story instead of dumping every character across the entire volume into one massive list.
+  * **Current Story Focus**: While reading inside a collection, the characters, locations, and timeline events for *This Story* are highlighted right at the top of the menu.
+  * **Collapsible Story Sections**: Other stories in the collection are neatly folded into collapsible sections, showing page numbers and story titles.
+  * **Recurring Characters Across Stories**: Characters who return across different stories (such as recurring detectives or companions) are tracked seamlessly across story boundaries without losing story-specific descriptions.
+  * **Story-Aware Spoiler Protection**: Future story headers and their characters stay hidden until you reach that story in the book, matching your spoiler settings.
+
+### Improvements & Fixes
+- Fix issue with new claude version and thinking level #127 
+* **Timeline **: Fixed an issue where timeline wasn't generating on a full-book prefetch #160 
+* **List Navigation**: Toggling folded story sections on later pages of the menu now preserves your position instead of jumping back to page one.
+* **Unit Converter Refinements**: Improved the new feature prompt behavior and eliminated redundant background unit scans when navigating between chapters. #159 
+* Fix #156 
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.22...26.10.28-beta
+
 # 26.10.23-beta · 2026-10-22
 
 ## What's New
@@ -35,23 +54,3 @@ You can now jump straight into X-Ray details when selecting a character, locatio
 Gesture now opens normal x-ray menu
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.16-beta...26.10.18-beta
-
-# 26.10.16-beta · 2026-10-16
-
-## What's Changed
-
-### Story Arc Fixes & Consistency
-* **Updated Settings Naming**: Renamed all remaining menu items and descriptions to **Story Arc Settings** across all languages for consistency.
-* **Support for Part-Only Books**: Fixed an issue where books divided into large "Parts" rather than regular numbered chapters (such as Stephen King's *Carrie*) resulted in missing character arcs. The plugin now automatically breaks oversized sections into smaller segments during prefetch so characters evolve naturally across the entire story.
-* **Prefetch Truncation Fix**: Fixed a bug where starting full-book pre-generation or horizon prefetch from early pages could prematurely truncate the first chapter.
-
-### Stability & Performance on E-Readers
-* **Reduced Memory Footprint**: Fixed an issue where extracted chapter text was kept in memory during background pre-generation. Text buffers are now freed immediately once sent.
-* **Low Memory Guards**: Added checks that monitor free memory between prefetch batches and pause background scanning if system RAM runs low, preventing crashes on memory-constrained devices like Kindles.
-* **Fetch Collision Prevention**: Page turns and chapter transitions while reading will no longer trigger conflicting background fetches while pre-generation is actively running.
-
-### Unit Converter
-* **Language-Aware Cache Versioning**: The unit converter now tracks rule changes per language and category rather than using a single global version bump. Updates to vocabulary or aliases in other languages will no longer invalidate your existing scanned books, eliminating unnecessary re-scans.
-* **Legacy Cache Migration**: Existing unit caches are now automatically recognized and preserved across updates.
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.10.15-beta...26.10.16-beta

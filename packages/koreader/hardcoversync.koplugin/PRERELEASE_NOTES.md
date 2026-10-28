@@ -1,3 +1,9 @@
+# v2.4.0-beta.3 · 2026-10-28
+
+No pull requests were merged since the last release.
+
+**Full changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.4.0-beta.2...v2.4.0-beta.3
+
 # v2.4.0-beta.2 · 2026-10-28
 
 No pull requests were merged since the last release.
@@ -40,26 +46,3 @@ Browse community reviews even when you are offline. Pages you have opened, inclu
 No pull requests were merged since the last release.
 
 **Full changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.3.0-beta.1...v2.3.1-beta.1
-
-# v2.3.0-beta.1 · 2026-10-22
-
-## ✨ New
-- Add one-step stable releases with vX.Y.Z-stable (#185)
-- Add the activity feed's data layer: status changes, notes, quotes and reviews (#186)
-- Add an Activity tab to the Library (#188)
-- Add a Journal button to the reader panel (#192)
-
-## 🎨 Improved
-- Book details: every action is a button (#194)
-- Rework the reader panel with fixed actions and top controls (#196)
-
-## Other
-- Design docs for the e-reader target; dialogs 80% wide with side-by-side buttons (#182)
-- Dialogs about 80% wide with side-by-side buttons (#187)
-- Update the design docs to leave sheets as they are (#189)
-- Keep Activity on the device and show what is waiting to send (#190)
-- Let you edit and delete your notes, quotes and reviews from Activity (#193)
-- Download new covers three at a time (#184)
-- Balance the reader panel and restore readable book actions (#197)
-
-**Full changelog**: https://github.com/CaptainCamin/HardcoverSync.koplugin/compare/v2.2.1-beta.1...v2.3.0-beta.1
