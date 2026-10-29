@@ -1,3 +1,20 @@
+# v1.0.2 · 2026-10-29
+
+Fixes for Ligature 1.0.1.
+
+- the dictionaries of the ten languages besides English no longer suggest
+  English words, which came up in Portuguese as "the" and "you"; update
+  them under Manage dictionaries
+- loads when another plugin has changed KOReader's keyboard first, as
+  Appearance before 1.9.0 did; Ligature fell back to KOReader's own
+  keyboard then
+- swipes are a little quicker on the Kindle, with less memory used for
+  each one
+
+### Installing
+
+Unzip `ligature.koplugin.zip`, copy the `ligature.koplugin` folder into KOReader's `plugins` folder (`koreader/plugins` on a Kindle over USB) and restart KOReader.
+
 # v1.0.1 · 2026-10-12
 
 Fixes for Ligature 1.0.0.
