@@ -1,3 +1,35 @@
+# v0.4.3 · 2026-10-29
+
+## 月读 v0.4.3
+
+KOReader 插件包：`book.koplugin-v0.4.3.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.4.3.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.4.3.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.4.2`：
+
+#### 修复
+
+- :bug: (fonts): 坏界面字体不再写进 fontmap 导致 KO 冷启动崩溃 (13b9459e)
+
+#### 变更
+
+- :green_heart: (fonts): fontpicker 测试适配 set 的成功返回值 (cc89afdc)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.4.2...v0.4.3
+
 # v0.4.2 · 2026-10-29
 
 ## 月读 v0.4.2
@@ -212,43 +244,3 @@ KOReader 插件包：`book.koplugin-v0.3.4.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.3.3...v0.3.4
-
-# v0.3.3 · 2026-10-27
-
-## 月读 v0.3.3
-
-KOReader 插件包：`book.koplugin-v0.3.3.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.3.3.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.3.3.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.3.2`：
-
-#### 修复
-
-- :bug: (passcode): 修复解锁页测例与残留 l10n，让 v0.3.3 CI 过关 (1e65f30b)
-- :bug: (ocr): 清单解析失败只报 bad manifest，不再透出解析器报错 (2b708b01)
-- :bug: (fanqie): HTTP 错误只报短句，整条 URL 诊断串不再弹给用户 (881ff893)
-- :bug: (moon): 非 JSON 回包只报短句，整页 HTML 不再弹给用户 (36ffbe98)
-- :bug: (store): StoreCache 显式传 source_id，避免 nil 拼键炸掉 (3a2045a9)
-
-#### 界面
-
-- :lipstick: (passcode): 解锁页铺锁屏纯图壁纸，卡片居中不挡 logo (982e1114)
-
-#### 变更
-
-- :children_crossing: (auth): 无法自动登录时明确通知用户 (80767b70)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.3.2...v0.3.3
