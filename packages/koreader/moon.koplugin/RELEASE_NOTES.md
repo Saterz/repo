@@ -1,3 +1,39 @@
+# v0.4.1 · 2026-10-29
+
+## 月读 v0.4.1
+
+KOReader 插件包：`book.koplugin-v0.4.1.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.4.1.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.4.1.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.4.0`：
+
+#### 修复
+
+- :bug: (wechat): 脚注弹窗与页底直显互斥，恢复 epub:type (cced23c3)
+
+#### 变更
+
+- :globe_with_meridians: (l10n): 删除已不用的脚注文案键 (d8c7d965)
+- :construction_worker: ci: push main / PR 自动跑离线测试 (66bbf7af)
+- :truck: test: 散落在 tests/ 根的 spec 归位到镜像目录 (718a1456)
+- :white_check_mark: test: 离线测试只依赖系统 luajit + libsqlite3 (d1f90d30)
+- :fire: chore: 删掉仓库里的代码审计报告 (5dc9adc4)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.4.0...v0.4.1
+
 # v0.4.0 · 2026-10-29
 
 ## 月读 v0.4.0
@@ -207,57 +243,3 @@ KOReader 插件包：`book.koplugin-v0.3.2.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.3.1...v0.3.2
-
-# v0.3.1 · 2026-10-27
-
-## 月读 v0.3.1
-
-KOReader 插件包：`book.koplugin-v0.3.1.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.3.1.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.3.1.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.3.0`：
-
-#### 新功能
-
-- :sparkles: (http): 大文件下载支持断点续传 (dc3be5b5)
-- :sparkles: (remote): 打开远程管理显示二维码与地址 (bc9880b3)
-- :sparkles: (bluetooth): 睡眠前记录蓝牙状态，唤醒后自动恢复 (5ee99306)
-- :sparkles: (rotation): 记住全局屏幕方向，下次进桌面与开书沿用 (e3c82ece)
-- :sparkles: (reader): 支持中西文字体分开选择 (608be953)
-- :sparkles: (wechat): 书架改走 synckey 增量同步，全量加 bookCount 对账 (033b6a37)
-
-#### 修复
-
-- :bug: (reader): 库外打开只 touch 不上架，EndOfBook 交回原生 (77b5005d)
-- :bug: (ui): 斜向截图手势按 northeast 等真实方向放行 (59435824)
-- :bug: (test): 补齐旋转合入后缺失的测试桩 (ba59e82a)
-- :bug: (wake): 看门狗不再强制关锁屏，只记日志 (972dce5f)
-- :bug: (bars): 书名等弹性组件居中靠右按内容宽偏移，不再贴槽左缘 (0912b10a)
-
-#### 性能
-
-- :zap: (local): 扫盘与补齐拆开，日常同步回到分钟级并可续跑 (1369894c)
-
-#### 重构
-
-- :recycle: (store): 书城缓存收敛到数据获取层，源退回纯拉取 (a6369e2b)
-
-#### 变更
-
-- :globe_with_meridians: (l10n): 补齐本地书补封面文案并删掉废弃键 (354915b7)
-- :fire: (source): 删除起点/QQ阅读/潇湘/长佩书架分页的 50 页上限 (53daf2d1)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.3.0...v0.3.1
