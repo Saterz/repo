@@ -1,3 +1,40 @@
+# v0.4.2 · 2026-10-29
+
+## 月读 v0.4.2
+
+KOReader 插件包：`book.koplugin-v0.4.2.zip`
+
+输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
+
+安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
+
+拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.4.2.zip`（Kavita）、
+`moonsource-bookorbit.koplugin-v0.4.2.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
+
+词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
+`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
+
+### 更新内容
+
+相对上一版本 `v0.4.1`：
+
+#### 修复
+
+- :bug: (xray): 有进展的全书分析不再误报失败 (#77) (07b454af)
+- :bug: (insight): 显隐配置缺失时不再崩溃 (fca11c3d)
+- :bug: (xray): 显式重新生成时释放已删实体的墓碑 (693216ba)
+- :bug: (kavita): 卷行不全时不按「缺行=未读」聚合，退回服务端比例 (de45eb95)
+- :bug: (kavita): 起始页只把云端位置当提示，合并交给 kamare (2a94d5f4)
+- :bug: (kavita): 漫画进度跨设备取更靠后，书架百分比与打开位置同源 (d5234162)
+
+#### 重构
+
+- :recycle: (toc): 目录不做保鲜，开书与临近章末静默刷新 (0e7726a8)
+
+### 完整对比
+
+https://github.com/AnkioTomas/moon/compare/v0.4.1...v0.4.2
+
 # v0.4.1 · 2026-10-29
 
 ## 月读 v0.4.1
@@ -215,31 +252,3 @@ KOReader 插件包：`book.koplugin-v0.3.3.zip`
 ### 完整对比
 
 https://github.com/AnkioTomas/moon/compare/v0.3.2...v0.3.3
-
-# v0.3.2 · 2026-10-27
-
-## 月读 v0.3.2
-
-KOReader 插件包：`book.koplugin-v0.3.2.zip`
-
-输入法词库（整库，手动 sideload）：`dictionary.sqlite3 dictionary-wubi.sqlite3 dictionary-cangjie.sqlite3 dictionary-zhuyin.sqlite3`
-
-安装：解压后将 `book.koplugin` 复制到 KOReader 的 `plugins` 目录，然后重启。
-
-拓展书源（可选，需同时安装月读）：`moonsource-kavita.koplugin-v0.3.2.zip`（Kavita）、
-`moonsource-bookorbit.koplugin-v0.3.2.zip`（BookOrbit）。解压后同样放进 `plugins` 目录。
-
-词库 sideload：下载对应布局的词库，直接放入 KOReader 数据目录下的
-`.moon/`（与 `book.sqlite3` 同级）。附件已使用最终文件名，无需重命名。
-
-### 更新内容
-
-相对上一版本 `v0.3.1`：
-
-#### 修复
-
-- :bug: (store): Z站浏览补上 id，避免 StoreCache 拼键炸掉 (711d52b9)
-
-### 完整对比
-
-https://github.com/AnkioTomas/moon/compare/v0.3.1...v0.3.2
