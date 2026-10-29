@@ -1,3 +1,19 @@
+# v1.5.3 · 2026-10-29
+
+Continuous view now zooms what you actually see on screen.
+
+### 🔧 Fixes
+- **Quadrant zoom in continuous view** (#20): when the screen showed the end of one page and the start of the next, quadrant zoom divided only the top page into quarters, so tapping the bottom of the screen could zoom into the wrong page. Quadrants are now quarters of the screen as you see it, each zooming into whichever page it shows. Moving between quadrants follows the screen across pages, and after the last one it scrolls to the next screen.
+- **Spread, double tap and Ctrl + wheel** in continuous view now zoom into the page under your fingers or mouse pointer, not the top page.
+- **Back where you were:** returning from any zoom in continuous view puts the view back exactly where it was scrolled, instead of at the top of a page.
+
+Single-page view works as before.
+
+### 🔄 Updating
+On v1.5.0 or newer, use **Leading Manga Zoom › Updates › Check for updates**. On older versions, download **leadingmangazoom.koplugin.zip** below and replace the `leadingmangazoom.koplugin` folder in KOReader's `plugins/` folder.
+
+Fixes #20 · Changes: #21
+
 # v1.5.2 · 2026-10-18
 
 Fix: double-tap zoom now stays on.
@@ -65,23 +81,3 @@ Download **leadingmangazoom.koplugin.zip** below and extract it into KOReader's 
 > Don't use GitHub's "Source code" zip. It has an extra outer folder, and the plugin won't show up.
 
 Requested in [Euphoriyy/KOReader.patches#26](https://github.com/Euphoriyy/KOReader.patches/issues/26) · Changes: #13, #15
-
-# v1.3.1 · 2026-10-15
-
-Fixes from Kindle Colorsoft feedback. This is the first release with the free zoom zip attached (v1.3.0 went out without it), so if you downloaded "latest" in the last few hours, please grab this one.
-
-### 🔧 Fixes
-- **Moving between quadrants with swipes:** if *swipe to go back* or *swipe to follow nearest link* is turned on in KOReader, those swipes used to take priority while a quadrant was zoomed. Quadrant swipes now win while zoomed, and link swipes work as before otherwise.
-- **Zoom mode kept when closing mid-zoom:** closing a book (or an autosave) while zoomed in no longer replaces the book's zoom mode with the temporary free zoom.
-
-### Included from v1.3.0
-- **Free zoom** for newspapers, magazines and textbooks: spread to zoom by how far you spread, drag or swipe (diagonals too) to move anywhere, pinch to zoom out.
-- Fixed the crash when opening the zoom tab of the bottom menu while zoomed.
-- Quadrant navigation from v1.2.0 (swipe, side taps or page buttons to move between quadrants).
-
-### 📥 Installation
-Download **leadingmangazoom.koplugin.zip** below and extract it into KOReader's `plugins/` folder, replacing the old `leadingmangazoom.koplugin` folder. You should end up with `plugins/leadingmangazoom.koplugin/main.lua`. Restart KOReader, and keep Reflow off for the document.
-
-> Don't use GitHub's "Source code" zip. It has an extra outer folder, and the plugin won't show up.
-
-Changes: #11
