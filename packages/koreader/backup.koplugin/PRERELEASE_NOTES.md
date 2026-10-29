@@ -1,3 +1,10 @@
+# 26.10.29-beta · 2026-10-29
+
+- Settings from manual backups now persist
+- You can now select multiple books folders in the settings
+
+**Full Changelog**: https://github.com/ultimatejimmy/backup.koplugin/compare/26.10.23...26.10.29-beta
+
 # 26.10.22-beta · 2026-10-22
 
 ### What's New
@@ -35,10 +42,3 @@ update eink refresh logic on loading toast
 - Support redirects with webdav
 
 **Full Changelog**: https://github.com/ultimatejimmy/backup.koplugin/compare/26.10.6-beta...26.10.7-beta
-
-# 26.10.6-beta · 2026-10-06
-
-- Fix webdav, ftp and sftp
-- update settings UX
-
-**Full Changelog**: https://github.com/ultimatejimmy/backup.koplugin/compare/26.10.3-beta...26.10.6-beta

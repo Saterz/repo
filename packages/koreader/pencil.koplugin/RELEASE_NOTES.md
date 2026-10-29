@@ -1,18 +1,3 @@
-# 0.6.0 · 2026-10-29
-
-## Requires KOReader 2026.07 or newer
-
-KOReader 2026.07 includes the stylus input support this plugin needs. You no longer need to replace KOReader's `input.lua`. Just copy the `pencil.koplugin` folder into KOReader's `plugins` folder.
-
-Upgrading from an earlier release? Update KOReader to 2026.07 or newer. That installs a fresh `input.lua` over the modified one.
-
-On an older KOReader? Use [0.5.0](https://github.com/mysticknits/pencil.koplugin/releases/tag/0.5.0), which still includes `input.lua`.
-## What's Changed
-* Drop bundled input.lua; require KOReader 2026.07+ by @mysticknits in https://github.com/mysticknits/pencil.koplugin/pull/91
-
-
-**Full Changelog**: https://github.com/mysticknits/pencil.koplugin/compare/0.5.0...0.6.0
-
 # 0.5.0 · 2026-05-18
 
 ## What's Changed
@@ -57,3 +42,17 @@ xoxo
 
 
 **Full Changelog**: https://github.com/mysticknits/pencil.koplugin/compare/0.3.0...0.3.1
+
+# 0.3.0 · 2026-03-16
+
+## What's Changed
+* fix: reinvert to keep the same colors in night mode by @Euphoriyy in https://github.com/mysticknits/pencil.koplugin/pull/32
+* re-enables toggle ability by @mysticknits in https://github.com/mysticknits/pencil.koplugin/pull/37
+* Plugin active where shouldnt by @mysticknits in https://github.com/mysticknits/pencil.koplugin/pull/38
+* code cleanup by @mysticknits in https://github.com/mysticknits/pencil.koplugin/pull/39
+* Annotations to bookmarks by @mysticknits in https://github.com/mysticknits/pencil.koplugin/pull/40
+
+## New Contributors
+* @Euphoriyy made their first contribution in https://github.com/mysticknits/pencil.koplugin/pull/32
+
+**Full Changelog**: https://github.com/mysticknits/pencil.koplugin/compare/0.2.1...0.3.0
