@@ -1,3 +1,51 @@
+# v0.1.0-beta.17 · 2026-10-30
+
+# OrbitUI Beta 17 — snabbkontroller och tydligare inställningar
+
+Förhandsversion för test på Boox/Bigme. Ingen ny upstream-import i själva releasen;
+de redan granskade ändringarna från 30 oktober ingår.
+
+- Fem stora inställningskort med förklaringar, sökning och alternativ listvy.
+- Små snabbmenyer för ljus/färgtemperatur, Wi-Fi, batteri och klocka. Kontroller
+  visas efter enhetens stöd; Android Wi-Fi går till systemets inställningar.
+- Valfria upstream-funktioner: rutnät för snabbåtgärder, upp till sex omslag per
+  rad på Hem, menyfiltrering, bläddringsstatistik och fler Tiny Critter-val.
+- Egna patchar stängs inte av. Profiler/chip, omslagsfixen, snabbstängning och
+  BookOrbit/MAL-integrationer behålls. Svenska och engelska finns för nya egna UI.
+
+Uppdatera via förhandskanalen och **starta om KOReader**. Öppna sedan
+**OrbitUI-inställningar → Navigation och gränssnitt → Snabbkontroller**.
+Slå vid behov på **Tryck på statusfält för snabbkontroller**, eller lägg till
+**Snabbkontroller** som navigationsknapp. Tryckfunktionen är av från början;
+sparade navigationsrader ersätts inte. Ta gärna bilder från Hem och Bookshelf.
+
+## English
+
+Beta 17 adds large bilingual settings-category cards and shared anchored quick
+controls. Open **OrbitUI settings → Navigation & interface → Quick controls**.
+Status-field taps are opt-in; the same action can be added to a bar without
+replacing saved buttons. Native light ranges/warmth conversions, existing
+statistics/calendar owners and Android's system Wi-Fi settings are reused.
+Opening status does not start scans, network connections or polling.
+
+Also includes the already-reviewed October 30 changes through Bookshelf
+`ee84a8fe` and SimpleUI `257c26d6`: optional grid quick actions/six-cover rows,
+protected menu hiding, page-turn statistics, Tiny Critter enhancements, guarded
+startup work and scrollable long messages. Automatic patch disabling is blocked.
+
+Download **orbitui.koplugin.zip**, not the source-code archives. Update through
+the preview channel and restart KOReader. Stable bootstrap/API 1, all 2,000
+installed paths, languages, fonts and artwork are retained. Earlier betas can
+update directly. Previous public releases/assets are unchanged.
+
+Back up KOReader's data independently. Rollback changes code, not later settings
+or reading progress; remove/reselect the optional Quick controls bar action if
+rolling back to code that does not recognize it. Physical font/touch/focus,
+light/warmth, Android return, colour/night/underlay and lifecycle acceptance
+remains open. Automated checks are not a measured device-speed/RAM claim.
+
+[Full bilingual notes and recovery guidance](https://github.com/komadorirobin/orbitui.koplugin/blob/v0.1.0-beta.17/docs/OTA.md#orbitui-010-beta17).
+
 # v0.1.0-beta.16 · 2026-10-28
 
 ## Svenska
@@ -151,74 +199,3 @@ reviewed compatibility plan before adding runtime files.
 
 Bookshelf `c37580a1ca5040d2423e45b9bdd429776117f3c1` (6.0.3),
 SimpleUI `b1580f90b2e17cf03a66c744c323a1df66d77100` (3.0 follow-ups).
-
-# v0.1.0-beta.12 · 2026-10-26
-
-# OrbitUI 0.1.0-beta.12
-
-Local Bookshelf covers with Android safe mode still enabled. Experimental
-prerelease, explicitly requested for the reported Boox cover problem.
-
-OrbitUI includes and adapts **SimpleUI by doctorhetfield-cmd** and **Bookshelf
-by AndyHazz**, with their contributors' work. This is an independent combined
-plugin, not an official release by either upstream project.
-
-## What changes
-
-- Android safe mode previously blocked Bookshelf's automatic metadata/cover
-  extraction altogether. Local covers now load one document at a time between
-  UI turns, without forking a background process or using BIM's subprocess-only
-  extractor. The Android safety preference is not changed.
-- The visible page and large current-book image get appropriately sized source
-  images. Small cached thumbnails can be replaced with sharper originals;
-  refreshing metadata does not downgrade an already larger cached thumbnail.
-  A low-resolution original cannot gain real detail by being enlarged.
-- Single-book and selected-book Refresh metadata keep the previous database row
-  and scaled cover until a replacement is saved successfully. Failed loading,
-  decoding or database writes do not first erase the old cover. Custom covers,
-  ignore flags, reading data, links and settings remain intact.
-- Queues are capped at 256 local books, cancelled when Bookshelf is covered,
-  closed, suspended or a reader is opened, and yield between documents. Keep
-  Bookshelf open to finish an explicitly requested refresh. Failures can be
-  retried; provider-stream formats are excluded, with no automatic network work.
-- Bookshelf's old full-library metadata scanner launches subprocesses even in
-  safe mode. It now explains page-by-page loading instead of launching that
-  scanner while Android safe mode is enabled. Other KOReader/plugin indexers
-  are outside this guard.
-
-## After updating
-
-Restart KOReader and leave **Android safe mode enabled**. Open Bookshelf and
-pause on a page to let its local covers load. Browse other pages as needed;
-do not clear the cover database or repeat a full-library scan. For a stubborn
-book, long-press it and choose **Refresh metadata**. Existing selected-book
-refresh uses the same safe queue (maximum 256 books per request).
-
-SimpleUI's separate Android background-extraction block remains in place;
-Home can reuse covers saved by Bookshelf, but this is not a new Home indexer.
-Non-Android and explicitly disabled-safe-mode paths retain native behavior.
-
-Use OrbitUI's common updater with preview releases enabled, or install the
-complete **orbitui.koplugin.zip**, not a source archive. Preserve hidden version
-directories and settings; follow external-install verification/restart prompts.
-Bootstrap/API 1 and older published releases are unchanged. Code rollback does
-not reset reading progress or settings.
-
-## Verification and limits
-
-Regression coverage includes native-sized/coverless images, larger-cache
-preservation, custom-cover handling, actual single/bulk refresh callbacks,
-SQLite savepoint rollback, resource cleanup, read-only parked-reader access,
-bounded/cancellable queues and unchanged native fallback. Release gates also
-include complete Lua/LuaJIT suites, translations, sealed-byte checks, older
-native installers, exact draft/public assets, history/artwork/secrets and CI.
-
-These are headless/native-service tests, not a physical Boox or Bigme session.
-One document load runs synchronously and cannot be interrupted midway; large
-or damaged files may still pause the UI or expose native-engine defects.
-Actual cover quality, input responsiveness, memory, rotation, sleep/wake and
-reader-return acceptance remain to be checked on the affected devices. No
-measured speed improvement or complete Android-crash fix is claimed.
-
-No upstream merge: Bookshelf `c37580a1ca5040d2423e45b9bdd429776117f3c1` (6.0.3),
-SimpleUI `b1580f90b2e17cf03a66c744c323a1df66d77100`.
